@@ -1,0 +1,1247 @@
+<html>
+<!----------------------------------------------------------------------------->
+<!--                          BEGIN HTML HEAD                                -->
+
+<head>
+<title>Microsoft Repository 自述文件</title>
+<meta name="MS-HAID" content="readmerp">
+<style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+</head>
+
+<body BGCOLOR="#FFFFFF" onclick="checkExpand()">
+<font face="宋体" color="#000000" link="#0000FF"
+vlink="#660066"><!--                                           -->
+<!--                             END HEADER                                  -->
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+<!--                            BEGIN JSCRIPT                                -->
+<!--                                                                         -->
+<script language="JSCRIPT">
+
+  function checkExpand( )
+  {
+     if ("" != event.srcElement.id)
+     {
+        var ch = event.srcElement.id + "Child";
+        var el = document.all[ch];
+        if (null != el)
+        {
+           el.style.display = "none" == el.style.display ? "" : "none";
+           if (el.style.display != "none")
+           event.returnValue=false;
+        }
+     }
+  }
+
+</script>
+<!--                                                                         -->
+<!--                             END JSCRIPT                                 -->
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+<!--                         BEGIN README INTRO                              -->
+<!--                                                                         -->
+
+
+<h2>Microsoft Repository 2.0 自述文件 </h2>
+
+<p>(C) 1998 Microsoft Corporation. 保留所有权利。 </p>
+
+<p>Repository 自述文件中补充了与 Microsoft(R) Visual Studio -- Windows 和 Internet 开发系统一起提供的和文档相关的最新信息。本文档中的信息比帮助系统中包含的信息更新。本文档中所描述的问题在后续的版本中将得到纠正。</p>
+
+<p>有关 Visual Studio 6.0 套装产品的<font color="#007f00">一般安装问题</font>，包括并列产品安装，请参看<a href="install.htm"
+title="Jumps to the installation readme (install.htm).">安装注意事项</a>自述文件
+(install.htm)。</p>
+
+<p>有关 Visual Studio 套装产品帮助系统的其他问题，请转到 <font
+face="宋体" color="#000000" link="#0000FF"
+vlink="#660066"><a href="readmeDN.htm" title="Jumps to readmeDN.htm">MSDN(TM), Microsoft 开发者网络自述文件。</a></p>
+<!--                                                                         -->
+<!--                            END README INTRODUCTION                      -->
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+<!--                               BEGIN TOC                                 -->
+<!--                                                                         -->
+
+<h3>内容 </h3>
+<!------------------------------------------------------------------->
+<!--                         SECTION 1.0                           -->
+<!--                                                               -->
+
+<h4><a class="ex" href="#" title="Click to expand or collapse." id="Section1">Repository
+概述</a></h4>
+<div id="Section1Child"><a href="#Topic_10">
+
+<p>什么是 Microsoft Repository？</a> </p>
+
+<p><font face="宋体" color="#FF0000" > <strong>新</strong></font>
+<a href="#Topic_11"> Microsoft Repository 2.0 中的新特征</a> </p>
+
+<p><a href="#Topic_12"> 2.0 版用户需要注意的重要信息</a></p>
+</div><!------------------------------------------------------------------->
+<!--                         SECTION 2.0                           -->
+<!--                                                               -->
+
+
+<h4><a class="ex" href="#" title="Click to expand or collapse." id="Section2">安装</a></h4>
+<div id="Section2Child">
+
+<p><b>要点：</b>&nbsp;&nbsp;&nbsp;本部分包含了有关安装 Repository 2.0 的重要信息。在开始安装之前，请仔细阅读所有条目。</p>
+<a href="#Topic_20">
+
+<p>Repository 安装注意事项</a></p>
+
+<p><a href="#Topic_21">硬盘上的 Repository 文件</a> </p>
+</div><!------------------------------------------------------------------->
+<!--                         SECTION 3.0                           -->
+<!--                                                               -->
+
+
+<h4><a class="ex" href="#" title="Click to expand or collapse." id="Section3">与 Repository 2.0 有关的问题</a></h4>
+<div id="Section3Child"><a href="#Topic_30">
+
+<p> Repository 1.0 和 Repository 2.0 之间的差异</a></p>
+<a href="#Topic_31">
+
+<p>异步操作</a></p>
+<a href="#Topic_32">
+
+<p>属性定义中所使用的 SQL 和 API 类型</a></p>
+<a href="#Topic_33">
+
+<p>新特征</a></p>
+</div><!------------------------------------------------------------------->
+<!--                         SECTION 4.0                           -->
+<!--                                                               -->
+
+
+<h4><a class="ex" href="#" title="Click to expand or collapse." id="Section4">限制条件和详细信息</a></h4>
+<div id="Section4Child"><a href="#Topic_40">
+
+<p> Microsoft Repository 2.0 中已知的限制条件</a></p>
+
+<p><a href="#Topic_41">详细信息</a> </p>
+</div><!--                                                                   -->
+<!--                           END CONTENTS TOC                              -->
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+<!--                             BEGIN CONTENTS                              -->
+<!--                                                                         -->
+<!--                                                                         -->
+<!------------------------------------------------------------------->
+<!--                         SECTION 1.0                           -->
+<!--                                                               -->
+
+
+<p><br>
+</p>
+
+<h3>Repository 概述</h3>
+
+<p><br>
+<!------------------------------------------------------><!--                     TOPIC 1.0                    --><!--                                                  --></p>
+
+<h4><a name="Topic_10"></a>什么是 Microsoft Repository？</h4>
+
+<p>Microsoft Repository 是一种可以实现定义和操作信息模型的技术。它被工程和软件开发工具用来共享有关设计器具的信息。所谓设计器具指的是任何想要用来共享信息而又具有复杂结构的事物 - 诸如软件组件、制造的组件、文档、地图、Web 页面等。Microsoft Repository 在一个关系型数据库中保存 repository数据。它支持两种数据库管理系统：Microsoft(R) SQL Server 6.5 版或者更高版以及 Microsoft Jet 数据库引擎 3.0 版或者更高版。</p>
+
+<p><!------------------------------------------------------><!--                     TOPIC 1.1                    --><!--                                                  --></p>
+
+<h4><a name="Topic_11"></a></h4>
+
+<h4> Microsoft Repository 2.0 的新特征</h4>
+
+<p>Microsoft Repository 2.0 在保持与 Microsoft Repository 1.0 的向后兼容性的同时对版本管理和团队开发等领域内进行了加强。</p>
+
+<p>主要的新功能包括： 
+
+<ul>
+  <li><b>对象的版本管理</b>：允许 repository 用户来管理 repository 对象的多个版本。</li>
+  <li><b>关系的版本管理</b>：允许 repository 用户来管理对象之间关系的多个版本。 </li>
+  <li><b>工作站管理</b>：提供一个虚拟的 repository，在此 repository 中，用户可以对对象和关系的私有版本进行操作。签入/签出模型允许用户来控制在用户的工作站中哪些信息是可见的以及其他用户可以见到哪些改变。在此软件所附的用户文档和说明书中，对这个新的功能作了详细的描述。</li>
+</ul>
+
+<p><br>
+<!------------------------------------------------------><!--                     TOPIC 1.2                   --><!--                                                  --></p>
+
+<h4><a name="Topic_12"></a> 2.0 版用户需要注意的重要信息</h4>
+
+<p>用户还应该注意下面的事项： 
+
+<ul>
+  <li>Microsoft Repository 2.0 在功能和接口上与 1.0 版是向后兼容的。如果所有使用 repository 数据库的应用程序都只使用 1.0 版，那么就不会发生不兼容的情况。同样的，如果所有使用 repository 数据库的应用程序都充分考虑到了版本和工作站，那么这些应用程序应该是成功的。不推荐在同一个 repository 数据库上混合使用考虑版本的应用程序和不考虑版本及工作站的应用程序。</li>
+  <li>因为引入了版本管理，Microsoft Repository 2.0 SQL 方案是 Microsoft Repository 1.0 方案的一个扩展。    那些不通过 repository 接口而直接访问 SQL 表的应用程序可能需要修改查询或者提供视图以保证向后的兼容性。</li>
+  <li>移植向导 (MigRepV2.exe) 将 Microsoft Repository 的基本数据库信息从 1.0 版转换为 2.0 版 (SQL 到 SQL， Jet 到 Jet)。在运行移植向导之前，必须已经对 Microsoft Repository 引擎 2.0 版 (V2 版) 进行注册。请注意，移植过程只能单向地从 1.0 版到 2.0 版进行。</li>
+  <li>Microsoft Repository 2.0 不支持交易执行的 WRITETHROUGH 模式。</li>
+  <li>Microsoft Repository 2.0 支持 Intel x86 和 Alpha 平台。 </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><br>
+<!-------------------------------------------------------------------><!--                         SECTION 2.0                           --><!--                                                               --></p>
+
+<h3>安装</h3>
+<!------------------------------------------------------>
+<!--                     TOPIC 2.0                    -->
+<!--                                                  -->
+
+<h4><a name="Topic_20"></a>Repository 安装注意事项</h4>
+
+<p>Microsoft Repository 的安装是在 Visual Basic 安装过程中完成的。</p>
+
+<p>Microsoft Repository 要求数据访问组件已经被安装。在默认的情况下，数据访问组件的安装也是在 Visual Basic 的安装过程中完成的。然而，如果选择不安装数据访问组件而随后安装一种使用 Microsoft Repository 的第三方工具，那么在启动 Visual Basic 98 时就会遇到下列错误：</p>
+
+<p>&quot;打开 Microsoft Repository 数据库时产生一个错误。由于系统错误 126 (Microsoft Access 驱动程序 (*.MDB))，所指定的驱动程序不能被装载。Microsoft Repository Add-in for Visual Basic 正在关闭。&quot;</p>
+
+<p>要纠正这个错误，请安装数据访问组件。</p>
+
+<p><br>
+<!------------------------------------------------------><!--                     TOPIC 2.1                    --><!--                                                  --></p>
+
+<h4><a name="Topic_21"></a>硬盘上的 Repository 文件</h4>
+
+<p>下面这些文件将被添加到 Windows SYSTEM (或者 SYSTEM32) 目录中： 
+
+<ul>
+  <li>REPUTIL.DLL - Repository 引擎的实用程序 </li>
+</ul>
+
+<p>下面这些文件将被添加到 &quot;Program Files\Common Files\Microsoft
+Shared\Repostry&quot; 目录中：
+
+<ul>
+  <li>REPODBC.DLL - Repository 引擎</li>
+  <li>REPRC.DLL - Repository 引擎的资源</li>
+  <li>REPBROWS.EXE - 基本的 Repository 浏览器</li>
+  <li>REPBRRC.DLL - Repository 浏览器的资源</li>
+  <li>MIGREPV2.EXE - 移植向导用户界面</li>
+  <li>MIGV2RC.DLL - 移植向导的资源</li>
+  <li>MIGV2.DLL - 移植向导的算法</li>
+  <li>REPCDLG.DLL - Repository 一般对话框</li>
+  <li>REPCDLG.OCX - Repository 一般对话框的 ActiveX 控件</li>
+  <li>REPCDRC.DLL - Repository 一般对话框的资源</li>
+</ul>
+
+<p>下面这些文件将被添加到 &quot;Program Files\Common Files\Microsoft
+Shared\Repostry\infoMdl&quot; 目录中： 
+
+<ul>
+  <li>REPCDE.DLL - 组件描述信息模型</li>
+  <li>REPCOM.DLL - COM 信息模型</li>
+  <li>REPDTM.DLL - 数据类型信息模型</li>
+  <li>REPGEN.DLL - 一般信息模型</li>
+  <li>UML.DLL - 统一模型化语言 (UML) 信息模型</li>
+  <li>REPUMX.DLL - UML 扩展信息模型</li>
+  <li>REPVCM.DLL - Visual 组件管理器模型</li>
+</ul>
+
+<p>下面这些文件将被添加到 Visual Basic 目录中： 
+
+<ul>
+  <li>REPVB.DLL - Visual Basic 的 Repository Add-in </li>
+  <li>REPVBRC.DLL - Repository Add-in 的资源文件</li>
+  <li>REPVBTIM.DLL - MDO 模型的类型定义</li>
+</ul>
+
+<p><!--                     TOPIC 2.2                    --><!--       --></p>
+
+<h3><a name="Topic_22"></a><font face="宋体" ><br>
+<!-------------------------------------------------------------------><!--                      SECTION 3.0                           --><!--                                                               --></h3>
+
+<h3>与 Repository 2.0 有关的问题</font></h3>
+</font><font face="宋体" ><!------------------------------------------------------>
+<!--                     TOPIC 3.0                   -->
+<!--                                                  -->
+
+
+<h4><a name="Topic_30"></a> Repository 1.0 和 Repository 2.0 之间的差异</h4>
+<b>
+
+<h4></b>Repository 1.0 的用法</h4>
+
+<p ALIGN="JUSTIFY">如果 repository 数据库是利用 Repository 1.0 引擎来创建的并且已经被用来只通过这个引擎来创建、操作、和检索信息模型，那么利用 
+Repository 2.0 引擎来运行同一个应用程序就会存在一些差异。这些差异出现在对关系的处理上，如下所列： </p>
+
+<ul>
+  <li>在 Repository 1.0 中，如果一个应用程序所插入的关系的名称已经存在，那么马上就会引起名称独特性冲突。而在 Repository 2.0 中，只有当已经存在的关系位于缓冲区中(例如，创建为同一个交易的一部分或者已经检索仅缓冲区中)时，才会马上引起名称独特性冲突。否则，名称独特性冲突将在提交时刻产生。</li>
+</ul>
+
+<ul>
+  <li> Repository 1.0 引擎中的枚举算子，除了那些针对关系集合的，
+    具有静态的内容，所以在集合请求一个新的枚举算子之前，所添加的条目不会出现。而在 Repository 2.0 引擎中，枚举算子是动态的，所以添加的条目马上就会在枚举算子中出现。</li>
+</ul>
+
+<ul>
+  <li>在 Repository 1.0 中，如果 <strong>IRelationshipCol::Insert()</strong> 
+    中的插入位置大于集合的当前合计数，这个调用就被当作 <strong>IRelationshipCol::Add()</strong> 来处理。
+    而在 Repository 2.0 中，如果所指定的插入位置大于当前的合计数，那么调用就降为 <strong>IRelationshipCol::Add()</strong>。对于更高的插入位置，调用将返回一个错误，因为用户大概犯了一个错误(在任何情况下这都是不好的编程)。</li>
+</ul>
+
+<ul>
+  <li>在 Repository 2.0 中，对一个未排序或者目的集合实行 <strong>IRelationshipCol::Insert()</strong> 将导致一个错误。而在 Repository 1.0 中，如果集合是排过序的，调用将在初始位置执行 <strong>IRelationshipCol::Add()</strong>。</li>
+</ul>
+<b><u>
+
+<p></u>混合模式的 Repository 1.0 和 Repository 2.0 的用法</b></p>
+
+<p ALIGN="left">一个 Repository 1.0 应用程序在 Repository 2.0 引擎上运行是可能实现的，其中，对同一个 repository 的版本管理操作是由其他应用程序完成的。当然，引擎必须考虑到版本管理的语义学，以及一些对非版本管理应用程序来说必须可见的语义。
+如果 Repository 2.0 应用程序在一个 repository 数据库中进行版本和工作站操作，那么当 Repository 1.0 应用程序在这个数据库上运行时，就只能看到这些影响。如果在一个数据库上运行的所有的应用程序都遵循 Repository 1.0 语义学，那么就不会产生这些影响。除了上面提到的影响，还可能出现下面这些情况： </p>
+
+<ul>
+  <li> Repository 1.0 应用程序能够使用 <strong>get_Object()</strong> 检索对象(获得已辨认版本)，删除该对象(版本被删除)，然后再一次使用 <strong>get_Object()</strong> (这次调用将辨认另外一个版本)。 </li>
+</ul>
+
+<ul>
+  <li>因为在 Repository 1.0 中所有的对象没有被冻结，所以在 Repository 1.0 中更新从来不会失败。但是，在 Repository 2.0 中，所有对冻结版本或者已签出版本进行的更新操作(属性和初始集合更新)都将失败。</li>
+</ul>
+
+<ul>
+  <li>在 Repository 2.0 中，对一个已签出版本或者有后续的版本进行的删除操作将失败。而在 Repository 1.0 中则不会出现这种情况。</li>
+</ul>
+
+<ul>
+  <li>在 Repository 1.0 中， <strong>IRelationship::Delete()</strong> 完全地删除了关系，所以在起始对象和目的对象上都不再存在。而在 Repository 2.0 中，如果从目的端开始浏览，从起始版本到任何其他目的版本的关系在删除之后将继续存在。如果从起始端开始浏览，那么从该版本到所有目的版本的关系将被删除。对于 <strong>IRelationshipCol::Remove()</strong> 和 <strong>ITargetObjectCol::Remove()</strong> 来说，情况也与此相似。</li>
+</ul>
+
+<ul>
+  <li>在 Repository 1.0 中，如果一个对象是其他同种类型关系的目的，删除的传播将在此对象终止。在 Repository 2.0 种，除了要满足这个条件，删除传播将在不可改变的版本 (冻结或者已签出到另外的工作站中)终止，或者在拥有从冻结的起始版本(也就是说，没有错误)进来的关系(任何类型)的版本终止。</li>
+</ul>
+<b><u>
+
+<p></u>SQL 表</b> 
+
+<ul>
+  <li><p ALIGN="left">为了进行版本管理，Repository 2.0 SQL 表进行了广泛的修改。
+    如果一个 repository 数据库的所有对象都只有一个版本，那么与在此数据库上执行的 Repository 1.0 SQL 查询相对应的SQL 视图可以继续运行，没有什么改变。</p>
+  </li>
+  <li><p ALIGN="left">在一个存在对象的多个版本的 repository 上执行的epository 1.0 SQL 查询可能执行完成，但是，应该根据版本管理对其语义进行检查。在某些情况下，查询可能会返回同一个对象的多个版本，而这是一个 Repository 1.0 应用程序所不能实现的。</p>
+  </li>
+  <li><font ><p align="left">在 Repository 2.0 中，表 <strong>RTblSites</strong> 中没有 <strong>NextLocalID</strong> 这一列。</p>
+    </font></li>
+  <li><p align="left">表 <strong>RTblClassDefs</strong> 拥有一个被称为 <strong>VerPropDescs</strong> 
+    的新列，其中是类定义在 Repository 2.0 中的保存位置。 <strong>PropDescs</strong> 列中仅仅包含 null 值而不再被使用。但是出于兼容性的考虑，仍旧保留了这一列。</p>
+  </li>
+</ul>
+<b><u>
+
+<p></u>杂项</b> </p>
+
+<p ALIGN="JUSTIFY">下表显示了 Repository 1.0 和 Repository 2.0 之间的其他差异。</p>
+</font>
+
+<table BORDER="1" CELLSPACING="1" BORDERCOLOR="#000000" CELLPADDING="7" WIDTH="600">
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2"><b>描述</b></font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2"> <b>V1 引擎</b></font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2"> <b>V2 引擎</b></font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font color="#000000" face="宋体" size="2">IRepositoryItem::get_Item()</font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">超出范围的整数索引
+    返回 EREP_BADPARAMS。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">超出范围的整数索引
+    返回 DISP_E_BADINDEX。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2">IRelationshipCol::Insert()</font><p><font
+    face="宋体" size="2">ITargetObjectCol::Insert()</font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">如果集合是没有排序的，Insert 方法将在集合结尾插入。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">对于未排序的集合(EREP_COL_NOT-SEQUENCED)和目的集合(EREP_RELSHIP_ORGONLY)，Insert 方法失败。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2">IRelationshipCol::Move()</font><p><font
+    face="宋体" size="2">ITargetObjectCol::Move()</font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">对于未排序集合和目的集合，方法失败并返回 EREP_RELSHIP_ORGONLY。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">对于未排序的集合，方法失败并返回 EREP_COL_NOT-SEQUENCED，对于目的集合，方法失败并返回 EREP_RELSHIP_ ORGONLY。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2">IRepositoryObjectVersion::put_Name()</font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">错误
+    EREP_OBJ_NO-NAMING-RELSHIP 没有被添加到错误队列中。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">错误 REP_OBJ_NONAMING-RELSHIP
+    被添加到错误队列中。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2">命名唯一集合：名称为 &quot;B&quot; 的条目 B 被多次添加到一个命名唯一集合中 </font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">错误代码是
+    EREP_RELSHIP_DUPENAME。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">错误代码是
+    EREP_RELSHIP_EXISTS。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2">IRepositoryItem::get_Name()</font></td>
+<td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">对一个未命名的关系，操作成功
+ (返回 &quot;0&quot;)。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">失败。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2">IRelationshipCol::get_Item() </font><p><font
+    face="宋体" size="2">ITargetObjectCol:: get_Item()</font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">参数可以是 INTID、OBJID、
+    Index、或者 Name。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">参数可以是 OBJID、Index、
+    或者 Name。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2"> SQL Server 上的 ExecuteQuery()</font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">在结果集中检查 INTID 列。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">在隐式转换可能进行的任何时候，不仅仅接受 INTID。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="343" VALIGN="TOP"><font face="宋体" size="2">刷新对象实例集合</font></td>
+    <td WIDTH="300" VALIGN="TOP"><font face="宋体" size="2">刷新属性，然后刷新对象。</font></td>
+    <td WIDTH="272" VALIGN="TOP"><font face="宋体" size="2">刷新对象，然后刷新属性。</font></td>
+  </tr>
+</table>
+<font face="宋体" >
+
+<p>&nbsp;</p>
+<!------------------------------------------------------>
+<!--                     TOPIC 3.1                    -->
+<!--                                                  -->
+
+<h4><a name="Topic_31"></a>异步操作</h4>
+
+<p ALIGN="left">响应 <strong>IRepositoryODBC::ExecuteQuery()</strong> 的对象集合装载过程可以是异步进行的。调用此方法的线程应该检查装载是否完成。
+如果调用线程试图在装载进行过程中读取数据、刷新集合、或者建立一个枚举算子，那么该线程将被阻塞，直到刷新完成为止。</p>
+<b><u>
+
+<h4></u>标志 </h4>
+
+<ul>
+  </b>
+  <li>设置/清除 &quot;async&quot; 选项：</li>
+</ul>
+
+<dir>
+  <dir>
+    <dl>
+      <dt></font><font face="宋体" >RODBC_RESET_OPTIONS = 1&nbsp; // 重新设置所有选项</font></dt>
+      <dt><font face="宋体" >RODBC_ASYNCH = 2
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 异步查询的执行</font><font
+        face="宋体" ></dt>
+    </dl>
+    <u><b>
+  </dir>
+</dir>
+
+<ul>
+  </b></u>
+  <li>对象的装载状态：</li>
+</ul>
+
+<blockquote>
+  <dl>
+    <dd><font face="宋体" >READY = 1
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//
+      装载完成</font></dd>
+    <dd><font face="宋体" >INPROGRESS = 2
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 装载正在进行</font></dd>
+    <dd><font face="宋体" >CANCELLED = 3
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 装载已经被取消(被调用者)</font></dd>
+    <dd><font face="宋体" >FAILED = 4
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//
+      装载失败 (原因未知)</font></dd>
+  </dl>
+</blockquote>
+<b><u>
+
+<h4></u>新的接口</h4>
+
+<ul>
+  </b>
+  <li><strong>IObjectCol2</strong>  -- 继承自 <strong>IObjectCol</strong>. </li>
+</ul>
+
+<blockquote>
+  <p>附加的方法：</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><strong>LoadStatus</strong>：获得集合的装载状态。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <h6>参数</h6>
+  </blockquote>
+  <blockquote>
+    <dl>
+      <dt><strong>HRESULT LoadStatus(long</strong> *<em>piStatus</em><strong>)</strong>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;// Automation</dt>
+      <dt><strong>HRESULT get_LoadStatus(long</strong> *<em>piStatus</em><strong>)&nbsp;</strong>&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// COM</dt>
+    </dl>
+    <h6>参数</h6>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <dl>
+    <dd><em>piStatus</em> </dd>
+    <dd>[out, retval] </dd>
+    <dd> READY/INPROGRESS/CANCELLED/FAILED 之一。</dd>
+  </dl>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <h6>返回值</h6>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <dl>
+    <dd>如果成功就返回 S_OK，如果没有提供输出参数则返回 EREP_BADPARAMS。</dd>
+  </dl>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><strong>Cancel</strong>：请求取消正在进行的装载操作。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <h6>签名</h6>
+  </blockquote>
+  <blockquote>
+    <p><strong>HRESULT</strong> <strong>Cancel()</strong></p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <h6>返回值</h6>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <dl>
+    <dd>S_OK。</dd>
+  </dl>
+</blockquote>
+
+<ul>
+  <li><strong>IRepositoryODBC2</strong> -- 继承自 <strong>IRepositoryODBC</strong>。 </li>
+</ul>
+
+<blockquote>
+  <p>附加的方法： <ul>
+    <li><strong>GetOption： </strong> 获得装载选项的值。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <h6>签名</h6>
+    <p><strong>HRESULT</strong> <strong>GetOption(long</strong> <em>iOption</em>, <strong>VARIANT</strong>
+    *<em>psValue</em><strong>)</strong></p>
+  </blockquote>
+  <dl>
+    <dd><h6>参数</font></h6>
+      <font face="宋体" ></dd>
+    <dd><em>iOption</em>&nbsp;</dd>
+    <dd>[in] </dd>
+    <dd>RODBC_ASYNCH.</dd>
+    <dd>&nbsp;</dd>
+    <dd><em>psValue</em> </dd>
+    <dd>[out, retval] </dd>
+    <dd>VARIANT_TRUE 或者 VARIANT_FALSE，取决于是否已经设置了 RODBC_ASYNCH 选项。</dd>
+    <dd>&nbsp;</dd>
+    <dd><h6>返回值</font></h6>
+      <font face="宋体" ></dd>
+    <dd>如果成功就返回 S_OK，如果指定了任何其他操作则返回 EREP_BADPARAMS。</dd>
+  </dl>
+</blockquote>
+
+<blockquote>
+  <dir>
+    <li><strong>SetOption: </strong> 为集合的装载设置选项。当且仅当基本的数据库系统支持 async 操作时，能够设置 async 标志。</li>
+  </dir>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <dl>
+      <h6>签名</h6>
+      <dt><strong>HRESULT</strong> <strong>SetOption(long</strong> <em>iOption</em>, <strong>VARIANT</strong>
+        <em>sValue</em><strong>)</strong></dt>
+    </dl>
+    <h6>输入参数</h6>
+    <dl>
+      <dt><em>iOption</em> RODBC_ASYNCH 和 <em>sValue</em> TRUE 设置装载的 async 模式。</dt>
+      <dt><em>iOption</em> RODBC_ASYNCH 和 <em>sValue</em> FALSE 清除 async 模式。</dt>
+      <dt><em>iOption</em> RODBC_RESET_OPTIONS 重新设置装载的 async 模式。</dt>
+    </dl>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <h6>返回值</h6>
+    <p>如果成功就返回 S_OK，如果 iOption 是 RODBC_ASYNCH 而 sValue 中指定了不是 TRUE 或者 FALSE 的值则返回 EREP_TYPE_COLMISMATCH。</p>
+  </blockquote>
+</blockquote>
+<b><u>
+
+<p></u>其他改变 
+
+<ul>
+  </b>
+  <li> <strong>ObjectCol</strong> 类支持 <strong>IObjectCol</strong>[default] 和
+    <strong>IObjectCol2</strong>。</li>
+</ul>
+
+<ul>
+  <li> 如果 async 模式起作用，<strong>IObjectCol2::Refresh()</strong> 将异步地刷新对象集合
+    (重新装载对象集合并刷新目的对象)。
+调用此方法的线程应该检查刷新是否完成。如果调用线程试图在刷新进行过程中读取数据、
+    刷新集合、或者建立一个枚举算子，那么该线程将被阻塞，直到刷新完成为止。</li>
+</ul>
+<!------------------------------------------------------>
+<!--                     TOPIC 3.2                    -->
+<!--                                                  -->
+
+<p>&nbsp;</p>
+
+<h4><a name="Topic_32"></a>属性定义中所使用的 SQL 和 API 类型</h4>
+<!------------------------------------------------------>
+<!--                     TOPIC 3.3                    -->
+<!--                                                  -->
+
+<p>下面两个表中显示了 Repository 引擎所识别的 API 类型，还有
+ SQL 类型。这些值出现在 <b>PropertyDef</b> 对象的 <b>APIType</b> 属性 <b>SQLType</b> 属性中。有关在 SQL 和API 类型之间进行转换的信息，请参看 ODBC 程序员参考手册。</p>
+</font>
+
+<table BORDER="1" CELLSPACING="1" BORDERCOLOR="#000000" CELLPADDING="9" WIDTH="331">
+  <tr>
+    <td VALIGN="TOP" COLSPAN="2"><font face="宋体" size="2"><b>引擎识别出的 API 类型</b></font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2"> <b>API 类型</b></font></td>
+    <td WIDTH="36%" VALIGN="TOP"><b><p ALIGN="CENTER"><font face="宋体" size="2">值</font></b></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_UTINYINT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-28</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_STINYINT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-26</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_ULONG</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-18</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_USHORT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-17</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_SLONG</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-16</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_SSHORT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-15</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_BINARY</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-2</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_TINYINT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-6</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_BIT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-7</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_CHAR</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">1</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_LONG</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">4</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_SHORT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">5</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_FLOAT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">7</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_DOUBLE</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">8</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_DATE</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">9</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_TIME</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">10</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_C_TIMESTAMP</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">11</font></td>
+  </tr>
+</table>
+<font face="宋体" ><font >
+
+<p></font>&nbsp;</p>
+</font>
+
+<table BORDER="1" CELLSPACING="1" BORDERCOLOR="#000000" CELLPADDING="9" WIDTH="331">
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2"> <b>SQL 类型</b></font></td>
+    <td WIDTH="36%" VALIGN="TOP"><b><p ALIGN="CENTER"><font face="宋体" size="2">值</font></b></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_LONGVARCHAR</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-1</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_BINARY</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-2</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_VARBINARY</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-3</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_LONGVARBINARY</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-4</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_BIGINT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-5</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_TINYINT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-6</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_BIT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">-7</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_CHAR</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">1</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_NUMERIC</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">2</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_DECIMAL</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">3</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_INTEGER</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">4</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_SMALLINT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">5</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_FLOAT</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">6</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_REAL</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">7</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_DOUBLE</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">8</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_DATETIME</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">9</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_TIME</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">10</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_TIMESTAMP</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">11</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="64%" VALIGN="TOP"><font face="宋体" size="2">SQL_VARCHAR</font></td>
+    <td WIDTH="36%" VALIGN="TOP"><p ALIGN="CENTER"><font face="宋体" size="2">12</font></td>
+  </tr>
+</table>
+<font face="宋体" >
+
+<p>&nbsp;</p>
+
+<h4><a name="Topic_33"></a>新特征</h4>
+
+<h4>属性</h4>
+
+<p> <strong>IRepository2</strong> 接口中添加了两种新的属性，以便指示数据库文件的版本。 
+
+<ul>
+  <li><strong>MajorDBVersion</strong></li>
+</ul>
+
+<blockquote>
+  <h6>签名</h6>
+  <dl>
+    <dt><strong>HRESULT MajorDBVersion(long</strong> *<em>piMajorDBVersion</em><strong>)</strong>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Automation</dt>
+    <dt><strong>HRESULT get_MajorDBVersion(</strong> long *<em>piMajorDBVersion</em><strong>)</strong>
+      &nbsp;&nbsp;&nbsp;&nbsp; // COM</dt>
+  </dl>
+  <h6>参数</h6>
+  <dl>
+    <dt><em>piMajorDBVersion </em></dt>
+    <dt>[out, retval] </dt>
+    <dt>采用这种数据格式的第一个 Repository 引擎版本的主版本号。</dt>
+  </dl>
+</blockquote>
+
+<ul>
+  <li><strong>MinorDBVersion</strong></li>
+</ul>
+
+<blockquote>
+  <h6>签名</h6>
+  <dl>
+    <dt><strong>HRESULT MinorDBVersion(long</strong> *<em>piMinorDBVersion</em><strong>)</strong>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Automation</dt>
+    <dt><strong>HRESULT get_MinorDBVersion(</strong> long *<em>piMinorDBVersion</em><strong>)</strong>
+      &nbsp;&nbsp;&nbsp;&nbsp; // COM</dt>
+  </dl>
+  <h6>参数</h6>
+  <dl>
+    <dt><em>piMinorDBVersion </em></dt>
+    <dt>[out, retval] </dt>
+    <dt>采用这种数据格式的第一个 Repository 引擎版本的次版本号。</dt>
+  </dl>
+</blockquote>
+<!------------------------------------------------------>
+<!--                     TOPIC 4.0                    -->
+<!--                                                  -->
+
+<h4>方法</h4>
+
+<p><strong>IRepository2</strong> 接口中添加了一个新方法： <strong>CreateObjectEx()</strong>。<strong></strong> 这个方法为指定类型的新 Repository 对象创建第一个版本。
+新创建的版本被分配了一个对象-版本标识符，这个标识符被作为一个参数传递到此方法中，这一点与 <strong>IRepository::CreateObject()</strong> 不同，在 <strong>IRepository::CreateObject()</strong>中 Repository 给新创建版本分配一个 ID。其语法如下： </p>
+
+<blockquote>
+  <i><b><h6></b></i>签名<i><b></h6>
+  </b></i><dl>
+    <dt><strong>HRESULT IRepository2::CreateObjectEx(</strong></dt>
+    <dt><strong>VARIANT</strong> <em>TypeID,</em></dt>
+    <dt><strong>VARIANT</strong> <em>ObjectID,</em></dt>
+    <dt><strong>VARIANT</strong> <em>ExtVersionID,</em></dt>
+    <dt><strong>IRepositoryObjectVersion</strong> <em>**ppRepObjVer</em><strong>)</strong>;</dt>
+  </dl>
+  <b><i><h6></i></b>参数</h6>
+  <dl>
+    <dt><em>TypeID</em> </dt>
+    <dt>[in] </dt>
+    <dt>其功能与 <strong> IRepository::CreateObject</strong> 相同</dt>
+    <dt>&nbsp;</dt>
+    <dt><em>ObjectID</em> </dt>
+    <dt>[in] </dt>
+    <dt>其功能与 <strong>IRepository::CreateObject</strong>&nbsp; 相同 </dt>
+    <dt>&nbsp;</dt>
+    <dt><em>ExtVersionID</em> </dt>
+    <dt>[in] </dt>
+    <dt>这是将被分配给对象的第一个版本的对象-版本标志符 (20 字节) </dt>
+    <dt>&nbsp;</dt>
+    <dt><em>ppRepObjVer</em> </dt>
+    <dt>[out] </dt>
+    <dt>这是指向新创建版本的 <strong>IRepositoryObjectVersion</strong> 指针</dt>
+  </dl>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h3><a name="Topic_40"></a> Microsoft Repository 2.0 中已知的限制条件</h3>
+<b>
+
+<h4>1. 与接口及其相关方法有关的限制条件</b></h4>
+
+<p><b>IRepositoryObjectVersion</b> 
+
+<ul>
+  <li><b>MergeVersion()</b>：关系被插入到排好序的集合的末尾。</li>
+</ul>
+<b>
+
+<p>IRelationshipCol</b> 和 <b>ITargetObjectCol</b> 
+
+<ul>
+  <li><b>Remove()</b>: 从一个排好顺序的集合中删除元素并不会更新集合的顺序。</li>
+</ul>
+<b>
+
+<p>IVersionAdminInfo</b> 
+
+<ul>
+  <li><b>VersionModifyTime()</b>： 当初始关系或者目的对象集合被修改时，并不会改变。</li>
+  <li><b>ModifyByUser()</b>： 当初始关系或者目的对象集合被修改时，并不会改变。</li>
+</ul>
+<b>
+
+<p>IRepository2</b> 
+
+<ul>
+  <li><b>CreateObject()</b>: 只能从共享的 repository 中调用而不能从一个工作站中调用。
+    解决的办法是通过中央 repository 创建对象并将此对象包含在工作站中。</li>
+</ul>
+<b>
+
+<p>IClassDef</b> 和 <b>IInterfaceDef</b> 
+
+<ul>
+  <li><b>ObjectInstances()</b>：不属于工作站范围。 </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h4><strong>2. Repository 常数</strong> </h4>
+
+<p>在 Repository 文档中提到，当一个关系将一个名称赋给其目的对象的时候，这个名称的最大长度是由常数 RELSHIPNAMESIZE 所定义的 260。实际上这个值是 249。</p>
+
+<p>&nbsp;</p>
+
+<h4><strong>3. 名称的惯例</strong></h4>
+
+<p>关系和对象的名称必须遵循下面这些惯例： </p>
+
+<blockquote>
+  <dl>
+    <dt>1. 名称的长度不得超过 249 个字符。</dt>
+    <dt>2. 名称中可以使用任何字符。</dt>
+    <dt>3. 名称的开始和结尾都可以包含空格。名称也可以是一个空的字符串。</dt>
+    <dt>4. 如果名称全部由空格组成，那它就被当作一个空字符串来处理。</dt>
+  </dl>
+</blockquote>
+
+<p>这些惯例对引号中使用的名称或者保存在变量中的名称都适用。例如，
+下面的 &quot;IFolder&quot; 接口必须满足下面这些约束条件：</p>
+
+<blockquote>
+  <p><font face="宋体" >oFolder(&quot;IFolder&quot;).FolderName</font></p>
+</blockquote>
+</font>
+
+<p><font face="宋体" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -或者-</p>
+
+<blockquote>
+  <font COLOR="#000080"><p></font><font face="宋体" color="#000000">oFolder(sIFolder).FolderName</font></p>
+</blockquote>
+</font>
+
+<p><font face="宋体" color="#000000" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中：</font><font
+color="#000000" face="Verdana" size="3"> </font><font face="宋体" 
+color="#000000">sIFolder = &quot;IFolder&quot;</font><font face="宋体" ></p>
+
+<p>但是，对于引号外部的名称(诸如属性名称或者关系集合名称)来说，这些指导原则并不准确。例如，下面的关系集合 &quot;RcFolderContains&quot; ：</p>
+
+<blockquote>
+  <p><font face="宋体" >oFolder(&quot;IFolder&quot;).RcFolderContains.Count</font></p>
+</blockquote>
+</font>
+
+<p><font face="宋体" >除了字符数的限制为 127 而不是 Visual Basic 所允许的 255 之外，必须坚持 Microsoft Visual Basic 命名规则。</p>
+
+<p>&nbsp;</p>
+
+<h4><b>4. 存储过程</b> </h4>
+
+<p>表的存储过程名称是通过在表名称前面加上字符串 &quot;R_i&quot;而生成的。因为表的名称是独一无二的，这样产生的存储过程的名称也是独一无二的。但是，如果表的名称的长度大于 <b>MaxIdentifierLength</b> -3，
+那么产生表名称的算法就会失败。鉴于这一点，用户不可以
+提供一个名称长度大于 <b>MaxIdentifierLength</b>-3 的表。提供过长的名称会导致错误 EREP_BADNAME。</p>
+
+<p>如果用户不为一个接口提供表名称，引擎将自动地
+从接口名称产生表名称。如果将接口名称的打头字母&quot;I&quot;去掉，剩下的长度小于 <b>MaxIdentifierLength</b> -4，那么就将使用接口的名称作为表的名称。否则要将接口的名称截短为 <b>MaxIdentifierLength</b>-7，并在添加前缀 R_i 之前将 4 个字符的数字(被称为 &quot;<i>uniqifier</i>&quot;)附加到名称以便使其成为独一无二的名称。</p>
+
+<p>引擎使用已命名的参数来调用存储过程。一个已命名的参数的开始字符是
+ &quot;@&quot; 并且长度不得超过 <b>MaxIdentifierLength</b>。
+因此，属性名称，同时也是列名称，的长度不得超过 <b>MaxIdentifierLength</b>-1。</p>
+
+<p><b>MaxIdentifierLength</b> 的值： 
+
+<ul>
+  <li>对于 SQL Server 6.5 为 30 个字符</li>
+  <li>对于 SQL Server 7.0 为 128 个字符</li>
+</ul>
+<!------------------------------------------------------>
+<!--                     TOPIC 4.1                   -->
+<!--                                                  -->
+
+<p>&nbsp;</p>
+
+<h4><b>5. 表的定义</b> </h4>
+
+<p></font><font face="宋体" color="#000000" >下面这些表
+没有被包含在 Repository 帮助文件中：</font><font face="宋体" ></p>
+
+<blockquote>
+  <ul>
+    <li><strong><font face="宋体" color="#000000" >RTblSumInfo</font></strong></li>
+    <li><strong><font face="宋体" color="#000000" >RTblNamedObj</font></strong></li>
+    <li><strong><font face="宋体" color="#000000" >RTblVersionAdminInfo</font></strong></li>
+  </ul>
+</blockquote>
+
+<p></font><font face="宋体" color="#000000" >下面说明了这些表的列名称和数据类型。</font><font face="宋体" ></p>
+
+<p>&nbsp;</p>
+
+<p><font face="宋体" color="#000000" > <b>RTblSumInfo</b> </font></p>
+
+<p></font><font face="宋体" color="#000000" > <b>RTblSumInfo</b> 是一个与
+特定接口相关的表；它的列对应于被 <b>ISummaryInformation</b> 接口揭示的属性。在默认的情况下， Repository 类型信息模型的类都没有执行 <b>ISummaryInformation</b>。
+因此，在默认情况下 Repository 数据库中并不包含 <b>RTblSumInfo</b> 这个表。
+相反， Repository 为了节省空间省略了这个表。但是，一旦向 Repository 库中插入任何执行 <b>ISummaryInformation</b> 的类，
+Repository 库就创建该表。</font><font face="宋体" ></p>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="9" WIDTH="600">
+  <tr>
+    <td WIDTH="22%" VALIGN="TOP"><font FACE="宋体" size="2"><b>列名</b></font></td>
+    <td WIDTH="19%" VALIGN="TOP"><font FACE="宋体" size="2"><b>数据类型</b></font></td>
+    <td WIDTH="59%" VALIGN="TOP"><font FACE="宋体" size="2"><b>描述</b></font></td>
+  </tr>
+  <tr>
+    <td WIDTH="22%" VALIGN="TOP"><font FACE="宋体" size="2">IntID</font></td>
+    <td WIDTH="19%" VALIGN="TOP"><font FACE="宋体" size="2">RTIntID</font></td>
+    <td WIDTH="59%" VALIGN="TOP"><font FACE="宋体" size="2">类的内部标识符。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="22%" VALIGN="TOP" HEIGHT="32"><font FACE="宋体" size="2">Z_BranchID_Z</font></td>
+    <td WIDTH="19%" VALIGN="TOP" HEIGHT="32"><font FACE="宋体" size="2">RTBrID</font></td>
+    <td WIDTH="59%" VALIGN="TOP" HEIGHT="32"></font><font FACE="宋体" size="2">指示版本图中的一个分支，其中包含了本行中属性值所适用的范围。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="22%" VALIGN="TOP"><font FACE="宋体" size="2">Z_VS_Z</font></td>
+    <td WIDTH="19%" VALIGN="TOP"><font FACE="宋体" size="2">RTVerID</font></td>
+    <td WIDTH="59%" VALIGN="TOP"><font FACE="宋体" size="2">一个分支内版本标识符，指示了本行中属性值所适用的范围的下界。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="22%" VALIGN="TOP"><font FACE="宋体" size="2">Z_VE_Z</font></td>
+    <td WIDTH="19%" VALIGN="TOP"><font FACE="宋体" size="2">RTVerID</font></td>
+    <td WIDTH="59%" VALIGN="TOP"><font FACE="宋体" size="2">一个分支内版本标识符，指示了本行中属性值所适用的范围的上界。 </font></td>
+  </tr>
+  <tr>
+    <td WIDTH="22%" VALIGN="TOP"><font FACE="宋体" size="2">备注</font></td>
+    <td WIDTH="19%" VALIGN="TOP"><font FACE="宋体" size="2">RTLongString</font></td>
+    <td WIDTH="59%" VALIGN="TOP"><font FACE="宋体" size="2">备注字段。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="22%" VALIGN="TOP"><font FACE="宋体" size="2">ShortDesc</font></td>
+    <td WIDTH="19%" VALIGN="TOP"><font FACE="宋体" size="2">RTLongString</font></td>
+    <td WIDTH="59%" VALIGN="TOP"><font FACE="宋体" size="2">对对象的描述。</font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><b><font color="#000000" face="宋体">RTblNamedObj</font></b></p>
+
+<p><font color="#000000" face="宋体"> <b>RTblNamedObj</b> 是一个与
+特定接口相关的表；它的列对应于被 <b>INamedObject</b> 接口揭示的属性。在默认的情况下，Repository 类型信息模型的类都没有使用 <b>INamedObject</b>。
+因此，在默认情况下 Repository 数据库中并不包含 <b>RTblNamedObj</b> 这个表。
+相反， Repository 为了节省空间省略了这个表。但是，一旦
+向 Repository 插入任何使用了 <b>INamedObject</b> 的类，
+Repository 就创建该表。</font><font face="宋体" ></p>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="9" WIDTH="600">
+  <tr>
+    <td WIDTH="21%" VALIGN="TOP"><font FACE="宋体" size="2"><b>列名</b></font></td>
+    <td WIDTH="20%" VALIGN="TOP"><font FACE="宋体" size="2"><b>数据类型</b></font></td>
+    <td WIDTH="60%" VALIGN="TOP"><font FACE="宋体" size="2"><b>描述</b></font></td>
+  </tr>
+  <tr>
+    <td WIDTH="21%" VALIGN="TOP"><font FACE="宋体" size="2">IntID</font></td>
+    <td WIDTH="20%" VALIGN="TOP"><font FACE="宋体" size="2">RTIntID</font></td>
+    <td WIDTH="60%" VALIGN="TOP"><font FACE="宋体" size="2">类的内部标识符
+    class.</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="21%" VALIGN="TOP"><font FACE="宋体" size="2">Z_BranchID_Z</font></td>
+    <td WIDTH="20%" VALIGN="TOP"><font FACE="宋体" size="2">RTBrID</font></td>
+    <td WIDTH="60%" VALIGN="TOP"></font><font FACE="宋体" size="2">指示版本图中的一个分支，其中包含了本行中属性值所适用的范围。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="21%" VALIGN="TOP"><font FACE="宋体" size="2">Z_VS_Z</font></td>
+    <td WIDTH="20%" VALIGN="TOP"><font FACE="宋体" size="2">RTVerID</font></td>
+    <td WIDTH="60%" VALIGN="TOP"><font FACE="宋体" size="2">一个分支内版本标识符，指示了本行中属性值所适用的范围的下界。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="21%" VALIGN="TOP"><font FACE="宋体" size="2">Z_VE_Z</font></td>
+    <td WIDTH="20%" VALIGN="TOP"><font FACE="宋体" size="2">RTVerID</font></td>
+    <td WIDTH="60%" VALIGN="TOP"><font FACE="宋体" size="2">一个分支内版本标识符，指示了本行中属性值所适用的范围的上界。 </font></td>
+  </tr>
+  <tr>
+    <td WIDTH="21%" VALIGN="TOP"><font FACE="宋体" size="2">Name</font></td>
+    <td WIDTH="20%" VALIGN="TOP"><font FACE="宋体" size="2">RTLongString</font></td>
+    <td WIDTH="60%" VALIGN="TOP"><font FACE="宋体" size="2">对象名称。</font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<font COLOR="#000000"><b>
+
+<p>RTblVersionAdminInfo</b> </font></p>
+
+<p><font color="#000000" face="宋体"> <b>RTblVersionAdminInfo</b></font><font
+face="宋体" ><font color="#000000"> </font><font COLOR="#000000">是一个与
+特定接口相关的表；它的列对应于被 <b>IVersionAdminInfo</b> 接口揭示的属性。在默认的情况下， Repository 类型信息模型的类都没有使用 <b>IVersionAdminInfo</b>。
+因此，在默认情况下 Repository 数据库中并不包含 <b>RTblVersionAdminInfo</b> 这个表。
+相反， Repository 为了节省空间省略了这个表。但是，一旦
+向 Repository 插入任何使用了 <b>IVersionAdminInfo</b> 的类，
+Repository 就创建该表。</font></p>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="9" WIDTH="600">
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2"><b>列名</b></font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2"><b>数据类型</b></font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2"><b>描述</b></font></td>
+  </tr>
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2">IntID</font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2">RTIntID</font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2">类的内部标识符。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2">Z_BranchID_Z</font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2">RTBrID</font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2">指示版本图中的一个分支，其中包含了本行中属性值所适用的范围。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2">Z_VS_Z</font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2">RTVerID</font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2">一个分支内版本标识符，指示了本行中属性值所适用的范围的下界。 </font></td>
+  </tr>
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2">Z_VE_Z</font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2">RTVerID</font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2">一个分支内版本标识符，指示了本行中属性值所适用的范围的上界。 </font></td>
+  </tr>
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2">VersionCreateTime</font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2">Date/Time</font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2">该版本被创建的时间。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2">VersionModifyTime</font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2">Date/Time</font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2">版本被修改的时间。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2">CreateByUser</font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2">RTLongString</font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2">创建该版本的用户。</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="134" VALIGN="TOP"><font FACE="宋体" size="2">ModifyByUser</font></td>
+    <td WIDTH="96" VALIGN="TOP"><font FACE="宋体" size="2">RTLongString</font></td>
+    <td WIDTH="369" VALIGN="TOP"><font FACE="宋体" size="2">修改该版本的用户。</font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h4><b>6. 其他限制条件</b> </h4>
+
+<ul>
+  <li>移植向导 (MigRepV2.exe)、Repository 浏览器 (Repbrows.exe)、以及 Visual 组件管理器 (VCM) 不支持文件的 DSN (数据源名称)。这些工具只能支持 Access 或者 SQL Server 类型的 DSN。</li>
+</ul>
+
+<ul>
+  <li>在移植向导中，如果对 SQL Server 类型的 DSN 使用移植向导，系统将要求
+输入一个用户名称和相应的密码，除非已经使用 Windows NT 验证选项(在 ODBC 数据源管理器中)
+对该 DSN 进行了配置。</li>
+</ul>
+
+<ul>
+  <li>在 &quot;合并版本示例&quot; 主题中，第二段有一处不准确的地方。
+    在合并之后，版本 V8 的属性应该从(Large, Red, null) 变为 (Medium, Red, null)。</li>
+</ul>
+
+<ul>
+  <li><b>CollectionDefFlags</b> 枚举的文档中没有提到如下的标志： 
+<p>COLLECTION_NEWORGVERSIONSDONOTPARTICIPATE = 64</p>
+    <p>这个标志与同一个枚举中的另外一个标志是相关的： </p>
+    <p>COLLECTION_NEWORGVERSIONSPARTICIPATE = 32</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>这两个标志的含义正好相反。因此，就不能在同一时刻设置这两个标志。
+  但是，因为这两个标志的默认设置都是<font color="#007f00">清除</font>，在同一时刻两个标志都可以是清除。
+  如果两个标志都是清除， Repository 就按照 COLLECTION_NEWORGVERSIONSPARTICIPATE 标志被设置的方式操作。
+  也就是说，在创建 repository 对象的一个新版本的时候， Microsoft Repository 确实将新的初始集合
+  从一个原先创建版本拷贝到一个后续版本中。</p>
+</blockquote>
+
+<ul>
+  <li>如果 <b>SQLSize</b> 被设置为大于 65535 的值，引擎就会将输入值除以 65536 并将 <b>SQLSize</b> 设置为所得到的余数，而不会返回错误。</font></font><font face="宋体" COLOR="#000000"
+    link="#0000FF" vlink="#660066"></li>
+</ul>
+
+<ul>
+  <li>在 &quot;移植算法<i>&quot;</i>主题中引用了两个表，
+    <b>RTblRelColPairs</b> 和 <b>RTblTimestamp</b>。在 Repository 2.0 数据库中，
+    第一个表并不存在，而第二个表已经被 <b>RTblVersionAdminInfo</b> 取代。</font><font
+    face="宋体" color="#000000" link="#0000FF"
+    vlink="#660066"><font face="宋体" ></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h4><strong><a name="Topic_41"></a>详细信息</strong></h4>
+
+<p>您可以从下面这些途径获得有关 Microsoft Repository 的详细信息： 
+
+<ul>
+  <li>在 Microsoft Repository Web 站点上查找最新消息 (<a
+href="http://www.microsoft.com/repository">http://www.microsoft.com/repository</a>)。
+您也可以从这个站点下载 Repository 文档。</li>
+  <li>在 Microsoft Visual Studio 6.0 文档中，您将发现 <i>Repository</i>
+    程序员指南</font>、<i>Repository</i> 参考手册、<i>Repository</i> 浏览器、以及转换 <i>Repository 1.0</i> 数据库。要定位这些文档，请从要定位这些文档，请从顶部开始并沿着下面的路径查找：  <blockquote>
+      <blockquote>
+        <p></font><font face="宋体" color="#000000">MSDN 库 Visual Studio 6.0<br>
+        &nbsp;&nbsp;&nbsp; Visual Studio 文档<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 组件、设计和分析工具<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Microsoft
+        Repository 2.0 文档</font><font face="宋体" ></p>
+      </blockquote>
+    </blockquote>
+  </li>
+  <li>在 Microsoft Visual Basic 6.0 文档中，您将发现 <i>Repository</i> 程序员的 <i>Visual Basic</i> 指南和 <i>Microsoft Repository Visual Basic
+    Add-in</i> 参考手册。要定位这些文档，请从顶部开始并沿着下面的路径查找： <font
+    ><blockquote>
+      <blockquote>
+        <p><font face="宋体" color="#000000">MSDN 库 Visual Studio 6.0<br>
+        &nbsp;&nbsp;&nbsp; Visual Basic 文档<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 与 Visual Basic 一起使用 Repository </font></p>
+        </font>
+      </blockquote>
+    </blockquote>
+  </li>
+</ul>
+<!--                                                                         -->
+<!--                             END CONTENTS                                -->
+<!----------------------------------------------------------------------------->
+</font></font>
+</body>
+</html>

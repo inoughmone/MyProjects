@@ -1,0 +1,307 @@
+---------------------------------------------------------
+Microsoft(R) ActiveX(R) Data Objects 2.0 版自述文件
+---------------------------------------------------------
+
+(c) 1998 Microsoft Corporation. All rights reserved.
+
+本文档是 Microsoft ADO 文档的增补部分，提供了一些最新的或其他方面的信息。
+
+----
+目录
+----
+
+1. 产品说明
+   
+2. 新功能
+2.1 异步连接、执行、获取和事件
+2.2 数据形态
+2.3 持久性
+2.4 构造的 Recordset 对象
+2.5 排序、筛选和查找
+2.6 VC++ 的 ADO 扩展程序
+2.7 Visual Analyzer（Microsoft Visual Studio(TM)，仅限于企业版）的 ADO 支持
+2.8 客户端游标的冲突解决方案
+2.9 自定义的 DataFactory 行为
+
+3. 技术说明
+3.1 安全性增强
+3.2 限制性行为
+3.3 自定义安全性设置
+
+4. 已知错误、限制、解决方法以及最新文档说明
+
+-----------
+1. 产品说明
+-----------
+
+ActiveX Data Objects (ADO) 是用于访问数据的基于自动化的接口。ADO 使用 OLE DB 接口访问范围广大的数据源，包括但不限于通过 ODBC 提供的数据。
+
+RDO 和 DAO 的用户将能很快适应 ADO 编程，原因是 ADO 的总体设计来源于开发这些接口的经验。
+
+Microsoft Remote Data Service (RDS) 是 ADO 的一个组件，RDS 为驻留在 Microsoft Internet Explorer 上的应用程序提供快速有效的数据连接和数据发布框架。它是一种基于工作在 HTTP、HTTPS（在 Secure Sockets 层上的HTTP）和 DCOM 应用程序协议之上的客户端/服务器的分布式技术。RDS 使用数据识别 ActiveX 控件，向需要建立分布式、数据密集且用于企业内部网和 Internet 的应用程序的 Web 开发人员提供以 Microsoft Visual Basic(R) 样式编程的数据访问。
+
+---------
+2. 新功能
+---------
+
+ADO 2.0 为开发者增加了几个新功能。
+
+2.1 异步的连接、执行、获取和事件
+
+象 RDO 2.0 一样，ADO 现在支持异步操作。异步操作允许在扩展操作之外取消，或在等待连接完成的同时继续处理。事件将在异步操作完成时发出通知。异步获取是针对客户端游标 (CursorLocation =adUseClient) 的特定功能，该客户端游标将从查询结果返回第一行，然后在操作已经获取行的同时继续在后台获取。
+
+2.2 数据构形
+
+连同 MSDataShape 提供者，ADO 可以分级显示数据。ADO 也可以显示记录集的分组和组合。
+
+2.3 持久性
+
+现在可以将 Recordset 对象直接保存在本地硬盘驱动器上，稍后再加载（当使用客户端游标工作时）。这时将允许连接到服务器、执行查询、调用 rst.Save("myfilename")、关闭计算机、稍后调用 rs.Open("myfilename",,,adCmdFile) 并修改数据。 
+
+2.4 构造 Recordset 对象
+
+可以在 ADO 2.0 中创建 Recordset 对象而无须对数据源执行查询。只需创建新 Recordset 对象、追加某些 Field 对象、调用 rst.Open()，然后便可拥有可追加数据、进行远程调用和处理的 Recordset 对象，就好象 Recordset 对象已经由查询创建。
+
+2.5 排序、筛选和查找
+
+使用客户端游标时允许操作客户端的结果。
+
+2.6 VC++ 的 ADO Extensions 
+
+通过使用本地数据类型代替 C++ 代码中的变体型，向 VC++ 的用户提供更好的性能。
+
+2.7 Visual Analyzer（Microsoft Visual Studio，仅限于企业版）的 ADO 支持
+
+ADO 处理 Visual Analyzer，提交事件以帮助进行性能分析。
+
+2.8 客户端游标的冲突解决方案
+
+为在两层方案中通过客户端游标建立的 Recordset 对象提供增强功能。现在，在客户端游标中支持使用冲突解决方案的新函数（如 Resync 和 Update）。
+
+2.9 自定义的 DataFactory 行为
+
+现在，可以通过执行 DataFactory 句柄对象来自定义隐式远程行为。DataFactory 处理程序可用于自定义通过 RDS 打开的 Recordset 对象的打开和批更新行为。可以选择自己编写新句柄或使用 RDS 2.0 自带的默认句柄 (MSDFMAP.dll)。可通过编辑它使用的默认 INI 文件 (MSDFMAP.INI) 来驱动默认句柄的行为。
+
+-----------
+3. 技术说明
+-----------
+
+3.1 安全性增强
+
+该版本包括 ADO 和 RDS 对象的安全性增强，以便当 Internet Explorer 在“安全”模式下运行时使某些操作受到限制。
+
+3.1.1. 区域
+可以在 Internet Explorer 4.0 中为不同的“区域”设置不同的安全设置，以便在这些区域中自定义 ADO/RDS 对象的行为。在 Internet Explorer 4.0 中定义了以下四个区域：
+*  Internet 区域
+*  本地企业网区域
+*  受限站点区域
+*  可信站点区域
+
+3.1.2. 安全等级
+可以对每个区域指定所使用的安全等级。每个区域可使用以下的安全等级：
+*  高
+*  中
+*  低
+*  自定义
+
+象其他 ActiveX 控件一样，为了让 ADO/RDS 对象能完全地在 Internet Explorer 4.0 中工作，必须将安全等级设置为“中”或“高”。自定义设置用于将 ADO/RDS 对象设置为在安全或非安全模式下工作。
+
+3.2 限制性行为
+
+默认情况下，当访问来自“本地企业网区域”、“可信站点区域”和“Internet 区域”的网页时，在 Internet Explorer 4.0 中对 ADO/RDS 对象的任何非安全操作都将显示用户提示。默认情况下，对来自“受限站点区域”的网页，禁用对 ADO/RDS 对象的任何非安全操作。以下描述说明在这些模式下运行时的 ADO/RDS 行为：
+
+3.2.1 安全对象
+下列对象被认为是“安全”的。这意味着在安全环境（例如，默认情况下为 Internet Explorer，除非自定义设置用于在非安全模式下运行）下，不允许非安全操作（参见 3.2.3），而在非安全模式（例如，Visual Basic）下是允许的。
+a. RDS.DATACONTROL 对象
+b. RDS.DataSpace 对象
+c. ADO Recordset 对象
+
+3.2.2 非安全对象
+下列对象被认为是“非安全”的。当在安全环境下操作时，无法直接或间接创建这些对象（并给予用户）。
+a. RDSServer.DataFactory 对象
+b. ADO Connection 对象
+c. ADO Command 对象
+
+3.2.3 安全对象的非安全操作
+以下被认为是对“安全”对象的非安全操作 -- RDS.DataControl、RDS.DataSpace 和 ADO Recordset。这些操作在安全环境中是不允许的，但在非安全环境中却是允许的。
+
+a. RDS.DataControl
+i) 对于 RDS.DataControl 对象的所有两层和 DCOM 方案。这意味着不能在本地计算机，或在使用 DCOM 协议连接的服务器上打开数据库连接。
+ii) 通过 HTTP 执行的所有三层操作，仅限于已经从其上下载网页的服务器。这意味着 RDS.DataControl 对象中的 Server 属性必须和已下载网页的主机名 (http:// Server) 相同。
+
+b. RDS.DataSpace 
+i) RDS.DataSpace 对象的所有两层和 DCOM 方案。这意味着不能在本地计算机或 DCOM 协议上，使用 RDS.DataSpace 对象调用业务对象。
+ii) 通过 HTTP 执行的所有三层方案仅限于已经从其上下载网页的服务器。这意味着在 DataSpace 对象上的 CreateObject 调用中，其第二个参数必须指向与已下载网页服务器相同的服务器。
+
+c. ADO 记录集 
+i) 在提供者为非 MS Remote 的任何地方进行连接。所以连接字符串必须以“Provider=MS Remote”开头。连接字符串中的 "Remote Server" 标记也必须与下载网页的服务器同名。不允许本地的两层和 DCOM 连接。
+ii) 本地持久性操作，诸如将记录集保存到本地文件系统并从本地计算机的文件中打开记录集。
+
+3.3 自定义安全设置
+
+ADO/RDS 行为受选项“对没有标记为安全的 ActiveX 控件进行初始化和执行脚本”控制，可以通过更改指定区域的安全级别来更改安全设置。本地企业网区域的默认“对没有标记为安全的 ActiveX 控件进行初始化和执行脚本”选项设置如下：
+安全级别 = 高		值 = “禁用”
+安全级别 = 中		值 = “禁用”
+安全级别 = 低		值 = “提示”
+
+有关其他安全区域的默认设置，请参见 Internet Explorer 的文档。
+
+通过更改安全级别，可以更改运行在浏览器中未连接的 ADO Recordset 对象的行为。如要启用不安全的操作，并且希望每当进行这些操作时不被提示，则必须显式地将上面选项的值设置为“启用”。该步骤通过自定义安全设置（见后述）完成。同时请注意，如果对来自 RDS DataControl 的 ADO Recordset 进行不安全的操作（例如将它保存到本地文件系统的文件中），则必须将上面选项的值设置为“启用”。对这些 Recordset 对象（来自 RDS Datacontrol）设置“提示”将类似于“禁用”。
+
+可以通过直接操作以上选项的自定义设置来覆盖默认设置。可以选择完全禁用非安全操作（如上所述），或指定当试图进行该操作时显示警告，或不进行警告而启用该操作。可为不同的安全区域设置不同的自定义设置。对指定安全区域进行自定义安全设置，必须执行以下操作： 
+
+警告：请注意在启用“对没有标记为安全的 ActiveX 控件进行初始化和执行脚本”（下面的第 5 步）后，将允许从网页内使用任何安全或非安全的 ActiveX 控件（不可见地将用户计算机暴露给恶意的控件或恶意的脚本代码）。建议只在“企业网”或“可信站点”安全区域内（不要在 Internet 区域）进行这样的操作。
+
+1. 从 Internet Explorer 4.0 的“查看”菜单中选择“Internet 选项”后，弹出“Internet 选项”对话框。选择“安全”选项卡。
+2. 从“区域”下拉列表中选择要自定义设置的区域。
+3. 为所选的区域选择“自定义”。由此激活对话框中的“设置”按钮。
+4. 单击“设置”弹出“安全设置”对话框。
+5. 如果要启用对 ADO/RDS 对象的非安全操作（如 3.2.3 中所述）而不显示警告，请在“安全设置”对话框的“对没有标记为安全的 ActiveX 控件进行初始化和脚本运行”选项中选择“启用”，然后单击“确定”。
+6. 如果希望一旦对 ADO/RDS 对象进行非安全操作（如 3.2.3 中所述）时显示警告，请在“安全设置”对话框的“对没有标记为安全的 ActiveX 控件进行初始化和脚本运行”选项中选择“提示”，然后单击“确定”。
+7. 如果希望完全禁用对 ADO/RDS 对象进行的非安全操作（如 3.2.3 中所述），请在“安全设置”对话框的“对没有标记为安全的 ActiveX 控件进行初始化和脚本运行”选项中选择“禁用”，然后单击“确定”。
+8. 如有必要，请重复以上步骤为其他安全区域自定义安全设置。
+9. 单击“确定”。
+
+现在，ADO/RDS 对象将在指定的自定义模式下活动。这些设置将影响在指定安全区域中的 ADO/RDS 对象（如 3.2.3 中所述）的下列行为 -- 打开本地两层连接；通过 DCOM 工作；连接到网页最初下载之外的服务器；将记录集保存到本地计算机的文件中和从本地计算机的文件中打开记录集。
+
+如果将自定义选项设置为“提示”，在对 ADO/RDS 对象进行非安全操作时将显示如下警告：
+
+“网页正在访问另一个域中的数据源。是否允许该操作？”。用户可选回答“是”或“否”。回答“是”，将完成该操作；否则操作失败。
+
+-------------------------------------------
+4. 已知错误、限制、解决方法以及最新文档说明
+-------------------------------------------
+
+4.1 由于缺少操作系统的支持，当前尚不支持 RDS 中的客户模仿。
+
+4.2 当使用 adUseClient 或远程访问 SQL Server 6.5 Service Pack 4 时，对可更新的结果集在查询中使用 DISTINCT 关键字将被忽略。这是由于 SQL Server 的问题，将在以后的服务包中加以解决。
+
+4.3 当在 Internet Information Server 4.0 中创建“虚拟服务器”时，将需要以下两个额外步骤对服务器进行配置以便处理 RDS：
+
+A) 在安装服务器时，选中“允许执行访问”。
+B) 将 msadcs.dll 移至 vroot\msadc，此处的 vroot 是虚拟服务器的主页目录。
+
+4.4 当使用 Recordset.Save 方法时，要得到最好的结果请使用 CursorLocation=adUseClient。部分 OLE DB 提供者不支持所有支持保存记录集所必需的功能，使用客户端游标可提供此功能。
+
+4.5 ADO 事件 
+
+WillMove 和 MoveComplete、WillChangeField 和 FieldChangeComplete、WillChangeRecord 和 RecordChangeComplete、WillChangeRecordset 和 RecordsetChangeComplete 以及 EndOfRecordset 的标题将这些均列为 Connection 事件。然而，它们却是 Recordset 事件。
+
+4.5.1 WillConnect
+文档中对 WillConnect 事件的 Options 参数的描述不正确，唯一有效的选项是 adOpenAsync。
+
+WillConnect 事件的文档说，可更改 pConnection 参数。这是不正确的，pConnection 参数无法通过事件处理程序来修改。
+
+4.5.2 ConnectComplete 和 Disconnect
+针对这些事件 adStatus 将始终返回 adStatusOK，文档中说也能够返回 adStatusErrorsOccurred（不正确）。
+
+在对 adStatus 参数的描述中还说明了可“将该参数设置为 adStatusUnwantedEvent 以禁止后继的通知”。然而，关闭和重新打开连接将导致已经以这种方式“关闭”的任何事件再次激发。
+
+4.5.3 WillExecute
+文档中对 CursorType 参数的描述为“调用该方法时如果将其设置为 adOpenUnspecified，则不能更改该参数”。这是不正确的。无论调入的参数值是什么，都可对其进行更改。如果引发事件的操作不是记录集打开，则将其忽略。
+
+文档中对 LockType 参数的描述为“当调用该方法时，如果该参数设置为 adLockUnspecified，则不可对其进行更改。”，这是不正确的。无论调入值是什么，都可以对该参数进行更改；如果记录集打开未激发该事件，则它将被再次忽略。
+
+文档中注释，“相应的 pConnection、pCommand 或 pRecordset 参数将设置为引发事件的对象，而其余两个将设置为 Nothing”是不正确的。该事件一直有 pConnection 对象引用。
+
+4.5.4 InfoMessage
+文档中对 pError 参数的描述为“它描述了如果 adStatus 的值是 adStatusErrorsOccurred 时所出现的错误；否则将不设置它”。这是不正确的。每当返回警告时，该事件便会被激发。在这种情况下，该事件的状态将被设置为 adStatusOK，而 pError 对象将包含警告。
+
+文档中对于 adStatus 参数的描述为“如果引发事件的操作成功，该参数将被设置为 adStatusOK；或者如果失败，将被设置为 adStatusErrorsOccurred”。实际上，该事件会因为警告而激发，操作永远不会“失败”，并且状态永远不会是 adStatusErrorsOccurred。
+
+对 pConnection 参数描述为，该连接对象引用为“命令在其上执行的连接”。警告也可以出现在诸如打开连接等其他类型的操作中。
+
+4.5.5 WillMove 和 MoveComplete
+在说明部分中，以下 Recordset 操作也可以导致事件的激发：Filter、AbsolutePage、AbsolutePosition。如果子记录集使记录集事件连接，并且使上一级记录集发生移动，则也会激发事件。另外，Delete 不会激发这些事件。
+
+4.5.6 WillChangeRecord 和 RecordChangeComplete
+在说明部分中应该描述为，对于行的第一个被更改的字段将激活这些事件。
+
+4.6 ADO/RDS 文档提到 RDS.DATACONTROL 对象的名为 URL 的属性。在已发布的 RDS 2.0 组件版本中并不具有该属性。
+
+4.7 当使用 CursorLocation=adUseClient 时，异步获取在 ADO 2.0 版本中可用。有两种打开它的方法 - 一是通过 Recordset.Open 的 Options 参数，另外是通过 Recordset 属性集合“Asynchronous Rowset Processing”属性。要取得最好的结果，通常应该使用 Recordset.Open 参数。不使用参数会导致 ADO 后台获取相关事件的丢失。另外，使用 Provider="MS Remote" 进行后台获取并不能通过 properties 集合实现，而只能通过 Recordset.Open 参数进行。
+
+4.8 当 ADO 正在从数据源将“output”或“return”参数值返回给用户时，ADO 将仅从提供者读取一次值。这意味着如果用户在值准备好之前进行读取，将无法得到这些值。
+
+这种情况的主要用下列代码表示：
+
+Sub params()
+Dim conn As New Connection
+Dim cmd As New Command
+Dim rs As Recordset
+
+conn.Open "pubs", "sa", ""
+'conn.Open "provider=sqloledb;data source=sqlserver;user id=sa;password=;initial catalog=pubs"
+conn.Execute "DROP PROC test_proc"
+conn.Execute "CREATE PROCEDURE test_proc as SELECT * from authors RETURN 1"
+Set cmd.ActiveConnection = conn
+cmd.CommandText = "test_proc"
+cmd.CommandType = adCmdStoredProc
+cmd.Parameters.Append cmd.CreateParameter("RetVal", adInteger, adParamReturnValue)
+
+Set rs = cmd.Execute()
+Debug.print rs(0)
+
+在 Microsoft SQL Server 仅向前和只读的游标处的记录集关闭之前，对参数值进行的访问将导致在其有效之前获取参数值。只有在记录集关闭之后（而不是之前和之后）才能引用参数才能得到正确的参数值。
+
+Debug.Print "Return Val : "; cmd(0)
+rs.Close
+Debug.Print "Return Val : "; cmd(0)
+conn.Close
+
+End Sub
+
+4.9 当使用 CursorLocation=adUseClient 时，Recordset.Resync() 方法只对非只读 Recordsets 对象有效。
+
+4.10 要通过 Visual Basic 使用 ADO 2.0 FetchProgress 和 FetchComplete 事件， Visual Basic 至少应是 6.0 版本。
+
+4.11 当对不支持书签的提供者使用在 ADO 的事件时，用户将在每次要求 ADO 从 OLE DB 提供者处获取新的行时收到 RecordsetChanged 通知。其发生频率直接取决于 Recordset.CacheSize 属性。
+
+4.12 在 IIS 服务器上使用 RDS 时，每个处理器创建的线程数量可通过 Web 服务器的注册表加以控制。每个处理器的线程数量会在交通紧张或交通量小但查询方案巨大的情况下，影响性能。用户应进行试验以获得最佳的结果。需调整的指定值为：
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W3SVC\Parameters\ADCThreads
+
+此处 ADCThreads 是用户添加的、范围为 1-50 的 REG_DWORD。默认值是 6，默认的无效值为 6 或 50。用户需要创建该注册表值，默认情况下，它不包括在注册表中。
+
+4.13 在 Recordsets 对象中有些从 Connection 对象的 OpenSchema 返回的列，该 Connection 对象属于无法与 Visual Basic 中的其他变量的类型相比。这些使具有相应的 DBTYPE_UI4 的 OLE DB 数据类型的列。请在具有该类型的方案行集合中，查阅有关这些列的 OLE DB 说明。
+
+4.14 使用 ADO Connection 对象的 OpenSchema 方法时，可以使用函数的第二个参数对返回的结果加以限制。该参数包含一个变体型值的数组，可以在 VBA 中指定为：
+
+Dim criteria(3) As Variant
+
+criteria(0) = "pubs"		' Use the "pubs" database on the SQL Server
+criteria(1) = Empty		' No restriction on the schema/owner
+criteria(2) = Empty		' No restriction on the table name
+criteria(3) = "table"		' Only objects of type "table" are returned.
+Set rs = cnn.OpenSchema(adSchemaTables, Criteria)
+
+4.15 在 ADO 中，提供者或正被使用的指定的游标类型可能不是一直支持 Recordset 对象的 RecordCount 属性。在提供者或游标类型不支持 RecordCount 的情况下，返回值将为 -1。
+
+4.16 运行代码范例
+为保持每行代码的段落格式，必须选择全部代码范例，否则，在将代码粘贴到程序窗口时段落格式将被忽略，代码将无法运行。
+
+4.17 在“形状追加命令”主题文档中，语法应表示为：
+SHAPE {parent command}
+APPEND {child command} [AS] table-alias
+RELATE (parent column TO child column)
+
+4.18 在“访问分级 Recordset 中的行”主题文档中，步骤 3 中的代码行应为：
+
+Set rstChapter = rst("chapter").Value
+
+4.19 在“步骤 4：操作数据（ADO 教程）”主题文档中，代码范例是指 Field 对象的 Optimize 属性。这稍微不正确。当使用 CursorLocation=adUseClient 或未连接的 Recordset 对象时，Optimize 属性出现在 Field 对象的 Optimize 集合中。范例用法如下：
+
+rs("au_lname").properties("Optimize") = True
+
+4.20  在 StayInSync 属性的文档中说，该属性“在分级 Recordset 对象中，指示当现行子记录的集合（即子集）变更时，其父记录行是否也要更改。”。
+
+这个说法不正确。该属性控制当用户在父记录集中定位时是否更改对子记录集的引用（默认值为 True）。
+
+文档中还说明“设置或返回布尔型值。如果设置为 True，则子集变更时父 Recordset 对象也将更新；如果设置为 False，父 Recordset 对象将继续引用先前的子集”。
+
+这个说法不正确。如果该属性为 True，记录集将保持同步 -- 在父记录集中的定位将更改由引用子记录集所显示的数据。如果属性为 False，对子记录集的引用将继续包含该特定子集的信息，即使用户在父记录集中定位。
+
+4.21 在“WillChangeRecordset 和 RecordsetChangeComplete (ConnectionEvent) 方法”主题的帮助中说，“WillChangeRecordset 或 RecordsetChangeComplete 事件可因下列 Recordset 操作而发生：Requery、Resync、Close、Open 和 Filter”。这是不正确的。Filter 和 Close 不会触发该事件。
+
+4.22 在“WillMove 和 MoveComplete (ConnectionEvent) 方法”的帮助中说，WillMove 事件将因 Resync 操作而产生。这是不正确的。Resync 不会触发该事件。
+

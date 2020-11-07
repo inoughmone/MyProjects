@@ -1,0 +1,30 @@
+:Base MSORCL32.hlp
+:Title 用于 Oracle 的 Microsoft ODBC  驱动程序
+1 新增功能=Whats_New
+1 概述=IDH_Overview>main
+1 安装 Microsoft ODBC Driver for Oracle
+2 系统需求=System_Requirements>main
+1 使用 Microsoft ODBC Driver for Oracle
+2 添加和修改数据源=Adding_and_Modifying_Data_Sources_Using_Setup>main
+2 配置 Oracle ODBC Driver=Configuring_the_Oracle_ODBC_Driver>main
+2 连接数据源=Connecting_to_a_Data_Source>main
+2 连接字符串属性=Connection_String_Attributes>main
+1 技术参考
+2 ODBC 符合级=ODBC_Conformance_Levels>main
+2 SQL 符合级=SQL_Conformance_Levels
+2 映射数据类型=Mapping_Data_Types>main
+2 高级主题
+3 使用 Microsoft Transaction Server=Using_Microsoft_Transaction_Server
+3 使用 Microsoft Internet Information Server=Using_Microsoft_Internet_Information_Server>main
+3 使用操作系统确认=Using_Operating_System_Authentication>main
+3 使用键集合驱动的光标的限制=Limitations_of_Using_Keyset-Driven_Cursors>main
+3 从存储程序返回数组参数=Returning_Array_Parameters_from_Stored_Procedures>main
+3 连接选项表=Connect_Options_Table>main
+3 语句选项表=Statement_Options_Table>main
+3 光标类型和并行组合表=Cursor_Type_and_Concurrency_Combinations_Table>main
+3 API 函数
+4 线程-安全性注视=Thread-Safety_Notes_on_API_Functions>main
+4 核心级函数=Core_Level_Functions
+4 一级函数=Level_1_Functions
+4 二级函数=Level_2_Functions
+1 错误消息=Error_Messages>main

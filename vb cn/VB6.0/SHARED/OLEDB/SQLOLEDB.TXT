@@ -1,0 +1,75 @@
+------------------------------------------------------
+Microsoft(R) SQL Server OLE DB Provider 7.00.459 自述文件
+------------------------------------------------------
+
+(c) 1998 Microsoft Corporation。保留所有权力。
+
+本文档提供了 Microsoft SQL Server OLE DB Provider 文档中没有包括的最新或其他的信息。
+
+----
+目录
+----
+
+1. 产品说明
+   
+2. 技术说明
+
+-----------
+1. 产品说明
+-----------
+SQLOLEDB，Microsoft SQL Server OLE DB 提供者，为希望从一个或多个 SQL Server 存取数据的用户提供了接口。
+
+-----------
+2. 技术说明
+-----------
+
+2.1 对 SQLOLEDB 属性所作的改变
+
+请注意 SQLOLEDB 属性有下列改变：
+
+* DBPROP_INIT_DATASOURCE 属性现在用于指定正在运行 SQL Server 的服务器的名称。它不再用于指定数据库名称。
+
+* DBPROP_INIT_CATALOG 属性现在用于指定初始化数据库。
+
+* 不再支持 DBPROP_INIT_LOCATION 属性。
+
+* 支持 DBPROP_AUTH_INTEGRATED 属性。如果将 DBPROP_AUTH_INTEGRATED 设置为“SSPI”，则使用集成安全设置。如果
+设置为空值 BSTR 指针，则使用 SQL Server 安全设置。
+
+* 不再支持 SSPROP_AUTH_TRUSTEDCONNECTION 属性。
+
+* 不再支持 DBPROP_INIT_MODE 提供者指定属性。
+
+2.2
+如果试在连接上执行一个命令，而此连接上已有一个尚未执行的命令，在满足下述条件时，SQLOLEDB 创建另一连接来执
+行新命令：
+
+*  将 DBPROP_MULTIPLECONNECTIONS 设置为 VARIANT_TRUE。
+*  第一个命令不产生行集，或没有使用服务器光标。
+*  连接中没有正在运行的事务。
+
+如果在连接中有正在运行的事务，则执行第二个命令将返回 E_FAIL。如果在连接中没有正在运行的事务，但是 
+DBPROP_MULTIPLECONNECTIONS 设置为  VARIANT FALSE，则执行第二个命令将返回 DB_E_OBJECTOPEN。
+
+事务和锁定由每一个连接的 SQL Server 管理。如果生成第二个连接，则各自连接上命令并不共享锁定。必须小心确保不
+要由于其他命令要求的保持行锁定而造成一个命令阻塞另一命令。
+
+2.3
+为通过减少网络传输来改善性能，SQLOLEDB 并不自动地派生参数信息，除非在执行命令之前调用 
+ICommandWithParameters::GetParameterInfo 或 ICommandPrepare::Prepare。这表明 SQLOLEDB 将不会自动地执行：
+
+* 验证用 ICommandWithParameters::SetParameterInfo 指定的数据类型的正确性。
+* 将存取器绑定消息中指定的 DBTYPE 映射到正确的参数的 SQL 数据类型。
+
+如果应用程序指定的数据类型与参数的 SQL 数据类型不兼容，则应用程序将收到可能出现的错误消息或某一方法的精度
+损失。
+
+为辟免发生上述情况，应使您的应用程序：
+
+* 在编写 ICommandWithParameters::SetParameterInfo 程序时，确保 pwszDataSourceType 与参数的 SQL 数据类型匹配。
+* 在编写附件程序时，确保绑定到参数的 DBTYPE 数据类型与参数的 SQL 数据类型相同。
+* 编写程序来调用 ICommandWithParameters::GetParameterInfo，以便提供者能动态地获得参数的 SQL 数据类型。这将
+引起连接到服务器网络额外的循环行程。
+
+2.4
+如果行集合使用一个键盘操作的光标，DBPROP_CHANGEINSERTEDROWS 只能设置为 VARIANT_TRUE。 

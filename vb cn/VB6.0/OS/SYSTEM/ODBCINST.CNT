@@ -1,0 +1,10 @@
+:Base odbcinst.hlp
+:Title ODBC 帮助
+:Index ODBC Help=odbcinst.hlp
+1 "用户 DSN" 选项卡=User_DSN_Tab>ref
+1 "系统 DSN" 选项卡=System_DSN_Tab>ref
+1 "文件 DSN" 选项卡=File_DSN_Tab>ref
+1 "ODBC 驱动程序" 选项卡=ODBC_Drivers_Tab>ref
+1 "跟踪" 选项卡=Tracing_Tab>ref
+1 "连接池" 选项卡=Connection_Pooling_Tab>ref
+1 "关于" 选项卡=About_Tab>ref

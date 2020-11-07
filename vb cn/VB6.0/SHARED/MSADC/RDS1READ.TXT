@@ -1,0 +1,198 @@
+                 ---------------------------------------------------------
+                     Microsoft(R) Remote Data Service 1.1 版本自述文件
+                                           1997
+                 ---------------------------------------------------------
+
+	    		      (c) Microsoft Corporation, 1997
+
+本文档是 Microsoft Remote Data Service (RDS) 1.1 版本文档的增补部分，提供了一些最新编入的或其他信息。 
+
+----
+目录
+----
+
+1. 产品说明
+   1.1 产品名称的变化
+
+2. 新功能
+
+3. 安装注意事项
+   3.1 运行安装程序之前
+       3.1.1 硬件要求
+       3.1.2 软件要求
+   3.2 安装 Microsoft Remote Data Service
+       3.2.1 在 Web 服务器上安装 RDS 客户端组件
+       3.2.2 在客户端计算机上安装和使用 RDS 客户端组件
+   3.3 确认安装
+
+4. 技术支持
+   4.1 与 Microsoft 的技术支持联系
+   4.2 访问 Microsoft Remote Data Service Web 站点
+   4.3 加入 Remote Data Service 公共新闻组
+
+5. 技术注意事项
+
+6. 已知问题
+
+-----------
+1. 产品说明
+-----------
+
+Microsoft Remote Data Service (RDS) 是一个针对宿主于 Microsoft Internet Explorer 上应用程序的快速、有效的数据连接和数据发布框架。它采用工作在 HTTP、HTTPS（安全套接层上的 HTTP）和 DCOM 应用程序协议之上的客户端/服务器、分布式技术。RDS 使用数据识别的 ActiveX(R) 控件，为需要在公司的局域网和 Internet 上建立分布式、数据密集型应用程序的网络开发者提供 Visual Basic(R) 样式的数据访问编程。
+
+1.1 产品名称的变化
+
+名称 Microsoft Advanced Data Connector (ADC) 现改为 Microsoft Remote Data Service (RDS)，是 Microsoft ActiveX 数据对象 (ADO) 的一项功能。ADC 总是基于 ADO，该变化表明了向更加集成化方向的转变并阐明了两组件之间的关系。ADO 是一个允许对 OLE DB 和 ODBC 数据源进行简易和灵活访问的编程界面。Remote Data Service 建立在 ADO 上以便提供简易、断开的记录集和远程服务。Advanced Data Connector 的功能不受该变化的影响。
+
+
+---------
+2. 新功能
+---------
+
+以下是 Remote Data Service 1.1 客户版的新功能。有关这些功能的详细信息，请查阅本文档。
+
+1.1 客户版为 1.0 版本的应用程序提供升级路径。Advanced Data Connector 1.0 版本对 Internet Explorer 3.0x 浏览器提供支持。Remote Data Service 1.1 版本同时支持 Internet Explorer 3.0x 和 4.0 版本，允许向前兼容路径。在 1.5 客户版中，对于数据绑定有一个略微更新的编程模式。1.1 客户版将保留 1.0 版本的编程模式，以便当有时间进行少量所需要的简易更改而选择时仍可以运行应用程序。
+
+1.1 客户版主要包括较小的调整和兼容性更改，但同时它也提供扩充的更新。您现在可以将数据更新为完全 ODBC 兼容的数据源，而无须再使用“for browse”子句。
+
+由于 1.1 客户版基于 1.5 版本的服务器，1.5 版本的服务器可同时作为 1.1 版本和 1.5 版本客户版的宿主。
+
+---------------
+3. 安装注意事项
+---------------
+
+3.1 运行安装程序之前
+
+在安装 Microsoft Remote Data Service 之前，请确认客户计算机和服务器满足最低的硬件和软件要求。
+
+3.1.1 硬件要求
+
+要安装 Remote Data Service，必须满足一定的硬件要求，具体要求如下：
+
+* 任何运行 Microsoft Windows NT(R) 或 Microsoft Windows 95 的 x86 兼容机。
+* 至少 8 兆 (MB) 可用硬盘空间，以满足在完全安装情况下 RDS 所要求的所有更新组件可以运行。
+* 客户计算机至少有 12 MB RAM。 
+* 服务器至少有 24 MB RAM（建议 32 MB）。 
+
+3.1.2 软件要求
+
+在服务器上安装 Remote Data Service 之前，Web 服务器必须满足以下软件要求：
+
+* Remote Data Service 1.5 服务器版。
+* 下列操作系统平台之一：Windows NT Server 4.0 或 Workstation SP3 或更高版本。Remote Data Service 1.1 版本目前支持 x86/Intel 平台。对于产品数据环境，建议使用 NT Server 平台。
+* Microsoft Internet Information Server (IIS) 3.0 或 4.0 版，带有 Microsoft Active Server Pages。
+* 带有 Service Pack 2 的 Microsoft SQL Server 6.5（或其他 ODBC 数据源）。
+ 
+要从客户计算机访问 Remote Data Service 应用程序，客户计算机必须满足以下软件要求：
+
+* 下列操作系统平台之一：Windows 95、Windows NT Server 4.0（带有 Service Pack 3）或更高版本，或 Windows NT Workstation 4.0 或更高版本。 
+* Microsoft Internet Explorer version 3.0x 或 4.0 版本，或更高版本。
+
+注意：Remote Data Service 尚未使用 Netscape 浏览器技术进行测试。
+ 
+要建立客户 Web 页可以使用典型的 HTML 写作工具，诸如记事本或功能更完全的 Microsoft ActiveX Control Pad。
+
+要对服务器端业务对象进行编程，可以使用任何 ActiveX/COM DLL-兼容工具，诸如 Microsoft Visual Basic 4.0 或更高版本或 Microsoft Visual C++(R)。
+
+3.2 安装 Microsoft Remote Data Service
+
+要使 Remote Data Service 能正常工作，应保证 Remote Data Service 服务器和客户组件分别正确安装在服务器和客户计算机上。
+
+3.2.1 在 Web 服务器上安装 RDS 客户组件
+
+通过 MDAC (Microsoft Data Access Components) 1.5 安装程序,可以在 Web 服务器上安装 Microsoft Remote Data Service 1.5 版本服务器组件。安装程序假设计算机满足所有软件要求。
+
+注意：Microsoft Remote Data Service 1.1 版客户组件与 Microsoft Remote Data Service 1.5 版服务器组件共同工作。RDS 1.1 版是 RDS 1.0 应用程序到 Internet Explorer 4.0 端口的升级路径并且充分利用了新 RDS 1.5 版服务器的功能。对于现有的 RDS 1.0 应用程序，可以与 1.5 版的服务器组件一起使用 1.1 客户版以获得 Internet Explorer 3.0x 和 4.0 的功能。对于新的和仅用于 Internet Explorer 4.0 的应用程序，建议与 RDS 1.5 版的服务器组件一起使用 RDS 1.5 版客户组件。 
+ 
+>>>安装 Remote Data Service 1.1 版客户组件：
+
+1) 从 Web 服务器计算机上连接到位于 http://www.microsoft.com/data/rds/ 处的 Remote Data Service World Wide Web 站点。
+2) 在左边窗体中单击“免费下载”。
+3) 单击“连接”获得所需的安装 (mdac_nts.exe for Windows NT Server; mdac_ntw.exe for Windows NT Workstation; mdac_95.exe for Windows 95; mdac_as.exe for Alpha server; mdac_aw.exe for Alpha workstation) 并选择自定义安装来安装 RDS 1.1 版客户组件和文档。 
+4) 遵循屏幕上的安装指导。 
+ 
+安装程序将程序文件安装到 <设备>：\Program Files\Common Files\System\MSADC 目录。（该位置与其他增补的 Microsoft 技术临近，诸如 ActiveX 数据对象和 OLE DB）。安装程序将在 \MSADC 目录下创建以下子目录。
+
+子目录		        说明
+------		        ----
+..\MSADC\Doc11 		包含文档。
+..\MSADC\Samples11	包含示例文件。
+
+服务器安装程序也许已经在 Web 服务器上创建 Microsoft Internet 信息服务器虚拟路径。该路径被指定为 http://<服务器名>/msadc，使用它可以从浏览器中引用物理文件系统。
+
+一旦按此过程在 Web 服务器上安装了 Microsoft Remote Data Service，便可确认安装（请参阅 3.3 节）。
+
+3.2.2 在客户计算机上安装和使用 RDS 客户组件
+
+为确保客户计算机包括运行 Remote Data Service 所需的所有适当的客户 DLLs，应使 Web 页上的 RDS.DATACONTROL 对象代码的 HTML CODEBASE 参数中包括 mdac11.cab 文件。下载 mdac11.cab 文件时，将会在客户计算机中自动安装所需的客户文件。这样做可以简化启用 Remote Data Service 的 Web 页的调度。关于如何将该信息包括在 Web 页中的详细信息，请参阅联机帮助中 RDS.DATACONTROL 对象主题。
+
+ 
+3.3 确认安装
+
+可以使用 ADCTest.asp 示例应用程序确认 Microsoft Remote Data Service 的安装。 
+
+>>>使用 ADCTest 确认安装
+1 启动 Internet Explorer 并键入下列地址： 
+
+  http://<servername>/MSADC/Samples11/adctest.asp 
+
+  此处 <servername> 是 Web 服务器名。
+  应显示远程数据服务查询页。您将会注意到已经提供了服务器、连接和查询信息。
+2 单击“运行！”按钮执行查询。 
+  如果网格显示结果集，则表明安装正确。 
+
+如果运行遇到问题，请参阅安装指导并查阅联机帮助中的“Remote Data Service 的疑难解答”和“其他 RDS 配置信息”。可以通过从 \docs 目录中运行 default.htm 访问帮助。
+
+-----------
+4. 技术支持
+-----------
+
+4.1 与 Microsoft 技术支持联系
+
+如果有关于 Remote Data Service 的技术问题，请与 PC 或服务器的生产商联系。查阅 PC 或服务器附带的文档以获得产品支持的电话号码。
+
+4.2 访问 Microsoft Remote Data Service Web 站点
+
+可以在 World Wide Web 上访问 Microsoft Remote Data Service 的主页以便获得文档更新和关于相关技术的信息。地址为 http://www.microsoft.com/data/rds/。
+
+4.3 加入 Remote Data Service 公共新闻组
+
+为方便讨论和信息共享，Microsoft 已经建立了公共新闻组：microsoft.public.ado.rds。欢迎向此无约束、无支持的新闻组投递文章和信息。Microsoft 不保障有相应的响应或直接的支持。关于详细信息，请访问位于  http://www.microsoft.com/data/rds/ 处的 Remote Data Service Web 站点。
+
+---------------
+5. 技术注意事项
+---------------
+
+* 示例应用程序
+要加载 RDS 示例应用程序中的网格，则需要能够访问 Internet（与 intranet）。如果试图加载使用 Sheridan 网格的的示例，在 CODEBASE 行中引用的 Sheridan cab 文件将试图从 Microsoft 一般固定的 Web 站点下载 mfc42.dll 文件。如果无法访问该文件，将不会加载网格。如果网格 (ssdatb32.ocx) 的 ActiveX 控件已经驻留在客户计算机中，CODEBASE 行将无须对 cab 文件进行解压，也就不会遇到该问题。
+
+当安装示例应用程序时，将试图在 SQL 服务器中创建用户帐号 ("adcdemo")。如果该帐号已存在，安装将成功，然而，运行示例应用程序时会收到“登录失败”的消息。可以编辑示例文件以便给工作帐号设置用户名和密码。
+
+* 使用 FoxPro 数据库
+如果访问 Visual FoxPro 的数据，则必须使用最新的 Visual FoxPro ODBC 驱动程序（5.0.0.402 或更高版本），可以从 http://www.microsoft.com/vfoxpro/vfdownload 处获取。如果未使用最新的驱动程序，将无法正确执行查询。
+
+* “系统错误：虚拟内存溢出”错误
+如果从 Web 服务器收到“系统错误：虚拟内存溢出”的错误信息，需要重新启动，该错误也许如下文所述。Web 服务器的虚拟内存可能溢出，或 SQL 数据源服务器可能需要更多的 TempDB 空间处理运行的查询。虚拟内存可在控制面板（单击“系统”图标，选择“性能”选项卡，而后单击“虚拟内存”按钮查看是否仍有额外的可用硬盘空间。）中进行调整。关于如何调整 TempDB 空间的详细信息可以在“性能”帮助主题的子主题“确保足够的 TempDB 空间”中找到。
+
+-----------
+6. 已知问题
+-----------
+
+以下是 Remote Data Service 1.1 版已知问题的列表。
+
+* Visual Basic Script DLL (vbscript.dll) 1.0.0.806 版本包含有内存泄漏。DLL（2.0.0.1114 或更高版本）的更新版本解决了该问题。它对于 Internet Information Server 3.0 版有效并且可以从 http://www.microsoft.com/vbscript 进行下载。
+
+* 当在 Visual Basic 5.0 列表框或 Internet Explorer 4.0 版中的 combo 框控件中使用 RDS 时，应在设计时在控件的 <OBJECT> 标记中为列表框或 combo 框设置 ListField 属性。否则，如果在运行时在 VBScript 代码中设置 ListField 属性，数据将不会填入控件。因此，应按以下方式使用 HTML 码：
+
+	<OBJECT....>
+	   <PARAM NAME="ListField" VALUE="ColName">
+	   ...
+	</OBJECT>
+
+而不是象以下的 VBScript 码：
+
+	Combo1.ListField="ColName"
+
+* 如果在 RDS 页中对数据进行了更改而后在尚未取消或提交更改的情况下进入另一页，则当返回 RDS 页时可能会得到“未知错误”的信息。返回页时调用 RDS.DATACONTROL 对象的刷新方法将解决该问题。
+
+* 当在装有 Microsoft Internet Explorer 3.02 版本的计算机上首次加载示例页时，对象可能无法加载或收到“未知错误 (0x80020009)”的信息。如果出现这种情况，单击“刷新”按钮纠正该问题。

@@ -1,0 +1,82 @@
+
+[Windows 95 Params]														
+	WndTitle   = Microsoft Visual Basic 6.0 中文版安装程序													
+	WndMess    = 正在启动 Visual Basic 6.0 中文版安装程序，\n\n请稍候...													
+	TmpDirSize = 2000													
+	TmpDirName = tmp													
+
+	CmdLine    = acmsetup /Z bboard.dll /T VB98ENT.STF /S %s %s													
+
+	DrvModName = ACMSETUP													
+	DrvWinClass = Stuff-Shell													
+														
+[Windows 95 Files]														
+	setup\acmsetup.exe = acmsetup.exe 													
+	setup\acmsetup.hlp = acmsetup.hlp 													
+	setup\mssetup.dll = mssetup.dll 													
+
+	setup\bboard.dll = bboard.dll													
+
+	setup\pholder.dll = pholder.dll													
+	setup\vssetup.ttf = vssetup.ttf													
+
+	setup\VB98ENT.DLL = VB98ENT.DLL													
+	setup\COMMON98.DLL = COMMON98.DLL													
+														
+	EULA.TXT = EULA.TXT													
+														
+	setup\VB98ENT.INF = VB98ENT.INF													
+	setup\VB98ENT.STF = VB98ENT.STF													
+														
+	setup\odbcstf.dll = odbcstf.dll													
+	setup\odbckey.inf = odbckey.inf													
+	os\system\odbccp32.dll = odbccp32.dll													
+	os\system\odbcint.dll = odbcint.dll													
+	os\system\msvcrt40.dll = msvcrt40.dll													
+	os\system\msvcrt.dll = msvcrt.dll													
+
+	setup\wpie15.exe = wpie15.exe													
+
+	setup\vsscantl.dll = vsscantl.dll													
+	setup\wwsetup.ttf = wwsetup.ttf													
+
+[NT Intel Params]														
+	WndTitle   = Microsoft Visual Basic 6.0 中文版安装程序													
+	WndMess    = 正在启动 Visual Basic 6.0 中文版安装程序，\n\n请稍候...													
+	TmpDirSize = 2000													
+	TmpDirName = tmp													
+
+	CmdLine    = acmsetup /Z bboard.dll /T VB98ENT.STF /S %s %s													
+
+	DrvModName = ACMSETUP													
+	DrvWinClass = Stuff-Shell													
+														
+[NT Intel Files]														
+	setup\acmsetup.exe = acmsetup.exe													
+	setup\acmsetup.hlp = acmsetup.hlp													
+	setup\mssetup.dll = mssetup.dll													
+
+	setup\bboard.dll = bboard.dll													
+
+	setup\pholder.dll = pholder.dll													
+	setup\vssetup.ttf = vssetup.ttf													
+
+	setup\VB98ENT.DLL = VB98ENT.DLL													
+	setup\COMMON98.DLL = COMMON98.DLL													
+
+	EULA.TXT = EULA.TXT													
+	setup\VB98ENT.INF = VB98ENT.INF													
+	setup\VB98ENT.STF = VB98ENT.STF													
+														
+	setup\odbcstf.dll = odbcstf.dll													
+	setup\odbckey.inf = odbckey.inf													
+	os\system\odbccp32.dll = odbccp32.dll													
+	os\system\odbcint.dll = odbcint.dll													
+	os\system\msvcrt40.dll = msvcrt40.dll													
+	os\system\msvcrt.dll = msvcrt.dll													
+
+	setup\wpie15.exe = wpie15.exe													
+
+	setup\vsscantl.dll = vsscantl.dll													
+	setup\wwsetup.ttf = wwsetup.ttf													
+

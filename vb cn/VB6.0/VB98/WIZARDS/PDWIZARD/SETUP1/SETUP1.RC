@@ -1,0 +1,198 @@
+#include "setupres.h"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+
+//
+//引导程序的公共数据
+//
+#include "commonrc.rc"
+
+//
+//全局
+//
+resSETMSG "安装消息"
+
+//
+//frmBegin
+//
+resSPECDEST "单击该按钮将软件 |1 安装到指定的目标目录。"
+resSPECNODEST "单击该按钮将软件 |1 安装到您的计算机上。"
+
+//
+//frmWelcome
+//
+resWELCOME "欢迎使用 |1 安装程序。"
+
+//
+//frmPath
+//
+resSRCPROMPT "请输入包含 |1 源文件的驱动器及路径。"
+resDESTPROMPT "输入或选择目标目录。"
+resDESTDIR "目标目录："
+resCREATE "不存在。您希望创建该目录吗？"
+resCHANGEDIR "改变目录"
+resINSTFROM "安装源自"
+
+//
+//Setup1.Bas
+//
+resCALCSPACE "计算所需磁盘空间时错误发生。"
+resDRVREAD "不能读驱动器"
+resDRVCHK "请确认驱动器门是否关紧，磁盘是否格式化以及没有磁盘物理错。"
+resCANTOPEN "不能打开指定文件："
+resCANTREAD "不能从指定文件读入："
+resCANTWRITE "不能写进指定文件："
+resCHKSPACE "请确认目标驱动器有足够的磁盘空间。"
+resMAKEDIR "不能创建目录："
+resASKEXIT "您确认要退出？"
+resINTERRUPTED "|1 安装在新软件被完全安装之前中断。"
+resCANRUN "您可以稍后运行完整的 |1 安装程序来完成安装。"
+resINCOMPLETE "安装尚未结束。"
+resQUITNOW "如果您现在退出，将不能正确安装该产品。"
+resQUITSETUP "退出产品安装？"
+resSUCCESS "|1 安装成功。"
+resERROR "|1 安装不成功。"
+resALLOCUNIT "错误地确定驱动器的分配单元"
+resSAMEASSRC "位于安装程序源文件目录。请键入一个不同的目录。"
+resNOCREATE "不能创建指定文件："
+resNOTPROTECT "请确认目标磁盘没有写保护。"
+resINSERT "请插入磁盘："
+resDISK "'磁盘 "
+resINTO "'到驱动器 "
+resSECTNAME "节： "
+resINVLINE "安装程序信息文件中的无效行！"
+resDIRSPECIFIED "指定目录："
+resDIRINVALID "无效、未完成或写保护。请键入驱动器及全路径，例如：'C:\\APPS'。"
+resNOTEXIST "目录不存在！"
+resDIRINVNAME "目录名无效"
+resWRITEPROT "目标文件写保护。"
+resINUSE "目标文件在使用中。请保证所有其他有关应用程序均已关闭。"
+resOUTOFSPACE "目标磁盘空间不足"
+resACCESSVIOLATION "复制文件时发生访问冲突。"
+resSHARINGVIOLATION "复制文件时发生共享冲突。"
+resOUTOFMEMORY "复制文件导致内存溢出。"
+resCANNOTCREATE "不能创建临时文件。"
+resCANNOTDELETE "不能删除现存目标文件。"
+resCANNOTRENAME "不能重命名临时文件。"
+resCANNOTREADSRC "不能读源文件。"
+resCANNOTREADDST "不能读目标文件属性。"
+resBUFFTOOSMALL "内部复制错误。"
+resNOINSTALL "  文件不能安装。"
+resCHKCONNECT "请检查到驱动器的连接"
+resWARNIGNORE "如果您忽略复制错误，文件将不被复制。应用程序运行可能不正确。您当真忽略该错误吗？"
+resTEMPDRIVE "由 'TMP' 或 'TEMP' 环境变量指定的驱动器未就绪。"
+resERR_VSHARE "在您的 SYSTEM.INI 文件的 [386Enh] 节应加入一行 'device=vshare.386' 来确保新软件的正确运行。"
+resCANTREADUNC "不能读网络路径 '|1'。"
+resCHECKUNC "请确认路径是否正确以及您是否具有访问权限。"
+resCANTFINDAPPREMOVALLOG "应用程序删除日志文件 '|1' 未找到，不能继续。"
+resBADCOMMANDLINE "非法命令行参数，不能继续。"
+resCANTFINDAPPREMOVALEXE "应用程序删除可执行文件 '|1' 未找到，不能继续。"
+resAPPREMOVALICONNAME "删除 |1"
+resCANTREGISTERAPPREMOVER "在 Windows 中注册应用程序时删除可执行文件出错"
+resCANTCREATEAPPREMOVALICON "为应用程序删除实用工具创建程序管理器图标时出错"
+resOVERWRITEPRIVATE "安装将替换以前存在的文件。它会引起现存应用程序丢失数据。"
+resOVERWRITEPRIVATE2 "安装已存在的安装程序而没有先删除它，可能损坏安装程序或导致将来删除它时失败。"
+resCANCELSETUP "取消安装？"
+resCHOOSENEWDEST "请重新运行安装程序并为应用程序文件选择一个新位置。"
+resVERIFYCONTINUE "您确信要继续吗？"
+resERR_REG "更新 Windows 登录数据库时发生错误。"
+resMICROSOFTSHARED " Microsoft Shared\\"
+resCANTCREATEPROGRAMGROUP "创建程序组 '|1' 时发生错误"
+resCANTCREATEPROGRAMICON "为 '|1' 创建程序图标时发生错误"
+resCANTCOPYLOG "复制 '|1' 到应用程序目录时发生错误"
+resCANTFINDREGFILE "文件 '|1' 不能被注册，由于它未找到。"
+resCANTRUNPROGRAM "Windows 不能运行程序 '|1'。您的系统可能内存不足，或程序找不到。"
+resREMOTELINENOTFOUND "错误: 'SETUP.LST' 不包含如何注册远程部件 '|1' 的有关信息。这些信息应该在 SETUP.LST 的 '|2' 关键字中找到。"
+resPROGRAMMANAGER "程序管理器"
+resUNEXPECTEDRPCREGDAT "创建 '|1' 时发生未知错误："
+resCANTCOPYPATHTOOLONG "不能复制文件，目标路径太长。"
+resCANTCREATEICONPATHTOOLONG "不能创建卸装图标，目标路径太长。"
+resICONMISSING "在 SETUP.LST 中没有为 |1 指定图标。您希望在不创建图标的情况下继续吗？单击“是”继续，单击“否”退出安装。"
+
+//
+//Setup1.Frm
+//
+resBADDEFDIR "安装程序不能决定有效的缺省目标目录。您需要指定目标目录。"
+resDISKSPACE "安装程序正在检查必要的磁盘空间..."
+resPROGMAN "安装程序正在创建程序光标..."
+resUPDATING "安装程序正在更新您的系统..."
+resNOEXE "不能确定应用程序可执行文件名。"
+resSETUP "|1 安装程序"
+resNOSETUPLST "文件 SETUP.LST 已毁损或找不到。"
+resUNEXPECTED "发生未知的安装错误！"
+resNOFOLDERFORICON "安装定制错误：需要为 |1 创建图标，但为此没有创建文件夹或程序管理器组。"
+resSTILLWITHINACTION "安装错误：丢失 'CommitAction()' 或 'AbortAction()'。"
+resREMAUTGROUPNAME "远程自动管理"
+resAUTMGR32ICON "自动管理器"
+resRACMGR32ICON "远程自动连接管理器"
+resNT4WithoutSP2 "警告：建议为 Windows NT 4.0 安装 Service Pack 2。否则该应用程序不能正确工作。"
+resINSTALLADO "正在安装 Data Access 部件..."
+resREBOOT "系统需要重新启动以使改动生效。\n\n你想现在就重新启动系统吗？"
+resREBOOTNO "在重新启动系统之前，你的应用程序无法正常工作。"
+
+//
+//Common.Bas
+//
+resDISKSPCERR "确定驱动器的磁盘剩余空间时出错"
+
+//
+//窗体/控件字符串
+//
+//resBTNINSTALL "安装(&)"
+resFRMDIRECTORY "目录："
+resBTNCHGDIR "更改目录(&C)"
+resBTNEXIT "退出安装(&X)"
+resLBLBEGIN "单击下面的按钮来开始安装。"
+resBTNCANCEL "取消"
+resLBLDESTFILE "目标文件："
+resBTNINSTALLNOW "立刻安装(&I)"
+resBTNCHGDRV "更改驱动器(&C)"
+resLBLDRIVE "驱动器"
+resLBLAVAIL "可用空间"
+resLBLNEEDED "所需空间"
+resLBLREQUIRED "要求空间"
+resLBLNOSPACE "一个或多个驱动器都没有足够的磁盘空间。"
+resBTNOK "确定"
+resLBLDRIVES "驱动器(&V)："
+resLBLDIRS "目录(&D)："
+resLBLPATH "路径(&P)："
+resLBLRUNNING "安装程序不能安装系统文件或正在使用的共享文件。在继续之前，建议您关闭任何正在运行的应用程序。"
+resBTNTOOLTIPBEGIN "在此处单击以开始安装"
+//
+// Group.Frm
+//
+resGROUPFRM "|1 - 选择程序组"
+resGROUPLBLMAIN "安装程序将添加项目到程序组框的组中。您可以输入新的组名或在现存的组列表中选择一个。"
+resGROUPLBLGROUP "程序组(&P)："
+resGROUPLBLGROUPS "现存组(&X)："
+resGROUPBTNCONTINUE "继续(&C)"
+resGROUPINVALIDGROUPNAME "程序组名长度必须少于 |1 字符并且不能包含任何下列字符：|2"
+resGROUPINVALIDCHARS """][,)("
+//
+//ServerDt.Frm
+//
+resNETWORKADDRESS "网络地址(&A)"
+resNETWORKPROTOCOL "网络协议(&P)"
+resOK "继续(&C)"
+resCANCEL "退出安装(&X)"
+resREMOTESERVERDETAILSTITLE "远程 ActiveX 部件配制"
+resREMOTESERVERDETAILSLBL "请填写有关下列远程部件要求的配置信息："
+resNOTEPROTOSEQNOTSUPPORTED "协议序列 |1 (|2) 在这台机器上不支持或不可用"
+resNOTEPROTOSEQINVALID "协议序列 |1 (|2) 无效"
+resPROTOSEQUNEXPECTEDERR "确定本机上可用的协议序列时发生意外错误"
+resNOPROTOCOLSINSETUPLST "安装错误：从 SETUP.LST 文件读协议时出错。"
+resNOPROTOCOLSSUPPORTED1 "没有一个应用程序需要的协议显得可用或安装在这台机器上。"
+resNOPROTOCOLSSUPPORTED2 "为了正确运行安装程序，需要首先安装下列网络协议序列之一："
+resSELECTEDPROTONOTSUPPORTED "应用程序不能访问远程部件 '|1'，直到安装了协议 '|2'。"
+
+resOVERWRITEFORM "版本冲突"
+resOVERWRITEINFO "你要拷贝的文件比你系统现有的文件的版本更老，建议保留现有的文件。"
+resOVERWRITEFILE "文件名:	'|1'"
+resOVERWRITEDESC "描述:	'|1'"
+resOVERWRITEVER	 "版本:	'|1'"
+resOVERWRITEKEEP "你想保留此文件吗？"
+resOVERNOTOALL "全部都否(&A)"
+resOVERYES "是(&Y)"
+resOVERNO "否(&N)"
+END

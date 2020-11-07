@@ -1,0 +1,121 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Draft//EN">
+<html>
+<HEAD>
+<title>Microsoft Visual 数据库工具自述文件</title>
+<meta name="MS-HAID" content="readmedt">
+<style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+</head>
+<BODY BGCOLOR="#FFFFFF" onclick="checkExpand()">
+<font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+
+<!----------------------------------------------------------------------------->
+<!--                            BEGIN JSCRIPT                                -->
+<script language="JSCRIPT">
+
+  function checkExpand( )
+  {
+     if ("" != event.srcElement.id)
+     {
+        var ch = event.srcElement.id + "Child";
+        var el = document.all[ch];
+        if (null != el)
+        {
+           el.style.display = "none" == el.style.display ? "" : "none";
+           if (el.style.display != "none")
+           event.returnValue=false;
+        }
+     }
+  }
+
+</script>
+<!--                             END JSCRIPT                                 -->
+<!----------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------->
+<!--                         BEGIN README INTRO                              -->
+<h2>Microsoft Visual 数据库工具自述文件</h2>
+
+<p>(C) 1998 Microsoft Corporation. 保留所有权利。</p>
+
+<p>本文档中的其他产品和公司可能是其相应所有者的商标。</p>
+
+<p> <i>Microsoft Visual </i>数据库工具自述文件中补充了与 Microsoft Visual Studio -- Windows 和 Internet 开发系统一起提供的文档相关的最新信息。本文档中的信息比帮助系统中包含的信息更新。本文档中所描述的很多问题将在后续的版本中将得到纠正。</p>
+<p>有关 Visual Studio 6.0 套装产品的一般安装问题，包括在同一台计算机上同时安装多个 Visual Studio 产品的信息，请参阅<a href="install.htm" title="Jumps to the installation readme (install.htm).">安装注意事项</a>自述文件 (install.htm)。 有关帮助系统的问题，请参阅 <a href="readmeDN.htm" title="Jumps to readmeDN.htm">MSDN- Microsoft 开发者网络自述文件</a>。</p>
+
+
+<!--                            END README INTRODUCTION                      -->
+<!----------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------->
+<!--                               BEGIN TOC                                 -->
+
+<h3><p>内容<font color="#000000" face="宋体">- 请单击以下的任一条目</font></p></h3>
+<p><B>注意</B>&nbsp;&nbsp;&nbsp; 如果要在本自述文件中查找某个主题，请确保目录中的所有标题都已被展开。这样一来，就可以知道何时在 TOC 标题中找到合适的主题。</p>
+
+
+<h4><a href="#dtwhatsnew"> Microsoft Visual 数据库工具中的新特征</a></h4>
+
+<h4><a class=ex href="#" title="Click to expand or collapse." id="dtissues">已发现的问题</a></h4>
+
+<div id="dtissuesChild">
+<blockquote>
+
+<blockquote>
+<p><a href="#dt4341">只支持最新的 MS ODBC 和 OLE DB 驱动程序</a></p>
+<p><a href="#dt8589">当连接到一个国别设定的数据库时显示不正确的数据</a></p>
+<p><a href="#dt11241">需要 SQL Server Service Pack 3 </a></p>
+<h4>下面的问题与 Microsoft(R) Visual Basic(R) 有关</h4>
+<p><a href="#dt7763">对 Oracle 数据库运行生成表查询</a></p>
+<p><a href="#dt8394">默认情况下并不显示所有的查询窗格</a></p>
+
+</blockquote>
+</div>
+
+<p>&nbsp;</p>
+<!--                                                                         -->
+<!--                           END CONTENTS TOC                              -->
+<!----------------------------------------------------------------------------->
+
+
+<h3><a name="dtwhatsnew"> Microsoft Visual 数据库工具中的新特征</a></h3>
+<p>
+要了解这一版本的 Microsoft Visual 数据库工具中的新特征，请在 MSDN 库 Visual Studio 6.0 文档的目录中查找“Visual 数据库工具的新特征”，这部分位于 Visual Studio 文档节点的参考部分。</p>
+
+
+<h3>已经发现的问题</h3>
+<p>
+在现在这个版本的 Visual 数据库工具中已经发现了下面这些问题。对于与特定产品相关的问题，请参阅相应产品的自述文件。</p>
+
+<h4><a name="dt4341"></a>只支持最新的 MS ODBC 和 OLE DB 驱动程序</h4>
+<p>即使旧版本的驱动程序和第三方驱动程序可以和 Visual 数据库工具一起使用， Visual 数据库工具只保证能够支持 Microsoft ODBC 和 OLE DB 驱动程序。如果您遇到任何意外的情况，请查证所使用的驱动程序是正确的。
+</p>
+
+<h4><a name="dt8589"></a>当连接到一个国别设定的数据库时显示不正确的数据</h4>
+<p>当连接到一个国别设定的数据库时显示不正确或者无效的字符，请检查计算机的区域设置以确保其与该数据库中的数据匹配。</p>
+
+<h4><a name="dt11241"></a>需要 SQL Server Service Pack 3 </h4>
+<p>要对 SQL Server 6.5 使用 Visual 数据库工具需要 SQL Server Service Pack 3。在使用 Visual 数据库工具之前，请确保服务器上已经安装了 Service Pack 3 或者更高版本。</p>
+
+<h3>下面的问题与 Microsoft(R) Visual Basic(R) 有关</h3>
+
+<h4><a name="dt7763"></a>对 Oracle 数据库运行生成表查询</h4>
+<p>如果使用 Microsoft OLE DB provider for Oracle，对一个 Oracle 数据库的生成表查询就不能正确地运行。请改用 Microsoft ODBC 驱动程序来创建与这种数据库的连接。
+</p>
+
+<h4><a name="dt8394"></a>默认情况下并不显示所有的查询窗格</h4>
+<p>当使用数据视图打开一个表时，实际上是用一条“SELECT * FROM table”命令打开查询设计器。要在 Visual Basic 中打开“图表”、“网格”和 SQL 窗格，请从<b>视图</b>菜单中单击<b>显示窗格</b>。这样就可以选择打开或者关闭哪些窗格。</p>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</FONT></BODY>
+</HTML>
+

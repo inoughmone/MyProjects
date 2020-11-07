@@ -1,0 +1,217 @@
+****************************************************************
+                      MICROSOFT(R) SQL SERVER
+                MICROSOFT SQL SERVER ODBC DRIVER
+                    安装自述文件 VERSION 3.6
+****************************************************************
+
+(c) 1998 Microsoft Corporation。保留所有权力。
+
+本文件说明如何将 version 3.6 Microsoft SQL Server ODBC 驱动程序与
+version 6.5 或更旧版本的 Microsoft SQL Servers 一起使用。
+
+主要内容如下：
+
+1. 概览
+2. 在服务器上安装 Instcat.sql
+3. 如何获得 SQL Server Client 网络库
+4. 有关在 SQL Server 上使用 ODBC 的文档资源
+5. 如何在开发环境中使用驱动程序
+6. 兼容性论述
+
+****************************************************************
+1. 概览
+
+Version 3.6 Microsoft SQL Server ODBC 驱动程序是 Win32(R) ODBC 
+version 3.6 驱动程序。它即可用于 ODBC 2.X API 编写的应用程序，也
+可用于 ODBC 3.X API 编写的应用程序。本驱动程序与 Microsoft SQL 
+Server version 4.21a 或更高版本兼容。本驱动程序可在 Windows 95 
+或 Windows NT（4.0 或更高版本）上运行。
+
+新版的 Win32 SQL Server Client Configuration 实用程序也可与 
+version 3.6 SQL Server ODBC 驱动程序一起安装。此 SQL Server 
+Client Configuration 实用程序可与 Microsoft SQL Server version 
+4.21a 或更高版本和相应版本的 SQL Server 带有的 Client 
+Net-Libraries 兼容。
+
+****************************************************************
+2. 在服务器上安装 Instcat.sql
+
+SQL Server ODBC 驱动程序使用一组称为目录存储程序的系统存储程序，
+来从 SQL Server 系统目录中获得信息。每一版本的 Microsoft SQL 
+Server ODBC 驱动程序被开发来用于目录存储程序的指定版本。Version 
+3.6 SQL Server ODBC 驱动程序附带的 Instcat.sql 文件包括用于将程
+序升级到本驱动程序使用的版本的目录存储程序的局部更新。为保证驱动
+程序的正确运行，SQL Server 系统管理员必须使用 Instcat.sql 程序段
+来升级目录存储程序。升级目录存储程序不影响旧版 SQL Server 客户端
+操作。从 4.21a 到 6.5 的所有版本的 Microsoft SQL Server 都必须这
+样做。
+
+要升级目录存储程序，系统管理员运行一 用 isql 实用程序编写的程序
+段（请参阅说明如下）。在对主数据库进行任何改变之前，系统管理员应
+将其进行备份。要运行 isql，您的计算机必须作为 Microsoft SQL 
+Server 的客户端安装。
+
+在命令提示符下，使用 isql 实用程序运行 Instcat.sql 程序段。例如：
+
+C:> ISQL /Usa /Psa_password /Sserver_name /ilocation\Instcat.Sql
+
+where
+sa_password 
+	Is the system administrator's password.
+server_name 
+	Is the name of the server on which SQL Server resides.
+location 
+	Is the full path of the location of Instcat.Sql.
+
+Instcat.sql 程序段生成许多信息。多数信息显示受程序段中 
+Transact-SQL 语句影响的行数。多数信息可以被忽略，尽管应查看所有
+输出以明确地得到执行错误的消息。当 Instcat.sql 在 version 6.0 
+SQL Server 下运行时，可以忽略“对象 sp_MS_upd_sysobj_category 不
+存在”的消息。最后一个消息应显示，Instcat.sql 执行成功。当因主数
+据库空间不足而不能存储目录存储程序或将变化记录到现存的程序中时，
+Instcat.sql 程序段失败。
+
+****************************************************************
+3. 如何获得 SQL Server Client 网络库
+
+Microsoft SQL Server ODBC 驱动程序用 Microsoft SQL Server Client
+Net-Libraries 来访问服务器。Version 3.6 SQL Server ODBC 驱动程序
+也用 SQL Server Client Configuration 实用程序来管理与 ODBC 数据
+源关联的 Net-Library。
+
+Version 3.6 SQL Server ODBC 驱动程序只安装一个 Net-Library，Win32
+命名管道 Net-Library Dbnmpntw.dll。
+
+Version 3.6 SQL Server ODBC 驱动程序与旧版的 Win32 Net-Libraries 
+兼容。如果连接 SQL Server 需要 Net-Library 而不是命名管道 ，可以
+使用您现有版本的 Microsoft SQL Server 附属的 Net-Library。通过安
+装您现有版本的 Microsoft SQL Server 的 Win32 SQL Server Client 
+实用程序，可以得到 SQL Server Net-Libraries。
+
+用 version 3.6 SQL Server ODBC 驱动程序安装的新版 SQL Server 
+Client Configuration 实用程序与 SQL Server 4.21a 或更高版本中的 
+Client Net-Libraries 兼容。
+
+****************************************************************
+4. 有关使用 ODBC 访问 SQL Server 的文档资源
+
+Version 3.6 Microsoft SQL Server ODBC 驱动程序用现存的用于驱动程
+序指定信息的 SQL Server 6.5 文档编译。有关驱动程序指定特性，请参
+况 SQL Server 手册和联机文档。
+
+Version 3.6 Microsoft SQL Server ODBC 驱动程序也可用技术说明
+“Using ODBC with Microsoft SQL Server”中的附加驱动程序指定信息
+编译，可以从 Microsoft Web 站点 
+http://www.microsoft.com/sql/reskit.htm 下载。
+
+Version 3.6 SQL Server ODBC 驱动程序附属的 Sqlsodbc.hlp 文件只含
+SQL Server ODBC Data Source 向导的操作提示帮助。旧版的 Microsoft
+SQL Server ODBC 驱动程序附属的 Drvssrvr.hlp 文件含有旧版驱动程序
+的驱动程序定信息。旧版 Drvssrvr.hlp 中包含的信息已复制到 SQL 
+Server 6.5 手册《Programming ODBC for Microsoft SQL Server》中。
+
+****************************************************************
+5. 如何在开发环境中使用驱动程序
+
+Microsoft SQL Server ODBC 驱动程序为调用一些 ODBC 函数使用驱动程
+序指定参数。Odbcss.h 文件中含有驱动程序指定参数的 #defines 和驱动
+程序指定 C 和 C++ 程序结构。
+
+Version 3.6 SQL Server ODBC 驱动程序可与下述资源中提供的 Odbss.h 
+文件一起工作：
+
+SQL Server Service Pack 2 (SP2) 或更高版本。
+	服务软件包可以从 Microsoft Web 站点
+	http://www.microsoft.com/sql/ServicePak.htm 下载。
+
+ODBC 3.0 SDK.
+	ODBC 3.0 SDK 是 Microsoft Developer
+	Network Professional 版本的一部分。SDK 可以从 Microsoft 
+	Web 站点 http://www.microsoft.com/odbc 下载。SDK 也可从
+	《Microsoft ODBC 3.0 Software Development Kit and 
+	Programmer's Reference》中的“Microsoft Press(R)”中获得。
+
+****************************************************************
+6. 兼容性论述
+
+Version 3.6 SQL Server ODBC 驱动程序将在下述情况下显示一新的向
+导，无论在 ODBC Administrator 实用程序中添加或配置数据源时，或当
+应用程序调用 SQLConfigDataSource 并要求驱动程序向用户提示信息时。
+单击向导中的“帮助”按钮可访问向导文档。
+
+在 SQL Server 6.5 的附件 version 2.65 SQL Server ODBC 驱动程序中，
+SQL_COPT_SS_PERF_QUERY_INTERVAL 以秒为单位工作而不是如文档所描述
+的以毫秒为单位（见“Knowledge Base article Q157753”）。在 version
+3.6 SQL Server ODBC 驱动程序中， SQL_COPT_SS_PERF_QUERY_INTERVAL
+已改变为以毫秒为单位工作如文档所述。 
+
+下述改变只影响用 ODBC 3.X API 编写的应用程序，而不会影响用 ODBC 
+2.X API 编写的应用程序。这些改变应不会影响大多数 ODBC 应用程序中
+的结果集处理。
+
+在先前的 SQL Server ODBC 驱动程序版本中，批处理或存储程序中的相
+连 PRINT 或 RAISERROR 语句以同一个结果集中返回信息。而在 version 
+3.6 SQL Server ODBC 驱动程序中，每一语句的信息按不同的结果集返回。
+在每一信息到下一个 SQL 语句的信息之间，必须调用 SQLMoreResults。
+单个 SQL 语句的信息，如 DBCC 语句，全部以单结果集返回，而不需要
+在每一信息之间调用 SQLMoreResults。
+
+在先前的 SQL Server ODBC 驱动程序版本中，运行时错误或 RAISERROR 
+with a severity of 11 or higher on the first statement in a batch 
+or stored procedure 通常会引起 SQLExecute、SQLExecDirect 或 
+SQLParamData 返回 SQL_ERROR。而在 version 3.6 SQL Server ODBC 驱
+动程序中，SQLExecute、SQLExecDirect 或 SQLParamData 只有在当第一
+个语句后没有执行其他语句时才返回 SQL_ERROR。如果在第一个语句后执
+行了任何其他语句，即使只是一个简单的没有返回值的 RETURN 语句，则
+SQLExecute 或  SQLExecDirect 返回 SQL_SUCCESS_WITH_INFO。在使用 
+SQLGetDiagRec 处理 SQL_SUCCESS_WITH_INFO 信息后，调用位于下一个
+结果集上的 SQLMoreResults。
+
+当先前的驱动程序版本在批处理或存储程序的第一个语句上遇到错误时，
+在 SQLExecute 或 SQLExecDirect 返回 SQL_ERROR 后，语句句柄可与另
+一 SQL 语句一起使用。而当 3.6 驱动程序返回 SQL_SUCCESS_WITH_INFO 
+时，在 SQLMoreResults 返回 SQL_NO_DATA 或在跟随 RAISERROR 的所有
+结果集关闭之前，语句没有释放从而不能执行其他 SQL 语句。如果在错
+误消息后没有跟随结果集，则不能调用 SQLCloseCursor，而必须调用 
+SQLFreeStmt(SQL_CLOSE) 或 SQLMoreResults 来释放语句句柄以执行其
+他 SQL 语句：
+
+CREATE PROCEDURE TestPrc @Parm1 as
+IF (@Parm1 IS NULL)
+BEGIN
+	RAISERROR ('Parm1 cannot be NULL', 11, 1)
+	RETURN
+END
+SELECT * FROM sysusers WHERE suid = @Parm1
+GO
+
+执行下述指令：
+
+SQLExecDirect(hstmt, "{ call TestPrc (NULL) }", SQL_NTS);
+
+当使用旧版的 SQL Server ODBC 驱动程序或当应用程序使用 ODBC 2.X 
+API 时，SQLExecDirect 返回 SQL_ERROR。在 SQLGetDiagRec 返回 
+SQL_NO_DATA 或 SQLError 返回 SQL_NO_DATA_FOUND 后，语句句柄是空
+闲的可执行其他 SQL 语句。
+
+当使用 version 3.6 SQL Server ODBC 驱动程序从应用程序写入 ODBC 
+3.X API 时，SQLExecDirect 返回 SQL_SUCCESS_WITH_INFO。在 
+SQLGetDiagRec 返回 SQL_NO_DATA 后，直到 SQLMoreResults 返回 
+SQL_NO_DATA 或调用 SQLFreeStmt(SQL_CLOSE) 之前，语句句柄不能用
+于执行其他 SQL 语句。
+
+在先前的 SQL Server ODBC 驱动程序版本中，当应用程序执行不影响行
+的搜索 UPDATE 或 DELETE 语句时，SQLExecute、SQLExecDirect 或 
+SQLParamData 返回 SQL_SUCCESS。而 version 3.6 驱动程序在此情况下，
+将 SQL_SUCCESS 返回到用 ODBC 2.X API 编写的应用程序，但如果应用
+程序是用 ODBC 3.X API 编写，则返回 SQL_NO_DATA。无论是接收 
+SQL_SUCCESS 的 ODBC 2.X 应用程序还是接收 SQL_NO_DATA 然后调用 
+SQLRowCount 的 ODBC 3.X 应用程序，SQLRowCount 返回零的数目。
+
+ODBC 3.X 比 ODBC 2.X 更清楚地定义了结果返回的方法。旧版的 SQL 
+Server ODBC 驱动程序返回输出参数值，并在 ODBC 2.X 函数 SQLFetch 
+或 SQLExtendedFetch 在由存储程序返回的最终结是果集上返回 
+SQL_NO_DATA 时，返回代码。Version 3.6 驱动程序在被 ODBC 2.X 应用
+程序调用时获得此行为，然而驱动程序在 SQLMoreResults 返回 
+SQL_NO_DATA 之前，不返回输出参数或代码 until SQLMoreResults。
+****************************************************************

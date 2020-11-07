@@ -1,0 +1,207 @@
+#include "setupres.h"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+
+//
+//부트스트랩 프로그램과 공용
+//
+#include "commonrc.rc"
+
+//
+// Setup1 프로젝트에 대한 전역 글꼴 설정.  무시하려면
+// Form_Load 다음의 코드에 있는 글꼴 속성을 설정합니다.
+//
+resFONTNAME "굴림"
+resFONTSIZE "9"
+resFONTBOLD "False"  		// Don't translate this
+resFONTNAMEBACKUP1 "Arial"	// Don't translate this
+resFONTNAMEBACKUP2 "System"	// Don't translate this
+
+//
+//전역
+//
+resSETMSG "설치 메시지"
+
+//
+//frmBegin
+//
+resSPECDEST "이 단추를 눌러 |1 소프트웨어를 지정한 대상 디렉터리에 설치합니다."
+resSPECNODEST "이 단추를 눌러 |1 소프트웨어를 컴퓨터에 설치합니다."
+
+//
+//frmWelcome
+//
+resWELCOME "|1 설치 프로그램을 사용하게 되신 것을 환영합니다!"
+
+//
+//frmPath
+//
+resSRCPROMPT "|1 원본 파일이 들어있는 드라이브나 경로를 입력하십시오."
+resDESTPROMPT "대상 디렉터리를 입력하거나 선택합니다."
+resDESTDIR "대상 디렉터리:"
+resCREATE "존재하지 않는 디렉터리입니다. 새로 만드시겠습니까?"
+resCHANGEDIR 렉터리 변경"
+resINSTFROM "설치 원본"
+
+//
+//Setup1.Bas
+//
+resCALCSPACE "필요한 디스크 공간을 계산하는 동안 오류가 발생하였습니다."
+resDRVREAD "드라이브를 읽을 수 없습니다. "
+resDRVCHK "드라이브 문이 닫혔는지 또는 디스크가 포맷되었고 오류가 없는지 확인하십시오."
+resCANTOPEN "열 수 없는 파일:"
+resCANTREAD "읽을 수 없는 파일:"
+resCANTWRITE "쓸 수 없는 파일:"
+resCHKSPACE "대상 드라이브에 디스크 공간이 충분히 있는지 확인하십시오."
+resMAKEDIR "만들 수 없는 디렉토리:"
+resASKEXIT "끝내시겠습니까?"
+resINTERRUPTED "새 소프트웨어를 완전히 설치하기 전에 |1 설치를 중단하였습니다."
+resCANRUN "나중에 |1 설치를 완전하게 실행하여 설치를 완료할 수 있습니다."
+resINCOMPLETE "아직 설치를 완료하지 않았습니다."
+resQUITNOW "지금 끝내면 이 프로그램은 올바르게 설치되지 않습니다."
+resQUITSETUP "이 프로그램의 설치를 끝내시겠습니까?"
+resSUCCESS "|1 설치가 성공적으로 완료되었습니다."
+resERROR "|1 설치가 성공적으로 완료되지 않았습니다."
+resALLOCUNIT "드라이브 할당 단위 결정 오류"
+resSAMEASSRC "이(가) 설치 원본 파일 디렉터리에 있습니다. 다른 디렉터리를 입력하십시오."
+resNOCREATE "만들 수 없는 파일:"
+resNOTPROTECT "대상 드라이브에 쓰기 금지되어 있지 않은지 확인하십시오."
+resINSERT "드라이브에 넣을 디스크:"
+resDISK "'디스크 "
+resINTO "' 드라이브 "
+resSECTNAME "구역:  "
+resINVLINE "설치 정보 파일에 잘못된 줄이 있습니다!"
+resDIRSPECIFIED "지정한 디렉터리:"
+resDIRINVALID "존재하지 않거나 불완전하거나, 쓰기 금지되어 있습니다. 'C:\\APPS'와 같이 드라이브 문자를 포함하여 완전한 경로를 입력하십시오."
+resNOTEXIST "해당 디렉터리가 없습니다!"
+resDIRINVNAME "잘못된 디렉터리 이름"
+resWRITEPROT "대상 파일이 쓰기 금지되어 있습니다."
+resINUSE "대상 파일을 사용하고 있습니다. 다른 모든 응용 프로그램이 닫혀 있는지 확인하십시오."
+resOUTOFSPACE "대상 드라이브의 공간이 부족합니다."
+resACCESSVIOLATION "파일을 복사하는 동안 액세스를 위반하였습니다."
+resSHARINGVIOLATION "파일을 복사하는 동안 공유를 위반하였습니다."
+resOUTOFMEMORY "파일을 복사하는 데 사용할 메모리가 부족합니다."
+resCANNOTCREATE "임시 파일을 만들 수 없습니다."
+resCANNOTDELETE "기존 대상 파일을 삭제할 수 없습니다."
+resCANNOTRENAME "임시 파일 이름을 바꿀 수 없습니다."
+resCANNOTREADSRC "원본 파일을 읽을 수 없습니다."
+resCANNOTREADDST "대상 파일 속성을 읽을 수 없습니다."
+resBUFFTOOSMALL "내부 복사 오류입니다."
+resNOINSTALL " 파일을 설치할 수 없습니다."
+resCHKCONNECT "드라이브 연결을 확인하십시오."
+resWARNIGNORE "복사 오류를 무시하면 파일이 복사되지 않습니다.  그 결과 응용 프로그램이 제대로 작동하지 않을 수 있습니다. 그래도 오류를 무시하시겠습니까?"
+resTEMPDRIVE "'TMP' 또는 'TEMP' 환경 변수로 지정한 드라이브가 준비되지 않았습니다."
+resERR_VSHARE "'device=vshare.386' 줄을 SYSTEM.INI 파일의 [386Enh] 구역에 추가하여 새 소프트웨어가 제대로 작동하도록 해야 합니다."
+resCANTREADUNC "'|1' 네트워크 경로를 읽을 수 없습니다."
+resCHECKUNC "경로가 정확한지 또는 경로를 액세스할 수 있는 사용 권한이 있는지 확인하십시오."
+resCANTFINDAPPREMOVALLOG "응용 프로그램 삭제 로그 파일 '|1'이(가) 없습니다. 계속할 수 없습니다."
+resBADCOMMANDLINE "잘못된 명령줄 매개 변수입니다. 계속할 수 없습니다."
+resCANTFINDAPPREMOVALEXE "응용 프로그램 삭제 실행 파일 '|1'이(가) 없습니다. 계속할 수 없습니다."
+resAPPREMOVALICONNAME "|1 삭제"
+resCANTREGISTERAPPREMOVER "Windows에서 실행할 수 있는 응용 프로그램 삭제 등록 오류입니다."
+resCANTCREATEAPPREMOVALICON "응용 프로그램 삭제 유틸리티의 [프로그램 관리자] 아이콘 작성 오류입니다."
+resOVERWRITEPRIVATE "설치 프로그램이 기존 파일(들)을 바꿉니다. 이로 인해 기존 응용 프로그램의 데이터를 상실할 수 있습니다."
+resOVERWRITEPRIVATE2 "먼저 기존 설치를 삭제하지 않은 채 설치하면 기존 설치를 손상시키거나 나중에 삭제할 때 오류를 발생시킬 수 있습니다."
+resCANCELSETUP "설치를 취소하시겠습니까?"
+resCHOOSENEWDEST "다시 설치하여 응용 프로그램 파일의 새 위치를 선택하십시오."
+resVERIFYCONTINUE "계속하시겠습니까?"
+resERR_REG "Windows 등록 데이터베이스를 업데이트하려는 중에 오류가 발생하였습니다."
+resMICROSOFTSHARED "Microsoft Shared\\"
+resCANTCREATEPROGRAMGROUP "'|1' 프로그램 그룹 작성 오류가 발생하였습니다."
+resCANTCREATEPROGRAMICON "'|1' 프로그램 아이콘 작성 오류가 발생하였습니다."
+resCANTCOPYLOG "응용 프로그램 디렉토리에 '|1' 파일 복사 오류가 발생하였습니다."
+resCANTFINDREGFILE "'|1' 파일이 없어 등록할 수 없습니다."
+resCANTRUNPROGRAM "Windows에서 '|1' 프로그램을 실행할 수 없습니다. 시스템의 메모리가 부족하거나 그 프로그램이 없을 수도 있습니다."
+resREMOTELINENOTFOUND "오류: '|1' 원격 구성 요소의 등록 방법에 관한 정보가 'SETUP.LST'에 없습니다. 이 정보는 SETUP.LST의 '|2' 키에 있어야 합니다."
+resPROGRAMMANAGER "프로그램 관리자"
+resUNEXPECTEDRPCREGDAT "예기치 않은 '|1' 작성 오류:"
+resCANTCOPYPATHTOOLONG "대상 경로명이 너무 길어 파일을 복사할 수 없습니다."
+resCANTCREATEICONPATHTOOLONG "대상 경로명이 너무 길어 [설치 해제] 아이콘을 만들 수 없습니다."
+resICONMISSING "|1에 대한 아이콘이 SETUP. LST 파일에 지정되지 않았습니다. 아이콘을 만들지 않고 계속하시겠습니까? 설치를 계속하려면 [예]를 누르고, 종료하려면 [아니오]를 누릅니다."
+
+//
+//Setup1.Frm
+//
+resBADDEFDIR "설치 프로그램이 올바른 기본 대상 디렉토리를 결정할 수 없습니다. 대상 디렉토리를 지정해야 합니다."
+resDISKSPACE "설치 프로그램이 사용할 수 있는 디스크 공간을 확인하고 있습니다..."
+resPROGMAN "설치 프로그램이 프로그램 아이콘을 만들고 있습니다..."
+resUPDATING "설치 프로그램이 시스템을 새로 고치고 있습니다..."
+resNOEXE "응용 프로그램의 실행 파일 이름을 판별할 수 없습니다."
+resSETUP "|1 설치"
+resNOSETUPLST "SETUP.LST 파일이 손상되었거나 찾을 수 없습니다."
+resUNEXPECTED "예기치 않은 설치 오류가 발생하였습니다!"
+resNOFOLDERFORICON "사용자 정의 설치 오류:  |1에 대한 아이콘을 만들어야 하는데, 이 용도로 만들어진 폴더나 프로그램 관리자 그룹이 없습니다."
+resSTILLWITHINACTION "설치 오류:  'CommitAction()' 또는 'AbortAction()'이 없습니다."
+resREMAUTGROUPNAME "원격 자동화 관리"
+resAUTMGR32ICON "자동화 관리자"
+resRACMGR32ICON "원격 자동화 연결 관리자"
+resNT4WithoutSP2 "경고: Windows NT 4.0용 Service Pack 2 버전을 설치하는 것이 좋습니다. 이 응용 프로그램은 이 프로그램없이 제대로 작동하지 않을 수 있습니다."
+resINSTALLADO "데이터 액세스 구성 요소를 설치하고 있습니다..."
+resREBOOT "시스템 설정을 업데이트하려면 시스템을 새로 시작하여야 합니다.\n\n지금 시스템을 다시 시작하시겠습니까?"
+resREBOOTNO "시스템을 다시 시작하지 않으면 응용 프로그램이 제대로 작동하지 않을 수 있습니다."
+//
+//Common.Bas
+//
+resDISKSPCERR "드라이브에 사용할 수 있는 디스크 공간 결정 오류"
+
+//
+//폼/컨트롤 문자열
+//
+//resBTNINSTALL "설치(&I)"
+resFRMDIRECTORY "설치(&I)"
+resBTNCHGDIR "디렉터리 바꾸기(&C)"
+resBTNEXIT "설치 끝내기(&X)"
+resLBLBEGIN "아래 단추를 눌러 설치를 시작합니다."
+resBTNCANCEL "취소"
+resLBLDESTFILE "대상 파일: "
+resBTNINSTALLNOW "지금 설치(&I)"
+resBTNCHGDRV "드라이브 바꾸기(&C)"
+resLBLDRIVE "드라이브"
+resLBLAVAIL "사용 가능한 공간"
+resLBLNEEDED "필요한 공간"
+resLBLREQUIRED "최소 필요 공간"
+resLBLNOSPACE "하나 이상의 드라이브에서 사용할 수 있는 디스크 공간이 부족합니다."
+resBTNOK "확인"
+resLBLDRIVES "드라이브(&V): "
+resLBLDIRS "디렉토리(&D):"
+resLBLPATH "경로(&P): "
+resLBLRUNNING "사용하고 있을 경우 설치 프로그램에서 시스템 파일을 설치하거나 공유 파일을 새로 고칠 수 없습니다. 계속 진행하기 전에 실행 중인 응용 프로그램을 닫도록 합니다."
+resBTNTOOLTIPBEGIN "여기를 눌러 설치를 시작합니다."
+//
+// Group.Frm
+//
+resGROUPFRM "|1 - 프로그램 그룹 선택"
+resGROUPLBLMAIN "[프로그램 그룹] 대화 상자에 나타난 그룹에 항목을 추가합니다. 새 그룹 이름을 입력하거나 기존 그룹 목록에서 하나를 선택할 수 있습니다."
+resGROUPLBLGROUP "프로그램 그룹(&P):"
+resGROUPLBLGROUPS "기존 그룹(&X):"
+resGROUPBTNCONTINUE "계속(&C)"
+resGROUPINVALIDGROUPNAME "프로그램 그룹 이름은 |1자 이하이어야 하며, |2와(과) 같은 문자를 포함할 수 없습니다."
+resGROUPINVALIDCHARS """][,)("
+//
+//ServerDt.Frm
+//
+resNETWORKADDRESS "네트워크 주소(&A)"
+resNETWORKPROTOCOL "네트워크 프로토콜(&P)"
+resOK "계속(&C)"
+resCANCEL "설치 끝내기(&X)"
+resREMOTESERVERDETAILSTITLE "원격 ActiveX 구성 요소 환경 설정"
+resREMOTESERVERDETAILSLBL "다음의 원격 구성 요소에 대해 필요한 환경 설정 정보를 채우십시오."
+resNOTEPROTOSEQNOTSUPPORTED "|1(|2) 프로토콜 시퀀스는 지원되지 않거나 이 컴퓨터에서 사용할 수 없습니다."
+resNOTEPROTOSEQINVALID "'|1'('|2') 프로토콜 시퀀스가 잘못되었습니다."
+resPROTOSEQUNEXPECTEDERR "컴퓨터에서 사용할 수 있는 프로토콜 시퀸스를 결정하는 동안 예기치 않은 오류가 발생하였습니다."
+resNOPROTOCOLSINSETUPLST "설치 오류:  SETUP.LST 파일에서 프로토콜을 읽을 때 오류가 발생하였습니다."
+resNOPROTOCOLSSUPPORTED1 "응용 프로그램이 필요로 하는 프로토콜이 이 컴퓨터에서 사용할 수 없거나 설치되어 있지 않습니다."
+resNOPROTOCOLSSUPPORTED2 "설치 프로그램을 성공적으로 실행하려면 다음 네트워크 프로토콜 시퀀스 중 하나를 설치해야 합니다."
+resSELECTEDPROTONOTSUPPORTED "응용 프로그램은 '|2' 프로토콜을 설치해야 '|1' 원격 구성 요소를 액세스할 수 있습니다."
+
+resOVERWRITEFORM "버전이 맞지 않습니다."
+resOVERWRITEINFO "복사하려는 파일이 현재 시스템의 파일보다 이전 것입니다. 기존 파일을 유지하는 것이 좋습니다."
+resOVERWRITEFILE "파일 이름:	'|1'"
+resOVERWRITEDESC "설명:	'|1'"
+resOVERWRITEVER	 "버전:	'|1'"
+resOVERWRITEKEEP "이 파일을 계속 사용하시겠습니까?"
+resOVERNOTOALL "모두 아니오(&A)"
+resOVERYES "예(&Y)"
+resOVERNO "아니오(&N)"
+END

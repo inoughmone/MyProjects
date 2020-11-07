@@ -1,0 +1,6 @@
+MDAC20.cab 不再有效。请使用 MDAC_TYP.EXE。
+您可以在 MDAC 2.0 SDK 和 Visual Studio 98 CD 中找到此文件。
+
+MDAC_TYP.CAB 是为使用 VB 安装向导所提供的。
+MDAC_TYP.CAB 不是为 HTML 页中的 Codebase 标签所准备的。
+用户若需要在工作站上运行 MDAC2.0 的功能，应该执行 MDAC_TYP.EXE 文件来安装组件。

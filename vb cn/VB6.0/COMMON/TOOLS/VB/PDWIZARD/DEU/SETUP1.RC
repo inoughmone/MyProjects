@@ -1,0 +1,198 @@
+#include "setupres.h"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+
+//
+//Common with bootstrapper
+//
+#include "commonrc.rc"
+
+//
+//Global
+//
+resSETMSG "Setup-Meldung"
+
+//
+//frmBegin
+//
+resSPECDEST "Klicken Sie auf diese Schaltfläche, um |1-Software in das angegebene Verzeichnis zu installieren."
+resSPECNODEST "Klicken Sie auf diese Schaltfläche, um |1-Software auf Ihrem System zu installieren."
+
+//
+//frmWelcome
+//
+resWELCOME "Willkommen zum |1-Installationsprogramm."
+
+//
+//frmPath
+//
+resSRCPROMPT "Bitte geben Sie den Pfad für die |1-Quelldateien an."
+resDESTPROMPT "Bitte geben Sie ein Zielverzeichnis ein oder wählen Sie eins aus."
+resDESTDIR "Das Zielverzeichnis:"
+resCREATE "existiert nicht. Soll dieses Verzeichnis erstellt werden?"
+resCHANGEDIR "Verzeichnis wechseln"
+resINSTFROM "Installieren von"
+
+//
+//Setup1.Bas
+//
+resCALCSPACE "Fehler beim Ermitteln des benötigten Speicherplatzes"
+resDRVREAD "Kein Lesen möglich von Laufwerk "
+resDRVCHK "Stellen Sie sicher, daß das Laufwerk geschlossen und die Diskette formatiert und nicht beschädigt ist."
+resCANTOPEN "Folgende Datei konnte nicht geöffnet werden:"
+resCANTREAD "Aus folgender Datei konnte nicht gelesen werden:"
+resCANTWRITE "In folgende Datei konnte nicht geschrieben werden:"
+resCHKSPACE "Bitte stellen Sie sicher, daß das Ziellaufwerk genügend freien Speicher hat"
+resMAKEDIR "Verzeichnis kann nicht erstellt werden:"
+resASKEXIT "Sind Sie sicher, daß Sie die Anwendung beenden möchten?"
+resINTERRUPTED "|1-Setup wurde unterbrochen, bevor die Software vollständig installiert werden konnte."
+resCANRUN "Sie können das |1-Setup später vollständig wiederholen, um die Installation zu abzuschließen."
+resINCOMPLETE "Setup ist noch nicht vollständig abgeschlossen."
+resQUITNOW "Wenn Sie Setup jetzt beenden, ist das Produkt noch nicht vollständig installiert."
+resQUITSETUP "Möchten Sie Setup wirklich beenden?"
+resSUCCESS "|1-Setup wurde erfolgreich abgeschlossen"
+resERROR "|1-Setup wurde nicht erfolgreich abgeschlossen"
+resALLOCUNIT "Fehler beim Ermitteln der Zuteilungseinheit des Laufwerks "
+resSAMEASSRC "ist im Setup-Quellverzeichnis. Bitte geben Sie ein anderes Verzeichnis an."
+resNOCREATE "Folgende Datei kann nicht erstellt werden:"
+resNOTPROTECT "Bitte stellen Sie sicher, daß das Ziellaufwerk nicht schreibgeschützt ist."
+resINSERT "Bitte legen Sie die folgende Diskette ein:"
+resDISK "'Diskette "
+resINTO "' in Laufwerk "
+resSECTNAME "Bereich:  "
+resINVLINE "Ungültige Zeile in Setup-Informationsdatei!"
+resDIRSPECIFIED "Das angegebene Verzeichnis:"
+resDIRINVALID "ist ungültig, unvollständig, oder schreibgeschützt.  Bitte geben Sie einen vollständigen Pfad mit Laufwerkbuchstaben an, zum Beispiel 'C:\\Anwendungen'."
+resNOTEXIST "Das Verzeichnis existiert nicht!"
+resDIRINVNAME "Ungültiger Verzeichnisname"
+resWRITEPROT "Die Zieldatei ist schreibgeschützt."
+resINUSE "Die Zieldatei wird verwendet. Bitte stellen Sie sicher, daß alle anderen Anwendungen geschlossen sind"
+resOUTOFSPACE "Nicht genügend Speicherplatz auf dem Ziellaufwerk "
+resACCESSVIOLATION "Eine Zugriffsverletzung ist beim Kopieren der Datei aufgetreten."
+resSHARINGVIOLATION "Ein Fehler durch gemeinsamen Zugriff ist beim Kopieren der Datei aufgetreten."
+resOUTOFMEMORY "Nicht genügend Speicher zum Kopieren der Datei."
+resCANNOTCREATE "Temporäre Datei kann nicht angelegt werden."
+resCANNOTDELETE "Bestehende Zieldatei kann nicht gelöscht werden."
+resCANNOTRENAME "Temporäre Datei kann nicht umbenannt werden."
+resCANNOTREADSRC "Quelldatei kann nicht gelesen werden."
+resCANNOTREADDST "Attribute der Zieldatei können nicht gelesen werden."
+resBUFFTOOSMALL "Interner Kopierfehler."
+resNOINSTALL "  Datei kann nicht installiert werden."
+resCHKCONNECT "Bitte überprüfen Sie die Verbindung zum Laufwerk "
+resWARNIGNORE "Wenn Sie einen Kopierfehler ignorieren, wird die Datei nicht kopiert. Aus diesem Grund funktioniert die Anwendung möglicherweise nicht ordnungsgemäß. Möchten Sie diesen Fehler ignorieren?"
+resTEMPDRIVE "Das Laufwerk, das in der Umgebungsvariable 'TMP' oder 'TEMP' angegeben ist, ist nicht betriebsbereit."
+resERR_VSHARE "Die Zeile 'device=vshare.386' muß möglicherweise zum Abschnitt [386Enh] der Datei SYSTEM.INI hinzugefügt werden, um eine fehlerfreie Ausführung der neuen Software zu ermöglichen."
+resCANTREADUNC "Netzwerkpfad '|1' kann nicht gelesen werden"
+resCHECKUNC "Bitte stellen Sie sicher, daß der Pfad richtig ist und daß Sie die nötigen Zugriffsrechte haben."
+resCANTFINDAPPREMOVALLOG "Protokolldatei '|1' zum Entfernen von Anwendungen nicht gefunden. Anwendung wird beendet."
+resBADCOMMANDLINE "Ungültige Befehlszeilenargumente. Anwendung wird beendet."
+resCANTFINDAPPREMOVALEXE "Datei '|1' für Programm zum Entfernen von Anwendungen nicht gefunden. Anwendung wird beendet."
+resAPPREMOVALICONNAME "|1 entfernen"
+resCANTREGISTERAPPREMOVER "Fehler beim Registrieren des Programms zum Entfernen von Anwendungen"
+resCANTCREATEAPPREMOVALICON "Fehler beim Erstellen des Programm-Manager-Symbols für das Programm zum Entfernen von Anwendungen"
+resOVERWRITEPRIVATE "Setup wird nun vorhandene Dateien ersetzen. Dies kann möglicherweise zu Datenverlust in vorhandenen Anwendungen führen."
+resOVERWRITEPRIVATE2 "Eine Installation über eine bereits vorhandene Installation, ohne diese zuvor zu entfernen, kann zu einer fehlerhaften Installation führen oder zur Folge haben, daß zukünftige Versuche, die Installation zu entfernen, fehlschlagen."
+resCANCELSETUP "Möchten Sie Setup abbrechen?"
+resCHOOSENEWDEST "Führen Sie Setup bitte erneut aus, und wählen Sie einen neuen Pfad für Anwendungsdateien aus."
+resVERIFYCONTINUE "Sind Sie sicher, daß Sie fortfahren möchten?"
+resERR_REG "Fehler beim Aktualisieren der Registrierungsdatenbank von Windows"
+resMICROSOFTSHARED "Microsoft Shared\\"
+resCANTCREATEPROGRAMGROUP "Fehler beim Erstellen der Programmgruppe '|1'"
+resCANTCREATEPROGRAMICON "Fehler beim Erstellen eines Programmsymbols für '|1'"
+resCANTCOPYLOG "Fehler beim Kopieren von '|1' in das Anwendungsverzeichnis"
+resCANTFINDREGFILE "Datei '1' kann nicht registriert werden, da sie nicht gefunden werden konnte"
+resCANTRUNPROGRAM "Windows kann die Anwendung '|1' nicht ausführen. Ihr System hat möglicherweise nicht genügend Speicher, oder die Anwendung konnte nicht gefunden werden."
+resREMOTELINENOTFOUND "Fehler: 'SETUP.LST' beinhaltet keine Information über die Registrierung von der Remote-Komponente '|1'.  Diese Informationen sollten unter dem Schlüssel '|2' in SETUP.LST eingetragen sein."
+resPROGRAMMANAGER "Programm-Manager"
+resUNEXPECTEDRPCREGDAT "Unerwarteter Fehler beim Erstellen von '|1':"
+resCANTCOPYPATHTOOLONG "Kopieren von Datei nicht möglich, Zielpfad zu lang."
+resCANTCREATEICONPATHTOOLONG "Symbol für Deinstallation kann nicht erstellt werden, Zielpfad ist zu lang."
+resICONMISSING "In SETUP.LST wurde kein Symbol für |1 angegeben. Möchten Sie fortfahren, ohne dieses Symbol zu erstellen? Klicken Sie auf 'Ja', um fortzufahren. Klicken Sie auf 'Nein', um Setup zu beenden."
+
+//
+//Setup1.Frm
+//
+resBADDEFDIR "Setup kann kein gültiges Standardverzeichnis ermitteln. Bitte geben Sie ein Zielverzeichnis an."
+resDISKSPACE "Setup überprüft, ob genügend Speicherplatz verfügbar ist..."
+resPROGMAN "Setup erstellt Programmsymbole..."
+resUPDATING "Setup aktualisiert Ihr System..."
+resNOEXE "Name der ausführbaren Datei der Anwendung kann nicht ermittelt werden"
+resSETUP "|1-Setup"
+resNOSETUPLST "Die Datei SETUP.LST ist beschädigt oder kann nicht gefunden werden"
+resUNEXPECTED "Unerwarteter Setup-Fehler aufgetreten!"
+resNOFOLDERFORICON "Fehler bei Anpassung von Setup: Für |1 muß ein Symbol erstellt werden, es wurde aber kein Ordner oder keine Programmgruppe dafür angelegt"
+resSTILLWITHINACTION "Setup-Fehler:  'CommitAction()' oder 'AbortAction()' fehlt"
+resREMAUTGROUPNAME "Remote-Automatisierung"
+resAUTMGR32ICON "Automatisierungs-Manager"
+resRACMGR32ICON "RemAuto-Verbindungs-Manager"
+resNT4WithoutSP2 "Achtung: Sie sollten Service Pack 2 für Windows NT 4.0 installieren. Diese Anwendung kann andernfalls möglicherweise nicht ordnungsgemäß ausgeführt werden."
+resINSTALLADO "Datenzugriffskomponenten werden installiert..."
+resREBOOT "Sie müssen einen Neustart durchführen, um die Systemeinstellungen zu aktualisieren.\n\nMöchten Sie Ihr System jetzt neu starten?"
+resREBOOTNO "Ihre Anwendung arbeitet möglicherweise erst dann korrekt, wenn Sie Ihr System neu gestartet haben."
+//
+//Common.Bas
+//
+resDISKSPCERR "Fehler beim Ermitteln des verfügbaren Speichers für Laufwerk "
+
+//
+//Forms/Controls Strings
+//
+//resBTNINSTALL "&Install"
+resFRMDIRECTORY "Verzeichnis:"
+resBTNCHGDIR "&Verzeichnis wechseln"
+resBTNEXIT "Setup b&eenden"
+resLBLBEGIN "Starten Sie die Installation, indem Sie auf die Schaltfläche klicken."
+resBTNCANCEL "Abbrechen"
+resLBLDESTFILE "Zieldatei:"
+resBTNINSTALLNOW "&Jetzt installieren"
+resBTNCHGDRV "&Laufwerk wechseln"
+resLBLDRIVE "Laufwerk"
+resLBLAVAIL "Verfügbarer Speicherplatz"
+resLBLNEEDED "Benötigter Speicherplatz"
+resLBLREQUIRED "Erforderlicher Speicherplatz"
+resLBLNOSPACE "Nicht genügend Speicherplatz auf mindestens einem Laufwerk."
+resBTNOK "OK"
+resLBLDRIVES "Lauf&werke:"
+resLBLDIRS "Ver&zeichnisse:"
+resLBLPATH "&Pfad:"
+resLBLRUNNING "Setup kann Systemdateien oder gemeinsame Dateien nicht aktualisieren, wenn Sie bereits verwendet werden. Bevor Sie fortfahren, sollten Sie alle geöffneten Anwendungen schließen."
+resBTNTOOLTIPBEGIN "Klicken Sie hier, um Setup zu starten"
+//
+// Group.Frm
+//
+resGROUPFRM "|1 - Programmgruppe wählen"
+resGROUPLBLMAIN "Setup fügt Elemente zu der im Feld 'Programmgruppe' angezeigten Gruppe hinzu. Sie können einen neuen Gruppennamen eingeben oder einen Namen aus der Liste 'Vorhandene Gruppen' auswählen."
+resGROUPLBLGROUP "&Programmgruppe:"
+resGROUPLBLGROUPS "&Vorhandene Gruppen:"
+resGROUPBTNCONTINUE "&Weiter"
+resGROUPINVALIDGROUPNAME "Der Name einer Progammgruppe darf höchstens |1 Zeichen lang sein und darf keine der folgenden Zeichen enthalten: |2"
+resGROUPINVALIDCHARS """][,)("
+//
+//ServerDt.Frm
+//
+resNETWORKADDRESS "&Netzwerkadresse"
+resNETWORKPROTOCOL "Netzwerk&protokoll"
+resOK "&Weiter"
+resCANCEL "Setup b&eenden"
+resREMOTESERVERDETAILSTITLE "Konfiguration von Remote-ActiveX-Komponenten"
+resREMOTESERVERDETAILSLBL "Geben Sie bitte die angeforderten Informationen zur folgenden Remote-Komponente ein:"
+resNOTEPROTOSEQNOTSUPPORTED "Protokollsequenz |1 (|2) wird nicht unterstützt oder ist auf diesem System nicht vorhanden"
+resNOTEPROTOSEQINVALID "Protokollsequenz '|1' ('|2') ist ungültig"
+resPROTOSEQUNEXPECTEDERR "Unerwarteter Fehler beim Ermitteln der Protokollsequenzen, die auf diesem System verfügbar sind"
+resNOPROTOCOLSINSETUPLST "Setup-Fehler: Fehler beim Lesen der Protokolle aus der Datei SETUP.LST"
+resNOPROTOCOLSSUPPORTED1 "Keines der von dieser Anwendung benötigten Protokolle scheint auf diesem System verfügbar oder installiert zu sein."
+resNOPROTOCOLSSUPPORTED2 "Um Setup erfolgreich auszuführen, müssen Sie zuerst eine der folgenden Netzwerk-Protokollsequenzen installieren: "
+resSELECTEDPROTONOTSUPPORTED "Diese Anwendung kann erst auf die Remote-Komponente '|1' zugreifen, wenn das Protokoll '|2' installiert ist."
+
+resOVERWRITEFORM "Versionskonflikt"
+resOVERWRITEINFO "Eine Datei, die gerade kopiert wird, ist älter als die Datei, die sich momentan auf Ihrem System befindet. Es wird empfohlen, die vorhandene Datei zu behalten."
+resOVERWRITEFILE "Dateiname:	 '|1'"
+resOVERWRITEDESC "Beschreibung:	'|1'"
+resOVERWRITEVER "Ihre Version:	'|1'"
+resOVERWRITEKEEP "Möchten Sie diese Datei behalten?"
+resOVERNOTOALL "Nein für &alle"
+resOVERYES "&Ja"
+resOVERNO "&Nein"
+
+END

@@ -1,0 +1,112 @@
+MICROSOFT软件《最终用户许可协议》
+
+重要需知：请认真阅读──本Microsoft《最终用户许可协议》（以下称《协议》）是您（个人或单一机构团体）与 Microsoft Corporation 之间有关随附本《协议》的Microsoft软件产品的法律协议。本软件产品包括计算机软件并且还可能包括“联机”或电子文档、相关媒体和印刷材料（以下称“软件产品”）。您一旦安装、复制或以其它方式使用本“软件产品”或任何“更新件”（定义见下），即表示您同意接受本《协议》中的条款的约束。如果您不同意这本《协议》中的条款，则您不得安装、复制或以其他方式使用本“软件产品”；但您可以将本“软件产品”退还原购买处并获得全额退款。另外，一旦您安装、复制或以其它方式使用作为本“软件产品”的一部分而分别获得的本“软件产品”的任何更新件或其它组件，即表示您同意接受随附该些“更新件”的任何附加许可条款的约束。如果您不同意随附该些 “更新件”的附加许可条款，则您不得安装、复制或以其它方式使用该“更新件”。
+
+
+软件产品许可证
+
+本“软件产品”受著作权法及国际版权条约和其它知识产权法及条约的保护。本“软件产品”只是被许可使用，而非出售。说明：随附本“软件产品”的印刷《协议》的条款取代任何包含在本“软件产品”中的任何显示在监视器上的《协议》条款。
+1·	软件产品使用的许可
+1·1	一般许可的授予。Microsoft授予您作为个人一份个人的、非独家性的许可证，仅供您为用于设计、开发、及测试您的设计为可与任何Microsoft 操作系统产品一起运行的软件产品。您可在无数量限制的计算机上安装本“软件产品”的副本，但您必须是本“软件产品”的唯一使用者。如果您为一个实体，Microsoft授予您指定您组织内一位人员以以上所规定的方式使用“软件产品“的权利。
+1·2	文档。本《协议》授予您作为个人一份个人的、非独家性的许可证，复制及使用无数量限制的任何文档的副本的权利,条件是这些文档副本只限于个人使用并且不得在用户所在处之外再出版或发行(无论以印刷版或电子版形式)，但下列情况除外：您可使用“软件产品”中的MSDN库部分内所指定的文档作为Microsoft Word、Microsoft Excel、Microsoft Access和/或Microsoft PowerPoint（“文件格式文档”）文件格式规格，将其用于开发与Windows或Windows NT操作系统一起运行而设计的，非通用的文字处理、电子制表、或数据库管理软件产品或是一份集成工作或产品套包，而其组件包括一个或多个通用性文字处理、电子制表、或数据库管理软件产品。说明：包含有限的文字处理、子制表、或数据库组件并包括提供重要和主要价值的其他组件的产品，如具有有限的电子制表功能的会计产品，则不被视为“通用性”产品。
+1·3	储存/网络使用。您还可以将“软件产品”的一份副本存储或安装在一个存储设备上， 如一台网络服务器，将其仅用于在一位被授权的最终用户根据第1·1节中所述在计算机上安装和运行“软件产品”。一份单一的“软件产品”许可证不得与其他最终用户分享或同时使用。
+1·4	 Visual Studio - 《协议》的效用。如果本“软件产品”为Microsoft Visual Studio，即一个开发工具和其软件的套包（每一个工具或软件为一个“组件”），那么本1.4节适用于您。作为“软件产品”的一部分而获得的组件可能包含一份单独的最终用户许可协议（每份为一个“《组件协议》”）。除第七节另规定外，如果本《协议》与任何《组件协议》的条款有差异，本《协议》中的条款为准。
+1·5	 Microsoft Internet Explorer。您可以为您所有拥有有效许可的Microsoft操作系统产品的计算机上复制和使用Microsoft Internet Explorer的副本。
+
+2·	MICROSOFT BACKOFFICE SERVER DEVELOPER EDITION组件。本“软件产品”可能包含某些Microsoft BackOffice Server（统称为“BackOffice组件”）。
+2·1	安装和许可证的授予。BackOffice组件包括可在一台称为服务器的计算机上提供服务的软件程序（“服务器软件”；运行“服务器软件”的计算机被称为“服务器”）并且还包括允许一台计算机或工作站访问或使用“服务器软件”所提供的服务的软件程序（“客户软件”）。您可根据第一节中所述在无数量限制的计算机上制作、使用和安装“服务器软件”和“客户软件”。“服务器软件”所驻的媒体可能包含多份服务器软件版本，每份均与不同的微型处理器体系结构（如x86体系结构或各种不同的RISC体系结构）兼容。在任何时候您只可安装与其中一种体系结构一起使用服务器软件。您不得将“服务器软件”用于支持您的软件产品开发的服务器的软件（如：作为源代码的存储器）。“服务器软件”的所有组件只能在同一台服务器上使用。最多只允许十个同时连接访问服务器的服务。（说明：关于Microsoft SQL Server的有关这项限制的例外规定请见下文第2.2.3节）。
+2· 2	附加权利及限制。
+2·2·1 Microsoft SNA Server。每份许可的SNA Server只允许一位用户使用与SNA Server一起提供的3270和5250终端仿真附加程序和ODBC/DRDA驱动程序。
+2·2·2 Microsoft Exchange Server。 Microsoft Exchange Server 包括Microsoft Schedule+（“Schedule+”）， Forms Designer （“Forms Designer”）及Sample Applications（“Sample Applications”）。Schedule+、Forms Designer及Sample Applications只可与Microsoft客户软件一起安装使用。Microsoft Exchange Server还包括“Source Extractor”软件，用于从其它电子邮件软件中迁移数据，管理器软件和Microsoft Mail Connector软件。“Source Extractor”软件、管理器软件和Microsoft Mail Connector软件包含可能可以安装到额外机器上的组件。Microsoft授予您附加权利更改“Source Extractor”程序的源代码版本。这类程序只可用于向Microsoft Exchange Server迁移数据之用。
+2·2·3 Microsoft SQL Server。无论第1·1节中如何说明，下列附加权利仅适用于BackOffice组件中的Microsoft SQL Server部分：（a)允许最多五位用户访问和使用“服务器软件”，仅限于为设计、开发、及测试您的软件产品之用，并且该软件是为Microsoft SQL Server一起运行而设计的；和(b)无数量限制的同时连接可以访问Microsoft SQL Server所提供的服务。
+
+3·	可再发行代码 - 附加许可权利。除第1节所授予的权利之外，“软件产品”的某些部分，如本第3节中所述，是另加以附加权利而向您提供，条件是您必须遵守第4.1节中的条款。
+3·1	样本代码。Microsoft授予您使用和更改在“软件产品”中的“REDIST.TXT”或其它部分所指定为“样本”的该些“软件产品”源代码版本（“样本代码”），仅作为设计、开发及测试您的软件产品之用，并且还允许您复制和再发行“样本代码”和其任何更改，但只限于以目标代码形式。
+3·2	可再发行代码 - 标准使用。MICROSOFT授予您非独家性的、免版税的权利以目标代码形式复制和再发行“软件产品”的REDIST·TXT中所列的任何部分（“再发行代码”）。说明：某些“可再发行代码”如果还注为“有限使用再发行代码”可能还受第3.3节的限制。
+3·3	可再发行代码 - 有限使用。在您遵守第4.1.3节中的条款的前提下，MICROSOFT授予您非独家性的、免版税的权利以目标代码形式复制和再发行“软件产品”的REDIST·TXT中所列为“有限使用再发行代码”的部分（“有限使用再发行代码”）。
+3·4	可再发行代码 - Microsoft Exchange - 关于样本应用程序和Outlook WebAccess软件使用的说明。
+3·4·1	样本应用程序。在您遵守第4·1·1节的条款的前题下，MICROSOFT授予您非独家性的、免版税的权利使用和更改“样本应用程序”的源代码版本以及随同您使用Microsoft Exchange Server的服务的应用程序，复制和发行该更改后的目标代码版本。
+3·4·2 Outlook WebAccess软件（“OWA软件”）。MICROSOFT授予您非独家性的、免版税的权利使用、定制、复制和发行“OWA软件”，条件是（a)您遵守第4.1.1节中的条款；和(b）您与“OWA软件”附一份最终用户许可协议，在该协议中授予有限的“OWA软件”使用权并且保护Microsoft及其供应商对于“OWA软件”的知识产权。
+3·5	可再发行代码 - Microsoft SQL Server - 关于运行时软件使用的说明。在您遵守第4.1.1节中的条款的前题下， MICROSOFT授予您非独家性的、免版税的权利复制和发行您的使用Microsoft SQL Server软件而制作的应用程序软件产品（“SQL 应用程序”）之中的运行时执行集成应用程序所需的D-B Library、Net Library及ODBC文档（“SQL 运行时文档”），随同并作为您的SQL应用程序的一部分。但如果您SQL应用程序包含ODBC运行时文档：(a)您的SQL应用程序必须与Microsoft SQL Server一同操作； 和(b)您同意将“导读”文件中所列的所有ODBC组件与您的SQL 应用程序一同发行。
+3·6	可再发行代码 - Site Server Software Development Kits (“Site Server SDK软件”)。MICROSOFT授予您非独家性的、免版税的权利的在您处的一台或多台计算机上安装和使用Site Server SDK软件的副本，仅作为设计、开发及测试您的与Microsoft Site Servr 一同操作的应用程序之用。您可更改“Site Server样本代码”以设计、开发及测试您的应用程序。在本第3·6节中，“Site Server样本代码”指在Site Server SDK和“样本”目录中的样本源、HTML和Active Server Pages(ASP)代码。Site Server中的某些部分指定为“可再发行代码” 。“软件产品”的Site Server部分中名为REDIST·TXT和LICENSE·TXT的文字文档描述了每个Site Server可再发行代码文档有关的发行权利。
+3·7	可再发行代码 - SNA Server Development软件。 MICROSOFT授予您非独家性的、免版税的权利在您处的一台或多台计算机上安装和使用VSAM与AS/400的OLE DB Data Provider (“OLE DB Data Provider”)和/或CICS和IMS的COM Transaction Integrator（“COM Transaction Integrator”），仅作为设计、开发及测试您的与Microsoft SNA Server一同操作的应用程序之用。“软件产品”的SNA Server部分的某些部分也被指定为“可再发行代码”。“软件产品”的SNA Server部分中名为REDIST·TXT的文字文档中包括该些文档的清单，以及SNA Server可再发行代码有关的发行权利。
+3·8	可再发行代码 - Visual C++和Visual Studio: Microsoft Foundation Classes (MFC)、 Template Libraries(ATL) 和Cruntimes(CRTs)。如果本《协议》是随附Visual C++或Visual Studio，那么，除了第1节中所授予的权利之外，MICROSOFT授予使用和更改“软件产品”中指定为MFC，ATL或CRTs（总称为“VC可再发行产品”）的源代码版本部分的权利，仅作为设计、开发及测试您的软件产品之用。在您遵守第4·1节并且重新命名任何由您制作的包括在许可产品（定义见下）中的文档，MICROSOFT授予您非独家性的、免版税的权利复制和发行“VC可再发行产品”的目标代码版本（包括任何您所做的更改）。在本节中，“更改”一词指增加“VC可再发行产品”的功能。
+
+4·	 发行规定；许可证限制。
+4·1	一般规定。本“软件产品”可能包含至到三类的可再发行代码，而您为其的再发行必须遵守以下规定。
+4·1·1	可再发行代码 - 标准。如果您被授权并选择以第3节中所述再发行“样本代码”、可再发行代码、有限使用再发行代码、样本应用程序和/或SQL运行时文档（总称为“可再发行产品”），您同意（a）仅以目标代码形式与您的应用程序一起或作为您的软件应用程序的一部分发行“可再发行产品”；您的软件应用程序必须是由您使用随附本《协议》的产品而制作的并为“软件产品”增加了重要的和主要的功能（“许可产品”）；（b）不使用Microsoft的名称、标识或商标推销“许可产品”；（c）在“许可产品”中包含一份有效的版权说明；(d）就使用或发行“许可产品”而发生或引起的索赔或诉讼（包括律师费）赔偿Microsoft，并使其免受任何损害和为其提供辩护；(e)在您的程序中使用的所有的“MicrosoftSystems Journal”（MSJ）编码中包括“版权<年>Microsoft Systems Journal”；(f)遵守本《协议》中的条款；和 (g)同意Microsoft保留所有在此未明确授予的权利。您还同意不允许您的最终用户进一步发行“可再发行产品”，但以下例外：（1）如果您的经销商只将“可再发行产品”与“许可产品”一起并作为“许可产品”的一部分发行，且您和您的经销商遵守本《协议》的所有其它条款，则您可以允许您的经销商向您的最终用户客户再发行“可再发行产品”，和（2）根据第4·1·2·节中所述的形式。
+4·1·2	可再发行代码 - 扩展的使用。Visual Basic、Visual C++、Visual J++和Visual Studio。如果本《协议》是随附本分节标题所列的任何Microsoft产品，您可以允许您的最终用户复制和发行本“软件产品”某些部分的目标代码版本（在REDIST·TXT中列为“扩展使用再发行代码”），仅与一个“许可产品”和/或网页一起并作为“许可产品”和/或网页的一部分，条件是“许可产品”和网页必须为“扩展再发行代码”加重要的和主要的功能。（说明：以上许可证不适用于指定为Dbgrid.ocx和Graph32.ocx的文档）。您被授予以上权利的条件是 ：
+(a) 您遵守第4·1·1节中的条款，和
+(b) 您的最终用户同意： （i）仅以目标代码的形式并与它们开发的一个软件应用程序一起或作为其一部分而发行“扩展使用再发行代码”；而且该软件应用程序为“扩展使用再发行代码”加重要的和主要的功能；(ii) 不使用Microsoft的名称、标识或商标推销“最终用户应用程序”；(iii)在“最终用户应用程序”内包括一份有效的版权说明；(iv) 就使用或发行“最终用户应用程序”而发生或引起的索赔或诉讼（包括律师费）赔偿Microsoft，使其免受任何损害和为其提供辩护；和(v)不允许“最终用户应用程序”的用户进一步发行“扩展使用再发行代码”。
+4·1·3	可再发行编码 - 有限使用。如果您被授权并选择再发行“有限使用可再发行代码”，除第4·1·1节中的条款外，您还必须遵守下列条款（以适用于在REDIST·TXT中指出为“有限使用可再发行代码”的相应的“软件产品”部分）。
+4·1·3·1 “Jet”文档。如果您再发行“Jet文档”（在“软件产品”指定的），您同意遵守下列附加规定： (a)您的“许可产品”不得大量的重复Microsoft Access的功能，或（在Microsoft合理的意见内）与其有竞争性；并且(b)除非您的“许可产品”要求您的顾客被授权使用Microsoft Access方可操作，您不得复制或使用任何“Jet文档”，将其与通用文字处理、电子制表或数据库管理的软件产品，或作为一份该组件包括通用文字处理、电子制表或数据库管理软件产品的集成工作或产品套包，一起作商业性发行，但将其专门用作向Microsoft Access支持的格式迁移数据则属例外。注意：一件除包括有限的文字处理、电子制表或数据库组件并包括提供重要和主要价值的其他组件的产品，如具有有限电子制表功能的会计产品，不被视为“通用”产品。
+4·1·3·2 Microsoft Data Access组件。如果您再发行名为MDAC_TYP·EXE的Microsoft Data Access组件文档，您还同意仅以目标代码形式与您使用Microsoft开发工具产品开发的“许可产品”一起或作为其一部分而再发行该文档；而且该“许可产品”必须为MDAC_TYP·EXE加以重要的和主要的功能。
+
+5·	 MICROSOFT WINDOWS NT OPTION PACK组件。
+无论本《协议》中另有规定，仅就指定为MICROSOFT WINDOWS NT OPTION PACK组件的“软件产品”部分而言，下列条款有效。请注意当您使用MICROSOFT WINDOWS NT OPTION PACK组件时(a)您必须已获得一份有效的某些MICROSOFT操作系统或服务器产品的许可证副本；和(b)在本第5节中所有定义的词语指在本节相关段落中所提到的WINDOWS NT OPTION PACK组件的最终用户协议中所定义的词语（所有这些词语将用括号注明）：
+5·1	如果您将软件组件作为Microsoft Windows NT Server 4.0、Microsoft Windows NT Server Enterprise Edition 4.0或Microsoft BackOffice2.5的一部分使用，下列条款适用于您：
+
+说明：如果您没有有效的Microsoft Windows NT Server 4.0、Microsoft Windows NT Server Enterprise Edition 4.0或Microsoft BackOffice 2.5的许可证，则您不被授予安装、复制或以其它方式使用Windows NT的软件组件。在本第5·1节中，“Windows NT软件组件”指下列软件组件：Microsoft Message Queue Server, Microsoft Transaction Server, Microsoft Internet Information Server和Microsoft Remote Access Service的Internet连接服务。除非本节中的其它段落另有规定外，即使您有使用“Windows NT软件组件”的权利，您也没有权利安装、复制或以其它方式使用其它WINDOWS NT OPTION PACK组件。
+5·1·1	一般规定。“Windows NT软件组件”包括服务器软件和客户软件，这些软件分别被视为相关的Microsoft Windows NT Server 4.0（作为独立产品或作为Microsoft BackOffice的组件）或Microsoft Windows NT Server Enterprise Edition4.0中的[服务器软件]和[客户软件]的一部分。除在此另有规定之外，如果您有一份有效的Microsoft Windows NT Server 4.0、Microsoft Windows NT Server Enterprise Edition 4.0或Microsoft BackOffice2.5（每个分别称为[软件产品]） 许可证，则您有权根据有关产品的相关《协议》中的条款和条件使用“Windows NT软件组件”。
+5·1·2	关于Microsoft Windows NT Server──客户访问。除目前有关《协议》中所列的[客户访问]规定之外，您需要获得一份单独的Windows NT Server[客户访问许可证]方可访问或以其它方式使用下列Windows NT Server基本网络/应用程序服务或[服务器软件]组件：Microsoft Message Queue Server（从Microsoft Message Queue Server接、送邮件）、Microsoft Transaction Server（启用由Microsoft Transaction Server管理的基于组件的应用程序）和Remote Access Service（通过一个通讯链远程访问服务器）。说明：“Remote Access Service”包括使用Internet连接服务，包括Internet Authentication Services（验证或转送远程访问请求）或Connection Point Services（为加新电话号码或其它数据而远程配置Microsoft Connection Manager Client）。性能和基准测验。未经Microsoft事先书面允许，您不得将Microsoft Message Queue Server、Microsoft Transaction Server或Microsoft Internet Information Server的[服务器软件]或[客户软件]的基准测验的结果透露给任何第三方。安装在单一一台[服务器]上。除在此另有规定外，组成有关[软件产品]的[服务器软件]组件，只可一起安装在一台[服务器]上使用，不得分开。关于Microsoft Site Server Express的说明。您可为您组织内的任何计算机自由复制和发行Microsoft Site Server Express以供您使用。
+5·1·3	关于Microsoft Internet Information Server-使用。尽管有关《协议》另有规定，您不需要一份单独[客户访问许可证]即可访问或以其它方式使用Microsoft Internet Information Server的服务，除非Microsoft Internet Information Server访问或以其它方式使用需要[客户访问许可证]方可使用的[服务器]或[服务器软件]组件。
+5·1·4	附加权利和限制。您还有权复制额外的Windows NT软件组件，只要这些副本的数目与您拥有的有效许可的每个[软件产品]副本的数目相同，并根据上文所述而使用即可。
+
+如果您没有有效的Microsoft Windows NT Server 4.0、Microsoft Windows NT Server Enterprise Edition 4.0或Microsoft BackOffice2.5的许可证，您在上述分节中无任何权利。
+5·2	如果您将“软件组件”作为Microsoft Windows NT Workstation 4.0的一部分使用，下列条款适用于您：
+
+说明：如果您没有有效的Microsoft Windows NT Workstation 4.0的许可证，则您无权安装、复制或以其它方式使用Windows NTWorkstation软件组件。在本第5·2节中，“Windows NT Workstation软件组件”指下列软件组件：Microsoft Transaction Server和Microsoft Personal Web Server。除非本节中的其它段落中另有规定，即使您有权使用“Windows NT Workstation软件组件”，您也无权安装、复制或使用任何其它软件组件。
+5·2·1	一般规定。除非在此另有规定，“Windows NT Workstation软件组件”被视为Microsoft Windows NT Workstation 4.0([ 软件产品])的一部分。应此受其《协议》中的条款和条件的约束。使用限制。在任何时候，只允许两（2）台计算机[而不是十（10）台]使用Microsoft Transaction Server组件的服务。最多限度的两（2）台计算机包括任何通过组合或集合使用的软件或硬件的间接使用。性能或基准测验。未经Microsoft事先书面允许，您不得将任何“Windows NT Workstation软件组件”的基准测验的结果透露给任何第三方。
+5·2·2	附加权利和限制。您还有权复制额外份的“Windows NT Workstation软件组件”，只要这些副本的数目与您拥有的有效许可的Microsoft Windows NT Workstation 4.0副本的数目相同，并根据上文所述而使用即可。
+如果您没有有效的Microsoft Windows NT Workstation 4.0的许可证，您在上述分节无任何权利。
+5·3	如果您将软件组件作为Microsoft BackOffice Small Business Server 4.0的一部分使用，下列条款适用于您：
+
+说明：如果您没有有效的Microsoft BackOffice Small Business Server 4.0的许可证，则您无权安装、复制或以其它方式使用Windows NT软件组件（如前文第5·1节中所定义的）。除非本节中的其他段落另有规定，即使您有权使用“Windows NT软件组件”，您也无权安装、复制或以其他方式使用任何其它软件组件。
+
+5·3·1	一般规定。“Windows NT软件组件”包括服务器软件和客户软件，这些软件分别被视为相关的Microsoft BackOffice Small Business Server 4.0中的[服务器软件]和[客户软件]的一部分，因此受其《协议》中的条款和条件的约束，除非在此另有说明。关于Microsoft Site Server Express的说明。您可为您组织内的任何计算机自由复制和发行Microsoft Site Server Express以供您使用。
+5·3·2	附加权利和限制。您还有权复制额外份的“Windows NT软件组件”，只要该些副本的数目与您拥有的有效许可的Microsoft BackOffice Small Business Server 4.0副本的数目相同，并根据上文所述使用即可。
+如果您没有有效的Microsoft BackOffice Small Business Server4.0许可证，您在上述分节中无任何权利。
+5·4	如果您将软件组件作为 MICROSOFT WINDOWS 95的一部分使用，下列条款适用于您：
+
+说明：如果您没有有效的 MICROSOFT WINDOWS 95许可证，则您无权安装、复制或以其它方式使用WINDOWS 95软件组件。在本第5·4节中，“WINDOWS 95软件组件”指下列软件组件：Microsoft Personal Web Server和 适用于Windows 95的Microsoft Transaction Server。除非本节其它段落中另有规定，即使您有权使用Windows 95软件组件，您也无权安装、复制或使用任何其它软件组件。
+5·4·1	一般规定。除非在此另有规定，Windows 95软件组件被视为Microsoft Windows 95[软件产品]的一部分，因此受其《协议》中的条款和条件的约束。
+5·4·2	使用限制。在任何时候，只允许十（10）台计算机使用Microsoft Personal Web Server组件的服务。最多限度的十（10）台计算机包括任何通过组合或集合使用的软件或硬件的间接使用。适用于Windows 95的Microsoft Transaction Server的组件不可作为网络服务器使用，即，任何计算机或工作站不可访问或使用该组件的任何网络服务。
+性能或基准测验。未经Microsoft事先书面允许，您不得将任何Windows 95软件组件的基准测验的结果透露给任何第三方。
+5·4·3	附加权利和限制。您还有权复制额外份的Windows 95软件组件，只要该些副本的数目与您拥有的有效许可的Microsoft Windows 95副本的数目相同，并根据上文所述使用即可。
+
+如果您没有有效的Microsoft Windows 95许可证，您在上述分节中无任何权利。
+
+6·	其它权利和限制的说明
+6·1	非再销售性软件。如果本“软件产品”标明为“非再销售品”或“NFR”，您不得再销售或对本“软件产品”作有偿转让。
+6·2	对反向工程、反向编译、反汇编的限制。您不可对本“软件产品”进行反向工程、反向编译或反汇编；尽管有这项限制，如果适用法律明示允许上述活动，则不在此限。
+6·3	租借。您不可出租、租赁或出借“软件产品”。
+6·4	商标。本《协议》不授予您有关任何Microsoft商标或服务商标的权利。
+6·5	支持服务。Microsoft 可能为您提供与本“软件产品”有关的支持服务（“支持服务”）。支持服务的使用受用户手册、“联机”文档和/或其它Microsoft提供的材料中所述的Microsoft政策和计划的制约。任何提供给您的作为支持服务的一部分的附加软件代码均属于本“软件产品”的一部分，受本《协议》的各项条款和条件的制约。对于您提供给Microsoft作为支持服务的一部分的技术信息，Microsoft可将该信息用于其商业用途，包括产品支持和开发之用。Microsoft在使用这些技术信息时不会以个人形式提及您。
+6·6	软件转让。本“软件产品”的首位用户仅可将本《协议》和“软件产品”一次永久性的直接转让于一位最终用户。该转让必须包括全部“软件产品”（包括所有组件、媒体和印刷材料、任何升级版本、本《协议》及真品证书（如适用的话））。该转让不得以委付或其他非直接形式的转让。该一次性转让的受让人必须同意本《协议》的各项条款，包括不再转让本《协议》和“软件产品”的义务。
+6·7	组件分隔。本“软件产品”作为一个单一产品授权。其组成部分不得分开被一位以上的用户使用。
+6·8	生产使用。“软件产品”的BackOffice组件只可用于开发目的，而不得用于生产环境中。
+6·9	版本限制。BackOffice组件的服务器软件部分包括一个版本号（如“3.5”版本）。本《协议》允许您在一台单独的计算机上安装一份版本号与上文所列服务器软件版本号相同（或更低的）的服务器软件副本（例如：如果所列的版本号为“3.5”，您可安装包含版本号为“3.5”或“2.0”的服务器软件，但不得安装包含版本号为“3.6”的服务器软件）。
+6·10	性能或基准测试。未获Microsoft 事先书面同意，您不可将Microsoft SQL Server、Microsoft Exchange Server 、Microsoft Transaction Server、Microsoft Message Queue Server、Microsoft  Site Server、Microsoft Proxy Server或Microsoft Internet Information Server的服务器软件或客户软件的任何基准测试结果透露给任何第三方。
+6·11	终止。如您未遵守本《协议》的各项条款和条件，在不损害其它权利的情况下，Microsoft 可将本《协议》终止。如发生此种情况，则您必须销毁所有“软件产品”的副本及其全部组件。
+
+7·	预发行代码。“软件产品”某些部分可能标为预发行代码（“预发行代码”）。该“预发行代码”没有最终普通发行的产品同等的性能和能量的水平。“预发行代码”可能不会正确的运行，还可能在首次商业发行前做大量修改。Microsoft没有义务将这个或任何更新版本的“预发行代码”作商业发行。使用“预发行代码”的许可证在Microsoft开始商业发行“预发行代码”时终止。说明：如果该“预发行代码”包含一份单独的最终用户许可协议，您对“预发行代码”的使用应受该最终用户许可协议中的条款和条件的约束。
+
+8·	升级版本。如果本“软件产品”注明为升级版本，为了使用本“软件产品”，您必须获得使用Microsoft 标明有资格使用升级版本的产品的适当许可证。标明为升级版本的“软件产品”替换和/或补充使您有资格使用升级版本的基础的产品。您只可根据本《协议》中的条款使用升级后的“软件产品”。如本“软件产品”是您获得许可作为单一产品使用的一套软件包内的组成部分的升级版本，则本“软件产品”只可作为该单一产品包的一部分使用和转让，且不可将其分开在一台以上的计算机上使用。
+
+9·	著作权。 “软件产品”（包括本“软件产品”中所含的任何图象、照片、动画、录像、录音、音乐、文字及“附加程序”）、随附的印刷材料及 “软件产品” 的任何副本的所有权和知识产权，均由Microsoft 或其供应商拥有。通过使用“软件产品”可以访问的内容的一切所有权和知识产权均属于各自内容所有者拥有，并可能受适用著作权或其它知识产权法律和条约的保护。本《协议》不授予您使用这些内容的权利。所有未在此明示授予的权利均由Microsoft保留。
+
+10·	出口限制。您同意不将本“软件产品”或其任何部分或作为软件产品直接结果的任何程序或服务（上述所有项统称“限制组件”）出口或转口给任何受到美国出口限制的国家、个人、实体或最终用户。您特别同意不将任何 “限制组件”出口或转口给(i)受美国物品或服务禁运或出口限制的任何国家，这些国家目前包括，但不必限于，古巴、伊朗、伊拉克、利比亚、北朝鲜、苏丹和叙利亚，或无论位于何处但企图将限制组件发回或运回任何上述国家的国民；（ii）您知道或有理由知道会将该限制组件用于设计、开发或生产核子、化学或生物武器的任何最终用户；或（iii）被任何美国联邦政府机构禁止参与美国出口交易的任何最终用户。您保证并声明无论BXA或任何其他美国联邦机构都没有暂停、吊销或拒绝过您的出口特权。
+
+11·	JAVA支持说明。本“软件产品”可能包括用JAVA编制的程序的支持。JAVA不是容错的也不是作为用于或者转售于需有故障自动防护性能的在危险环境使用的联机控制设备而设计、制造或准备的，诸如核子设施、飞机导航或通信系统、航空中交通控制、直接生命保障系统或武器系统的运行。在这些环境中，JAVA技术的故障可能直接导致人员伤亡或严重人体或环境的损害。
+
+其他规定
+本《协议》受中华人民共和国法律管辖。
+如您对本《协议》有任何疑问，或因任何原因要与Microsoft接触，请与 Microsoft联系或写信给：Microsoft Sales Information Center/One Microsoft Way/Redmond, WA 98052-6399，U.S.A.
+
+有限保证
+有限保证。除“可再发行组件”之外，而其是以“即此”形式无任何保证提供，Microsoft 保证如下：
+（ａ）本“软件产品”自收货之日九十日内实际符合随附书面材料所述运行，和（ｂ） Microsoft提供的任何支持服务实际符合Microsoft提供给您的有关书面材料内所述而Microsoft支持工程师将在商业上合理的范围内尽力解决任何问题。在适用法律允许的范围内，就“软件产品”的默示保证（如果有的话），应限为90天内。某些国家/管辖区不允许限制保证的期限，因此以上限制可能不适用于您。
+顾客所享有的补偿。Microsoft及其供应商的全部责任以及您所享有的唯一补偿为下列两者之一（以何种为准，由Microsoft全权决定）：(a) 退还您已付的价款（如有的话），或(b) 修正或更换不符合Microsoft 有限保证的“软件产品”，但您须将“软件产品”连同您所持有的发票副本一同退还Microsoft。如“软件产品”的失灵是由于因意外事故、不当使用或错误操作所引起的，则本有限保证无效。经更换的任何“软件产品”的保质期限为原保质期限的剩余期限或三十天（以较长者为准）。在美国境外必须提供授权国际供应商的购买收据，Microsoft方可提供的上述补偿和任何产品支持服务。
+无其它保证。在适用法律所允许的最大范围内，Microsoft及其供应商否认其他明示或默保证和条件，其中包括（但不限于）对“软件产品”的适销性、适用性、所有权或无侵权的默示保证以及提供或未提供支持服务的保证。本有限保证给您特定的法律权利，根据各国家/管辖区的不同，您可能还有其它权利。
+赔偿限制。
+在适用法律所允许的最大范围内，Microsoft或其供应商在任何情况下绝不就因使用或不能使用软件产品或就未提供支持服务所发生的任何特殊、意外、非直接或间接的损害（包括，但不限于营业利润损失、营业中断、商业信息的遗失或其他金钱上的损失）负赔偿责任，即使Microsoft事先被告知该损害发生的可能性。不论任何情况，Microsoft依本《协议》任何条款所负的全部责任限于您就“软件产品”所实际已付的价款或美元$5·00，两者之间取其较高数额。但是，如果您已经与Microsoft签订了支持服务协议，Microsoft就支持服务的全部赔偿责任应受该协议条款制约。因为某些国家/管辖区不允许排除或限制赔偿责任，以上限制可能不适用于您。

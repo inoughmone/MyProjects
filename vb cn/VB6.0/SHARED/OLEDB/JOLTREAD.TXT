@@ -1,0 +1,118 @@
+----------------------------------------------------------
+Microsoft(R) OLE DB Provider for Jet version 3.52 自述文件
+----------------------------------------------------------
+
+(c) 1998 Microsoft Corporation。保留所有权力。
+
+本文档提供了 Microsoft OLE DB Provider for Jet 文档中没有包括的最新或其他的信息。
+
+----
+目录
+----
+
+1. 产品说明
+
+2. 新特性
+
+3. 技术说明
+
+4. 已知的错误、限制和工作环境
+
+-----------
+1. 产品说明
+-----------
+Microsoft OLE DB Provider for Jet 是数据的本地 OLE DB 提供者，数据以 Microsoft Access 使用的 .mdb 文件
+格式存放。使用本地 OLE DB 提供者，可以不再依赖于 Microsoft Access ODBC Driver 来读写 Microsoft Access 
+数据库中的数据。
+
+---------
+2. 新特性
+---------
+Microsoft OLE DB Provider for Jet 新版本准许使用与查询中参数标记有关的 ANSI 标准语法。旧版的提供者只支
+持由方括号中的参名组成的 Microsoft Jet-专用参数标记语法，其中参数名是可选项。
+
+例如：parameters parm1 text; select * from Table1 WHERE col1 = [parm1];
+
+当参数标记是问号“?”时，新版的提供者也支持 ANSI 语法。例如：...WHERE col1 = ? 
+
+新版的 Microsoft OLE DB Provider for Jet 准许用 ANSI 语法通配符（“%” 和“_”）替代 Jet-专用语法通配符
+（“*” 和“?”）。例如，假设有一查询，要求返回所有起始字母为“A”的列的数据。在旧版本中，限制条件被写
+为“...WHERE col1 LIKE("A*")”，而在新版中则改为“...WHERE col1 LIKE("A%")”。请注意，如果查询仍使用旧
+的、非 ANSI 标准语法，则不再返回相同的行集。
+
+-----------
+3. 技术说明
+-----------
+如果已预先创建了访问 Microsoft Access .mdb 文件的 OLE DB 应用程序，则应用程序使用的是 Microsoft Access 
+ODBC Driver。然而，现在可以用 Microsoft OLE DB Provider for the Microsoft Access Jet 数据库引擎来创建更
+有效的应用程序。
+
+用 Microsoft OLE DB Provider for Jet 提供的新特性，可以在访问 Microsoft Access 数据库文件时，旁路“打开
+数据库连接”(ODBC) 层。这意味着您不需要创建数据源名称 (DSN) 文件，ODBC 需用 DSN 来将数据源映射到基本数
+据库软件。 
+
+要连接 Microsoft Access 数据库，必须在您的程序中预先创建和引用 DSN。例如，下例程序用建立与 Microsoft 
+Access 数据库的连接：
+
+设置 cnnConn = Server.CreateObject("ADODB.Connection")
+cnnConn.Open "DSN=PayRollData;UID=SnrAccnt;pwd=Accnt1"
+
+然而，使用 Microsoft OLE DB Provider for Jet，可以直接访问 Microsoft Access 数据库文件。下列打开数据
+库连接不涉及到 DSN：
+
+ADOConnection.Provider = "Microsoft.JET.OLEDB.3.51"
+ADOConnection.Properties("user id") = "admin"
+ADOConnection.Properties("password") = ""
+ADOConnection.Properties("data source") = "d:\payroll\raises.mdb"
+ADOConnection.Open
+
+继续支持使用 Microsoft Access ODBC Driver 的应用程序。然而，可以选择将现存应用程序从 Microsoft Access 
+ODBC Driver 转换到 Microsoft OLE DB Provider for Jet。   
+
+如果通过 Microsoft OLE DB Provider for Jet 需要访问安全数据库，可能必须设置上述所列的附加信息。要指定
+数据库密码（而不是用户密码），需要在 ADO 连接对象（如上所示）上设置属性“Jet OLEDB:Database Password”。
+进一步，如果需要指定一特殊系统数据库，则应该使用“Jet OLEDB:System database”。
+
+请注意，Microsoft OLE DB Provider for Jet 中打开数据库的默认方式为只读型式。如果 .mdb 文件是在只读文件
+系统中，使用默认设置打开数据库的操作将失败。只能在只读方式下打开这些数据库。
+
+-----------------------------
+4. 已知的错误、限制和工作环境
+-----------------------------
+如果选择转换应用程序，则必须了解两种提供者访问方法之间的不同特性。特别指出，新版的 Microsoft OLE DB 
+Provider for Jet 不支持下述特性：
+
+* ODBC 为调用内部函数指定的规范语法。
+* 通过 Microsoft Jet 可安装的 ISAMs 访问数据库或文件而不是本地 Microsoft Jet 数据库（例如：Excel、
+dBase、Text 等）。
+* 创建存储查询的能力，有时也会涉及到存储程序。
+
+可安装的 ISAM 支持
+
+目前尚不支持直接使用 Microsoft OLE DB Provider for Jet 而不是本地 Jet 数据库来访问数据。如果您必须从
+应用程序访问外部数据，您能够并应该继续使用 Microsoft OLE DB Provider for ODBC data，直到发布下一个 
+Microsoft OLE DB Provider for Jet data 版本。本提供者将对 MDAC 2.1 有效。
+
+存储程序支持
+
+必须首先在 Access 中创建 Microsoft OLE DB Provider for Jet 使用的存储程序 Querydefs。本版程序中，没有
+用来直接创建存储程序的程序。
+
+
+下面列出了 Microsoft OLE DB Provider for Jet 3.52 已知错误。
+
+当改变处于暂挂时，IRowsetUpdate::GetOriginalData 将在新插入行时失败。
+--------------------------------------------------------------------
+当处于暂挂的改变尚未处理时，IRowsetUpdate::GetOriginalData 将在新插入行时失败。当检索新插入列的原始值
+时，Jet 3.5 Engine 本身并不对其进行处理。因此，OLE DB 提供者不能支持此函数。
+
+用 JET 改变“行集属性”主题。
+----------------------------
+对于 Jet 3.52，为在强制漂移条件下反映返回行集的实际属性，可以改变用来创建行集的预先设置属性。例如，使
+用 ICommand::SetProperties 或 IOpenRowset::OpenRowset 将 DBPROP_BOOKMARK 属性设置为 VT_FALSE（与 
+DBPROPOPTIONS_REQUIRED 一起），然后取回实际带有书签的行集，他们由强制 Jet 创建行集类型产生。Jet 将以不
+同的属性返回行集，而不会在返回行集时完全失败。
+
+这样的实际效果将导致一些 OLEDB API 返回额外的信息。例如，IColumnsInfo::GetColumnsInfo 可能返回不期望的
+额外的书签列条目。
+

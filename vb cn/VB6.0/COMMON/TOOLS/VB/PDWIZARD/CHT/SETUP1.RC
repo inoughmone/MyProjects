@@ -1,0 +1,207 @@
+#include "setupres.h"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+
+//
+//Common with bootstrapper
+//
+#include "commonrc.rc"
+
+//
+// Global Font settings for Setup1 project.  To override,
+// set font properties in code after Form_Load.
+//
+resFONTNAME "新細明體"	// Don't translate this
+resFONTSIZE "9"			// Don't translate this
+resFONTBOLD "False"  		// Don't translate this
+resFONTNAMEBACKUP1 "細明體"	// Don't translate this
+resFONTNAMEBACKUP2 "System"	// Don't translate this
+
+//
+//Global
+//
+resSETMSG "安裝訊息"
+
+//
+//frmBegin
+//
+resSPECDEST "按一下此按鈕來安裝 |1 軟體到指定的目錄上。"
+resSPECNODEST "按一下此按鈕來安裝 |1 軟體到您的電腦上。"
+
+//
+//frmWelcome
+//
+resWELCOME "歡迎使用 |1 安裝程式。"
+
+//
+//frmPath
+//
+resSRCPROMPT "請輸入包含 |1 來源檔的磁碟機或路徑名稱。"
+resDESTPROMPT "請輸入或選取目的目錄。"
+resDESTDIR "目的目錄:"
+resCREATE "不存在。您希望安裝程式自動建立此目錄嗎?"
+resCHANGEDIR "變更目錄"
+resINSTFROM "安裝自"
+
+//
+//Setup1.Bas
+//
+resCALCSPACE "計算所需的磁碟空間時，發生錯誤。"
+resDRVREAD "無法讀取磁碟機 "
+resDRVCHK "請確定磁片已放入磁碟機中，而該磁片已格式化且沒有問題。"
+resCANTOPEN "無法開啟檔案:"
+resCANTREAD "無法讀取檔案:"
+resCANTWRITE "無法寫入檔案:"
+resCHKSPACE "請確定目的磁碟機有足夠的空間。"
+resMAKEDIR "無法建立目錄:"
+resASKEXIT "您確定要離開嗎?"
+resINTERRUPTED "|1 的安裝過程在完成前被中斷。"
+resCANRUN "您可以稍後再執行 |1 安裝程式，來完成安裝手續。"
+resINCOMPLETE "安裝尚未完成。"
+resQUITNOW "如果您現在離開，本產品將無法成功安裝。"
+resQUITSETUP "您要結束本產品的安裝嗎?"
+resSUCCESS "|1 安裝成功。"
+resERROR "|1 安裝不成功。"
+resALLOCUNIT "決定下列磁碟機配置單位時，發生錯誤: 磁碟機 "
+resSAMEASSRC "是安裝來源檔所在的目錄。請輸入其它的目錄。"
+resNOCREATE "無法建立檔案:"
+resNOTPROTECT "請確定目的磁碟機沒有防寫保護。"
+resINSERT "請將標示下列標籤的磁片:"
+resDISK "「磁片 "
+resINTO "」插入磁碟機 "
+resSECTNAME "區段:  "
+resINVLINE "安裝資訊檔中，包含不正確的敘述行!"
+resDIRSPECIFIED "指定的目錄:"
+resDIRINVALID "不正確、不完整、或無法寫入。請輸入包含磁碟機字元的完整路徑，例如「C:\\APPS」。"
+resNOTEXIST "指定的目錄不存在!"
+resDIRINVNAME "不正確的目錄名稱"
+resWRITEPROT "目的檔案具有防寫保護。"
+resINUSE "目的檔案正被使用中。請確定其它的應用程式已經關閉。"
+resOUTOFSPACE "下列磁碟機空間不足: 磁碟機 "
+resACCESSVIOLATION "複製檔案時，發生存取錯誤。"
+resSHARINGVIOLATION "複製檔案時，發生共用錯誤。"
+resOUTOFMEMORY "記憶體不足，無法複製檔案。"
+resCANNOTCREATE "無法建立暫存檔。"
+resCANNOTDELETE "無法刪除已存在的目的檔。"
+resCANNOTRENAME "無法重新命名暫存檔。"
+resCANNOTREADSRC "無法讀取來源檔。"
+resCANNOTREADDST "無法讀取目的檔案的屬性。"
+resBUFFTOOSMALL "內部複製錯誤。"
+resNOINSTALL "  此檔案無法被安裝。"
+resCHKCONNECT "請檢查與下列磁碟機的連線: 磁碟機 "
+resWARNIGNORE "如果您忽略檔案的複製錯誤，則該檔案將不會被複製，但應用程式可能會無法正確地執行。您想要忽略此錯誤嗎?"
+resTEMPDRIVE "「TMP」或「TEMP」環境變數所指定的磁碟機尚未就緒。"
+resERR_VSHARE "為了確保您的新軟體能夠正常地執行，您必須在 SYSTEM.INI 檔中的 [386Enh] 區加入一行「device=vshare.386」。"
+resCANTREADUNC "無法讀取網路的路徑「|1」。"
+resCHECKUNC "請確定此路徑是正確的，並且您有足夠的存取權。"
+resCANTFINDAPPREMOVALLOG "找不到應用程式的移除記錄檔:「|1」。無法繼續。"
+resBADCOMMANDLINE "不正確的命令列參數。無法繼續。"
+resCANTFINDAPPREMOVALEXE "找不到應用程式的移除程式「|1」。無法繼續。"
+resAPPREMOVALICONNAME "移除 |1"
+resCANTREGISTERAPPREMOVER "註冊此應用程式的移除程式時，發生錯誤。"
+resCANTCREATEAPPREMOVALICON "建立應用程式移除公用程式的圖示時，發生錯誤"
+resOVERWRITEPRIVATE "安裝程式將會置換某個已存在的檔案。這可能會導致現存應用程式的資料遺失。"
+resOVERWRITEPRIVATE2 "在尚未移除原安裝好的應用程式前，就進行重複安裝，可能會發生安裝錯誤或導致日後無法移除。"
+resCANCELSETUP "取消安裝嗎?"
+resCHOOSENEWDEST "請重新執行安裝程式，並為應用程式選取新的安裝位置。"
+resVERIFYCONTINUE "您確定要繼續嗎?"
+resERR_REG "更新 Windows 註冊資料庫時，發生錯誤。"
+resMICROSOFTSHARED "Microsoft Shared\\"
+resCANTCREATEPROGRAMGROUP "建立程式群組「|1」時，發生錯誤"
+resCANTCREATEPROGRAMICON "建立「|1」的圖示時，發生錯誤"
+resCANTCOPYLOG "複製「|1」到應用程式目錄時，發生錯誤"
+resCANTFINDREGFILE "找不到檔案「|1」，因此無法註冊。"
+resCANTRUNPROGRAM "程式「|1」無法執行。可能是系統記憶體不足或找不到該程式。"
+resREMOTELINENOTFOUND "錯誤:「SETUP.LST」中沒有包含關於如何註冊遠端元件「|1」的資訊。SETUP.LST 中的「|2」機碼應提供此資訊。"
+resPROGRAMMANAGER "程式管理員"
+resUNEXPECTEDRPCREGDAT "建立「|1」時，發生無法預期的錯誤:"
+resCANTCOPYPATHTOOLONG "無法複製檔案，目地路徑的名稱太長了。"
+resCANTCREATEICONPATHTOOLONG "無法建立解除安裝的圖示，目地路徑的名稱太長了。"
+resICONMISSING "SETUP.LST 中並沒有指定 |1 的圖示。您要在沒有建立此圖示的情況下繼續嗎? 請按一下「是」繼續，或按一下「否」離開安裝程式。"
+
+//
+//Setup1.Frm
+//
+resBADDEFDIR "安裝程式無法確定預設安裝目錄，您必須指定一個安裝目錄。"
+resDISKSPACE "安裝程式正在檢查所需的磁碟空間..."
+resPROGMAN "安裝程式正在建立程式圖示..."
+resUPDATING "安裝程式正在更新您的系統..."
+resNOEXE "無法確定此應用程式的執行檔名稱。"
+resSETUP "|1 安裝程式"
+resNOSETUPLST "SETUP.LST 已損毀或無法找到。"
+resUNEXPECTED "發生無法預期的安裝錯誤!"
+resNOFOLDERFORICON "安裝自訂錯誤: 必須為 |1 建立圖示，但並沒有為此建立所需的檔案夾或程式管理員群組。"
+resSTILLWITHINACTION "安裝錯誤: 找不到「CommitAction()」或「AbortAction()」。"
+resREMAUTGROUPNAME "Remote Automation 管理工具"
+resAUTMGR32ICON "Automation Manager"
+resRACMGR32ICON "RemAuto 連線管理員"
+resNT4WithoutSP2 "警告: 建議您在 Windows NT 4.0 的環境中安裝 Service Pack 2。否則，應用程式可能無法正確地執行。"
+resINSTALLADO "正在安裝資料存取元件..."
+resREBOOT "您的系統需要重新啟動以更新系統設定值。\n\n要立即重新啟動您的系統嗎?"
+resREBOOTNO "在您重新啟動系統之前，您的應用程式可能無法正常運作。"
+//
+//Common.Bas
+//
+resDISKSPCERR "檢查下列磁碟機剩餘空間時，發生錯誤: 磁碟機 "
+
+//
+//Forms/Controls Strings
+//
+//resBTNINSTALL "&Install"
+resFRMDIRECTORY "目錄:"
+resBTNCHGDIR "變更目錄(&C)"
+resBTNEXIT "結束安裝(&X)"
+resLBLBEGIN "請按一下下面的按鈕來進行安裝。"
+resBTNCANCEL "取消"
+resLBLDESTFILE "目的檔案:"
+resBTNINSTALLNOW "進行安裝(&I)"
+resBTNCHGDRV "變更磁碟機(&C)"
+resLBLDRIVE "磁碟"
+resLBLAVAIL "剩餘空間"
+resLBLNEEDED "所需空間"
+resLBLREQUIRED "所需空間"
+resLBLNOSPACE "磁碟機上沒有足夠的剩餘空間。"
+resBTNOK "確定"
+resLBLDRIVES "磁碟機(&V):"
+resLBLDIRS "目錄(&D):"
+resLBLPATH "路徑(&P):"
+resLBLRUNNING "安裝程式無法安裝使用中的系統檔案，也無法更新使用中的共用檔案。建議您在安裝前，關閉所有的應用程式。"
+resBTNTOOLTIPBEGIN "請按一下此按鈕來進行安裝。"
+//
+// Group.Frm
+//
+resGROUPFRM "|1 - 選擇程式群組"
+resGROUPLBLMAIN "安裝程式將在群組 (顯示於「程式群組」方塊中) 中加入項目。您可以輸入新的群組名稱，或從「現有群組」清單中選取一個群組。"
+resGROUPLBLGROUP "程式群組(&P):"
+resGROUPLBLGROUPS "現有群組(&X):"
+resGROUPBTNCONTINUE "繼續(&C)"
+resGROUPINVALIDGROUPNAME "程式群組的名稱必須少於 |1 個字元，且不能包括下列字元: |2"
+resGROUPINVALIDCHARS """][,)("
+//
+//ServerDt.Frm
+//
+resNETWORKADDRESS "網路位址(&A)"
+resNETWORKPROTOCOL "網路通訊協定(&P)"
+resOK "繼續(&C)"
+resCANCEL "結束安裝(&X)"
+resREMOTESERVERDETAILSTITLE "遠端 ActiveX 元件的設定"
+resREMOTESERVERDETAILSLBL "請輸入下列遠端元件的設定資訊:"
+resNOTEPROTOSEQNOTSUPPORTED "此電腦沒有支援通訊協定 |1 (|2)"
+resNOTEPROTOSEQINVALID "通訊協定「|1」(「|2」) 不正確"
+resPROTOSEQUNEXPECTEDERR "當確認此電腦上通訊協定時，發生無法預期的錯誤。"
+resNOPROTOCOLSINSETUPLST "安裝錯誤：從 SETUP.LST 檔中讀取通訊協定時，發生錯誤。"
+resNOPROTOCOLSSUPPORTED1 "本應用程式所需要的通訊協定均沒有安裝或無法使用於此電腦上。"
+resNOPROTOCOLSSUPPORTED2 "為了能成功執行安裝程式，您必須先安裝下列網路通訊協定之一: "
+resSELECTEDPROTONOTSUPPORTED "本應用程式必須在安裝通訊協定「|2」之後，才能存取遠端元件「|1」。"
+
+resOVERWRITEFORM "版本衝突"
+resOVERWRITEINFO "現在正在複製的檔案比您系統目前擁有的檔案要舊。建議您保留目前擁有的檔案。"
+resOVERWRITEFILE "檔名:	'|1'"
+resOVERWRITEDESC "描述:	'|1'"
+resOVERWRITEVER	 "您的版本:	'|1'"
+resOVERWRITEKEEP "要保留此檔案嗎?"
+resOVERNOTOALL "全部拒絕(&A)"
+resOVERYES "是(&Y)"
+resOVERNO "否(&N)"
+END

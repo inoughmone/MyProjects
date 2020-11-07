@@ -1,0 +1,199 @@
+#include "setupres.h"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+
+//
+//ﾌﾞｰﾄｽﾄﾗｯﾌﾟ ﾌﾟﾛｸﾞﾗﾑ共通
+//
+#include "commonrc.rc"
+
+//
+//Global
+//
+resSETMSG "ｾｯﾄｱｯﾌﾟ ﾒｯｾｰｼﾞ"
+
+//
+//frmBegin
+//
+resSPECDEST "このﾎﾞﾀﾝをｸﾘｯｸすると |1 ｱﾌﾟﾘｹｰｼｮﾝが指定されたﾃﾞｨﾚｸﾄﾘにｾｯﾄｱｯﾌﾟされます。"
+resSPECNODEST "このﾎﾞﾀﾝをｸﾘｯｸすると、|1 ｱﾌﾟﾘｹｰｼｮﾝがｺﾝﾋﾟｭｰﾀにｾｯﾄｱｯﾌﾟされます。"
+
+//
+//frmWelcome
+//
+resWELCOME "|1 のｾｯﾄｱｯﾌﾟを始めます。"
+
+//
+//frmPath
+//
+resSRCPROMPT "|1 のﾌｧｲﾙがあるﾃﾞｨｽｸ ﾄﾞﾗｲﾌﾞまたはﾃﾞｨﾚｸﾄﾘを指定してください。"
+resDESTPROMPT "ｾｯﾄｱｯﾌﾟ先のﾃﾞｨﾚｸﾄﾘを指定してください。"
+resDESTDIR "ｾｯﾄｱｯﾌﾟ先ﾃﾞｨﾚｸﾄﾘ:"
+resCREATE "は、存在しません。このﾃﾞｨﾚｸﾄﾘを作成しますか?"
+resCHANGEDIR "ﾃﾞｨﾚｸﾄﾘ変更"
+resINSTFROM "ｾｯﾄｱｯﾌﾟ元"
+
+//
+//Setup1.Bas
+//
+resCALCSPACE "必要なﾃﾞｨｽｸ容量の計算中にｴﾗｰが発生しました。"
+resDRVREAD "ﾄﾞﾗｲﾌﾞが読めません。:ﾄﾞﾗｲﾌﾞ"
+resDRVCHK "ﾄﾞﾗｲﾌﾞにﾃﾞｨｽｸが正しく挿入されているか、またはﾃﾞｨｽｸが正しくﾌｫｰﾏｯﾄされているかを確認してください。"
+resCANTOPEN "次のﾌｧｲﾙがｵｰﾌﾟﾝできません:"
+resCANTREAD "次のﾌｧｲﾙを読めません:"
+resCANTWRITE "次のﾌｧｲﾙへ書き込めません:"
+resCHKSPACE "ｾｯﾄｱｯﾌﾟ先のﾄﾞﾗｲﾌﾞに十分な空き容量があることを確認してください。"
+resMAKEDIR "ﾃﾞｨﾚｸﾄﾘが作成できません:"
+resASKEXIT "終了します。よろしいですか?"
+resINTERRUPTED "|1 ｾｯﾄｱｯﾌﾟは、中断されました。ｺﾋﾟｰされていないﾌｧｲﾙがあります。"
+resCANRUN "ｾｯﾄｱｯﾌﾟを完了するには、もう一度最初から |1 ｾｯﾄｱｯﾌﾟを実行してください。"
+resINCOMPLETE "ｾｯﾄｱｯﾌﾟは完了していません。"
+resQUITNOW "ここで終了すると、正しくｾｯﾄｱｯﾌﾟされません。"
+resQUITSETUP "ｾｯﾄｱｯﾌﾟを終了しますか?"
+resSUCCESS "|1 のｾｯﾄｱｯﾌﾟが完了しました。"
+resERROR "|1 ｾｯﾄｱｯﾌﾟは正常に終了しませんでした。"
+resALLOCUNIT "ﾄﾞﾗｲﾌﾞの空き容量の取得に失敗しました:ﾄﾞﾗｲﾌﾞ "
+resSAMEASSRC "は、ｾｯﾄｱｯﾌﾟ元のﾃﾞｨﾚｸﾄﾘです。違うﾃﾞｨﾚｸﾄﾘを指定してください。"
+resNOCREATE "次のﾌｧｲﾙが作成できません:"
+resNOTPROTECT "ｾｯﾄｱｯﾌﾟ先のﾄﾞﾗｲﾌﾞが書き込み禁止ではないことを確認してください。"
+resINSERT "次のﾗﾍﾞﾙのﾃﾞｨｽｸを挿入してください:"
+resDISK "'ﾃﾞｨｽｸ "
+resINTO "' ﾄﾞﾗｲﾌﾞ "
+resSECTNAME "ｾｸｼｮﾝ:  "
+resINVLINE "ｾｯﾄｱｯﾌﾟ情報ﾌｧｲﾙに不正な行があります。"
+resDIRSPECIFIED "指定されたﾃﾞｨﾚｸﾄﾘ:"
+resDIRINVALID "は無効、不完全または書込み禁止です。  ﾄﾞﾗｲﾌﾞ名をﾌﾙﾊﾟｽで入力してください; 例 'C:\\APPS'。"
+resNOTEXIST "そのﾃﾞｨﾚｸﾄﾘは存在しません。"
+resDIRINVNAME "不正なﾃﾞｨﾚｸﾄﾘ名"
+resWRITEPROT "ｾｯﾄｱｯﾌﾟ先のﾌｧｲﾙは書き込み禁止です。"
+resINUSE "ｾｯﾄｱｯﾌﾟ先のﾌｧｲﾙは、他のｱﾌﾟﾘｹｰｼｮﾝで使われています。使用中のｱﾌﾟﾘｹｰｼｮﾝを終了してください。"
+resOUTOFSPACE "ｾｯﾄｱｯﾌﾟ先のﾄﾞﾗｲﾌﾞに十分な容量がありません: ﾄﾞﾗｲﾌﾞ "
+resACCESSVIOLATION "ﾌｧｲﾙのｺﾋﾟｰ中にｴﾗｰが発生しました。"
+resSHARINGVIOLATION "ﾌｧｲﾙのｺﾋﾟｰ中に共有違反が発生しました。"
+resOUTOFMEMORY "ﾌｧｲﾙのｺﾋﾟｰ中にﾒﾓﾘが足りなくなりました。"
+resCANNOTCREATE "一時ﾌｧｲﾙを作成できません。"
+resCANNOTDELETE "ｾｯﾄｱｯﾌﾟ先の既存のﾌｧｲﾙを削除できません。"
+resCANNOTRENAME "一時ﾌｧｲﾙの名前を変更できません。"
+resCANNOTREADSRC "ｾｯﾄｱｯﾌﾟ元のﾌｧｲﾙが読み込めません。"
+resCANNOTREADDST "ｾｯﾄｱｯﾌﾟ先のﾌｧｲﾙの属性が読めません。"
+resBUFFTOOSMALL "内部のｺﾋﾟｰのｴﾗｰです。"
+resNOINSTALL "  このﾌｧｲﾙは組み込めませんでした。"
+resCHKCONNECT "次のﾄﾞﾗｲﾌﾞへの接続を確認してください: ﾄﾞﾗｲﾌﾞ "
+resWARNIGNORE "ﾌｧｲﾙ ｺﾋﾟｰ ｴﾗｰを無視すると、そのﾌｧｲﾙは組み込まれません。この場合、ｱﾌﾟﾘｹｰｼｮﾝが正しく動作しなくなる可能性があります。ｴﾗｰを無視しますか?"
+resTEMPDRIVE "'TMP' または 'TEMP' 環境変数で設定されているﾄﾞﾗｲﾌﾞが有効ではありません。"
+resERR_VSHARE "ｱﾌﾟﾘｹｰｼｮﾝを実行するために SYSTEM.INI の [386Enh] ｾｸｼｮﾝに 'device=vshare.386' の行の追加が必要な可能性があります。"
+resCANTREADUNC "ﾈｯﾄﾜｰｸ ﾊﾟｽ '|1' が読み込めません。"
+resCHECKUNC "ﾊﾟｽ名が正しく、そのﾊﾟｽに対するｱｸｾｽ権があることを確認してください。"
+resCANTFINDAPPREMOVALLOG "ｱﾌﾟﾘｹｰｼｮﾝ削除用のﾛｸﾞ ﾌｧｲﾙ '|1' がありません。継続できません。"
+resBADCOMMANDLINE "ｺﾏﾝﾄﾞﾗｲﾝが不正です。継続できません。"
+resCANTFINDAPPREMOVALEXE "ｱﾌﾟﾘｹｰｼｮﾝ削除ﾕｰﾃｨﾘﾃｨ '|1' がありません。継続できません。"
+resAPPREMOVALICONNAME "|1 をﾏｼﾝから削除します。"
+resCANTREGISTERAPPREMOVER "ｱﾌﾟﾘｹｰｼｮﾝ削除ﾌﾟﾛｸﾞﾗﾑの登録に失敗しました。"
+resCANTCREATEAPPREMOVALICON "ｱﾌﾟﾘｹｰｼｮﾝ削除ﾕｰﾃｨﾘﾃｨのﾌﾟﾛｸﾞﾗﾑ ﾏﾈｰｼﾞｬ ｱｲｺﾝの作成に失敗しました。"
+resOVERWRITEPRIVATE "ｾｯﾄｱｯﾌﾟは既存のﾌｧｲﾙを上書きしようとしています。これにより、既存のｱﾌﾟﾘｹｰｼｮﾝのﾃﾞｰﾀが破壊される可能性があります。"
+resOVERWRITEPRIVATE2 "既存のｱﾌﾟﾘｹｰｼｮﾝを削除しないまま、新しいﾌｧｲﾙをｾｯﾄｱｯﾌﾟすると、このｾｯﾄｱｯﾌﾟ作業および今後のｱﾌﾟﾘｹｰｼｮﾝ削除作業が失敗する可能性があります。"
+resCANCELSETUP "ｾｯﾄｱｯﾌﾟを中断しますか?"
+resCHOOSENEWDEST "もう一度ｾｯﾄｱｯﾌﾟを実行して、ｱﾌﾟﾘｹｰｼｮﾝ ﾌｧｲﾙの新しい位置を選択してください。"
+resVERIFYCONTINUE "継続しますか?"
+resERR_REG "Windows のﾚｼﾞｽﾄﾘの更新に失敗しました。"
+resMICROSOFTSHARED "Microsoft Shared\\"
+resCANTCREATEPROGRAMGROUP "ﾌﾟﾛｸﾞﾗﾑ ｸﾞﾙｰﾌﾟ '|1' の作成に失敗しました。"
+resCANTCREATEPROGRAMICON "'|1' のﾌﾟﾛｸﾞﾗﾑ ｱｲｺﾝの作成に失敗しました。"
+resCANTCOPYLOG "'|1' をｱﾌﾟﾘｹｰｼｮﾝ ﾃﾞｨﾚｸﾄﾘにｺﾋﾟｰしようとして失敗しました。"
+resCANTFINDREGFILE "このﾌｧｲﾙ '|1' が見つからないため登録されませんでした。"
+resCANTRUNPROGRAM "ﾌﾟﾛｸﾞﾗﾑ '|1' は実行できませんでした。ﾒﾓﾘが足りないかﾌﾟﾛｸﾞﾗﾑが見つかりません。"
+resREMOTELINENOTFOUND "ｴﾗｰ: 'SETUP.LST' 中の '|2' ｷｰ には、ﾘﾓｰﾄ ｺﾝﾎﾟｰﾈﾝﾄ '|1' の登録情報が設定されていません。"
+resPROGRAMMANAGER "ﾌﾟﾛｸﾞﾗﾑ ﾏﾈｰｼﾞｬ"
+resUNEXPECTEDRPCREGDAT "'|1' 作成中に予期せぬｴﾗｰが発生しました:"
+resCANTCOPYPATHTOOLONG "ﾌｧｲﾙをｺﾋﾟｰできません。ｺﾋﾟｰ先のﾊﾟｽ名が長すぎます。"
+resCANTCREATEICONPATHTOOLONG "ｱﾌﾟﾘｹｰｼｮﾝの削除ｱｲｺﾝを作成できません。作成先のﾊﾟｽ名が長すぎます。"
+resICONMISSING "SETUP.LST に |1 のｱｲｺﾝが指定されていませんでした。  このｱｲｺﾝを作成しないで続行しますか ?  [はい] をｸﾘｯｸすると続行します。  [いいえ] をｸﾘｯｸするとｾｯﾄｱｯﾌﾟを終了します。"
+
+//
+//Setup1.Frm
+//
+resBADDEFDIR "ｾｯﾄｱｯﾌﾟ先のﾃﾞｨﾚｸﾄﾘとして、適切なﾃﾞｨﾚｸﾄﾘが見つかりませんでした。ｾｯﾄｱｯﾌﾟ先のﾃﾞｨﾚｸﾄﾘを指定してください。"
+resDISKSPACE "必要なﾃﾞｨｽｸ容量を調べています..."
+resPROGMAN "ﾌﾟﾛｸﾞﾗﾑ ｱｲｺﾝを作成しています..."
+resUPDATING "ｼｽﾃﾑ設定を更新しています..."
+resNOEXE "ｱﾌﾟﾘｹｰｼｮﾝの実行可能ﾌｧｲﾙの名前を判別できませんでした。"
+resSETUP "|1 ｾｯﾄｱｯﾌﾟ "
+resNOSETUPLST "SETUP.LST ﾌｧｲﾙが壊れているか、見つかりません。"
+resUNEXPECTED "予期しないｴﾗｰが発生しました。"
+resNOFOLDERFORICON "ｾｯﾄｱｯﾌﾟ ｶｽﾀﾏｲｾﾞｰｼｮﾝのｴﾗｰ: |1 用のｱｲｺﾝを作成しようとしましたが、ﾌｫﾙﾀﾞもﾌﾟﾛｸﾞﾗﾑ ﾏﾈｰｼﾞｬ ｸﾞﾙｰﾌﾟも存在していません。"
+resSTILLWITHINACTION "ｾｯﾄｱｯﾌﾟ ｴﾗｰ: 'CommitAction()' もしくは 'AbortAction()' がありません。"
+resREMAUTGROUPNAME "ﾘﾓｰﾄ ｵｰﾄﾒｰｼｮﾝ ﾏﾈｰｼﾞﾒﾝﾄ"
+resAUTMGR32ICON "ｵｰﾄﾒｰｼｮﾝ ﾏﾈｰｼﾞｬ"
+resRACMGR32ICON "ﾘﾓｰﾄ ｵｰﾄﾒｰｼｮﾝ接続ﾏﾈｰｼﾞｬ"
+resNT4WithoutSP2 "警告: Windows NT 4.0 をご使用の場合は、ｻｰﾋﾞｽ ﾊﾟｯｸ 2 以降をｾｯﾄｱｯﾌﾟすることをお勧めします。"
+resINSTALLADO "ﾃﾞｰﾀ ｱｸｾｽ ｺﾝﾎﾟｰﾈﾝﾄをｲﾝｽﾄｰﾙしています..."
+resREBOOT "ｼｽﾃﾑ設定を更新するためにはｺﾝﾋﾟｭｰﾀを再起動する必要があります。\n\n今すぐ再起動しますか?"
+resREBOOTNO "ｱﾌﾟﾘｹｰｼｮﾝが正しく動作するためにはｺﾝﾋﾟｭｰﾀを再起動する必要があります。"
+
+//
+//Common.Bas
+//
+resDISKSPCERR "ﾃﾞｨｽｸ空き容量の取得に失敗しました:ﾄﾞﾗｲﾌﾞ "
+
+//
+//Forms/Controls Strings
+//
+//resBTNINSTALL "&Install"
+resFRMDIRECTORY "ﾃﾞｨﾚｸﾄﾘ:"
+resBTNCHGDIR "ﾃﾞｨﾚｸﾄﾘ変更(&C)"
+resBTNEXIT "終了(&X)"
+resLBLBEGIN "ｾｯﾄｱｯﾌﾟを開始するには次のﾎﾞﾀﾝをｸﾘｯｸしてください。"
+resBTNCANCEL "ｷｬﾝｾﾙ"
+resLBLDESTFILE "ｾｯﾄｱｯﾌﾟ先ﾌｧｲﾙ:"
+resBTNINSTALLNOW "ｾｯﾄｱｯﾌﾟ開始(&I)"
+resBTNCHGDRV "ﾄﾞﾗｲﾌﾞの変更(&C)"
+resLBLDRIVE "ﾄﾞﾗｲﾌﾞ"
+resLBLAVAIL "空き容量"
+resLBLNEEDED "不足している容量"
+resLBLREQUIRED "必要な容量"
+resLBLNOSPACE "ﾃﾞｨｽｸの空き容量が足りません。"
+resBTNOK "OK"
+resLBLDRIVES "ﾄﾞﾗｲﾌﾞ(&V):"
+resLBLDIRS "ﾃﾞｨﾚｸﾄﾘ(&D):"
+resLBLPATH "ﾊﾟｽ名(&P):"
+resLBLRUNNING "ｾｯﾄｱｯﾌﾟ ﾌﾟﾛｸﾞﾗﾑでは、ｼｽﾃﾑ ﾌｧｲﾙや共有ﾌｧｲﾙが使用中のとき、そのﾌｧｲﾙの追加や更新はできません。起動している他のｱﾌﾟﾘｹｰｼｮﾝを終了することをお勧めします。"
+resBTNTOOLTIPBEGIN "ここをｸﾘｯｸするとｾｯﾄｱｯﾌﾟを開始します"
+//
+// Group.Frm
+//
+resGROUPFRM "|1 - ﾌﾟﾛｸﾞﾗﾑ ｸﾞﾙｰﾌﾟの選択"
+resGROUPLBLMAIN "ｾｯﾄｱｯﾌﾟは [ﾌﾟﾛｸﾞﾗﾑ ｸﾞﾙｰﾌﾟ] ﾎﾞｯｸｽに表示されたｸﾞﾙｰﾌﾟに項目を追加します。  新しいｸﾞﾙｰﾌﾟ名を入力することも、既存のｸﾞﾙｰﾌﾟ ﾘｽﾄから選択することもできます。"
+resGROUPLBLGROUP "ﾌﾟﾛｸﾞﾗﾑ ｸﾞﾙｰﾌﾟ(&P):"
+resGROUPLBLGROUPS "既存のｸﾞﾙｰﾌﾟ(&X):"
+resGROUPBTNCONTINUE "継続(&C)"
+resGROUPINVALIDGROUPNAME "ﾌﾟﾛｸﾞﾗﾑ ｸﾞﾙｰﾌﾟ名は |1 未満で指定する必要があります。また、次の文字を含むことはできません: |2"
+resGROUPINVALIDCHARS """][,)("
+//
+//ServerDt.Frm
+//
+resNETWORKADDRESS "ﾈｯﾄﾜｰｸ ｱﾄﾞﾚｽ(&A)"
+resNETWORKPROTOCOL "ﾈｯﾄﾜｰｸ ﾌﾟﾛﾄｺﾙ(&P)"
+resOK "継続(&C)"
+resCANCEL "終了(&X)"
+resREMOTESERVERDETAILSTITLE "ﾘﾓｰﾄ ActiveX ｺﾝﾎﾟｰﾈﾝﾄの設定"
+resREMOTESERVERDETAILSLBL "次のﾘﾓｰﾄ ｺﾝﾎﾟｰﾈﾝﾄに関する情報を [必要な設定] に入力してください:"
+resNOTEPROTOSEQNOTSUPPORTED "このﾌﾟﾛﾄｺﾙ |1 (|2) はこのｺﾝﾋﾟｭｰﾀ上では有効ではありません。"
+resNOTEPROTOSEQINVALID "このﾌﾟﾛﾄｺﾙ '|1' ('|2') は不正です。"
+resPROTOSEQUNEXPECTEDERR "このｺﾝﾋﾟｭｰﾀ上で有効なﾌﾟﾛﾄｺﾙを取得中に予期せぬｴﾗｰが発生しました。"
+resNOPROTOCOLSINSETUPLST "ｾｯﾄｱｯﾌﾟ ｴﾗｰ:  SETUP.LST からﾌﾟﾛﾄｺﾙの読み込みに失敗しました。"
+resNOPROTOCOLSSUPPORTED1 "このｱﾌﾟﾘｹｰｼｮﾝの実行に必要なﾌﾟﾛﾄｺﾙが組み込まれていません。"
+resNOPROTOCOLSSUPPORTED2 "ｾｯﾄｱｯﾌﾟを正常に実行するには、まず以下のﾈｯﾄﾜｰｸ ﾌﾟﾛﾄｺﾙ ｼｰｹﾝｽを組み込む必要があります:  "
+resSELECTEDPROTONOTSUPPORTED "このｱﾌﾟﾘｹｰｼｮﾝは、ﾌﾟﾛﾄｺﾙ '|2' が組み込まれるまで、ﾘﾓｰﾄ ｺﾝﾎﾟｰﾈﾝﾄ '|1' にｱｸｾｽできません。"
+
+resOVERWRITEFORM "ﾊﾞｰｼﾞｮﾝの競合"
+resOVERWRITEINFO "ｺﾋﾟｰしようとしているﾌｧｲﾙより新しいﾌｧｲﾙがｼｽﾃﾑに存在します。現在のﾌｧｲﾙをそのまま使用することをお勧めします。"
+resOVERWRITEFILE "ﾌｧｲﾙ名:    '|1'"
+resOVERWRITEDESC "詳細:  '|1'"
+resOVERWRITEVER	 "ﾊﾞｰｼﾞｮﾝ: '|1'"
+resOVERWRITEKEEP "現在のﾌｧｲﾙを保持しますか?"
+resOVERNOTOALL "すべて無視(&A)"
+resOVERYES "はい(&Y)"
+resOVERNO "いいえ(&N)"
+
+END

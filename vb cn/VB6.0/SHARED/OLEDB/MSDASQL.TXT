@@ -1,0 +1,50 @@
+---------------------------------------------------------
+Microsoft(R) OLE DB Provider for ODBC 自述文件
+---------------------------------------------------------
+
+(c) Microsoft Corporation, 1998
+
+本文档提供了 Microsoft OLE DB Provider for ODBC 文档中没有包括的最新或其他的信息。
+
+有关 OLE DB 的详细信息，请参阅 Data Access SDK 自述文件。
+
+----
+目录
+----
+1. 产品说明
+2. 新特性
+3. 技术说明
+4. 已知的限制
+
+
+-----------
+1. 产品说明
+-----------
+ODBC Provider 对任何 ODBC 数据库发送多样化、高性能的访问。
+
+---------
+2. 新特性
+---------
+提供者的 2.0 版本包含了更易处理的长数据并增强了性能和范围。 
+
+-----------
+3. 技术说明
+-----------
+* 新服务器名称属性
+DBPROP_SERVER_NAME 是一新添加的属性。它是数据源信息属性，而不是初始化属性。它根据初始化结果，返回连接的服务器的名称。在许多情况下，它与 DBPROP_INIT_DATASOURCE 属性相同。例如：当连 ODBC 数据源时，可以指定 DSN（易用名称），而服务器名称将告诉您连接的服务器的实际名称。
+
+* IOpenRowset 不将表名称引起来 
+ODBC 提供者在向 DBID 传递表名称时不使用引号，如在  IOpenRowset 中。因此，当在需要将名称引起来的 ODBC 提供者下打开表（例如：表名称含有扩展字符）时，用户必须手工为表名称添加引号，或简单地执行 SELECT * FROM <“名称”>.
+
+* 布尔参数不能转换成“True”/“False”。
+为将布尔值转换成字符串数据类型以显示字符串“True”或“False”，需调用 OLE DB Specification。当使用 ODBC 提供者时，如果基本 ODBC 驱动程序不支持 SQLDescribeParam，并且 OLE DB 用户没有指定参数类型，在参数类型为字符串时，ODBC 提供者将布尔参数转换成“-1”或“0”。为保证在不支持描述参数的 ODBC 驱动程序下进行正确地转换，OLE DB 用户应保持调用 SetParameterInfo 来指定参数类型。
+
+* 建议在 ODBC 设置 DBPROPINITMODE 为只读型式，但不强制执行（ 所以这是对 ODBC 提供者的建议）。
+
+-------------
+4. 已知的限制
+-------------
+* 不要将 DBPROP_INIT_LOCATION 与 MSDASQL 和 Microsoft Access 数据库一起使用。 
+当试初始化 MSDASQL (ODBC Provider) 时，如果设置的初始化属性 DBPROP_INIT_LOCATION 为有效值且指定 DATASOURCE 为 Microsoft Access 数据源，将会发生损坏。不要将属性 DBPROP_INIT_LOCATION 与 MSDASQL 和 Microsoft Access 数据源一起使用。
+
+

@@ -1,0 +1,80 @@
+:Base MSQRY32.HLP>REF
+:Title Microsoft Query
+:Index Microsoft Query=msqry32.hlp
+:Link QY9701.HLP
+:Link QY9702.HLP
+:Link QY9703.HLP
+:Link QY9704.HLP
+:Link QY9705.HLP
+:Link OF9701.HLP
+:Link OF9702.HLP
+:Link OF9703.HLP
+:Link OF9704.HLP
+:Link OF9705.HLP
+1 Microsoft Query
+1 Microsoft Query 疑难解答=qutbsTroubleshootUsingMicrosoftQuery
+1 获取帮助
+2 获取有关 Microsoft Query 程序的信息=ofhowGetInformationAboutMyComputer>HowTo
+2 通过“Office 助手”获取帮助
+3 隐藏或显示 Office 助手=IDH_ofdefShowOfficeAssistant>HowTo
+3 移动 Office 助手及其气球=ofhowMoveOfficeAssistant>HowTo
+3 选择其它 Office 助手=ofhowChangeOfficeAssistant>HowTo
+3 修改 Office 助手的大小=ofdccChangeSizeOfOfficeAssistant>HowTo
+3 打开或关闭 Office 助手的声音=ofdccTurnOfficeAssistantSoundOnOrOff>HowTo
+3 Office 助手疑难解答=ofhowTroubleshootOfficeAssistant
+2 获取帮助的其他形式
+3 不用 Office 助手而获得帮助=oftbcGetHelpWithoutShowingOfficeAssistant>HowTo
+3 不用 Office 助手而显示消息=rerefDisplayMessagesWithoutOfficeAssistant>HowTo
+1 安装组件
+2 安装或删除 Microsoft Office 的独立组件=wohowInstallorremoveindividualcomponentsofword
+1 设定数据源
+2 指定检索数据的来源=quhowSpecifySourceToRetrieveDataFrom>HowTo
+2 安装 ODBC 驱动程序以便访问外部数据源=quconInstallODBCDriverSoThatYouCanAccessExternalDataSource>HowTo
+2 无法创建新的数据源。=qutbcICantSeemToCreateNewDataSource
+1 创建、打开及保存查询
+2 创建新查询=qutbcCreateNewQuery
+2 构造查询的准则=quconGuidelinesForConstructingQuery
+2 打开现有的查询=quhowOpenQuery>HowTo
+2 保存查询=quhowSaveQueryFileForReuse>HowTo
+2 运行、查看或编辑 SQL 命令、SQL 过程或 SQL 语句=quhowViewOrEditSQLSELECTStatementForQuery>HowTo
+1 运行查询
+2 自动运行查询，或稍后再运行查询=quhowRunQueryAutomaticallyOrWaitToRunAtLaterTime>HowTo
+2 向 Microsoft Excel 返回结果集=quhowReturnResultSetToMicrosoftExcel>HowTo
+2 执行 SQL 语句=quhowExecuteSQLStatement>HowTo
+1 修改查询
+2 添加与删除表及字段
+3 向查询中添加表=quhowAddOrRemoveTablesInQuery>HowTo
+3 删除查询中的表=quconDeleteTableFromQuery>HowTo
+3 添加或删除字段=quhowAddFieldToQuery>HowTo
+3 运行、查看或编辑 SQL 命令、过程或语句=quhowViewOrEditSQLSELECTStatmentForQuery>HowTo
+2 创建、修改及删除连接
+3 连接查询中的表=qudecJoinTablesInQuery
+3 连接如何影响查询的结果集=quconWaysToJoinTablesInQuery
+3 连接中的运算符=qurefHowOperatorsAffectJoin
+3 删除连接=quhowRemoveJoin>HowTo
+1 设定数据检索条件
+2 关于条件的用法=qurefAboutUsingCriteria
+2 用条件限制所检索的记录=qudecUseCriteriaToRetrieveSpecificRecords
+2 表达式示例=qurefExpressionsYouCanUseToCreateCustomQueries
+2 删除条件以恢复完整的结果集=quhowRestoreFullResultSetByRemovingCriteria>HowTo
+1 创建计算字段
+2 创建计算字段=qudecCalculateFieldsUsingExpressionsOrFunctions
+2 使用算术运算符的表达式示例=IDH_qudefExamplesOfExpressionsThatUseArithmeticOperators
+2 可在计算字段中使用的函数=qurefSummaryFunctionsForTotalsInQueries
+1 修改结果集
+2 修改结果集的布局=qudecFormatDataInQuery
+2 设置 Microsoft Query 中的数据格式=quhowChangeHowYouViewDataInMicrosoftQuery
+2 删除条件以恢复完整的结果集=quhowRestoreFullResultSetByRemovingCriteria>HowTo
+1 数据查找、排序与查看
+2 在结果集内转到某一特定的记录=quhowGoToSpecificRecordInResultSet>HowTo
+2 在查询中对记录排序=quhowSortRecordsInQuery>HowTo
+2 在查询中查看不同的记录=quhowViewDifferentRecordsInQuery>HowTo
+1 修改查询数据库中数据
+2 对被查询的数据库进行改动=qudecMakeChangesToDataInQueriedDatabase
+1 参考信息
+2 使用 Microsoft Query 中的快捷键=qukbdUseKeyboardShortcutKeys
+2 用于 Office 助手的按键=ofrefKeysForWorkingWithOfficeAssistant
+1 动态数据交换(DDE)
+2 用动态数据交换（DDE）与 Microsoft Query 通信=DDEUsingDynamicDataExchangewithMicrosoftQuery
+2 DDE 命令=qurefDDECommands
+:Include EULA8.CNT

@@ -1,0 +1,120 @@
+---------------------------------------------------------
+Microsoft(R) Data Link API version 2.0 自述文件
+---------------------------------------------------------
+
+(c) 1998 Microsoft Corporation。保留所有权力。
+
+本文档提供了 Microsoft Data Link API 文档中没有包括的最新或其他的信息。
+
+----
+目录
+----
+
+1. 产品说明
+
+2. 新特性
+
+3. 技术说明
+
+4. 已知的错误、限制和工作环境
+
+-----------
+1. 产品说明
+-----------
+Microsoft Data Link API 为普通用户提供了定义和管理连接 OLE DB 数据源的接口。也可以用应用程序程序接口 Data Link API 调用
+用户接口。
+
+可以将连接信息保存到数据链接文件 (.udl)。然后可以通过“数据链接属性”页修改这些文件，应用程序使用这些文件来创建各种 
+OLE DB 数据存储的连接。Data Link API 向应用程序提供选择、加载或保存 .udl 文件的能力。
+
+当执行 OLE DB 数据存储的特别连接时，应用程序可以使用管理 .udl 文件中连接信息的相同的用户接口，来获得用户的连接信息。Data 
+Link API 允许应用程序从现存的 OLE DB 数据源对象获得连接信息的字符串版本，从现存连接字符串创建数据源对象，或使用“数据链接
+”对话框编辑未初始化的 OLE DB 数据源对象的连接属性。
+
+---------
+2. 新特性
+---------
+Microsoft Data Link API 是 MDAC 2.0 Core Component 的新特性。
+
+-----------
+3. 技术说明
+-----------
+
+对旧版本的改变
+--------------
+已发布的 Visual Studio(TM) 98 beta 2 中包含的 Data Link API 旧版本已有了一些改变。确保在安装 Data Link API 新版之前，卸载
+所有其旧版本（包括未注册的）。
+
+* 对旧版本的文件扩展名的改变
+如果您已使用了服务组件的旧版本，存储数据链接文件的文件扩展名已改为“.udl”。
+
+* 对旧版本的文件格式的改变
+在支持 unicode 的最终发布的版本中，数据链接文件的文件格式已改变。此改变意味着现存的旧版数据链接文件将不能用于最终编译。您
+需要重新编译数据链接文件。 
+
+* 对旧版本的参数的改变
+数据链接组件支持的 IDBPromptInitialize 接口的旧版本不包括将未知控制指针作为 PromptDataSource 第一个参数的指针。调用旧版 
+Data Link API 中 IDBPromptInitialize::PromptInitialize 方法的应用程序将添加此参数并重编译以用于新版。
+
+* GetInitString 和 DBPROP_AUTH_PERSISTSENSITIVEAUTHINFO  
+IDataInitialize::GetInitString 返回一个连接串，包含在数据源对象上的初始化属性设定。这一方法包括指定的参数、
+fIncludePassword，不管口令是否返回做为初始化信息的一部分。注意，如果DBPROP_AUTH_PERSISTSENSITIVEAUTHINFO 设定为 VARIANT 
+FALSE，既使 fIncludePassword 有效，口令也不返回做为 GetInitString 的一部分。为了使口令成为信息的一部分从 GetInitString 
+返回，用户必须将 DBPROP_AUTH_PERSISTSENSITIVEAUTHINFO 设定为 VARIANT TRUE。 
+
+* 在 IDBPromptInitialize 中禁用提供者选择
+IDBPromptInitialize::PromptDataSource 允许应用程序为用户提示连接信息。这一应用程序可以通过默认的数据源进入 
+PromptDataSource 并可指定 DBPROMPTOPTIONS_DISABLE_PROVIDER_SELECTION，以便防止用户改变指定的数据源。这一标志必须结合 
+DBPROMPTOPTIONS_WIZARDSHEET 或 DBPROMPTOPTIONS_PROPERTYSHEET；只设定这一标志将无效。在  * ppDataSource 中设定这一标志而
+没有指定一个有效的数据源，输入后将返回 E_INVALIDARG 的错误信息。
+
+* 控制面板图标从最新的版本之中删除
+以前发行的版本在服务部分中增加了一个数据链接图标到控制面板，可用其建立数据链接文件。这一图标已从最新的版本之中删除。如
+建立数据链接文件，单击右键后出现一个目录或在平台上从“New”菜单中选定“Microsoft Data Link”既可。
+
+-----------------------------
+4. 已知的错误、限制和工作环境
+-----------------------------
+Microsoft Data Link API 2.0 已知问题如下：
+
+* 文档错误：在“Listing Keywords Multiple Times”中，关于例外的说明“如果提供者关键字在列表中出现多次，将使用第一次出
+现的关键字”是不正确的。正确的解释应为“如果提供者关键字在列表中出现多次，将使用最后一次出现的关键字”。
+
+* 文档错误：在“OLE DB Initialization Properties: Quick Reference”中，可以添加附加说明和短值：
+
+	DBPROP_INIT_OLEDBSERVICES
+	Description: OLE DB Services
+	OLE DB Documented Value		Connection String Short Value
+	-----------------------		-----------------------------
+	DBPROPVAL_OS_RESOURCEPOOLING	ResourcePooling
+	DBPROPVAL_OS_TXNENLISTMENT	TxnEnlistment
+	DBPROPVAL_OS_ENABLEALL		EnableAll
+
+* 文档错误：在 IDataInitialize::GetDatasource 说明中，ppDatasource 参数说明中的第四段章节应修改如下：
+
+如果 *ppDataSource 是 non-null ，且没有在 pwszInitializationString 中指定提供者，则将使用由 * ppDatasource 指定的数
+据源。
+
+在原文档中漏印“no”。
+
+* 文档错误：在 IDBPromptInitialize::PromptDatasource 的说明中说“方法返回一连接字符串”。实际上，方法返回的是带有
+指定属性设置的数据源对象。
+
+* 文档错误：在文档说明中说“IDBPromptInitialize::PromptDataSource 的 cSourceTypeFilter、rgSourceTypeFilter 和 
+pwszszzProviderFilter 参数是保存以备今后使用”。 应按已发布的 OLE DB 2.0 版本说明执行这些参数。
+
+* 文档错误：在 IDBPromptInitialize::PromptFileName 的说明中建议“文件名可以传递到 IDataInitialze 以获得连接字符串
+的数据源对象”。实际上它并不支持这项功能。为从 .udl 文件加载数据源，应用程序必须调用 
+IDataInitialize::LoadStringFromStorage 来从文件中获得连接字符串，然后调用含有这些字符串的 
+IDataInitialize::GetDatasource 以获得连接字符串的数据源对象。
+
+* 文档错误：在 IDBPromptInitialize::PromptFilename 的有关 dwPromptOptions 的说明中建议“指定 
+DBPROMPTOPTIONS_NODIRECTORYCHANGE 防止用户改变目录”。实际上，当使用对话框时，没有办法阻止用户改变目录，但如果设
+置的标志为用户选择的目录不设置为默认的目录，则下一次窗口文件对话框依然出现。
+
+* 文档错误：在 "Organizing Data Links" 部分，程序中列出的建立、编辑、删除和移动数据的链接文件要更改，应参考 
+"the Organize Data Links Files dialog box"，以取代 "the explorer window"。
+
+
+2.0 限制：请注意，已发布的 Data Link API 2.0 不支持创建远程提供者。除本地提供者以外，任何对 
+IDataInitialize::CreateDBInstanceEx 的调用都将失败。

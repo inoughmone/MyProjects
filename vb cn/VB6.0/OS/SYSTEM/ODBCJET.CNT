@@ -1,0 +1,155 @@
+:Base odbcjet.hlp
+:Title ODBC Microsoft 桌面数据库驱动程序帮助
+
+:Index ODBC Desktop Database Drivers Help=odbcjet.hlp
+1 概述 (所有用户)
+2 简介=Overview>ref
+2 硬件和软件需求=Requirements>ref
+2 ODBC 部件文件=ODBCComponentFiles>ref
+2 产品支持=ProductSupport>ref
+2 安装驱动程序=SettingUpDrivers>ref
+1 用数据源工作(所有用户)
+2 添加数据源=AddingADataSource>howto
+2 数据源转换=DataSourceConversion>ref
+2 修改数据源=ModifyingADataSource>howto
+2 删除数据源=DeletingADataSource>howto
+2 ODBC 安装对话框
+
+3 近似行数=ApproximateRowCount>ref
+3 缓冲区大小=BufferSize>ref
+3 排序序列=CollatingSequence>ref
+3 数据源名称=DataSourceName>ref
+3 数据库=Database>ref
+3 定义格式=DefineFormat>ref
+3 描述=Description>ref
+3 目录=Directory>ref
+3 独占=Exclusive>ref
+3 文件扩展名列表=ExtensionsList>ref
+3 页超时=PageTimeout>ref
+3 只读=ReadOnly>ref
+3 扫描的行数=RowsToScan>ref
+3 选取目录=SelectDirectory>ref
+3 选取索引=SelectIndexes>ref
+3 选取工作簿=SelectWorkbook>ref
+3 显示删除的行=ShowDeletedRows>ref
+3 排序次序=SortOrder>ref
+3 系统数据库=SystemDatabase>ref
+3 使用当前目录=UseCurrentDirectory>ref
+3 用户名称=UserName>ref
+3 版本=Version>ref
+2 文本格式
+3 定义文本格式=TextFormat>ref
+3 SCHEMA.ini 文件=SchemaIni>ref
+2 连接问题
+
+3 密码项=PasswordEntry>ref
+3 数据库修复（高级）=DatabaseRepair>ref
+3 数据库压缩（高级）=DatabaseCompaction>ref
+3 异种联结/附加表=HeterogeneousJoinsAttachedTables>ref
+3 打开 Microsoft Excel 表=OpeningMicrosoftExcelTables>ref
+3 密码保护的文件=PasswordProtectedFiles>ref
+3 参考完整性=ReferentialIntegrity>ref
+3 反复连接之后的失败=FailingAfterRepeatedConnections>ref
+3 Lotus 1-2-3 数据/EMS 数据=Lotus123DataEMSData>ref
+3 Visual Basic 支持=VisualBasicSupport>ref
+1 动态地使用数据源 (高级用户)
+2 SQLDriverConnect=SQLDriverConnect>ref
+2 连接串（高级）=ConnectString>ref
+2 动态地添加、修改或删除数据源=AddingModifyingOrDeletingADataSourceDynamically>howto
+2 SQLConfigDataSource=SQLConfigDataSource
+1 SQL 问题 (高级用户)
+2 SQL-92 可塑情形（高级）=SQL92Compliance>ref
+2 附加支持的 ODBC SQL 语法（高级）=Add_Grammar>ref
+2 驱动特定的 SQL 语法
+3 BETWEEN 谓词=BETWEENPredicate>ref
+3 CREATE INDEX 语句=CREATEINDEXStatement>ref
+3 日期算术=DateArithmetic>ref
+3 日期、时间及时间戳文字=DateTimeAndTimestampLiterals>ref
+3 DROP INDEX 语句=DROPINDEXStatement>ref
+3 定宽文本文件=FixedWidthTextFile>ref
+3 GROUT BY expression-list=GROUPBYExpressionList>ref
+3 ORDER BY expression-list=ORDERBYExpressionList>ref
+3 使用 GROUP BY 的 ORDER BY=ORDERBYWithGROUPBY>ref
+3 外部联结=OuterJoins>ref
+3 标量函数=ScalarFunctions>ref
+3 表名称=TableNames>ref
+2 SQL 语法限制
+3 合计函数限制=AggregateFunctionsLimitations>ref
+3 ALTER TABLE 语句限制=ALTERTABLEStatementLimitations>ref
+3 AND 谓词限制=ANDPredicatesLimitations>ref
+3 CALL 语句限制=CALLStatementLimitations>ref
+3 列名限制=ColumnNameLimitations>ref
+3 CONVERT 函数限制=CONVERTFunctionLimitations>ref
+3 CREATE INDEX 语句限制=CREATEINDEXStatementLimitations>ref
+3 CREATE TABLE 语句限制=CREATETABLEStatementLimitations>ref
+3 日期算术限制=DateArithmeticLimitations>ref
+3 DELETE 语句限制=DELETEStatementLimitations>ref
+3 DISTINCT 关键字限制=DISTINCTKeywordLimitations>ref
+3 DROP INDEX 语句限制=DROPINDEXStatementLimitations
+3 DROP TABLE 语句限制=DROPTABLEStatementLimitations>ref
+3 FROM 子句限制=FROMClauseLimitations>ref
+3 HAVING 子句限制=HAVINGClauseLimitations>ref
+3 标识符限制=IdentifiersLimitations>ref
+3 索引名限制=IndexNameLimitations>ref
+3 INSERT 语句限制=INSERTStatementLimitations>ref
+3 LIKE 谓词限制=LIKEPredicateLimitations>ref
+3 NOT NULL 限制=NOTNULLLimitations>ref
+3 ORDER BY 子句限制=ORDERBYClauseLimitations>ref
+3 参数查询限制=ParameterizedQueryLimitations>ref
+3 保留字限制=ReservedWordLimitations>ref
+3 Scalar 函数限制=ScalarFunctionLimitations>ref
+3 SELECT DISTINCT 限制=SELECTDISTINCTLimitations>ref
+3 SELECT 语句限制=SELECTStatementLimitations>ref
+3 集合函数限制=SetFunctionsLimitations>ref
+3 排序限制=SortingLimitations>ref
+3 字符串限制=StringLimitations>ref
+3 表名称限制=TableNameLimitations>ref
+3 表引用限制=TableReferencesLimitations>ref
+3 UPDATE 语句限制=UPDATEStatementLimitations>ref
+3 View 的限制=ViewsLimitations>ref
+3 WHERE 子句限制=WHEREClauseLimitations>ref
+3 WHERE CURRENT OF 子句限制=WHERECURRENTOFClauseLimitations>ref
+1 数据类型 (高级用户)
+2 Microsoft Access 数据类型（高级）=AccessDataTypes>ref
+2 dBASE 数据类型（高级）=dBASEDataTypes>ref
+2 Microsoft Excel 数据类型（高级）=ExcelDataTypes>ref
+2 Microsoft FoxPro 数据类型（高级）=FoxProDataTypes>ref
+2 Paradox 数据类型（高级）=ParadoxDataTypes>ref
+2 文本数据类型（高级）=TextDataTypes>ref
+2 数据类型限制（高级）=DataTypeLimit>ref
+1 错误信息 (高级用户)
+2 错误信息（高级）=Errors>ref
+1 SQLGetInfo 返回值 (程序员)
+2 SQLGetInfo 返回值（过程设计）=SQLGetInfoReturnValues>ref
+1 ODBC API 函数(程序员)
+2 支持 ODBC API 函数（功能)=SupportedODBCAPIFunctions>ref
+2 SQLBindParameter=SQLBindParameter>ref
+2 SQLColAttributes=SQLColAttributes>ref
+2 SQLColumns=SQLColumns>ref
+2 SQLConfigDataSource=SQLConfigDataSource>ref
+2 SQLGetCursorName=SQLGetCursorName>ref
+2 SQLGetData=SQLGetData>ref
+2 SQLGetInfo=SQLGetInfo>ref
+2 SQLGetStmtOption=SQLGetStmtOption>ref
+2 SQLGetTypeInfo=SQLGetTypeInfo>ref
+2 SQLMoreResults=SQLMoreResults>ref
+2 SQLPrepare=SQLPrepare>ref
+2 SQLProcedureColumns=SQLProcedureColumns>ref
+2 SQLProcedures=SQLProcedures>ref
+2 SQLSetConnectOption=SQLSetConnectOption>ref
+2 SQLSetCursorName=SQLSetCursorName>ref
+2 SQLSetPos=SQLSetPos>ref
+2 SQLSetScrollOptions=SQLSetScrollOptions>ref
+2 SQLSetStmtOption=SQLSetStmtOption>ref
+2 SQLSpecialColumns=SQLSpecialColumns>ref
+2 SQLStatistics=SQLStatistics>ref
+2 SQLTables=SQLTables>ref
+2 SQLTransact=SQLTransact>ref
+1 执行问题 (程序员)
+2 算术错误=ArithmeticErrors>ref
+2 驱动程序的基础地址=BaseAddressOfDrivers>ref
+2 创建和打开表=CreatingAndOpeningTables>ref
+2 多个 hstmts=MultipleHstmts>ref
+2 只读状态=ReadOnlyStatus>ref
+2 安装 DLL=SetupDLL>ref
+2 转换 DLL=TranslationDLLs>ref

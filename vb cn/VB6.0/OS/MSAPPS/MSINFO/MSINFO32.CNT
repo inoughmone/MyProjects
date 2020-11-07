@@ -1,0 +1,83 @@
+:Base msinfo32.hlp>proc4
+:Title Microsoft 系统信息
+:Index msinfo32=msinfo32.hlp>proc4
+1 概述
+2 Microsoft 系统信息=msinfo32_index
+2 “文件”菜单
+3 “运行”命令（“文件”菜单）=HID_FILE_RUN
+3 “保存”命令（“文件”菜单）=HID_FILE_SAVE
+3 “打印”命令（“文件”菜单）=HID_FILE_PRINT
+3 “退出”命令（“文件”菜单）=HID_APP_EXIT
+2 “编辑”菜单
+3 “复制”命令（“编辑”菜单）=HID_EDIT_COPY
+3 “全选”命令（“编辑”菜单）=HID_SELECT_ALL
+2 “视图”菜单
+3 “工具栏”命令（“查看”菜单）=HID_VIEW_TOOLBAR
+3 “状态栏”命令（“查看”菜单）=HID_VIEW_STATUS_BAR
+3 “刷新”命令（“查看”菜单）=HID_VIEW_REFRESH
+3 “取消更新”命令（“查看”菜单）=HID_STOP_UPDATE
+3 “前端显示”命令（“查看”菜单）=HID_ALWAYS_ONTOP
+2 “测试”菜单
+3 “测试媒体驱动程序”命令（“测试”菜单）=HID_TEST_ENACT
+3 “取消媒体测试”命令（“测试”菜单）=HID_TEST_CANCEL
+3 “定位媒体示范”命令（“测试”菜单）=HID_TEST_LOCATE
+3 “设置多媒体”命令（“测试”菜单）=HID_TEST_CONFIGURE
+2 “帮助”菜单
+3 “帮助主题”命令（“帮助”菜单）=HID_HELP_INDEX
+3 “关于”命令（“帮助”菜单）=HID_APP_ABOUT
+1 怎样...
+3 对数据进行排序=howto_sort
+3 显示网络驱动器上的有效空间=howto_show_network_drives
+3 测试音频驱动程序=howto_test_audio_driver
+3 定位其他示范=howto_locate_alternative_sample
+3 设置音频驱动程序=howto_configure_audio_driver
+3 复制具体某类数据=howto_copy_category_data
+3 “运行”命令（“文件”菜单）=HID_FILE_RUN
+3 “保存”命令（“文件”菜单）=HID_FILE_SAVE
+3 “打印”命令（“文件”菜单）=HID_FILE_PRINT
+3 “全选”命令（“编辑”菜单）=HID_SELECT_ALL
+3 “工具栏”命令（“查看”菜单）=HID_VIEW_TOOLBAR
+3 “刷新”命令（“查看”菜单）=HID_VIEW_REFRESH
+1 什么是...
+3 合适的示范=popup_appropriateness
+3 脉冲代码调制 (PCM).=popup_pcm
+3 虚拟内存=popup_virtual_memory
+3 位=popup_bitness
+3 有效物理内存=popup_av_phys_mem
+1 分类信息
+2 系统
+3 系统类别的项=HID_ITEMS_SYSTEM
+2 打印
+2 用于打印类别的项=HID_ITEMS_PRINTING
+2 系统 DLL 的
+2 系统 DLL 类别的项=HID_ITEMS_SYSTEM_DLLS
+2 字体
+3 字体替换=HID_CATEGORY_FONT_SUBSTITUTIONS
+3 字体管理器=HID_CATEGORY_FONT_MANAGERS
+2 校对
+3 注册表设置=HID_CATEGORY_PROOFING_REGISTRY_SETTINGS
+3 INI 设置=HID_CATEGORY_PROOFING_INI_SETTINGS
+3 文件信息=HID_CATEGORY_PROOFING_FILE_INFO
+2 图形过滤器
+3 注册表设置=HID_CATEGORY_GRAPHIC_FILTERS_REGISTRY_SETTINGS
+3 INI 设置=HID_CATEGORY_GRAPHIC_FILTERS_INI_SETTINGS
+3 文件信息=HID_CATEGORY_GRAPHIC_FILTERS_FILE_INFO
+2 文本转换器
+3 注册表设置=HID_CATEGORY_TEXT_CONVERTERS_REGISTRY_SETTINGS
+3 INI 设置=HID_CATEGORY_TEXT_CONVERTERS_INI_SETTINGS
+3 文件信息=HID_CATEGORY_TEXT_CONVERTERS_FILE_INFO
+2 显示
+3 显示类别的项=HID_ITEMS_DISPLAY
+2 音频
+3 音频类别的项=HID_ITEMS_AUDIO
+2 视频
+3 视频目录的项=HID_ITEMS_VIDEO
+2 CD ROM
+3 CD ROM 类别的项=HID_ITEMS_CDROM
+2 正在运行的应用程序
+3 正在运行的应用程序类别的项=HID_ITEMS_APPLICATIONS_RUNNING
+2 OLE 注册
+3 注册表设置=HID_CATEGORY_OLE_REGISTRATION_REGISTRY_SETTINGS
+3 INI 设置=HID_CATEGORY_OLE_REGISTRATION_INI_SETTINGS
+2 活动模块
+3 活动模块类别的项=HID_ITEMS_ACTIVE_MODULES

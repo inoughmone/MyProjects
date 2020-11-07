@@ -1,0 +1,72 @@
+----------------------------------------------------------
+Microsoft(R) OLE DB Provider for Oracle, version 2.0 自述文件
+----------------------------------------------------------
+
+(c) 1998 Microsoft Corporation。保留所有权。
+
+本文档提供了 Microsoft OLE DB Provider for Oracle 文档中没有包括的最新或其他的信息。
+
+----
+目录
+----
+
+1. 产品说明
+
+2. 系统要求
+
+3. 技术说明
+
+4. 已知的限制
+
+-----------
+1. 产品说明
+-----------
+提供者准许 OLE DB 用户访问 Oracle 数据源。这是 Microsoft Data Access 2.0 的新特性。（提供者的版本号与 Data Access 
+的版本号匹配。）
+
+-----------
+2. 系统要求
+-----------
+Microsoft OLE DB Provider for Oracle 提供对 Oracle 数据库 (version 7.3 或 version 8) 的访问，它使用 
+version 7.3.3.4.0，或更高版本的 version 8.0.4.1.1c。Oracle Client Software 软件必须安装在客户端机器上。提供者经
+过与 Oracle Client Software version 7.3.3.4.0 和 SQL*Net version 2.3.3.0.4 一起进行了主要测试，所以使用此类版本将
+获得最好的效果。当升级 Oracle 客户端时，安装客户端升级和应用 Server 补丁附带的“Required Supporting Files”都是非
+常重要的。
+
+有关 Oracle 产品的详细信息，请参阅 Oracle 文档集。
+
+-----------
+3. 技术说明
+-----------
+a) Oracle 数据源的 Microsoft OLE DB Provider 并不直接地支持滚动，也不支持使用 IRowsetChange 执行的行集更新。如果
+使用 IDataInitialize 示例或通过 ADO 请求提供者，Service Components 将提供应用程序要求的更新和滚动功能。另外，提供
+者还支持执行 SQL 更新命令。
+
+b) 在一些情况下，数值数据将以 DBTYPE_VARNUMERIC 返回，这是 OLE DB 2.0 的一种新的数据类型。请特别注意如下情况：列
+被定义为 FLOAT、NUMBER（没有精度或范围）、可计算的数值列或任何范围为负值或超过 38 位数字的状态。
+
+c) 只有当引用的值传递到 IDBSchemaRowset 时， IDBSchemaRowset::GetRowset 才执行区分大小写选择。  
+
+d) 作为 GetTransaction 的报告的 Transaction Unit Of Work 将总是 NULL。例如，从会话中获得事务并从中调用 
+GetTransaction。XACTTRANSINFO 中的 XACTUOW 将总是 NULL。
+
+-------------
+4. 已知的限制
+-------------
+a) 提供者不支持 Microsoft ODBC Driver for Oracle 执行的 {结果集} 换码。
+
+b) OLE DB 2.0 在 IConvertType::CanConvert 含有一新的标志 DBCONVERTFLAGS_FROMVARIANT。提供者支持这个标志，且不影
+响在同一时刻从 CanConvert 返回的值。
+
+c) Oracle version 8 中一个 VARCHAR 列的最大长度是从 2000 至 4000 字节。Oracle 7.3.x Client Software 软件 不支持
+大于 2000 字节的参数值。因此，如果您使用参数值限制为 2000 字节以下的 Client Software 软件建立一份表，其 VARCHAR 
+列字节的长度大于 2000 字节，您将不 能执行参数化的插入、更新、删除和查询。由于 ODBC Driver for  Oracle 和 OLE DB 
+Provider for Oracle 均使用参数化的插入、更新、删除和查询，在这种情况下，它们将报告出现 ORA-01026 的错误。数据在
+限制以内，Oracle 客户软件才工作。工作区将把您的客户软件升级到 Oracle 8，(8.0.4.1.1c 或更高的版本)。
+
+d) 如果使用 Oracle Provider 和 MTS 支持共用事务，必须安装文件 MTXOCI.DLL。这个文件安装在Microsoft Visual 
+Studio(TM) 98。如果安装 Back Office(R)， 然后又卸载 Back Office(R)，将导致从系统中删除 MTXOCI.DLL。在使用 Oracle 
+Provider 和 MTS 时，您必须把 MTXOCI.DLL 放回原处。       
+
+
+

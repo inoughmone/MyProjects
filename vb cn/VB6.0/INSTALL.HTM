@@ -1,0 +1,657 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<title>Installation Notes</title>
+<META NAME="MS-HAID" CONTENT="install.htm">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" link="#0000FF" vlink="#660066" onclick="checkExpand()">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">
+
+<!-------------------Scripting----------->
+
+<script language="JSCRIPT">
+
+  function checkExpand( )
+  {
+     if ("" != event.srcElement.id)
+     {
+        var ch = event.srcElement.id + "Child";
+        var el = document.all[ch];
+        if (null != el)
+        {
+           el.style.display = "none" == el.style.display ? "" : "none";
+           if (el.style.display != "none")
+           event.returnValue=false;
+        }
+     }
+  }
+
+</script>
+
+<!-----------------Readme Intro------------------->
+
+<h2><a name="geninstall">Installation Notes</a></h2>
+<p>&copy; 1998 Microsoft Corporation. All rights reserved.</p>
+
+<p><i>Installation Notes</i> contains vital information about installing Microsoft&reg; Visual Studio&trade; 6.0 -- Development System for Windows and the Internet, and its family of development products. Information in this file may apply to all or a number of the products shipped in the Visual Studio suite. This Readme updates information provided in the <i>MSDN Library Visual Studio 6.0</i> documentation.</p>
+<p><i>Installation Notes</i> is one of a &quot;family&quot; of Readmes shipped with the suite. All product Readme files reside at the root of Visual Studio compact disc 1. These Readme files (install.htm, plus several others called readme<i>XX</i>.htm, where <i>XX</i> signifies a product) utilize current Web technology so users can find and view their information quickly. They may be viewed with a Web browser, such as Microsoft Internet Explorer 4, or in Notepad.</p>
+
+<h5><a class=ex href="#" title="Click to expand or collapse." id="PrintingInstructions">How do I print all Readme files available to me at one time from Microsoft Internet Explorer?</a></h5>
+
+<div id="PrintingInstructionsChild" onclick="cl_script_data"  style="display:none">
+
+<a name=#ieinstructions></a>
+<blockquote>
+<ol><li>Open readme<i>XX</i>.htm, or install.htm, in Microsoft Internet Explorer.</li>
+<li>On the <b>File</b> menu, click <b>Print</b>.</li>
+<li>In the <b>Print</b> dialog box, set the printing options you want.</li>
+<li>Select <b>Print all linked documents</b> and click <b>OK</b>.</p>
+</li></ol> 
+</blockquote>
+
+</div>
+
+<!---------------TOC---------------------->
+
+<p>
+<h3>Contents</h3>
+<blockquote><b>Note</b>&nbsp;&nbsp;&nbsp;Be sure all headings in the table of contents are expanded when you search this Readme for a topic. In this way, you will know when the search finds the topic among the TOC headings.
+</blockquote>
+</p>
+
+<!-------------------Section 1--------------->
+
+<h5><a class=ex href="#" title="Click to expand or collapse." id="InformationonFilesandProgramsShippedwithVisualStudio">Installation Instructions for Visual Studio Programs</a></h5>
+
+<div id="InformationonFilesandProgramsShippedwithVisualStudioChild">
+
+	<blockquote>
+<a href="#nonusnt40">Special Installation Instructions for Computers with Non-U.S. Versions of Microsoft Windows NT 4.0 and Microsoft Internet Explorer</a> </blockquote>
+
+	<blockquote>
+<a href="#installingondualbootcomputers">Warning When Installing on Dual-Boot Computers</a> </blockquote>
+
+	<blockquote>
+<a href="#sidebysideinstallation">&quot;Side-by-Side Installation&quot;: Installing Multiple Versions of Visual Studio 6.0 on the Same Computer</a> </blockquote>
+
+	<blockquote>
+<a href="#installingclienttoolsafterinstallingvs">Installing Client Tools After Visual Studio 6.0 Is Installed</a> </blockquote>
+
+	<blockquote>
+<a href="#webpublishingwizarddisc">When the Installation Wizard Looks for A Web Publishing Wizard Disc</a> </blockquote>
+
+	<blockquote>
+<a href="#runningstandardorserversetupwithmdac2">Running Standard or Server Setup When the Beta 2 Version of Microsoft Data Access Components 2.0 Is Already Installed</a> </blockquote>
+
+	<blockquote>
+<a href="#howtocontacttechnicalsupport">How to Contact Technical Support</a></blockquote>
+
+	<blockquote>
+<a href="#findingsdkreadmes">Finding More Information on Non-Visual Studio Programs and Tools Shipped with the Visual Studio Suite</a> </blockquote>
+
+</div>
+<p>
+
+<!-----------------------Section 2------------------->
+
+<h5><a class=ex href="#" title="Click to expand or collapse." id="ServerSideSetups">Installing Server-Side Components</a></h5>
+
+<div id="ServerSideSetupsChild">
+
+	<blockquote>
+<a href="#minimumreqsforserversideinstall">Minimum Requirements for Installation and Operation of Server-Side Components</a></blockquote>
+
+	<blockquote>
+<a href="#servercomponentsonwin95">Installing Server Components on Windows 95</a></blockquote>
+
+	<blockquote>
+<a href="#sqlandwinntop">Known Compatibility Issues with SQL Server 6.5 and Windows NT Option Pack 4.0</a> </blockquote>
+
+</div>
+<p>
+
+<!-----------------------Section 3------------------->
+
+<h5><a class=ex href="#" title="Click to expand or collapse." id="configuringdebugging">Configuring for Debugging</a></h5>
+
+<div id="configuringdebuggingChild">
+
+	<blockquote>
+<a href="#sqldebuggingoncomputerswithsql65andvc5orhigher">Using SQL Debugging Services on a Computer with SQL Server 6.5 and Visual C++ 5.0 or Higher Installed</a> </blockquote>
+
+</div>
+<p>
+
+<!----------------------Section 4------------------->
+
+<h5><a class=ex href="#" title="Click to expand or collapse." id="RelatedtoWindows95Computers">Issues Specific to Windows 95 Computers</a></h5>
+
+<div id="RelatedtoWindows95ComputersChild">
+
+	<blockquote>
+<a href="#resumingsetupafterinstallingpws">Installation Wizard May Not Restart After PWS Is Installed on Windows 95 Computers</a></blockquote>
+
+	<blockquote>
+<a href="#servercomponentsonwin95">Installing Server Components on Windows 95</a></blockquote>
+
+	<blockquote>
+<a href="#odbccustomactionhandlermalfunctions">The ODBC Custom Action Handler Malfunctions During Installation of Visual Studio 6.0 on a Clean Windows 95 Computer</a></blockquote>
+
+	<blockquote>
+<a href="#windows95registrysize">Windows 95 Registry Size: 64 KB Limitation May Cause A Warning During Visual Studio Installation</a></blockquote>
+
+	<blockquote>
+<a href="#frontpage98onwin95">Installing Microsoft FrontPage 98 Extensions on Some Windows 95 Computers</a></blockquote>
+</div>
+<p>
+
+<!--------------------Section 5------------------------->
+
+<h5><a class=ex href="#" title="Click to expand or collapse." id="RelatedtoOtherPrograms">Notes Impacting Other Installed Programs</a></h5>
+
+<div id="RelatedtoOtherProgramsChild">
+
+	<blockquote>
+<a href="#iisamexchangedriver">IISAM Exchange Driver Will Fail if Microsoft Exchange or Microsoft Outlook Is Not Already Installed</a> </blockquote>
+
+</div>
+<p>
+
+<!-----------------------Section 6----------------------->
+
+<h5><a class=ex href="#" title="Click to expand or collapse." id="ForComputerswithNonUSVersionsofMicrosoftPrograms">Issues Related to Computers with Non-U.S. Versions of Microsoft Programs</a></h5>
+
+<div id="ForComputerswithNonUSVersionsofMicrosoftProgramsChild">
+
+	<blockquote>
+<a href="#nonusnt40">Special Installation Instructions for Computers with Non-U.S. Versions of Microsoft Windows NT 4.0 and Microsoft Internet Explorer</a> </blockquote>
+
+	<blockquote>
+<a href="#necpc98">NEC PC 98 Installation Issue</a></blockquote>
+
+</div>
+
+<!-----------------------SECTION 7-------------------->
+
+<h5><a class=ex href="#" title="Click to expand or collapse." id="DASDK">Data Access SDK 2.0</a></h5>
+
+<div id="DASDKChild">
+
+	<blockquote>
+<a href="#installreq">Install Requirements</a></blockquote>
+
+	<blockquote>
+<a href="#sql65orolderwithmdac2">Before Using SQL Server 6.5 or Older with MDAC 2.0
+</a></blockquote>
+
+</div>
+
+<!------------------------->
+
+<p>
+<h5>For other last-minute issues, click any of the following links.</h5></p>
+<p>
+<a href="readmevs.htm" title="Jumps to the Visual Studio Readme (readmeVS.htm).">Microsoft&reg; Visual Studio&trade;</a></p>
+<p>
+<a href="readmeve.htm" title="Jumps to the VS Enterprise Edition Readme (readmeVE.htm).">Microsoft&reg; Visual Studio&trade;, Enterprise Edition</a></p>
+<p>
+<hr align=left color=black SIZE=1 width=640>
+<!------------------------CONTENTS--------------------->
+<!--SECTION 1-->
+
+<h3>Installation Instructions for Visual Studio Programs</h3>
+
+<p>This section lists installation-related information on programs and files shipped with Visual Studio 6.0.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 1) TOPIC 1-->
+		  
+<h4><a name="installingondualbootcomputers">Warning When Installing on Dual-Boot Computers</a></h4>
+<p>
+If you have a dual-boot computer and want to install and run Visual Studio programs with both operating systems, you must install these products into separate directories.</p>
+<p>Installing a Visual Studio product, such as Visual C++ or Visual Basic, multiple times on the same directory can result in undefined behavior. Installing a product to the same location from each operating system is sometimes done to save disk space, but it will lead to problems and is not supported.</p>
+<p>For example, if you install onto the same directory, you will not be able to fully uninstall the product from both systems. Uninstalling on one system may result in undefined behavior, including the removal of system files from the other system.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 1) TOPIC 2-->
+		  
+<h4><a name="sidebysideinstallation">Installing Multiple Versions of Visual Studio 6.0 &quot;Side-by-Side&quot; on the Same Computer</a></h4>
+<p>
+Visual Studio products with the same version and in the same language&mdash;Visual C++ and Visual Basic version 6.0 in English, for example&mdash;can be installed separately on the same workstation. Such installations are supported by Microsoft. The Visual Studio 6.0 Installation Wizard detects if other versions of the 6.0 product line have been installed on a developer's workstation.</p>
+<p>Mixing different language versions, point releases, or product tiers on the same workstation is generally not supported.  This means that the installation may fail, one or more of Visual Studio 6.0 products may not work even if the installation succeeds, or in the worst case you may not be able to uninstall any of the products completely.</p>
+<p>If the Wizard generates a warning during installation, the safest course of action is to uninstall the Visual Studio 6.0 product before proceeding. The detection scheme checks for the following scenarios:</p>
+<ul><li>Users <b>installing different language versions</b> of the same product. For example, Japanese Visual C++ and English Visual C++. Installation of certain combinations is supported.</li>
+<p>
+<table COLS=2 cellspacing="2" cellpadding="5" border="1" frame="below" rules="rows">
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2><b>Product</b></font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><b>Supported Installation</b></font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual Basic</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Install to two different locations</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual C++</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><i>[still checking]</i></font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual FoxPro</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><i>[still checking]</i></font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual InterDev</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Install to the same location. You must reinstall after uninstalling one version.</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual J++</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Install to the same location. You must reinstall after uninstalling one version.</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual SourceSafe</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><i>[still checking]</i></font></td>
+</tr>
+</table>
+<p>
+<li>Users <b>installing different tiers of Visual Studio 6.0 products</b>. For example, Visual J++ Standard Edition and Visual InterDev Professional Edition. Installing different tiers of the same product on the same workstation is not supported.</li>
+<p>
+<li>Users <b>installing point releases</b>. Upgrading a later point release of Visual Studio over an earlier point release is supported.  However, installing earlier versions over later versions is not supported.</li>
+<p>
+<li>Users <b>installing stand-alone versions of Visual Studio 6.0 products over the versions installed from Visual Studio 6.0 Professional or Enterprise</b>. For example, Visual FoxPro 6.0 over Visual Studio Professional 6.0. Installing a stand-alone version of the same language versions (English) of Visual Studio 6.0 products is supported.  It is safe to install Visual FoxPro 6.0 (English) from the stand-alone version on a workstation that already has Visual Basic 6.0 installed from Visual Studio Professional Edition.</li>
+</ul>
+
+         <!------------------------------------------------------>
+         <!--(Sec. 1) TOPIC 3-->
+
+<h4><a name="installingclienttoolsafterinstallingvs">Installing Client Tools After Visual Studio 6.0 Is Installed</a></h4>
+<p>
+To install any of the following components, you must install them at the same time you install Visual Studio 6.0.
+</p>
+<ul>
+<li>Application Performance Explorer</li>
+<li>Data Access Components 2.0</li>
+<li>FrontPage 98</li>
+<li>FrontPage 98 Server Extensions</li>
+<li>InstallShield</li>
+<li>NT Option Pack for Windows 95</li>
+<li>Visual FoxPro Server Examples</li>
+<li>Visual InterDev Server Components</li>
+<li>Visual SourceSafe Server</li>
+<li>Visual Studio Analyzer</li>
+</ul> 
+<p><b>Use the following procedure to install any of the listed components after you have installed Visual Studio 6.0</b></p>
+<ol><li>Uninstall Visual Studio.</li>
+<li>Reinstall Visual Studio.</li>
+<li>When the setup options appear, select the components you want to install with Visual Studio.</li>
+</ol>
+</p>
+         <!------------------------------------------------------>
+         <!--(Sec. 1) TOPIC 4-->
+
+<h4><a name="webpublishingwizarddisc">When the Installation Wizard Looks for A Web Publishing Wizard Disc</a></h4>
+<p>
+When installing Visual Studio 6.0 or the Visual J++ Technology Preview 2, and you get a dialog box asking you to insert the Web Publishing Wizard disc, close the dialog box and proceed with the installation. </p>
+<p>Neither Visual Studio nor Visual J++ ships a Web Publishing Wizard on a separate disc. Users may get this message when they are installing Visual Studio or Visual J++ to computers that have Temp directories set to removable drives, such as an IOMega's Jazz Drive.
+</p> 
+<p>After your Visual Studio or Visual J++ installation is complete, if you want to install the Web Publishing Wizard, do the following: 
+</p>
+<ol><li>Set your Temp environment variable to a directory on fixed media, such as your hard drive.</li>
+<li>Run wpie15.exe from <i>[CD Drive:]</i> \setup of the compact disc.
+</li>
+<li>After Web Publishing Wizard setup is complete, reset your Temp environment variable directory to its previous directory, if necessary.</li>
+
+</ol>
+
+         <!------------------------------------------------------>
+         <!--(Sec. 1) TOPIC 5-->
+
+<h4><a name="runningstandardorserversetupwithmdac2">Running Standard or Server Setup When the Beta 2 Version of Microsoft Data Access Components 2.0 Is Already Installed</a></h4>
+<p>
+If you have already installed Microsoft Data Access Components 2.0 beta 2, which comes with Visual Studio, and you run the standard or server setup again, you may get the following error message:
+</p>
+<blockquote>File is installed and supports English. Currently, version <i>number</i> of <i>filename</i> is installed and supports English (United States). The software you are installing contains the same component, but it supports English (United States). Do you want the existing copy to be replaced?
+</blockquote> 
+<p>This message is a known issue, and will not affect your setup. You may ignore the message and click either <b>Yes</b> or <b>No</b> to continue. 
+</p>
+          <!------------------------------------------------------>
+          <!--(Sec. 1) TOPIC 6-->
+
+<h4><a name="howtocontacttechnicalsupport">How to Contact Technical Support</a></h4>
+<p>The online documentation includes complete information on how to get support and support options, including free support and online support. Click the MSDN Library Visual Studio 6.0 icon and open the Visual Studio Documentation. Support information is in Technical Support, under Getting Started with Visual Studio 6.0.</p>
+<blockquote><b>Note</b>&nbsp;&nbsp;&nbsp;You must install MSDN to get the online documentation.</blockquote>
+<p>You also can look up support information on the web at <a href="http://www.microsoft.com/support">http://www.microsoft.com/support</a>. You can also call (425) 635-7012.
+</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 1) TOPIC 7-->
+
+<h4><a name="findingsdkreadmes">Finding More Information on Non-Visual Studio Programs and Tools Shipped with the Visual Studio Suite</a></h4>
+<p>For more and specific information on SDKs and non-Visual Studio programs and tools, consult their readmes. Use the following table to locate the Readmes.</p>
+<p>
+<table COLS=2 cellspacing="2" cellpadding="5" border="1" frame="below" rules="rows">
+<tr valign="top">
+    <td width="30%"><font face="verdana,arial,helvetica" SIZE=2><b>Program/Tool</b></font></td>
+    <td width="30%"><font face="verdana,arial,helvetica" SIZE=2><b>Readme File Name</b></font></td>
+    <td width="40%"><font face="verdana,arial,helvetica" SIZE=2><b>Location</b></font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>This table</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>is under</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>construction!</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>???</font></td>
+</tr>
+</table>
+</p>
+<hr align=left color=black SIZE=1 width=320>
+<!------------->
+<!--SECTION 2-->
+
+<h3><a name="serversidesetups">Installing Server-Side Components</a></h3>
+
+<p>This section lists installation issues identified for server-side components shipped with Visual Studio.</p>
+          <!------------------------------------------------------>
+          <!--(Sec. 2) TOPIC 1-->
+
+<h4><a name="minimumreqsforserversideinstall">Minimum Requirements for Installation and Operation of Server-Side Components</a></h4>
+<p>Consult the following table for information on operating system, browser, and other dependency requirements for installation and use of server-side components.</p>
+<P><B>Table of Minimum Requirements for Installation of Server-Side Components</B></P>
+<table cellspacing="1" cellpadding="5" border="1" rules="all" cols="6" frame="below">
+<tr valign="top"></tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2><b>Component</b></font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><b>NT Server?</b></font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><b>NT Workstation?</b></font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><b>Windows 95/98?</b></font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><b>Requires Microsoft Internet Explorer?</b></font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2><b>Other Dependencies?</b></font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows NT Option Pack 4.0</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4.0 SP3</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Limited on Win95</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2></font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>None</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>SQL Server 6.5 (DEV Edition)</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 3.51 +</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Installs some tools on Windows 95</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>No</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>None</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>SQL Server Debugging Service</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Svr. 3.51 Sp5 or better</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>---</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>---</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>No</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Needs SQL server 6.5 (SP3)</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual SourceSafe Server Components</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT4 Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows 95</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Yes. Version 4 for viewing HTML Help</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>None</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Posting Acceptor (2.0)</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT4 Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4.0 SP3</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows 95</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>---</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Install NTOP before PA 2.0</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Remote Machine Debugging (Script Debugging)</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT4 Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows 95</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Yes. Version 4 or later </font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>None</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual InterDev Server Components</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT4 Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4.0 SP3</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows 95</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Yes. Version 4 or later</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Install NTOP, MDAC, FP Extensions before VIDSS</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>FrontPage Server Extensions</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT4 Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4.0 SP3</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows 95</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Yes. Version 4 or later</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Install NTOP, MDAC before FP Extension</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Fox ISAPI Samples and Extensions</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>---</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NO OS dependencies (samples)</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>---</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Any generic browser</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>None</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Visual Studio Analyzer (VISTA)</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Yes</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4.0 SP3</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows 95 (with DCOM update)</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Yes. Only on W95 to get DCOM</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>None</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Application Performance Explorer (APE)</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT4 Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4.0 SP3</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows 95 (with DCOM update)</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Yes. Only on W95 to get DCOM</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>None</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>MDAC  2.0 Update</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT4 Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4.0</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Windows 95</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>No</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Install after NTOP and Before SNA</font></td>
+</tr>
+<tr>
+    <td><font face="verdana,arial,helvetica" SIZE=2>SNA server</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT4 Svr.</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>NT Workstation 4.0</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>---</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>No</font></td>
+    <td><font face="verdana,arial,helvetica" SIZE=2>Install after MDAC and MTS</font></td>
+</tr>
+</table>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 2) TOPIC 2-->
+
+<h4><a name="servercomponentsonwin95"></a>Installing Server Components on Windows 95</h4>
+<p><i>We recommend installing all server applications on computers running Windows NT.</i></p>
+<p>Enterprise and Professional Editions of Visual Studio 6.0 products are packaged with a variety of Micosoft server applications specifically tailored for the Visual Studio developer.  Most applications can be installed on either Windows 95 or Windows NT operating systems.  We recommend installing all server applications on Windows NT, either Workstation or Server.</p>
+<p> If you choose to set up servers on a Windows 95 the order of installation is important. On Windows 95 some applications must be installed before others for the installation to complete successfully and the product to work.  Install the components in the following order:
+<ol><li>NT Option Pack</li>
+<li>FrontPage 98 Server Extensions</li>
+<li>Data Access Components 2.0</li>
+<li>Visual InterDev Server Components</li>
+<li>Application Performance Explorer</li>
+<li>Visual Studio Analyzer</li>
+</ol>
+<ul><li>(Any Order) Visual Source Safe Server</li>
+<li>(Any Order) Visual FoxPro Server Samples</li>
+</ul>
+The Installation Wizard presents these options in the same order.  Again, ordering is significant on Windows 95 only.
+</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 2) TOPIC 3-->
+
+<h4><a name="sqlandwinntop"></a>Known Compatibility Issues with SQL Server 6.5 and Windows NT Option Pack 4.0</h4>
+<p>
+If you install SQL Server 6.5 on a computer with Windows NT Option Pack 4.0 installed, some of your Design Time Controls (DTCs) may be overwritten.</p>
+<p>
+If this happens, you will get an error message when you launch Microsoft Transaction Server (MTS). The message will instruct you to reinstall MTS.</p>
+<p>To prevent this situation, install NT Option Pack after you install SQL Server.
+<p>
+<hr align=left color=black SIZE=1 width=320>
+<!-------------------------------------------------------------->
+<!--SECTION 3-->
+
+<h3><a name="configuringdebugging">Configuring for Debugging</a></h3>
+
+<p>Information in this section addresses issues on debugging and configuring computers for debugging services.</p>
+          <!------------------------------------------------------>
+          <!--(Sec. 3) TOPIC 1-->
+
+<h4><a name="sqldebuggingoncomputerswithsql65andvc5orhigher">Using SQL Debugging Services on a Computer with SQL Server 6.5 and Visual C++ 5.0 or Higher Installed</a></h4>
+<p>
+To use SQL Debugging services on a computer that has SQL Server 6.5 and Visual C++ 5.0 or higher installed, make sure that the Remote Automation (RA) configuration properties of the computer are set correctly.</p>
+<p><b>To check RA configuration properties</b>
+<ol> 
+<li>Run dcomcnfg.exe.
+<li>Select Remote Automation CLSID_StubMarhsaler.
+<li>Click <b>Properties</b>.
+<li>In the <b>Identity</b> tab, select Interactive User.
+</ol>
+<p>Also, your SQL Debugging scenarios may not work if you run SQL Server as a service under the Local System account. You must select <b>This Account</b> and enter a valid account and password.
+</p>
+<hr align=left color=black SIZE=1 width=320>
+<!--------------------------------------------------------->
+<!--SECTION 4-->
+
+<h3><a name="forwin95">Issues Specific to Windows 95 Computers</a></h3>
+
+<p>This section lists issues identified when Visual Studio 6.0 is installed on Windows 95 computers.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 4) TOPIC 1-->
+
+<h4><a name="resumingsetupafterinstallingpws">Installation Wizard May Not Restart After PWS Is Installed on Windows 95 Computers</a></h4>
+<p>If you choose to install Personal Web Server (PWS) on a Windows 95 computer, the Installation Wizard may not resume correctly after the computer restarts. To proceed, start Setup.exe again from the first disc of your Visual Studio 6.0 CD set. The Installation Wizard automatically resumes setup at the correct point.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 4) TOPIC 2-->
+
+<h4><a name="odbccustomactionhandlermalfunctions">The ODBC Custom Action Handler Malfunctions During Installation of Visual Studio 6.0 on a Clean Windows 95 Computer</a></h4>
+<p>The ODBC Custom Action Handler (CAH) works when Visual Studio 6.0 is installed on a computer running Windows NT 4.0, or a computer with Windows 95 and Microsoft Internet Explorer 4.0. The ODBC CAH fails if Visual Studio is installed on a Windows 95 computer that does not have Microsoft Internet Explorer 4.0.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 4) TOPIC 3-->
+
+<h4><a name="windows95registrysize">Windows 95 Registry Size: 64 KB Limitation May Cause A Warning During Visual Studio Installation</a></h4>
+<p><i>[Under Construction!]</i></p>
+<p></p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 4) TOPIC 4-->
+
+<h4><a name="frontpage98onwin95">Installing Microsoft FrontPage 98 Extensions on Some Windows 95 Computers</a></h4>
+<p>When the Installation Wizard launches other client or server setups, the Wizard becomes invisible and waits until the component installation is complete. The Wizard then reappears, enabling the user to install another component.</p>
+<p>When you install Microsoft FrontPage 98 extensions on some Windows 95 computers, the Installation Wizard may remain hidden for several minutes after the FrontPage setup is complete.
+</p>
+<p>During the time that the Wizard is hidden, you cannot launch the setup program again. A second Installation Wizard will not start when the program detects that one is already running.</p>
+
+<hr align=left color=black SIZE=1 width=320>
+<!--------------------------------------------------------->
+<!--SECTION 5-->
+
+<h3><a name="vs6andothers">Notes Impacting Other Installed Programs</a></h3>
+
+<p>This section lists installation issues that may affect programs already installed on your computer.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 5) TOPIC 1-->
+
+<h4><a name="iisamexchangedriver">IISAM Exchange Driver Will Fail if Microsoft Exchange or Microsoft Outlook Is Not Already Installed</a></h4>
+<p>
+The IISAM Exchange driver requires that Microsoft Exchange or Microsoft Outlook be fully installed on your computer prior to installation of Visual Studio. If neither is installed, the IISAM Exchange driver will not register correctly.</p>
+<p>
+To manually correct the problem after you've installed Visual Studio 6.0, you can install Microsoft Exchange or Microsoft Outlook and then self-register the IISAM Exchange driver using this command line:</p>
+<font face="Courier" size=2>Regsrv32 msech35.dll</font>
+<p>
+<p></p>
+<hr align=left color=black SIZE=1 width=320>
+<!-------------------------------------------------------------->
+<!--SECTION 6-->
+
+<h3><a name="fornonusversions">Issues Related to Computers with Non-U.S. Versions of Microsoft Programs</a></h3>
+
+<p>This section lists known setup issues related to computers with non-U.S. versions of Microsoft programs.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 6) TOPIC 1-->
+
+<h4><a name="necpc98">NEC PC 98 Installation Issue</a></h4>
+<p>On NEC PC98's where the C drive is a floppy disk, if you get the error <i>Cannot read drive \Device\Floppy0:</i>, place a formatted floppy disk in the drive. Make sure that the drive door is closed and that the disk is properly formatted. Then, proceed with installation.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 6) TOPIC 2-->
+
+<h4><a name="nonusnt40">Special Installation Instructions for Computers with Non-U.S. Versions of Microsoft Windows NT 4.0 and Microsoft Internet Explorer</a></h4>
+<p>
+If you are installing this version of Visual Studio 6.0 on a non-U.S. version of Windows NT 4.0, you must first install the appropriate language version of Windows NT 4.0 Service Pack 3.</p>
+<p> 
+To install this version of Visual Studio 6.0 on a computer that uses an international version of Microsoft Internet Explorer, you must install the appropriate language version of Microsoft Internet Explorer. </p>
+<p>The international versions of Windows NT 4.0 Service Pack 3 are available from these locations:</p>
+<li>
+<a href="ftp://ftp.microsoft.com/bussys/winnt/winnt-public/fixes">ftp://ftp.microsoft.com/bussys/winnt/winnt-public/fixes</a></li> 
+<li>
+<a href="http://www.microsoft.com/support/winnt/intlsp.asp">http://www.microsoft.com/support/winnt/intlsp.asp</a></li>
+<p>The international versions of Microsoft Internet Explorer 4.<i>x</i> are available from:</p>
+<li>
+<a href="http://www.microsoft.com/ie/download/">http://www.microsoft.com/ie/download/</a></li>
+<p>
+<hr align=left color=black SIZE=1 width=320>
+<!--------------------------------------------------------->
+<!--SECTION 7-->
+
+<h3><a name="dasdkissues">Data Access SDK 2.0</a></h3>
+
+<p>This section discusses all issues identified in Data Access SDK 2.0.</p>
+          <!------------------------------------------------------>
+          <!--(Sec. 7) TOPIC 1-->
+
+<h4><a name="installreq">Install Requirements</a></h4>
+<p>The Data Access SDK delivered with Visual Studio requires that the Microsoft Data Access components be installed prior to installing this SDK. Otherwise, when the SDK setup is run, you will get the message:</p>
+<blockquote>ODBC is not installed on this machine.  If you continue, you will receive errors.  Do you wish to continue anyway?</blockquote>
+<p>To resolve this, make sure that you have run the Visual Studio setup before installing the Data Access SDK.</p>
+
+          <!------------------------------------------------------>
+          <!--(Sec. 7) TOPIC 2-->
+
+<h4><a name="sql65orolderwithmdac2">Before Using SQL Server 6.5 or Older with MDAC 2.0</a></h4>
+<p>You must update the catalog procedures if you plan to use SQL Server 6.5 or older with MDAC 2.0. See the SQL Server Driver Help file, drvssrv.hlp, for more information.</p>
+<p>Typically, you will find drvssrv.hlp</p>
+<ul><li>On NT systems: \winnt\system32</li>
+<li>On Windows 95: \windows\system</li></ul>
+
+</FONT></BODY>
+</HTML>
+

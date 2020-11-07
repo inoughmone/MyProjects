@@ -1,0 +1,40 @@
+:Base jetsql35.hlp>langref
+:Title Microsoft Jet SQL Reference
+:Index Jet SQL Reference=jetsql35.hlp
+:Link acvba80.hlp
+1 Microsoft Jet SQL 参考
+2 概述
+3 SQL 合计函数=daidxAggregateFunctions
+3 Microsoft Jet 数据库引擎 SQL 的保留字=dasqlJetSQLReservedWords
+3 Microsoft Jet 数据库引擎 SQL 的数据类型=dasqlJetDataTypes
+3 Microsoft Jet 数据库引擎 SQL 和 ANSI SQL 的比较=dasqlJetVANSI
+3 等效的 ANSI SQL 数据类型=dasqlEquivalentDataTypes
+2 数据定义语言
+3 CREATE TABLE 语句=dasqlCreateTable
+3 CREATE INDEX 语句=dasqlCreateIndex
+3 ALTER TABLE 语句=dasqlAlter
+3 CONSTRAINT 子句=dasqlConstraint
+3 DROP 语句=dasqlDrop
+2 数据操作语言
+3 SELECT 语句=dasqlSelect
+3 SELECT...INTO 语句=dasqlSelectInto
+3 INSERT INTO 语句=dasqlInsertInto
+3 UPDATE 语句=dasqlUpdate
+3 DELETE 语句=dasqlDelete
+3 INNER JOIN 操作=dasqlInnerJoin@jetsql35.hlp>langref
+3 LEFT JOIN 和 RIGHT JOIN 操作=dasqlLeftRightJoin@jetsql35.hlp>langref
+3 PARAMETERS 声明=dasqlParameters@jetsql35.hlp>langref
+3 UNION 操作=dasqlUnion@jetsql35.hlp>langref
+2 外部数据源 Windows 注册表设置
+3 数据访问对象的自定义 Windows 注册表设置=dahowCustomizingDataAccess
+3 初始化 dBASE 数据库的驱动程序=dahowChangingdBASE
+3 初始化 HTML（Internet）Data Source 驱动程序=dahowChangingHTML
+3 初始化 Lotus 驱动程序=dahowChangingLotus
+3 初始化 Microsoft Excel 驱动程序=dahowChangingExcel
+3 初始化 Microsoft Exchange Data Source 驱动程序=dahowInitializingMicrosoftExchangeDataSourceDriver
+3 初始化 Microsoft FoxPro 数据库的驱动程序=dahowChangingFoxPro
+3 初始化 Microsoft Jet 3.5 数据库引擎的驱动程序=dahowChangingJetEngine30
+3 初始化 Microsoft Jet 2.5 数据库引擎的驱动程序=dahowChangingJetISAM
+3 初始化 Paradox 数据库的驱动程序=dahowChangingParadox
+3 初始化 Text Data Source 的驱动程序=dahowChangingText
+3 为ODBC 访问配置 Microsoft Jet 数据库引擎=dahowChangingMicrosoftODBC

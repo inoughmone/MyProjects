@@ -1,0 +1,3001 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Draft//EN">
+<html>
+<!----------------------------------------------------------------------------->
+<!--                          BEGIN HTML HEAD                                -->
+<!--                                                                         -->
+<!--                                                                         -->
+<!--                                                                         -->
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=GB_2312-80">
+<title>Visual Basic 自述文件</title>
+<meta name="MS-HAID" content="ReadmeVB">
+<style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000FF" vlink="#660066" onclick="checkExpand( )">
+<!--                                                                         -->
+<!--                             END HEADER                                  -->
+<!----------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------->
+<!--                            BEGIN JSCRIPT                                -->
+<!--                                                                         -->
+<!--                THIS IS STUFF IS STATIC - DO NOT ALTER                   -->
+<!--                                                                         -->
+<!--                                                                         -->
+<script language="JSCRIPT">
+
+  function checkExpand( )
+  {
+     if ("" != event.srcElement.id)
+     {
+        var ch = event.srcElement.id + "Child";
+        var el = document.all[ch];
+        if (null != el)
+        {
+           el.style.display = "none" == el.style.display ? "" : "none";
+           if (el.style.display != "none")
+           event.returnValue=false;
+        }
+     }
+  }
+</script>
+<!--                                                                         -->
+<!--                             END JSCRIPT                                 -->
+<!----------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------->
+<!--                         BEGIN README INTRO                              -->
+<!--                                                                         -->
+<!--                                                                         -->
+<!--                                                                         -->
+<!--                                                                         -->
+<h2>Visual Basic 6.0 版自述文件</h2>
+
+<p>(C) 1998 Microsoft Corporation. 保留所有权利。</p>
+
+<p>本文档中的其它产品和公司可能是其各自所有者的商标。</p>
+
+<p> <i>Visual Basic(R)</i><font color="#007f00">自述文件</font>中补充了与 Microsoft(R) Visual Studio(TM)  --  Windows(R) 和 Internet 开发系统一起提供的文档相关的最新信息。本文档中的信息比帮助系统中包含的信息更新。</p>
+
+<!--                                                                         -->
+<!--                                                                         -->
+<!--                            END README INTRODUCTION                      -->
+<!----------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------->
+<!--                               BEGIN TOC                                 -->
+<!--                                                                         -->
+<!--                                                                         -->
+<!--                                                                         -->
+<!--                                                                         -->
+<h3><p>内容 - 请单击以下的任一条目</p></h3>
+
+<p><b>注意：</b>如果要在本自述文件中查找某个主题，请确保目录中的所有标题已经展开。这样才能在 TOC 标题中找到所需的主题。</p>
+
+     <!------------------------------------------------------------------->
+     <!--                 Important Issues (Read First!)                -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="CriticalIssues">重要的问题 -- 请首先阅读！ </a></H4>
+
+<div id="CriticalIssuesChild">
+
+	<blockquote>
+<a href="#Samples1">示例文件的位置</a></blockquote>
+
+	<blockquote>
+<a href="#Critical1">将用户定义的类型传递给过程</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind2">与数据绑定控件不兼容的情况</a></blockquote>
+
+	<blockquote>
+<a href="#Critical2">按照主题标题进行在线搜索</a></blockquote>
+
+	<blockquote>
+<a href="#Critical3">交叉引用的 Internet Client SDK 实际上指的是 Internet/Intranet/Extranet 服务 </a></blockquote>
+
+	<blockquote>
+<a href="#Critical4">上下文相关的帮助</a></blockquote>
+
+	<blockquote>
+<a href="#Critical5">示例代码有时不能正确地进行剪切和粘贴</a></blockquote>
+
+	<blockquote>
+<a href="#Critical6">参考主题的定位按钮被禁止</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind7">查找有关 ADO 对象的帮助</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind8">SQL Server 的 OLE DB 提供程序需要新的 instcat.sql</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind9">在 Windows 95/98 上安装数据访问应用程序可能会失败</a></blockquote>
+
+	<blockquote>
+<a href="#ChsOnly1">关于安装时的“联机注册”</a></blockquote>
+
+	<blockquote>
+<a href="#ChsOnly2">关于“Microsoft Visual Basic 6.0 中文标准版”的名称</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--            Data Access Issues and DataBinding Tips            -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="DataBindIssues">与数据访问相关的问题和数据绑定的技巧</a></H4>
+
+<div id="DataBindIssuesChild">
+
+	<blockquote>
+<a href="#DataBind1">数据环境设计器代码示例中的错误</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind2">与数据绑定控件不兼容的情况</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind3">绑定到对象的属性可能产生不可预料的结果</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind4">对 ADO 记录集的复杂绑定需要 CursorType </a></blockquote>
+
+	<blockquote>
+<a href="#DataBind5">创建 Visual Basic 数据源：对于SQL Server 和 Access 数据库请将字段类型定为 adVarChar 而不是 adBSTR </a></blockquote>
+
+	<blockquote>
+<a href="#DataBind6">有关创建 OLE DB 提供程序的不正确引用</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind7">查找有关 ADO 对象的帮助</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind8">SQL Server OLE DB 提供程序需要新的 instcat.sql</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                 Controls Issues                               -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="ControlsIssues">与控件有关的问题</a></H4>
+
+<div id="ControlsIssuesChild">
+
+	<blockquote>
+<a href="#Controls1">轻量控件必须是无边界的</a></blockquote>
+
+	<blockquote>
+<a href="#Controls2">运行时错误 711：编译过的 .Exe 中没有包含与未被引用的控件有关的信息从而导致 Controls.Add 失败</a></blockquote>
+
+	<blockquote>
+<a href="#Controls3">分层的 FlexGrid 控件： ColWordWrapOption、ColWordWrapOptionBand、ColWordWrapOptionFixed、 ColWordWrapOptionHeader 属性</a></blockquote>
+
+	<blockquote>
+<a href="#Controls4">分层的 FlexGrid 控件： ColIsVisible 和 RowIsVisible 属性是只读的</a></blockquote>
+
+	<blockquote>
+<a href="#Controls5">DataRepeater 控件：设置公有属性只影响当前的控件</a></blockquote>
+
+	<blockquote>
+<a href="#Controls6">数据报表设计器：事件处理代码中的错误</a></blockquote>
+
+	<blockquote>
+<a href="#Controls7">RichTextBox 控件： SelPrint 方法拥有新的参数</a></blockquote>
+
+	<blockquote>
+<a href="#Controls8">可以在 Tools 目录下获得 Visual Basic 5 版的 MSChart 控件</a></blockquote>
+
+	<blockquote>
+<a href="#Controls9">Toolbar 控件： Style 属性的设置已改变</a></blockquote>
+
+	<blockquote>
+<a href="#Controls10">Visual Basic 运行时错误 720：试图将不是控件的对象添加到控件集合中将导致运行时错误</a></blockquote>
+
+	<blockquote>
+<a href="#Controls11">分层的 FlexGrid 控件：纠正在绑定记录集到 HflexGrid 时遇到的错误</a></blockquote>
+
+	<blockquote>
+<a href="#Controls12">分层的 FlexGrid 控件： 如何改变个别带区中的字体</a></blockquote>
+
+	<blockquote>
+<a href="#Controls13">分层的 FlexGrid 控件： 避免重复显示标题</a></blockquote>
+
+	<blockquote>
+<a href="#Controls14">ADO 数据控件： FetchProgress 和 FetchComplete 事件不可实现</a></blockquote>
+
+	<blockquote>
+<a href="#Controls15">DataGrid：SizeMode 和 Size 属性的值不能是 2 (dbgNumberOfColumns)</a></blockquote>
+
+	<blockquote>
+<a href="#Controls16">控件：页面设计器上的 ImageList 控件</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr12">页面设计器：控件问题</a></blockquote>
+
+	<blockquote>
+<a href="#Controls17">MSComm 控件：EOFEnable 属性不能停止数据输入</a></blockquote>
+
+	<blockquote>
+<a href="#Controls18">Treeview 控件： Node 对象的 Visible 属性是只读的</a></blockquote>
+
+	<blockquote>
+<a href="#Controls19">SysInfo 控件：不支持的常数</a></blockquote>
+
+	<blockquote>
+<a href="#Controls20">User 控件： PropertyBag 数据的二进制持久性引起页面设计器失败</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                 Language Issues                               -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="LanguageIssues">与语言有关的问题</a></H4>
+
+<div id="LanguageIssuesChild">
+
+	<blockquote>
+<a href="#Language1">InStr 函数和与国别有关的比较</a></blockquote>
+
+	<blockquote>
+<a href="#Language2">SendKeys 语句引起“无效过程调用”的错误</a></blockquote>
+
+	<blockquote>
+<a href="#Language3">Type 语句的澄清</a></blockquote>
+
+	<blockquote>
+<a href="#Language4">十进制数据类型以带符号整数形式存储</a></blockquote>
+
+	<blockquote>
+<a href="#Language5">DateSerial 函数和 Windows 98/Windows NT 5</a></blockquote>
+
+	<blockquote>
+<a href="#Language6">代码窗口中“查找下一个”的快捷键</a></blockquote>
+
+	<blockquote>
+<a href="#Language7">Add 方法(文件夹)的语法</a></blockquote>
+</div>
+
+
+     <!------------------------------------------------------------------->
+     <!--                 Samples Issues                               -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="SamplesIssues">与示例有关的问题</a></H4>
+
+<div id="SamplesIssuesChild">
+
+	<blockquote>
+<a href="#Samples9">得到示例应用程序的更新版本</a></blockquote>
+
+	<blockquote>
+<a href="#Samples1">示例文件的位置</a></blockquote>
+
+	<blockquote>
+<a href="#Samples2">Visual Basic 示例：Biblio 和 Mouse 示例被省略了</a></blockquote>
+
+	<blockquote>
+<a href="#Samples3">Visual Basic 示例：ChrtSamp 的描述</a></blockquote>
+
+	<blockquote>
+<a href="#Samples4">Visual Basic 示例：CtlsAdd 示例：在硬盘上 Controls.mdb 必须是可读/写的</a></blockquote>
+
+	<blockquote>
+<a href="#Samples5">DHSHOWME.VBP 示例：要让此示例在设计模式下能够正确地运行可能需要重新设置其 SourceFile 属性</a></blockquote>
+
+	<blockquote>
+<a href="#Samples6">PROPBAG.VBP 示例：装载此示例模块时可能出现的错误</a></blockquote>
+
+	<blockquote>
+<a href="#Samples7">运行 IObjSafe 示例应用程序</a></blockquote>
+
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                 Wizard Issues                                 -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="WizardIssues">有关向导的问题</a></H4>
+
+<div id="WizardIssuesChild">
+
+	<blockquote>
+<a href="#DataBind9">在 Windows 95/98 上安装数据访问应用程序可能会失败</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard1">打包和展开向导：自动从 Redist 目录中检选文件</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard2">打包和展开向导有 [Do Not Redist] 部分</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard3">打包和展开向导：在 Silent 模式下，按窗口的Z顺序通知窗口可能不是第一个窗口</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard4">打包和展开向导：命令行模式中增加一个参数以便指定可执行程序的路径</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard5">打包和展开向导：手工添加用户控件许可证文件</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard6">打包和展开向导：Web 部署过程中的步骤</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard7">打包和展开向导：关于 HTTP 协议的 Web 部署技巧</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard8">打包和展开向导：“开始”菜单项目：不支持“运行”选项</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard9">为 WebPost 的 Posting Acceptor 进行系统配置</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard10">打包和展开向导：如果从批文件重建 cabs 请编辑 Setup.lst 文件</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard11">打包和展开向导：错误 80042114</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard12">打包和展开向导：使用 Mdac_typ.Cab 来发布数据访问部件</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass21">标准软件包中不包含 .ASP 文件</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard13">打包和展开向导：在使用标准的设置时手工为 IIS 应用程序包含 .ASP 和 .HTM 文件</a></blockquote>
+	<blockquote>
+<a href="#Wizard14">打包和展开向导：坏的日期和时间形式</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard15">打包和展开向导：不能在第一个 Windows 95 版本上运行 Setup.exe</a></blockquote>
+
+	<blockquote>
+<a href="#Wizard16">打包和展开向导：打包 ActiveX 文档</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                 Error Message Issues                          -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="ErrorIssues">有关出错消息的问题</a></H4>
+
+<div id="ErrorIssuesChild">
+
+	<blockquote>
+<a href="#Error1">下列出错消息没有相应的帮助主题</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr1">DHTML 页面设计器出错消息</a></blockquote>
+
+	<blockquote>
+<a href="#Controls2">运行时错误 711：编译过的 .Exe 中没有包含与未被引用的控件有关的信息从而导致 Controls.Add 失败</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                 WebClass Designer Issues                      -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="WebClassIssues">有关 WebClass 设计器的问题</a></H4>
+
+<div id="WebClassIssuesChild">
+
+	<blockquote>
+<a href="#WebClass1">Webclasses：不支持 "Me." </a></blockquote>
+
+	<blockquote>
+<a href="#WebClass2">Webclasses：无效的 HTML 语法可能导致不可预料的错误</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass3">Webclasses：避免在 Webclass 中使用全局和静态变量</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass4">Webclasses：有些外部的 HTML 改变不能被自动检测到</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass5">Webclasses：模板不接受 IIS 管理控制台对文件的设置</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass6">Webclasses：无用户界面执行</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass7">Webclasses：驻留内存</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass8">Webclasses：有关 Debug 和 Compiled 版本之间差别的说明</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass9">Webclasses：提高性能的技巧</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass10">Webclasses：问题集选</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass11">Webclasses：相关的文章</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass12">Webclasses： HTM 源文件中的格式信息</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass13">Webclasses：不支持 HTML 的 LINK 元素</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass14">Webclasses：当与 Webclass 项目一起使用 Visual SourceSafe 的时候，必须手工来检查项目的 .HTM 文件</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass15">Webclasses：TagPrefix 应该是 WC:</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass16">Webclasses：URLFor 方法中的可变参数</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass17">Webclasses：使用 &amp;WCU 参数传递连续数据</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass18">Webclasses：“StateManagement 属性常数”帮助主题中包含了错误的属性参考信息</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass19">Webclasses：状态和 Session 对象</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass20">Webclasses：帮助主题“运行时定义 Webclass 事件”中的代码更正</a></blockquote>
+
+	<blockquote>
+<a href="#WebClass21">Webclasses：标准的软件包中不包含 HTM 和 ASP 文件</a></blockquote>
+	<blockquote>
+<a href="#WebClass22">Webclasses:未指明的错误</a></blockquote>
+
+</div>
+
+
+     <!------------------------------------------------------------------->
+     <!--                 DHTML Page Designer Issues                     -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="PageDsrIssues">有关 DHTML 页面设计器的问题</a></H4>
+
+<div id="PageDsrIssuesChild">
+
+	<blockquote>
+<a href="#PageDsr1">页面设计器的出错消息</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr2">页面设计器：不支持"Me." </a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr3">页面设计器：不能从窗体或者外部对象访问 HTML 元素</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr4">页面设计器：图象源文件被不正确地解析</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr5">页面设计器：二进制持久性问题</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr6">页面设计器：类型库的问题使得有些帮助主题不能显示</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr7">页面设计器：在运行模式下有模式的提示消息出现在浏览器后面</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr8">页面设计器：不要监视 HTMLDocument 类型的对象</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr9">页面设计器：不能在页面设计器中设计框架</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr11">页面设计器：不能在 SetInterval 方法中使用 Visual Basic 代码 </a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr12">页面设计器：有关控件的问题</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr13">页面设计器：有关 HTML 的问题集选</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr14">页面设计器：有关调试的问题集选</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr15">页面设计器：通过编程进行浏览的语法</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr24">页面设计器：项目文件在部署 .CAB 中所处的位置</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr17">页面设计器：插入 OBJECT 标记</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr18">页面设计器：当输入焦点位于页面设计器时，不能使用 CTRL+TAB 快捷键在窗口之间切换</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr19">页面设计器：不能删除一个不包含列的表</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr20">页面设计器：当与页面设计器项目一起使用 Visual SourceSafe 时，必须手工选进项目的 .HTM 文件</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr21">页面设计器：未指定的 BuildFile 属性将产生 DLL</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr22">页面设计器：与 Asynchronous 属性一起使用的 Load 事件</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr23">页面设计器：与属性页面相关的问题</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr26">页面设计器：保存选项的名称已改变</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr27">页面设计器：从编译模式切换到调试模式的过程中由于代码改变而产生的问题</a></blockquote>
+
+	<blockquote>
+<a href="#PageDsr28">页面设计器：在平台 SDK 中可以获得大多数语言元素的帮助</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                 Extensibility Issues                          -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="ExtensibilityIssues">有关可伸缩性的问题</a></H4>
+
+<div id="ExtensibilityIssuesChild">
+
+	<blockquote>
+<a href="#Ext1">"命令行安全"的外接程序行为</a></blockquote>
+
+	<blockquote>
+<a href="#Ext2">手工设定外接程序注册表的值</a></blockquote>
+
+	<blockquote>
+<a href="#Ext3">使用外接程序设计器</a></blockquote>
+
+	<blockquote>
+<a href="#Ext4">外接程序设计器：有关指定 Satellite DLL 的详细信息</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                 Miscellaneous Issues                          -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="MiscIssues">问题集选</a></H4>
+
+<div id="MiscIssuesChild">
+
+	<blockquote>
+<a href="#Misc1">从 DLL 返回错误值</a></blockquote>
+
+	<blockquote>
+<a href="#Misc2">数据访问指南：DataFormats 教程的文件扩展名是错误的</a></blockquote>
+
+	<blockquote>
+<a href="#Misc3">“选项”对话框中添加了“外部编辑器”字段</a></blockquote>
+
+	<blockquote>
+<a href="#Misc4"> Internet 部件下载程序中的 CodeBase Fixup 实用程序 </a></blockquote>
+
+	<blockquote>
+
+<a href="#Misc6">中文、日文和韩文版的 Windows 下项目属性/打开对话框中的文本被截掉一部分</a></blockquote>
+
+	<blockquote>
+<a href="#DataBind7">查找有关 ADO 对象的帮助</a></blockquote>
+
+	<blockquote>
+<a href="#Misc7">避免与 ActiveX 设计器一起使用Repository外接程序</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                         MTS Issues                            -->
+     <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="MTSIssues">有关 Microsoft Transaction Server (MTS) 的问题</a></H4>
+
+<div id="MTSIssuesChild">
+
+	<blockquote>
+<a href="#MTS1"> 在 Visual Basic 6.0 中建立并调试 MTS 部件</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                     Dictionary Object                         -->
+	 <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="DictIssues">Dictionary 对象</a></H4>
+
+<div id="DictIssuesChild">
+
+	<blockquote>
+<a href="#Dict1"> Dictionary 对象简介</a></blockquote>
+
+</div>
+
+     <!------------------------------------------------------------------->
+     <!--                       VCM Issues                              -->
+	 <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="VCM">Visual 部件管理器</a></H4>
+
+	<blockquote>
+<div id="VCMChild" >
+
+<p><a class=ex href="#" title="Click to expand or collapse." id="VCMKnownProblems">已知的问题</a>
+
+	<blockquote>
+<div id="VCMKnownProblemsChild" >
+
+<p><a href="#RelatedFilesTab">“相关文件选项卡 (部件属性对话框)”主题错误</a></p>
+
+<p><a href="#RemovingRepository10RegistryKeys">删除 Repository 1.0 的注册表项</a></p>
+
+<p><a href="#AddingrepositorytablestoanexistingMDBfile">向一个已有的 .mdb 文件中添加 Repository 表</a></p>
+
+	</blockquote>
+	</blockquote>
+	</blockquote>
+	</blockquote>
+
+
+
+
+
+     <!------------------------------------------------------------------->
+     <!--                       APE Issues                              -->
+	 <!--                                                               -->
+<H4><a class=ex href="#" title="Click to expand or collapse." id="APE">应用程序性能评测器</a></H4>
+
+	<blockquote>
+<div id="APEChild">
+
+<p><a class=ex href="#" title="Click to expand or collapse." id="APEKnownProblems">已知的问题</a>
+
+	<blockquote>
+<div id="APEKnownProblemsChild" >
+
+<p><a href="#ConfiguringRemoteAutomationSecurityWhenUsingRemoteAPEComponents">在使用远程 APE 部件时配置Remote Automation 的安全特性</a></p>
+
+<p><a href="#compatibilityissuesbetweenvs6apeandvb5ape">与 Visual Studio 6.0 一起发布的应用程序性能评测器和与 Visual Basic 5.0 一起发布的应用程序性能评测器之间的兼容性问题</a></p>
+
+<p><a href="#AdjustingdefaultsettingstouseAPEandMTS">调整默认的设置以便使用 APE 和 MTS</a></p>
+
+<p><a href="#ApplicationPerformanceExplorerServerSideSetup">应用程序性能评测器的服务器端的设置可能产生错误</a></p>
+
+	</blockquote>
+</div>
+
+	</blockquote>
+<br>
+
+     <!------------------------------------------------------------------->
+     <!--                          Other Jumps                          -->
+     <!--                                                               -->
+<p>与 Microsoft(R) Visual SourceSafe(tm) 有关的安装问题，请参看 <a href="ReadMeSS.htm" title="Jumps to the Visual SourceSafe installation readme.">Visual SourceSafe 说明</a>。</p>
+
+<p>有关 Visual Studio 6.0 套装产品的<font color="#007f00">一般安装问题</font>，包括并排产品安装，请参看<a href="install.htm" title="Jumps to the installation readme (install.htm).">安装说明</a>的自述文件 (install.htm)。</p>
+
+<H4>有关 Visual Studio 套装产品的帮助系统的其它问题，请转到：</H4>
+<p><a href="readmeDN.htm" title="Jumps to readmeDN.htm">MSDN(TM), Microsoft Developer Network 自述文件。</a></p>
+
+
+<!--                                                                         -->
+<!--                           END CONTENTS TOC                              -->
+<!----------------------------------------------------------------------------->
+<!-- The following is the line separator：-->
+<hr align="left" size="2" width="640" color="Black">
+<!----------------------------------------------------------------------------->
+<!--                             BEGIN CONTENTS                              -->
+<!--                                                                         -->
+<!--                                                                         -->
+<!--                                                                         -->
+<!--                                                                         -->
+     <!------------------------------------------------------------------->
+     <!--                         Critical Issues                       -->
+     <!--                                                               -->
+<h3>重要的问题</h3>
+<br>
+          <!------------------------------------------------------>
+          <!--                   Critical1                      -->
+          <!--                                                  -->
+<h4><a name="Critical1"></a>将用户定义的类型传递给过程</h4>
+<P>在 Visual Basic 6.0 中，可以将用户定义的类型 (UDT) 作为参数传递给一个过程或者函数，不过这有一定的约束条件。如果要在一个进程外部件中将 UDT 传递给一个过程或者要在一个多线程部件中跨线程将 UDT 传递给一个过程，那么就需要 DCOM for Windows 95 和 Windows 98 的一个更新版本，或者是 Windows NT 4.0的Service Pack 4。不仅在开发应用程序的计算机上需要更新过的文件，而且任何将运行该应用程序的计算机上都要进行更新。如果没有安装所需的文件，则将导致一个运行时错误。</P>
+<P>上述的约束条件并不适用于在一个单线程应用程序中传递 UDT 的情况；在这种情况下，不用更新就可以将用户定义的类型传递给过程。</P>
+<P>打包和展开向导不能确定那些部件是必需的 - 这要由开发人员来确保在最终用户的计算机上具备所需的文件。开发人员可以通过捕获运行时错误 458 - “Visual Basic 不支持变量所使用的 Automation 类型”，来测试部件是否存在。如果发生了这个错误，那么就必须对 DCOM 或者 Service Pack 部件进行更新；根据操作系统的不同，更新的过程也有所不同： </P>
+<H4>Windows 95 / Windows 98</H4>
+<P>DCOM98.EXE 是一个自解压的可执行程序，它将安装 Windows 95 或者 Windows 98 的DCOM 更新部件。这个文件位于 Visual Basic 6.0 CD 中的 DCOM98 目录下。该文件可以免费地与所开发的应用程序一道发布。</P>
+<H4>Windows NT 4.0</H4>
+<P>更新后的 DCOM 部件将自动地与 Service Pack 4 (SP4) 一道安装。可以从 Microsoft 的 web 站点下载此 Service Pack 。</P>
+
+
+
+          <!------------------------------------------------------>
+          <!--                   Critical2                      -->
+          <!--                                                  -->
+<h4><a name="Critical2"></a>按照主题标题进行在线搜索</h4>
+<p><b>当已知主题的标题时搜索该主题</b>
+<ol>
+<li>
+在 MSDN 窗口的定位窗格中，单击<b>搜索</b>选项卡，然后键入或者粘贴想要查找的主题的标题。请用引号将搜索字符串引起来。</li>
+<li>
+单击<b>仅搜索标题</b>。</li>
+<li>
+单击<b>列出主题</b>。(如果搜索所返回的命中主题不止一个，可以通过单击<b>标题</b>或者<b>位置</b>列标题来对主题列表进行排序)。</li>
+<li>
+选择想要的主题的标题，然后单击<b>显示</b>。</li>
+</ol>
+
+<p>
+<b>要查找某个主题在目录中所处的位置</b></p>
+<ul>
+<li>
+单击工具条上的<b>定位</b>按钮。目录将根据所查看的主题同步变化。</li>
+</ul>
+<p>
+<b>注意</b>&nbsp;&nbsp;&nbsp; 对 Visual Basic 文档的参考节点中的主题不能使用<b>定位</b> 按钮。</p>
+
+
+          <!------------------------------------------------------>
+          <!--                   Critical3                      -->
+          <!--                                                  -->
+<h4><a name="Critical3"></a>交叉引用的 Internet Client SDK 实际上指的是 Internet/Intranet/Extranet 服务</h4>
+<P>在部件工具指南中的建立 Internet 应用程序一书中，多个交叉引用都指向 MSDN 中一个被称为 "Internet Client SDK" 的部分，但是这个引用的正确名称应该是"Internet/Intranet/Extranet 服务" 当在 MSDN 中搜寻一个 Internet Client SDK 参考时，请在此部分中查找。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Critical4                      -->
+          <!--                                                  -->
+<h4><a name="Critical4"></a>上下文相关的帮助</h4>
+<p>如果 CD 驱动器中没有 MSDN CD 而想要使用帮助按钮和 F1 键来获取帮助，那就<b>必须</b> 在 MSDN 库的设置过程中选择定制安装选项。请选择标有 “VB 文档，”“ VB 产品示例，”和“VS 共享文档”的复选框。如果想要使用 Visual SourceSafe， 请同时选择“VSS 文档。”
+
+          <!------------------------------------------------------>
+          <!--                   Critical5                      -->
+          <!--                                                  -->
+<h4><a name="Critical5"></a>有时示例代码不能正确地进行剪切和粘贴</h4>
+<p>在将示例代码从 MSDN 库 Visual Studio 文档拷贝到代码编辑器中的时候，不能正确地拷贝换行和格式化信息。要解决这个问题，请按下列方法之一进行操作： </p>
+<ul><li>在拷贝完代码之后，手工编辑换行信息。</li>
+<li>查看示例代码来源，拷贝整个代码示例，包括<B>&lt;pre&gt</B> 和 <B>&lt;/pre&gt</B> 标签，将其粘贴到代码编辑器中，然后从粘贴进来的内容中删除掉不想要的部分。</li>
+</ul>
+
+
+          <!------------------------------------------------------>
+          <!--                   Critical6                      -->
+          <!--                                                  -->
+<h4><a name="Critical6"></a>参考主题的定位按钮被禁止</h4>
+<p>当在 MSDN 中通过搜索选项卡来查找一个语言参考主题时，不能使用定位按钮来查找该主题在 MSDN 目录树中所处的位置。
+</p>
+
+<br>
+
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--          Data Access Issues and DataBinding Tips              -->
+     <!--                                                               -->
+<h3>有关数据访问的问题和数据绑定的技巧</h3>
+<br>
+          <!------------------------------------------------------>
+          <!--                   DataBind1                      -->
+          <!--                                                  -->
+<h4><a name="DataBind1"></a>数据环境设计器代码示例中的错误</h4>
+<p>在主题中，“在数据环境设计器中通过编程来访问对象
+
+“执行一个带有多个参数的 Command 对象”中的例子错误地使用了 <b>Open</b> 方法：
+<pre><font face="Courier">
+	MyDE.Commands("InsertCustomer").Parameters("ID").value = "34"
+	MyDE.Commands("InsertCustomer").Parameters("Name").value = "Fred"
+	MyDE.Commands("InsertCustomer").<b>Open</b>
+</font></pre>
+
+<b>Commands</b> 对象根本没有 <b>Open</b> 方法。必须改为使用 <b>Execute</b> 方法。
+</p>
+<br>
+
+          <!------------------------------------------------------>
+          <!--                   DataBind2                      -->
+          <!--                                                  -->
+<h4><a name="DataBind2"></a>与数据绑定控件不兼容的情况</h4>
+<P>由于 Visual Basic 6.0 的一些改变，使得并不是所有的数据绑定控件都能够与所有的数据源兼容。这种不兼容性是由于 ADO 和 DAO/RDO 的内部绑定机制存在不同而造成的。为与 DAO/RDO 一起使用而专门创建的控件就不能绑定到一个 ADO 数据控件；而为与 ADO 一同使用而创建的控件则不能被绑定到标准的数据控件或者远程数据控件。</P>
+<P>这种不兼容的情况主要存在于复杂绑定的控件，诸如grids 或者 lists 这些需要绑定到一个数据源的多个字段的控件；简单绑定的控件，诸如文本框或者标签这样的绑定到单个字段的控件能够和每种数据源兼容。以下是一些示例： </P>
+
+<UL>
+<LI>Microsoft 数据绑定 Grid 控件 (Dbgrid32.ocx) 可以被绑定到 DAO 或者 RDO 数据控件；但是不能被绑定到 ADO 数据控件。</LI>
+<LI>Microsoft DataGrid 控件 (Msdatgrd.ocx) 可以被绑定到 ADO 数据控件；但是它不能被绑定到 DAO 或 RDO 数据控件。</LI>
+<LI>Microsoft Masked 编辑控件 (Msmask32.ocx) 可以被绑定到任何一种数据控件。</LI>
+<LI>内部控件 (文本框、图片框、标签，等等) 可以被绑定到任何一种数据控件。</LI>
+<LI>第三方控件和用 Visual Basic 编写的用户控件应该针对每种情况进行测试。</LI></UL>
+
+<P>在设计阶段，当试图将一个控件绑定到一个数据源的时候，开发者可能会碰到一条“没有兼容的数据源”的出错消息。&nbsp;在这种情况下，就需要用另外一个与数据源兼容的控件来替换该控件。</P>
+
+          <!------------------------------------------------------>
+          <!--                   DataBind3                      -->
+          <!--                                                  -->
+<h4><a name="DataBind3"></a>绑定到对象的属性可能会产生不可预料的结果</h4>
+<P>尽管有可能将任何对象绑定到任何别的对象，但是这样做的结果并不总是所预期的那样。有些属性是只读可绑定的，并不会更新相应的绑定源。</P>
+<P>例如，如果将一个 Frame 控件的 Caption 属性绑定到一个 ADO 记录集对象中名为 Foo 的字段，当在记录集中进行滚动的时候， Caption 将随之改变以便反映 Foo 的值。然而，如果通过编程来改变 Caption 属性 (Frame1.Caption = "Bar")， Foo 的值就不会进行更新。因为 Frame 的 Caption 属性是只读可绑定的，它不会发出通知来说明其数据已经被改变。</P>
+<P>对于用 Visual Basic 编写的对象来说，这并不是一个问题，因为开发人员可以在其对象的代码中调用 PropertyChanged 方法。对于其它的对象来说，可以通过检查 DataBindings 集合来确定一个属性是否是更新可绑定的。如果一个属性被列举在 DataBindings 集合中，那它就是更新可绑定的，且数据源将接收到对数据的更新；反之，如果没有被列出来，该属性就是只读可绑定的。</P>
+
+          <!------------------------------------------------------>
+          <!--                   DataBind4                      -->
+          <!--                                                  -->
+<h4><a name="DataBind4"></a>复杂绑定到一个 ADO 记录集需要 CursorType</h4>
+<P>当将一个 ADO 记录集对象绑定到一个复杂绑定的控件(比如一个 Grid 控件)时，需要显式地将 CursorType 属性设置为 adOpenStatic 或者 adOpenKeyset。如果不设置此属性，将不会显示任何的数据。下面的代码显示了 CursorType 属性的使用方法。</P>
+<pre><font size = 2><BLOCKQUOTE>Private Sub DataClass_Initialize()
+   Set cn = New ADODB.Connection
+   Set rs = New ADODB.Recordset
+   rs.CursorType = adOpenStatic
+   cn.Open "northwind"
+   rs.Open "customers", cn
+End Sub
+</BLOCKQUOTE></font></pre><P>绑定到一个简单绑定的控件 (诸如一个文本框)不需要一个特定的 CursorType。</P>
+
+          <!------------------------------------------------------>
+          <!--                   DataBind5                      -->
+          <!--                                                  -->
+<h4><a name="DataBind5"></a>创建 Visual Basic 数据源：对于SQL Server 和 Access 数据库请将字段类型定为 adVarChar 而不是 adBSTR</h4>
+<P>如果要向一个 ADO 记录集对象添加字段以便与一个 SQL Server 或者 Access 数据库一起使用，请将字段的类型定义为 adVarChar 而不是 adBSTR (正如一些示例代码中所示的那样)。当从 SQL Server 或者 Access 数据库中读出数据的时候，ADO 将使用 adVarChar 类型。</P>
+
+          <!------------------------------------------------------>
+          <!--                   DataBind6                      -->
+          <!--                                                  -->
+<h4><a name="DataBind6"></a>有关创建 OLE DB 提供程序的参考信息的错误</h4>
+<P>VB 文档错误地指出可以将一个类模块的 <B>DataSourceBehavior</B> 属性设置为 <I>2 - vbOLEDBProvider</I> 以便创建一个 OLE DB 数据提供程序。 <B>DataSourceBehavior</B> 属性的正确值是 <I>0 - vbNone</I> 和 <I>1 - vbDataSource</I>。 </P>
+
+<P>VB 文档还错误地提到了一个名叫 OnDataConnection 的事件，实际上类模块中根本不存在这个事件。</P>
+
+
+<P>最后，在“创建 MyDataSource 类”主题中，逐步实现的示例错误地指出应该将 <B>DataSourceBehavior</B> 设置为 <I>2 - vbOLEDBProvider</I>。恰恰相反，应该将 <B>DataSourceBehavior</B> 属性设置为 <I>1 - vbDataSource</I>。</P>
+
+<P>要利用 Visual Basic 创建一个 OLE DB 数据提供程序，请使用 OLE DB SDK 中所包含的提供程序编写工具包（Provider Writer Toolkit）。有关的详细信息，请参看 MSDN 上 Platform SDK 文档中的 OLE DB 简单的提供程序工具包（Simple Provider Toolkit）。</P>
+
+          <!------------------------------------------------------>
+          <!--                   DataBind7                      -->
+          <!--                                                  -->
+<h4><a name="DataBind7"></a>查找有关 ADO 对象的帮助</h4>
+<P>在使用 ADO 对象的时候， (例如，记录集、连接、命令、参数、ADOR、RDS、以及 RDS 服务器对象)，开发人员不能获得这类对象或者其属性、事件或方法的上下文相关的帮助。也就是说，如果开发人员引用一个对象并使用了这个对象的功能，当选择相应的代码并按下 F1 时并不会显示一个帮助主题。相反，将显示一个错误的主题或者一个“关键词未找到”的主题。</P>
+
+<P>不过，通过使用联机文件索引，就可以找到该对象的任何属性、事件或方法的帮助信息： </P>
+<ol>
+<li>如果没有打开 MSDN 文档查看器，请在<B>帮助</B>菜单上单击<B>内容</B>。</li>
+<li>单击<B>索引</B>选项卡。</li>
+<li>键入属性、事件或者方法的名称，如果合适的话，请在名称中包括“集合”、“属性”、“事件”或者“方法”等字。</li>
+<li>从可选的主题列表中，选择标题中包括“ADO”的主题。</li>
+</ol>
+<blockquote><b>Note</b>&nbsp;&nbsp;&nbsp;通过 MSDN 的查看器目录，在 ADO 主题中还可以找到其他帮助信息，例如 ADO 对象模型：打开<B> SDK 平台</B>，以及<b>数据库和信息服务</b>，到<B>Microsoft 数据访问 SDK</B>.</blockquote>
+
+          <!------------------------------------------------------>
+          <!--                   DataBind8                      -->
+          <!--                                                  -->
+<h4><a name="DataBind8"></a>SQL Server 的 OLE DB 提供程序需要新的 instcat.sql</h4>
+<P>在使用 SQL Server 的 OLE DB 数据提供程序之前，必须运行随 Microsoft Visual Basic 6.0 on SQL Server (6.5 版以及更新版本)一起发布的新版本的 instcat.sql。Instcat.sql 与 Visual Basic 6.0 一起发布，完成安装后可以在 \winnt\system32 目录下找到这个文件。</P>
+<P>如果 Instcat.sql 没有在 SQL Server 上运行，数据提供程序就不能从 SQL Server 处检索元数据（metadata），因而也就不能连接到该服务器。</P>
+          <!------------------------------------------------------>
+          <!--                   DataBind9                      -->
+          <!--                                                  -->
+<h4><a name="DataBind9"></a>在 Windows 95/98 上安装数据访问应用程序可能会失败</h4>
+<P>当重新发布包含数据访问组件的 VB 6.0 应用程序时，如果 Windows 95 和 Windows 98 的 DCOM 没有出现在客户机的 Windows 9x 上安装会失败。</P>
+<P>如果工程包含对 ADO, OLEDB,或 ODBC 的引用(可在向导的 Included 文件页中进行核实)，可通过软件包 &amp;展开向导将文件 Mdac_typ.exe 增加到安装软件包中。这一文件将 MDAC 2.0 文件安装到客户机上。 MDAC 2.0 正常工作需要 Windows 95 和 Windows 98 的 DCOM ，然而在安装时它并不检测这一点。如果 Windows 95 和 Windows 98 的 DCOM 没有出现在客户机的 Windows 9x 上安装会失败。一些旧的数据访问组件将在失败前被覆盖，可能引起客户机上旧的数据访问应用程序失败。</P>
+<P>重新发布 Windows 9x 版的数据访问应用程序时，需要确认 Windows 95 和 Windows 98 的 DCOM 安装到客户机上。DCOM98.EXE 是自释放可执行文件，这个文件将更新版的 Windows 95 or Windows 98 的 DCOM 安装到客户机上。不能在 Visual Basic 6.0 CD 的 DCOM98 目录中找到该文件。此文件可免费随 Visual Basic 应用程序一同发布。</P>
+
+          <!------------------------------------------------------>
+          <!--                   ChsOnly1                      -->
+          <!--                                                  -->
+<h4><a name="ChsOnly1"></a>关于安装时的“联机注册”</h4>
+<P>在安装中文VB6的过程中，安装向导会提示您通过Web注册，由于联机注册网页正在构造中，目前联机注册功能还无法使用，请填写附在产品包中的产品注册卡并寄往微软（中国）有限公司。</P>
+
+          <!------------------------------------------------------>
+          <!--                   ChsOnly2                      -->
+          <!--                                                  -->
+<h4><a name="ChsOnly2"></a>关于“Microsoft Visual Basic 6.0 中文标准版”的名称</h4>
+<P>Microsoft Visual Basic 共有三个版本：企业版，专业版和标准版。Microsoft Visual Basic 5.0 的学习版实际上就是标准版。MSDN Library Visual Studio 6.0 版中所指的学习版就是 Microsoft Visual Basic 6.0 中文标准版。
+</P>
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+   <!------------------------------------------------------------------->
+   <!--                     Controls Issues                           -->
+   <!--                                                               -->
+<h3>有关控件的问题</h3>
+          <!------------------------------------------------------>
+          <!--                   Controls1                      -->
+          <!--                                                  -->
+<h4><a name="Controls1"></a>轻量控件必须是无边界的</h4>
+<P>当通过将 Windowless 属性设置为 True 来创建一个轻量用户控件时，该控件的 BorderStyle 属性就被置成无效。根据定义，轻量控件是没有边界的。</P>
+<P>如果首先将 BorderStyle 属性设置为非 0 - None 的任何值，随后又将 Windowless 属性改变为 True，这样就会接收到一条出错消息“Windowless 用户控件只支持 BorderStyle = None”。 </P>
+
+
+          <!------------------------------------------------------>
+          <!--                   Controls2                      -->
+          <!--                                                  -->
+<h4><a name="Controls2"></a>运行时错误 711：编译过的 .Exe 中不包含与未被引用的控件有关的信息从而导致 Controls.Add 失败</h4>
+<B><P>问题： </P></B>
+<ol>
+<li>创建一个新的标准的 Exe 文件。</li>
+<li>向项目中添加一个用户控件。</li>
+<li>添加下列代码： </li>
+
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Dim WithEvents x as VBControlExtender
+
+Private Sub Form_Load ()
+   Set x = Controls.Add ("Project1.Usercontrol1", "XX")
+   x.Visible = True
+End Sub
+</FONT></blockquote></pre>
+<li>在<B>文件</B>菜单上，单击<B>生成 Project1.exe </B>(不要运行该项目。)</li>
+<li>运行该 exe 文件。</li>
+</ol>
+<B><P>结果：</B>导致了一个错误(711)，指出 Project1.Usercontrol1 是一个无效的 ProgID 因为在这个 exe 找不到任何与其相关的信息。</P>
+
+<B><P>解决办法：</B>在编译该项目之前，在<B>项目</B>菜单下，单击 <B>Project1 属性</B>。在<B>生成</B>选项卡上，取消对“删除与未使用的 ActiveX 控件相关的信息”复选框的选择。</P>
+
+<B><P>说明</P>
+</B><P>在默认情况下，如果在设计阶段 ActiveX 控件被引用而又没有被放置到任何一种窗体上，那么该 ActiveX 控件对运行时或可执行文件中的 Controls.Add 来说是不可用的。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls3                      -->
+          <!--                                                  -->
+<h4><a name="Controls3"></a>分层的 FlexGrid 控件： ColWordWrapOption、ColWordWrapOptionBand、ColWordWrapOptionFixed、ColWordWrapOptionHeader 属性</h4>
+<P>下面这些属性是分层的 FlexGrid 控件的一系列特征中的一部分，但是这些属性没有被归档到该控件的帮助信息中： ColWordWrapOption、ColWordWrapOptionBand、ColWordWrapOptionFixed、ColWordWrapOptionHeader。以下部分给出了这些属性的描述和语法。所有属性可用的设置值是一样的，这些设置值位于本主题的底部。</P>
+
+<B><P>ColWordWrapOption 属性</P>
+</B><P>返回或者设置一个值，这个值指出了在指定的列中文本如何进行换行。</P>
+<B><P>语法</P>
+</B><P><I>object</I>.<B>ColWordWrapOption </B>(<I>Index</I>) = <I>integer</I></P>
+<P> <B>ColWordWrapOption </B>属性的语法包括以下这些部分：</P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>部分</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>说明</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>object</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个对象表达式,其值为分层 FlexGrid 控件。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>Index</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>长整数.  要获得或者设置其自动换行信息的列号。这个值必须在 -1 和 Cols - 1 之间。如果将这个值设置为 *1，那就将选择所有的列。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>integer</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个数值表达式，决定了自动换行的方式，如设置部分中所示。</TD>
+</TR>
+</TABLE>
+
+<B><P>ColWordWrapOptionBand 属性</P>
+</B><P>返回或者设置一个值，这个值指出了特定的带区中文本自动换行的方式。</P>
+<B><P>语法</P>
+</B><I><P>object</I>.<B>ColWordWrapOptionBand (</B><I>BandNumber</I>, <I>BandColIndex</I><B>)</B> = <I>integer</I></P>
+<P> <B>ColWordWrapOption </B>属性的语法包括下列这些部分： </P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>部分</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>说明</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>object</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个对象表达式,其值为分层 FlexGrid 控件。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>BandNumber</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>长整数。要获得或者设置其自动换行信息的带区号。这个值必须在 0 到 Bands - 1 的范围之内。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>BandColIndex</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>长整数。要获得或者设置其自动换行信息的列号。这个可选参数的默认值是 *1，指出该带区中的所有列。有效值为 *1 到 Cols *1。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>integer</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个数值表达式，决定了自动换行的方式，如设置部分中所示。</TD>
+</TR>
+</TABLE>
+
+<B><P>ColWordWrapOptionFixed 属性</P>
+</B><P>返回或者设置一个值，这个值指定了在特定的固定列中文本自动换行的方式。</P>
+<B><P>语法</P>
+</B><I><P>object</I>.<B>ColWordWrapOptionFixed(</B><I>index</I><B>)</B> = <I>integer</I></P>
+<P> <B>ColWordWrapOptionFixed </B>属性的语法包括下列这些部分： </P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>部分</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>说明</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>object</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个对象表达式,其值为分层 FlexGrid 控件。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>index</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>长整数。要获得/设置其自动换行信息的列号。这个可选参数的默认值是 *1。有效值为 *1 到 Cols *1。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>integer</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个数值表达式，决定了自动换行的方式，如设置部分中所示。</TD>
+</TR>
+</TABLE>
+
+<B><P>ColWordWrapOptionHeader 属性</P>
+</B><P>返回或设置一个值，这个值指出了在列标头中文本如何进行换行。</P>
+<B><P>语法</P>
+</B><I><P>object</I>.<B>ColWordWrapOptionHeader(</B><I>BandNumber, BandColIndex</I><B>)</B> = <I>integer</I></P>
+<P> <B>ColWordWrapOptionHeader </B>属性的语法包括下列这些部分： </P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>部分</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>说明</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>object</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个对象表达式,其值为分层 FlexGrid 控件。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>BandNumber</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>长整数。要获得/设置其自动换行信息的带区号。这个值必须在 0 到 Bands - 1 的范围之内。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>BandColIndex</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>长整数。要获得/设置其自动换行信息的列号。这个可选参数的默认值是 *1，指出该带区中的所有列。有效值为 *1 到 Cols *1。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>integer</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个数值表达式，决定了自动换行的方式，如设置部分中所示。</TD>
+</TR>
+</TABLE>
+
+<B><P>设置值</P>
+</B><P> <I>integer </I>的设置值可以是：</P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="35%" VALIGN="TOP">
+<B><P>常数</B></TD>
+<TD WIDTH="10%" VALIGN="TOP">
+<B><P>值</B></TD>
+<TD WIDTH="55%" VALIGN="TOP">
+<B><P>说明</B></TD>
+</TR>
+<TR><TD WIDTH="35%" VALIGN="TOP">
+<B><P>flexSingleLine</B></TD>
+<TD WIDTH="10%" VALIGN="TOP">
+<P>0</TD>
+<TD WIDTH="55%" VALIGN="TOP">
+<P>(默认) 只在单行上显示文本。</TD>
+</TR>
+<TR><TD WIDTH="35%" VALIGN="TOP">
+<B><P>flexWordBreak</B></TD>
+<TD WIDTH="10%" VALIGN="TOP">
+<P>1</TD>
+<TD WIDTH="55%" VALIGN="TOP">
+<P>在单词之间自动断开重起一行</TD>
+</TR>
+<TR><TD WIDTH="35%" VALIGN="TOP">
+<B><P>flexWordEllipsis</B></TD>
+<TD WIDTH="10%" VALIGN="TOP">
+<P>2</TD>
+<TD WIDTH="55%" VALIGN="TOP">
+<P>截断超出矩形区域的文本并添加上省略号。</TD>
+</TR>
+<TR><TD WIDTH="35%" VALIGN="TOP">
+<B><P>flexWordBreakEllipsis</B></TD>
+<TD WIDTH="10%" VALIGN="TOP">
+<P>3</TD>
+<TD WIDTH="55%" VALIGN="TOP">
+<P>在行之间断开单词并在文本超出矩形区域的情况下添加省略号。</TD>
+</TR>
+</TABLE>
+
+          <!------------------------------------------------------>
+          <!--                   Controls4                      -->
+          <!--                                                  -->
+<h4><a name="Controls4"></a>分层的 FlexGrid 控件： ColIsVisible 和 RowIsVisible 属性是只读的</h4>
+<P> <B>ColIsVisible</B> 和 <B>RowIsVisible </B>属性是只读的属性，且不能通过编程来进行设置。可以使用这些属性来测试一行或者一列是否可见，如果适当的话，也可以用来隐藏该行或列，如下所示： </P>
+
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+With MSHFlexGrid1
+   If .ColIsVisible(1) Then .ColWidth(1) = 0
+   If .RowIsVisible(1) Then .RowHeight(1) = 0
+End With
+</FONT></blockquote></pre>
+
+<B><P>分层的 FlexGrid 控件： GridLines、GridLinesBand、GridLinesFixed、GridLinesHeader、GridLinesIndent、和 GridLinesUnpopulated 属性的其它设置</P>
+</B>
+<P>下列属性拥有两种另外的设置：GridLines、GridLinesBand、GridLinesFixed、GridLinesHeader、GridLinesIndent、GridLinesUnpopulated 属性。这些属性的可能设置请见下表： </P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="35%" VALIGN="TOP">
+<B><P>常数</B></TD>
+<TD WIDTH="10%" VALIGN="TOP">
+<B><P>值</B></TD>
+<TD WIDTH="55%" VALIGN="TOP">
+<B><P>说明</B></TD>
+</TR>
+<TR><TD WIDTH="35%" VALIGN="TOP">
+<B><P>flexGridDashes</B></TD>
+<TD WIDTH="10%" VALIGN="TOP">
+<P>4</TD>
+<TD WIDTH="55%" VALIGN="TOP">
+<P>虚线。将单元之间的线的类型设置为虚线。</TD>
+</TR>
+<TR><TD WIDTH="35%" VALIGN="TOP">
+<B><P>flexGridDots</B></TD>
+<TD WIDTH="10%" VALIGN="TOP">
+<P>5</TD>
+<TD WIDTH="55%" VALIGN="TOP">
+<P>点画线。 将单元之间的线的类型设置为点画线。</TD>
+</TR>
+</TABLE>
+
+<B><P>说明</P>
+</B><P>除了 flexGridNone、flexGridFlat、flexGridInset 和 flexGridRaised 之外，还可以使用这些设置值。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls5                      -->
+          <!--                                                  -->
+<h4><a name="Controls5"></a>DataRepeater 控件：对公共属性进行设置只影响当前的控件</h4>
+<P>当创建一个将用于 <B>DataRepeater</B> 控件中的用户控件的时候，请注意，该控件的公有属性将仅被设置在当前的控件上 (即输入焦点所在的“活动”控件)。例如，如果在运行时打开一个用户控件的 Font 属性，重新设置该属性 (如下面的例代码所示)将仅仅影响 <B>DataRepeater</B> 控件中的当前控件。而不会影响那些重复控件的字体。</P>
+
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Private Sub Command1_Click()
+   '只有当前控件的字体受到影响。
+   DataRepeater1.RepeatedControl.FontName = "Courier"
+End Sub
+</FONT></blockquote></pre>
+<P>用户控件中的相应的代码类似于以下的代码： </P>
+
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Public Property Get FontName() As String
+   FontName = txtProductName.Font.Name
+End Property
+
+Public Property Let FontName(ByVal newFontName As String)
+   txtProductName.Font.Name = newFontName
+End Property
+</FONT></blockquote></pre>
+<br>
+
+<B><P>TabStrip 控件：只有在 Style 属性 = TabFlatButtons 时，分隔符才会显示出来</P>
+</B>
+<P>当 <B>Style</B> 属性被设置为 <B>TabFlatButtons</B> 时，分隔符只出现在 <B>TabStrip</B> 控件上。以下是一个例子： </P>
+
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Private Sub Form_Load()
+   With TabStrip1
+      .Style = tabFlatButtons
+      .Separators = True
+   End With
+End Sub
+</FONT></blockquote></pre>
+<br>
+
+          <!------------------------------------------------------>
+          <!--                   Controls6                      -->
+          <!--                                                  -->
+<h4><a name="Controls6"></a>数据报表设计器：事件处理代码中的错误</h4>
+<P>在标题为<font color="#007f00">数据报表事件</font>主题的显示如何处理异步错误的代码中存在一个错误。有关的详细信息，请选择<b>仅搜索标题</b>进行 <a href="#Critical2">在线搜索</a>，在 MSDN 库的 Visual Studio 6.0 文档中查找  &quot;数据报表事件&quot;。</P>
+
+<P>包含错误的代码位于标题为“Error 事件或 Asynchronous 事件”的主题中。</P>
+
+<P>该段代码遗漏了一条“Select Case ErrObj.ErrorNumber”语句。正确的代码应该是： </P>
+
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Private Sub DataReport_Error(ByVal JobType As _ MSDataReportLib.AsyncTypeConstants, ByVal Cookie As Long, _
+ ByVal ErrObj As MSDataReportLib.RptError, ShowError As Boolean)
+   Select Case ErrObj.ErrorNumber
+      Case rptErrPrinterInfo ' 8555
+         MsgBox "发生了一个打印错误。 " &amp; _
+          "您可能没有安装打印机。"
+         ShowError = False
+         Exit Sub
+      Case Else ' 处理其它情况。
+         ShowError = True
+   End Select
+End Sub
+</FONT></blockquote></pre>
+<br>
+
+          <!------------------------------------------------------>
+          <!--                   Controls7                      -->
+          <!--                                                  -->
+<h4><a name="Controls7"></a>RichTextBox 控件： SelPrint 方法拥有新的参数</h4>
+<P> <B>SelPrint </B>方法现在拥有第二个，可选的参数。其语法和组成部分的描述显示如下： </P>
+
+<B><P>语法</P>
+</B><I><P>object</I>.<B>SelPrint(</B><I>lHDC</I> <B>As Long</B>, [<I>vStartDoc</I>]<B>)</B></P>
+<P> <B>SelPrint </B>方法的语法包括以下这些部分： </P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<B><P>部分</B></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<B><P>说明</B></TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>object</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>一个值为 <B>RichTextbox</B> 控件的对象表达式。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>lHDC</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>长整数。计划用来打印该控件内容设备的设备环境。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<I><P>vStartDoc</I></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>Boolean 类型.指出了控件关于 <I>startdoc</I> 和 <I>enddoc</I> 打印机控件操作的行为，如设置部分所示。</TD>
+</TR>
+</TABLE>
+
+<B><P>设置</P>
+</B><P> <I>vStartDoc </I>的设置可以是：</P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="21%" VALIGN="TOP">
+<B><P>常数</B></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<B><P>值</B></TD>
+<TD WIDTH="71%" VALIGN="TOP">
+<B><P>说明</B></TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="TOP">
+<B><P>True</B></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<P>-1</TD>
+<TD WIDTH="71%" VALIGN="TOP">
+<P>(默认) 控件保持其初始方式并发送 <I>startdoc</I> 和 <I>enddoc</I> 命令到打印机。</TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="TOP">
+<B><P>False</B></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<P>0</TD>
+<TD WIDTH="71%" VALIGN="TOP">
+<P>控件不发送 <I>startdoc</I> 和 <I>enddoc</I> 命令，但是仅发送 <I>startpage</I>和 <I>endpage</I> 命令到打印机。</TD>
+</TR>
+</TABLE>
+
+<B><P>说明</P>
+</B><P>添加这个参数的目的是改善当打印机以非默认方式进行打印的情况。当激活 <B>SelPrint</B> 方法后， Visual Basic 和 RichTextBox 控件都将向打印机发送 <I>startdoc</I> 和 <I>enddoc</I> 命令，这样将产生一对嵌套的 <I>startdoc</I>/<I>enddoc</I> 命令。有的打印机将仅仅响应第一对命令，这样一来，当 RichTextbox 控件发送出第二对命令的时候，打印机将变成禁止状态。在这种情况下，将 <I>vStartDoc</I> 参数设置为 <B>False</B> 可以阻止第二对命令的发送。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls8                      -->
+          <!--                                                  -->
+<h4><a name="Controls8"></a>可以在 Tools 目录下获得 Visual Basic 5 版的 MSChart 控件</h4>
+<P>仅对原先版本的 Visual Basic 的用户而言： </P>
+
+<P> Visual Basic 5.0x 版的 MSChart 控件现在包括在 Visual Basic 中。如果开发人员需要一个 Visual Basic 5 版的 Chart 控件，而且又已经安装了原先发布的版本的 MSChart 控件，请用 Visual Basic CD 上 Tools 目录下所包含的版本覆盖掉原先发布的版本。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls9                      -->
+          <!--                                                  -->
+<h4><a name="Controls9"></a>Toolbar 控件： Style 属性的设置被改变</h4>
+<P> <B>Toolbar</B> 控件的 Style 属性的设置已经被改变。该属性的帮助主题中将 <B>tbrTransparent</B> 和 <B>tbrRight</B> 列为可行的设置，但是，这些设置在目前的版本中是不可用的。实际可行的设置及其描述显示如下： </P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="21%" VALIGN="TOP">
+<B><P>常数</B></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<B><P>值</B></TD>
+<TD WIDTH="71%" VALIGN="TOP">
+<B><P>说明</B></TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="TOP">
+<B><P>tbrStandard</B></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<P>0</TD>
+<TD WIDTH="71%" VALIGN="TOP">
+<P>(默认) 标准的工具条。</TD>
+</TR>
+<TR><TD WIDTH="21%" VALIGN="TOP">
+<B><P>tbrFlat</B></TD>
+<TD WIDTH="9%" VALIGN="TOP">
+<P>1</TD>
+<TD WIDTH="71%" VALIGN="TOP">
+<P>平面。当光标在按钮上移动时，动态显示按钮的边界。</TD>
+</TR>
+</TABLE>
+
+          <!------------------------------------------------------>
+          <!--                   Controls10                     -->
+          <!--                                                  -->
+<h4><a name="Controls10"></a>Visual Basic 运行时错误 720：试图将任何非控件的对象添加到控件集合中将导致运行时错误</h4>
+<P>试图将任一个非控件的对象添加到控件集合中将导致运行时错误 720。只能向集合中添加 Visual Basic 内部控件或者 ActiveX 控件。</P>
+<B><P>要重现此错误：</P></B>
+<ol>
+<li>创建一个新的标准的 Exe。</li>
+<li>添加下列代码： </li>
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Private Sub Form_Load ()
+   Controls.Add "Excel.Application", "MyExcelApp")
+End Sub
+</FONT></blockquote></pre>
+<li>运行该 exe。</li>
+</ol>
+<B><P>结果：</B>导致了一个错误(720)：无效的类字符串。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls11                     -->
+          <!--                                                  -->
+<h4><a name="Controls11"></a>分层的 FlexGrid 控件：纠正在绑定记录集到 HflexGrid 时遇到的错误</h4>
+<P>如果在试着将 <B>Hierarchical FlexGrid</B> 绑定到一个 ADO 记录集对象的时候遇到下面这个错误， &quot;DataSource 的设置可能不正确&quot;，请尝试改变一些与 ADO 记录集对象或者命令相关的动作属性。例如，将 <B>CursorLocation </B>属性改变为 <B>adUseNone </B>或者 <B>adUseClient</B>。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls12                     -->
+          <!--                                                  -->
+<h4><a name="Controls12"></a>分层的 FlexGrid 控件：如何改变个别带区中的字体</h4>
+<P>因为整个 grid 对象使用的是同一个 font 对象，如果想要改变个别带区中的字体，就必须创建一个新的 font 对象，而不能直接改变字体。</P>
+
+<P>例如，下面的这种方法将不能达到改变单个带区中字体的目的： </P>
+<pre><FONT FACE="Courier" SIZE=2><blockquote><P>MSHFlexGrid1.FontBand(1).Name = "Arial"</P></blockquote></FONT></pre>
+<P>因为直接修改了 font 对象，这种方法将把所有带区中的字体都改变为 Arial。</P>
+
+<P>要改变单个带区中的字体，首先要创建一个新的 Font 对象，然后将该 Font 对象赋给 <B>FontBand </B>属性：</P>
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Dim ft As New StdFont
+ft.Name = "Arial"
+Set MSHFlexGrid1.FontBand(1) = ft
+</FONT></blockquote></pre>
+
+<P>这种方法将仅仅把该带区中的字体改变为 Arial。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls13                     -->
+          <!--                                                  -->
+<h4><a name="Controls13"></a>分层的 FlexGrid 控件：避免重复显示标题</h4>
+<P>按照默认的设置，分层的 FlexGrid 控件使用分层 FlexGrid 中的第一个 FixedRow 作为一组标题 (这意味着第一个 FixedRow 中显示了绑定到每一列的字段名称)。因为在默认的情况下，HFlexGrid 控件显示一个 FixedRow，如果允许在 Band 0 上显示标题，这样的效果就相当于把标题复制了两次。为了避免出现这种情况，请将 FixedRow 属性设置为 0，或者使用代码将第一个 FixedRow 中的文本清除掉。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls14                     -->
+          <!--                                                  -->
+<h4><a name="Controls14"></a>ADO 数据控件： FetchProgress 和 FetchComplete 事件不可实现</h4>
+<P>尽管 <B>ADO 数据控件</B>参考主题包括了指向 FetchProgress 和 FetchComplete 事件的链接，但实际上该控件的这两个事件还不可实现。</P>
+<br>
+
+          <!------------------------------------------------------>
+          <!--                   Controls15                     -->
+          <!--                                                  -->
+<h4><a name="Controls15"></a>DataGrid：SizeMode 和 Size 属性的值不能是 2 (dbgNumberOfColumns)</h4>
+<P>有关 <B>Split</B> 对象的 <B>SizeMode</B> 和 <B>Size</B> 属性的参考主题中提到了一个根本不存在的属性值： 2 (<b>dbgNumberOfColumns</b>)。请忽略这个值。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls16                     -->
+          <!--                                                  -->
+<h4><a name="Controls16"></a>控件：页面设计器上的 ImageList 控件</h4>
+<P>当在一个 DHTML 页面设计器上使用 ImageList 控件时，在设计阶段并不能添加图象。如果想要在一个未经编译的 .dll 项目中使用下列代码，将碰到运行时错误 -2147418113 (8000ffff)，“对象 Iimages 的 'Add' 方法失败” </P>
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Private Sub DHTMLPage_Load()
+   ImageList1.ListImages.Add , , LoadPicture("C:\Winnt\winnt.bmp")
+End Sub
+</FONT></blockquote></pre>
+<P>然而，上述代码经过编译将正确地运行。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Controls17                     -->
+          <!--                                                  -->
+<h4><a name="Controls17"></a>MSComm 控件： EOFEnable 属性不能停止数据输入</h4>
+<p> <b>EOFEnable</b> 属性决定当检测到一个 EOF 字符的时候是否发生 OnComm 事件。然而，与 VB 文档中对该属性的描述相反，输入不会停止。</p>
+
+          <!------------------------------------------------------>
+          <!--                   Controls18                     -->
+          <!--                                                  -->
+<h4><a name="Controls18"></a>Treeview 控件： Node 对象的 Visible 属性是只读的</h4>
+<P> <B>Treeview</B> 控件的 <B>Node</B> 对象的 <B>Visible</B> 属性是一个只读的属性。如果节点是不可见的，开发人员可以使用 <B>EnsureVisible</B> 方法将其变为可见的，如下例所示： </P>
+
+<pre><blockquote><FONT FACE="Courier" SIZE=2>
+Private Sub Command1_Click()
+   If Not TreeView1.Nodes(10).Visible Then
+      TreeView1.Nodes(10).EnsureVisible
+   End If
+End Sub
+</FONT></blockquote></pre>
+
+          <!------------------------------------------------------>
+          <!--                   Controls19                     -->
+          <!--                                                  -->
+<h4><a name="Controls19"></a>SysInfo 控件：不支持的常数</h4>
+<p>下列事件的参考主题：</p>
+<ul>
+<li>DeviceArrival 事件</li>
+<li>DeviceOtherEvent 事件</li>
+<li>DeviceQueryRemove 事件</li>
+<li>DeviceQueryRemoveFailed 事件</li>
+<li>DeviceRemoveComplete 事件</li>
+<li>DeviceRemovePending 事件</li>
+</ul>
+<p>具有标识设备和设备数据常数的列表。然而，与 VB 文档中所叙述的相反的是，这些事件或者 SysInfo 控件根本不支持这些常数。实际上，与帮助主题中列举的常数相关的值是有效的，但是常数的名称却不是。</p>
+
+          <!------------------------------------------------------>
+          <!--                   Controls20                     -->
+          <!--                                                  -->
+<h4><a name="Controls20"></a>User 控件：PropertyBag 数据的二进制持久性引起页面设计器失败</h4>
+<p> PropertyBag 以二进制的形式保存数据。但是，由于一个已知的二进制持久性和 DHTML 页面设计器的问题，这些数据将导致页面设计器和 Visual Basic 失败。有关的详细信息，请参看 <a href="#PageDsr5">页面设计器：二进制持久性问题</a> 。</p>
+
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                     Language Issues                           -->
+     <!--                                                               -->
+<h3>有关语言的问题</h3>
+          <!------------------------------------------------------>
+          <!--                   Language1                      -->
+          <!--                                                  -->
+<h4><a name="Language1"></a>InStr 函数和与国别有关的比较</h4>
+<P>要在比较中使用与国别有关的规则，请输入一个有效的 LCID (国别ID)。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Language2                      -->
+          <!--                                                  -->
+<h4><a name="Language2"></a>SendKeys 语句引起“无效过程调用”的错误</h4>
+<P> 在 Windows NT 4.0 Service Pack 3 下以短代码形式发送一个 Insert， {INS}，将导致一个“无效过程调用。”要解决这个问题，请使用 Insert 的长代码， {Insert}。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Language3                      -->
+          <!--                                                  -->
+<h4><a name="Language3"></a>Type 语句的澄清</h4>
+<P>“Type 语句”帮助主题中的最后一句指出：“ <b>Option Base</b> 语句的设置决定了数组的下界。” 这句话是错误的，应该被忽略掉。<b>Option Base</b> 的设置对用户定义的类型的数组没有任何影响。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Language4                      -->
+          <!--                                                  -->
+<h4><a name="Language4"></a>十进制数据类型以带符号整数形式存储</h4>
+<P>“十进制数据类型”帮助主题中指出 <b>Decimal</b> 变量是以无符号整数形式存储的，而这是错误的。 <b>Decimal</b> 变量是以带符号整数形式存储的</P>
+
+          <!------------------------------------------------------>
+          <!--                   Language5                      -->
+          <!--                                                  -->
+<h4><a name="Language5"></a>DateSerial 函数和 Windows 98/Windows NT 5</h4>
+<P>对于 <B><I>year</I></B> 参数，两位数的年份是以用户自定义的计算机设置为基础来转换的(默认的范围是 1930-2029)。范围的设置是在 Microsoft Windows 控制面板中的区域设置中定义的。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Language6                      -->
+          <!--                                                  -->
+<h4><a name="Language6"></a>代码窗口中“查找下一个”的快捷键</h4>
+<DL>“代码窗口的快捷键”帮助主题中不正确地指出“查找下一个”的快捷键是 SHIFT+F4。而“查找下一个”的正确快捷键是 F3。</DL>
+
+          <!------------------------------------------------------>
+          <!--                   Language7                      -->
+          <!--                                                  -->
+<h4><a name="Language7"></a>Add 方法 (文件夹) 的语法</h4>
+在“Add 方法 (文件夹)”帮助主题中，所显示的语法是错误的。正确的语法是：
+<PRE><I>object</I>.<B>Add</B> <I>foldername</I>
+</PRE>
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                     Samples Issues                            -->
+     <!--                                                               -->
+<h3>与示例有关的问题</h3>
+          <!------------------------------------------------------>
+          <!--                   Samples1                       -->
+          <!--                                                  -->
+<h4><a name="Samples1"></a>示例文件的位置</h4>
+<P>如果在 MSDN 设置过程中选择包括 Visual Basic 示例，示例文件就被安装在一下目录中：</P>
+<BLOCKQUOTE>C:\Program Files\Microsoft Visual Studio\MSDN98\98VS\1033\Samples\VB98. </BLOCKQUOTE>
+<P>如果在 MSDN 设置过程中没有选择包含 Visual Basic 示例，也可以在 MSDN CD 上的以下目录中找到 Visual Basic 的示例： </P>
+<BLOCKQUOTE>D:\Samples\Vb98</BLOCKQUOTE>
+<B><P>注意：</B> 以上所提到的驱动器号可能会根据系统的不同而有所变化。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Samples2                       -->
+          <!--                                                  -->
+<h4><a name="Samples2"></a>Visual Basic 示例：Biblio 和 Mouse 示例被省略了</h4>
+<P> Visual Basic 产品中将不再包含在 Visual Basic 文档目录中所包含的 Biblio 示例程序。此外，也不再包括“响应鼠标和键盘事件”中提到的 Mouse 示例程序。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Samples3                       -->
+          <!--                                                  -->
+<h4><a name="Samples3"></a>Visual Basic 示例：ChrtSamp 的描述</h4>
+<P>ChrtSamp 是 Visual Basic 中包含的一个新的示例程序，它示范了 MSChart 控件的主要特征。如果已经安装了 Visual Basic 示例，那就可以在硬盘上的下面这个位置找到这个示例： </P>
+<P>\\Program Files\Microsoft Visual Studio\Msdn98\98vs\1033\Samples\Vb98\ChrtSamp</P>
+<P>如果没有将 Visual Basic 示例安装到硬盘上，就可以在 MSDN CD 上的下述位置找到这个示例： </P>
+<P>Samples\Vb98\ChrtSamp</P>
+
+<P>这个示例使用了一个 Excel 电子表格来为图表提供数据。这个示例还允许通过单击不同的按钮来显示多个系列的图表。最后，这个示例通过将 ChartType 属性设置为某个合适的值示范了 MSChart 控件的 3D 特征。</P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=559>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<B><P>文件</B></TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<B><P>说明</B></TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>Chrtsamp.vbp</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>此示例的项目文件。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>Frmchart.frm</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>此示例的主窗体。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>Frmchart.frx</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>该窗体的二进制数据。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>Gas.xls</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>包含数据的 Excel 电子表格。</TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<P>Modchart.bas</TD>
+<TD WIDTH="80%" VALIGN="TOP">
+<P>包含此示例的函数和过程的代码模块。</TD>
+</TR>
+</TABLE>
+
+<B><P>要运行</P>
+</B><P> 按 F5 键来运行此示例。在装入所有数据之后，单击“图标类型”，可以改变图表类型。要查看示例的三维特征，请单击图标类型组合框并选择一种 3-D 图表类型，比如 <B>3dArea</B>。如果在按下 CTRL 键的同时，右键单击图表，将改变对该图表的外观。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Samples4                       -->
+          <!--                                                  -->
+<h4><a name="Samples4"></a>Visual Basic 示例：CtlsAdd 示例：在硬盘上 Controls.mdb 必须是可读/写的</h4>
+<P>如果试图从 MSDN CD 上运行 CtlsAdd 示例，当试图使用 CD 上的 controls.mdb 数据库将发生一个错误。因为  CtlCfg.vbp 示例使用了一个 Access 数据库 (controls.mdb) 来保存控件的许可关键信息，而这个数据库必须被安装在一个硬盘上。请将 controls.mdb 文件拷贝到硬盘上，并将其设置为可写的。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Samples5                       -->
+          <!--                                                  -->
+<h4><a name="Samples5"></a>DHSHOWME.VBP 示例：要让此示例在设计模式下能够正确地运行可能需要重新设置其 SourceFile  属性</h4>
+<P>当在设计模式下打开页面设计器示例的时候，如果这些示例显示为空白，请重新设置 SourceFile 属性以便反映在计算机上项目的 HTML 文件被安装到的位置。您必须重新设置项目中每个设计器的这个属性。然后这个示例应该能够正确地运行了。</P>
+<P>要重新设置一个设计器的 SourceFile 属性，请在属性窗口中的 SourceFile 属性中直接键入一个路径。或者也可以从工具箱中选择<B>项目属性</B>图标，单击<B>保存为一个外部文件</B>，然后单击<B>打开</B>并浏览正确的 .htm 文件。 </P>
+
+          <!------------------------------------------------------>
+          <!--                   Samples6                       -->
+          <!--                                                  -->
+<h4><a name="Samples6"></a>PROPBAG.VBP 示例：装载此示例模块时可能出现的错误</h4>
+<P>Propbag.vbp 引用了一个模块 (Module1.bas)，这个模块位于 MSDN 示例的默认安装目录。如果想要将这个示例移动到另外一个目录，当打开项目的时候模块的路径是不正确的，从而将遇到一个错误。要解决这个问题，请不带该模块装入项目，然后从安装示例的目录中将该模块重新添加到项目中。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Samples7                       -->
+          <!--                                                  -->
+<h4><a name="Samples7"></a>运行 IObjSafe 示例应用程序</h4>
+</FONT><P>由于一些最新发生的变化，IObjSafe 示例应用程序 (IObjSafe.vbp) 将不能正确地运行，除非您首先进行下列修改： </P>
+<OL>
+
+<LI>将 IObjSafe.vbp 项目文件装入开发环境中。</LI>
+<LI>从<b>项目</b>菜单中选择 <b>ucObjSafety 属性</b> 。在<b>调试</b>选项卡上从<b>开始程序</b>文本框中删除掉路径和文件名。</LI>
+<LI>在<b>用 URL 启动浏览器</b>文本框中键入 IObjSafe.htm 的实际路径和文件名。根据安装过程的不同，实际路径可能有所变化。</LI>
+<LI>从<b>工具</b>菜单中选择<b>选项</b>。在<b>常规</b>选项卡上，选择<b>遇到未处理的错误时中断</b>选择按钮。</LI></OL>
+
+<P>现在，这个应用程序应该能够正确地运行了。</P>
+<P>更新版的 IObjSafe 示例应用程序可在<A HREF="http://msdn.microsoft.com/vbasic/downloads/">联机得到。
+Microsoft Visual Basic 示例页</A>.</P>
+          <!------------------------------------------------------>
+          <!--                   Samples9                       -->
+          <!--                                                  -->
+<h4><a name="Samples9"></a>获得示例应用程序的更新版本。</h4>
+<P>许多 Visual Basic 示例应用程序的更新版本以及其它没有包含在 CD 中的示例可以在线获得，站点为 <A HREF="http://msdn.microsoft.com/vbasic/downloads/">
+Microsoft Visual Basic 示例页</A>.</P>
+
+
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                         Wizard Issues                         -->
+     <!--                                                               -->
+<h3>有关向导的问题</h3>
+          <!------------------------------------------------------>
+          <!--                   Wizard1                        -->
+          <!--                                                  -->
+<h4><a name="Wizard1"></a>打包和展开向导：自动从 Redist 目录中捡选文件</h4>
+<P>打包和展开向导的一个新的功能是，它能够从 Redist 文件夹中捡选文件。按照下面的步骤，就可以建立一个例子来了解如何使用这个功能： </P>
+
+<OL>
+
+<LI>已经建立了一个应用程序，并准备好进行包装。</LI>
+<LI>这个应用程序依赖某个特定的系统文件“MySysFile.dll”，这个文件原来一直是一个独立的文件。但是现在由于最近的一次系统更新，已经使得这个文件需要依靠别的文件才能正确地运行。</LI>
+<LI>但是，同时也提供了这个系统文件的一个独立的版本。</LI>
+<LI>为了简化设置，请将该独立的版本的文件放置到 Redist 文件夹中。</LI>
+<LI>当创建部署包装的时候，请定位系统文件以便指示向导应该包含该系统文件。</LI>
+<LI>打包和展开向导将选用位于 Redist 目录中的独立版本的文件，而不是选用系统文件(依赖其它文件的系统文件)。</LI></OL>
+
+
+<P>在默认的情况下，不会将文件放置到 redist 文件夹中。</P>
+
+
+          <!------------------------------------------------------>
+          <!--                   Wizard2                        -->
+          <!--                                                  -->
+<h4><a name="Wizard2"></a>打包和展开向导有 [Do Not Redist] 部分</h4>
+<P>包装和部署的 VB6Dep.ini 文件中添加了一个新的部分：[Do Not Redist]</P>
+
+<P>这个新的部分中列出两种文件： </P>
+<OL>
+
+<LI>运行时不需要的文件。例如，ActiveX 设计器通常需要两种文件引用，一个用于设计阶段，一个用于运行阶段。因为设计时引用是不必要的，它就被列在这部分中而没有被包括到包装中。</LI>
+<LI>不能被打包和展开向导重新发布的文件。有些附属的文件不是由 Visual Basic 安装的，但是必须由别的部件来安装。例如，下面的文件就是由 Internet Explorer 4.x 安装的： Shdocvw.dll 和 Mshtml.dll。</LI></OL>
+
+
+          <!------------------------------------------------------>
+          <!--                   Wizard3                        -->
+          <!--                                                  -->
+<h4><a name="Wizard3"></a>打包和展开向导：在 Silent 模式下，按窗口的Z顺序通知窗口可能不是第一个窗口</h4>
+<P>利用 Visual Basic，可以从命令提示符以 <I>silent</I> <font color="#007f00">模式</font>来运行打包和展开向导。如果以 silent 模式来运行打包和展开向导，还可以设定路径来记录向导的输出信息 (/<B>l </B>)。如果设定了路径，向导将创建一个日志文件来记录事件。如果不使用这个参数，向导将改为显示一个对话框来通知向导已经完成。然而，这个窗口并不总是可见的，因为它由可能被其它的窗口遮盖。为了能够看到这个窗口，可能须要关闭或者最小化所有其它窗口。</P>
+
+<P>有关的详细信息，请进行在线搜索，在 MSDN 库 Visual Studio 6.0 文档的 <I>Visual Basic</I> <font color="#007f00">概念</font>中查找 &quot;以独立形式运行&quot;。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard4                        -->
+          <!--                                                  -->
+<h4><a name="Wizard4"></a>打包和展开向导：命令行模式中增加了一个参数以便指定可执行程序的路径</h4>
+<P>打包和展开向导的命令行模式中增加了一个参数。这个参数如下表所示： </P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=590>
+<TR><TD WIDTH="17%" VALIGN="TOP">
+<B><P>参数</B></TD>
+<TD WIDTH="83%" VALIGN="TOP">
+<B><P>说明</B></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="TOP">
+<B><P>/e <I>path</I></B></TD>
+<TD WIDTH="83%" VALIGN="TOP">
+<P>如果项目的可执行文件的路径与项目的路径不同，请使用这个参数来设置其路径。</TD>
+</TR>
+</TABLE>
+
+
+<B><P>说明</P>
+</B><P>在多个开发人员的环境中，一台计算机专门用来编译项目并创建软件包。在这种情况下，这个参数允许使用命令行模式。</P>
+
+<P>有关的详细信息，请选择<B>打包和展开向导</B> 进行在线搜索，在MSDN 库 Visual Studio 6.0 文档中查找<font color="#007f00">以独立形式运行。</font></P>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard5                        -->
+          <!--                                                  -->
+<h4><a name="Wizard5"></a>打包和展开向导：手工添加用户控件许可证文件</h4>
+<P>在为一个需要许可证号码的用户控件创建软件包的时候，许可证文件 (.vbl) 并不能被自动包含进来。相反，必须手工添加该文件。</P>
+<P>如果打开了题为“打包和展开向导 * 包含的文件”对话框，请单击<B>添加</B>按钮并查找正确的 .vbl 文件。</P>
+</FONT>
+
+
+          <!------------------------------------------------------>
+          <!--                   Wizard6                        -->
+          <!--                                                  -->
+<h4><a name="Wizard6"></a>打包和展开向导： Web 部署过程中的步骤</h4>
+<P>当使用打包和展开向导将 Internet 软件包发布到 Web 服务器时，向导使用了一种称为 WebPost 的技术将软件包拷贝到服务器并适当地处理软件包。下面这些步骤就是 WebPost  处理 .cab 文件的全过程：</P>
+<OL>
+
+<LI> WebPost 将 .cab 文件展开到一个临时目录中。</LI>
+<LI> WebPost 定位 .cab 文件的 .inf 文件。</LI>
+<LI>根据 .inf 文件的内容，WebPost 过程安装应用程序文件 (根据 .inf 文件中的 RInstallApplicationFiles 部分)，安装系统文件(根据 RIinstallSystemFiles 部分)，并安装共享文件(根据 RInstallSharedFiles 部分)。在这个过程中，WebPost 将注册任何必要的文件。</LI></OL>
+
+<B><BLOCKQUOTE>注意</B> .inf 文件的 DefaultInstall 部分并不执行，因为这部分中包含的指令常常需要用户输入的信息。WebPost 过程也不会为应用程序创建一个虚拟的目录，如果需要的话，必须事先设置好目录。</BLOCKQUOTE>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard7                        -->
+          <!--                                                  -->
+<h4><a name="Wizard7"></a>打包和展开向导：关于 HTTP 或 FTP协议的 Web 部署技巧</h4>
+<UL>
+<LI>如果试图部署到 Web 服务器的 .cab 文件被拷贝到服务器上但是还没有被解开，请确保在“将部署的项目”屏幕上包含了 .cab 文件，并且在 Web 发布站点屏幕上使用 HTTP Post 作为协议。此外，应该已经在 Web 发布站点屏幕上选择了“解开并安装服务器端 Cab”复选框。如果还没有，请选择这个选项，尝试重新部署软件包。</LI></UL>
+
+<B><BLOCKQUOTE>注意</B> 运行在 IIS 4.0 上的 Posting Acceptor 2.0 支持解开 Cab 的功能。</BLOCKQUOTE>
+
+<UL>
+<LI>如果碰到错误，声称所选择的 Web 服务器不支持所选择的服务提供程序，可以进行下面的操作尝试解决这个问题： </LI></UL>
+
+<OL>
+<OL>
+
+<LI>如果正在使用 HTTP Post 协议，请确保 Web 服务器上安装了 Posting Acceptor。如果正在运行 IIS 4.0，则安装 Posting Acceptor 2.0。如果运行 IIS 3.0，则安装 Posting Acceptor 1.0。Posting Acceptor 1.0 不支持解开 Cab 的功能。</LI>
+<LI>请确保 URL 是正确的。如果正在使用 HTTP Post，请确保 URL 是以 http:// 打头的。如果正在使用 FTP，请确保 URL 是以 ftp:// 打头的。</LI>
+<LI>如果向安装了 Posting Acceptor 1.0 的服务器进行上载，当使用向导部署软件包的时候，不能选择解开并安装cabinet 文件的选项。如果遇到错误 C0042115，说明查询字符串 INSTALL 是无效的，请检查服务器的配置以便确定其安装的 posting acceptor 是哪个版本。如果版本号为 1.x，请确保取消对<b>解开并安装服务器端 Cab</B>选项的选择，并重新部署 cab。 
+<LI>如果须要使用 FTP 协议发送到以 http:// 打头的 URL，可以通过下面的方法消除这个错误：将下列登录项添加到 Web 服务器的 postinfo.asp 文件的结尾，这个文件通常位于 Web 服务器上的 scripts 目录中： <BR>
+<BR>
+&lt;!--这个登录项用于 FTP 协议 --&gt; <BR>
+[{02B5E1D1-8B7C-11D0-AD45-00AA00A219AA}] <BR>
+ServerName="&lt;%= Request.ServerVariables("SERVER_NAME") %&gt;" </LI></OL>
+</OL>
+
+<UL>
+<LI>如果遇到一个错误指出 INF 中的一些文件忙而需要重新启动计算机，请将注册表项 HKEY_LOCAL_MACHINE\Software\Microsoft\Publishing\RemoteInstaller 中的 <B>ComponentPermitReboot</B> 条目从否改为<B>是</B>。这样就允许在文件忙的情况下继续解开 cab 和安装，不过，为了成功地完成安装，有必要手工重新启动服务器。</LI>
+<LI>如果使用 HTTP Post 协议遇到一个错误称没有向 Web 服务器写入的权限，请在服务器计算机上打开 Internet 服务管理器，访问默认 Web 站点 (Console Root \ Internet Information Server \ machinename \ Default Web Site) 的接点，选择属性，选择“主目录”选项卡，然后选择“写”复选框。</LI>
+<LI>当试图发布时，如果文件是只读，就会遇到错误 C0042116 指出处理已经停止。请改变文件的属性以继续进行。
+<LI>请注意，如果将一个文件发布到一个目录中而该目录中已经有了一个同名的文件，那么服务器上的文件将被覆盖掉，而且不会显示任何警告消息。 
+<li>如果使用 FTP 协议遇到一个错误指出访问被禁止，请在服务器计算机上打开 Internet 服务管理器，访问默认 FTP 站点 (Console Root \ Internet Information Server \ machinename \ Default FTP Site) 的接点，选择属性，选择“主目录”选项卡，然后选择“写”复选框。 </LI>
+<LI>如果使用 FTP 协议遇到与上述错误不同的其它错误，请确保在 Web 服务器上已经正确地配置了 FTP 服务。要完成这个任务，请启动 Microsoft 管理控制台 (MMC)，然后按照下列步骤操作： </LI></UL>
+
+<OL>
+<OL>
+
+<LI>右键单击<B>默认的 FTP 站点</B> 选择<B>新的虚拟目录</B>。 </LI>
+<LI>输入一个将用来访问该虚拟目录的别名，然后单击<B>下一步</B>。 </LI>
+<LI>输入将映射到该虚拟目录的目录的物理路径 -- 例如， c:\inetpub\ftproot -- 然后单击<B>下一步</B>。 </LI>
+<LI>选择适当的访问许可，确保允许进行写访问，这样在部署过程中就不会产生错误，然后单击<B>完成</B>。</LI>
+<LI>右键单击<B>默认的 FTP 站点</B>并选择<B>停止</B>。</LI>
+<LI>右键单击<B>默认的 FTP 站点</B>并选择<B>开始</B>。<BR>
+<BR>
+当使用打包和展开向导来部署 FTP 服务器的时候，请使用站点 FTP://servername/<I>alias</I> 其中 <I>alias</I> 是在第二步中指定的别名。请使用 "anonymous" 作为用户名而 "me@somewhere" 作为密码，进行匿名登录。</LI></OL>
+</OL>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard8                        -->
+          <!--                                                  -->
+<h4><a name="Wizard8"></a>打包和展开向导：“开始”菜单项：不支持“运行”选项</h4>
+<P>在创建一个部署包装的时候，也可以创建一个“开始”菜单项。虽然在关于对话框的帮助主题中提到了这一点，但是不支持“运行”选项。</P>
+
+          <!------------------------------------------------------>
+          <!--                 Wizard9                         -->
+          <!--                                                  -->
+<h4><a name="Wizard9"></a>为 WebPost 的 Posting Acceptor 进行系统配置</h4>
+<P>当将软件包部署到 Web 服务器时，打包和展开向导使用一种称为 WebPost 的技术将文件移动到想要的位置。WebPost 由两个主要部件构成： </P>
+
+<UL>
+<LI>打包和展开向导，它将软件包内容发送到合格的站点。</LI>
+<LI> Posting Acceptor，位于 Web 服务器上，它允许将内容发布到 IIS 服务器。</LI></UL>
+
+<P>目前有多个版本的 Posting Acceptor 可以使用。必须确保根据计算机的配置在 Web 服务器上安装正确的版本。下表列出了适当的配置： </P>
+
+<TABLE CELLSPACING=1 CELLPADDING=7 BORDER=1 WIDTH=561>
+<TR><TD WIDTH="25%" VALIGN="TOP">
+<P><B>请使用</B></TD>
+<TD WIDTH="30%" VALIGN="TOP">
+<B><P>如果运行</B></TD>
+<TD WIDTH="45%" VALIGN="TOP">
+<B><P>备注</B></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<P>Posting Acceptor 2.0</TD>
+<TD VALIGN="TOP">
+<P>Windows NT 4.0 （带 SP3） <BR>
+IIS 4.0</TD>
+<TD VALIGN="TOP">
+<P>Posting Acceptor 2.0 既支持进行内容发布又支持在服务器上解开 cabinet (.cab) 文件。</TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<P>Posting Acceptor 1.0</TD>
+<TD VALIGN="TOP">
+<P>Windows NT 4.0 （带 SP3）<BR>
+IIS 3.0</TD>
+<TD VALIGN="TOP">
+<P>不能使用这个版本的 posting acceptor 来解开 .cab 文件。只能用这个版本来发布内容。可以将文件移动到服务器上，然后手工对应该由 .cab 过程注册的任何必要的文件进行注册。</TD>
+</TR>
+</TABLE>
+
+<BLOCKQUOTE><B>注意：</B> Posting Acceptor 不能在任何使用 Personal Web Server 或者 Peer Web Server 的平台上运行。必须使用 IIS。<BR>
+</BLOCKQUOTE>
+<P> Posting Acceptor 2.0 可以从第二张 Visual Studio 安装 CD 的 Deploy 文件夹中进行安装 
+Posting Acceptor 1.0 则可以从 <A HREF="http://www.microsoft.com/windows/software/webpost/post_accept.htm">
+Microsoft Posting Acceptor 信息站点</A> 进行安装。如果想要在已经有了 Windows NT Option Pack 的计算机上安装 Posting Acceptor 2.0，那就应该首先检查该计算机上是否已经安装了 1.0 版的 Posting Acceptor。
+如果已经安装了 1.0 版，请在安装 2.0 版之前先删除掉。要确定是否安装了 1.0 版，请在<b>控制面板</b>的<b>添加/删除程序</b>中选择 <b>NT Option Pack</b> 。单击 <b>添加/删除</b>，然后从列出的部件当中寻找 Posting Acceptor 1.0 。可以在 Microsoft Site Server 下找到。如果已经安装了，请删除它。然后运行 PASetup.exe，就可以安装 2.0 版。</p>
+
+
+          <!------------------------------------------------------>
+          <!--                   Wizard10                       -->
+          <!--                                                  -->
+<h4><a name="Wizard10"></a>打包和展开向导：如果从批文件重建 cabs，请编辑 Setup.lst 文件</h4>
+<P>在使用打包和展开向导创建一个标准的安装软件包之后，可以通过运行 Support 文件夹中的批文件用手工重新创建安装文件 (Setup.exe、Setup.lst、以及所有的 .cab 文件)。这样做允许手工定制软件包或者不用再次运行向导而重新创建一个软件包。运行这个批文件将 setup.exe 和 setup.lst 从 Support 文件夹拷贝到 Package 文件夹中并在 Package 文件夹中生成 cab 文件。然而，一旦批文件完成，setup.lst 并不知道生成了多少个 .cab 文件。如果不解决这个问题，安装程序将失败。</P>
+
+<P>为了解决这个问题，请进行下列操作： </P>
+<OL>
+<LI>在运行批文件之前，删除 Package 文件夹中所有的 .cab 文件。</LI>
+<LI>在运行完批文件之后，计算出由批操作产生的 cabs 的数量。</LI>
+<LI>用文本编辑器打开 Package 文件夹中的 Setup.lst 文件。请注意：有两个 Setup.lst 文件。一个位于 Support 文件夹中，第二个位于 Support 文件夹之外，与所创建的 .cab 文件同处于 Package 文件夹中。请确保打开的是 Package 文件夹中的 Setup.lst 文件。</LI>
+<LI>在文本编辑器中，查找下列行 (位于文件的顶部)：</LI>
+<pre><FONT FACE="Courier" SIZE=2>
+<blockquote><p>[Bootstrap]
+SetupTitle=Install
+SetupText=Copying Files, please stand by.
+CabFile=Projec1.CAB
+Spawn=Setup1.exe
+Uninstal=st6unst.exe
+TmpDir=msftqws.pdw
+</p></pre></blockquote></FONT>
+<LI>在最后一行 (<FONT FACE="Courier" SIZE=2>TmpDir=msftqws.pdw</FONT>) 后面插入下面一行： </LI></OL>
+</FONT><FONT FACE="Courier" SIZE=2><blockquote><P>Cabs=</FONT><FONT FACE="Verdana,Arial" SIZE=2><I>N</I></font></P></blockquote>
+<P><blockquote>其中 N 等于所生成的 cabs 的数量。</blockquote></P>
+</OL>
+<P>现在，Setup.lst 是最新的，安装过程应该能够成功。</P>
+<br>
+          <!------------------------------------------------------>
+          <!--                   Wizard11                       -->
+          <!--                                                  -->
+<h4><a name="Wizard11"></a>打包和展开向导：错误 80042114</h4>
+<P>如果在为 Internet 部署创建一个软件包的过程中遇到下面这个错误： </P>
+<blockquote>产生了未知的错误 80042114：所选择的 Web 服务器不支持所选择的服务提供 provider 。继续进行吗？ </blockquote><P>产生这个错误的原因是已经指定通过使用 HTTP URL 将软件包发布到一个 FTP 站点上。如果能够确定拥有对 web 服务器的访问权限，可以单击“是”，继续进行部署。</P>
+<P>要避免将来再次发生这个错误，当在同一个服务器上创建一个部署软件包的时候，请指定站点及其协议。进行这个操作的时候，将出现下面这个对话框： </P>
+<blockquote>指定的 URL 和发布方法可以为一个 Web 发布站点被保存在注册表中作。这就可以确保 URL 和发布方法是有效的，并且可以在将来部署到这个站点的时候节省时间。想要将此信息保存为一个 Web 发布站点吗？</blockquote>
+<P>如果选择“是”，就会保存站点信息而且再也不会遇到 80042114 错误了。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard12                       -->
+          <!--                                                  -->
+<h4><a name="Wizard12"></a>打包和展开向导：使用 Mdac_typ.Cab 和 Mdac20.Cab 来发布数据访问组件</h4>
+<P>如果 Internet 软件包中包括下面四个文件中的任何一个，向导将默认地将这些文件设置为从 <A HREF="http://activex.microsoft.com/controls/vb6/mdac_typ.cab">
+http://activex.microsoft.com/controls/vb6/mdac_typ.cab</A>.</P>
+<pre><FONT FACE="Courier" SIZE=2>
+MSDAOSP.dll 
+MSADO15.dll 
+MSADCF.dll 
+ODBC32.dll 
+</FONT></pre>
+<p>与此相似，向导默认地将下列文件设置为从 <A HREF="http://activex.microsoft.com/controls/vb6/mdac20.cab">
+http://activex.microsoft.com/controls/vb6/mdac20.cab</A>:</p>
+<pre><FONT FACE="Courier" SIZE=2>MSADOR15.dll 
+MSADCO.dll
+</FONT></pre>
+<P>在两种情况下，这些默认设置指的就是文件来源屏幕上的"从 Microsoft Web 站点下载"选项。这些 cab 文件 (mdac_typ.cab 和 mdac20.cab) 进行一些不应该通过手工完成的特殊处理。为了确保进行正确的处理， Internet cab 不应该包含这些 cab 文件而应该引用它们。因此，不应该为这些文件中的任何一个选择"包含在此 cab 中"选项。此外，如果选择了"从 Web 站点下载"选项，就应该仔细地指明cab 文件是这些 cab 文件的拷贝以确保进行正确的处理。</P>
+
+<P>请不要改变这些文件的默认设置。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard13                       -->
+          <!--                                                  -->
+<h4><a name="Wizard13"></a>打包和部署向导：在使用标准的安装时为 IIS 应用程序通过手工包含 .ASP 和 .HTM 文件</h4>
+<p>如果使用打包和展开向导的标准安装来部署一个 IIS 应用程序，就必须用手工将所有的与软件包一起的 .asp 或者 .htm 文件包含进来。请使用包含文件对话框来添加文件。</p>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard14                       -->
+          <!--                                                  -->
+<h4><a name="Wizard14"></a>打包和部署向导: 错误的日期和时间格式</h4>
+<P>在某些情形，打包和部署向导不能正确地把时间和日期信息写入 Setup.lst 文件。出现这种情况时，设置将失效，因为数据写成了 setup.exe 不能读的格式。问题出现在当您创建一个使用 Visual Basic 的 <B>US </B>版本部署软件包时。</P>
+<UL>
+<LI>使用德文版本的 Windows (注意: Visual Basic 的 <B> 德文 </B> 版本能正常工作。)</LI>
+<LI>日期分隔符既不是采用前向斜杠 ("/") 也不采用破折号 ("-") 的计算机. </LI></UL>
+<B><P>为纠正错误格式:</P></B>
+<ol>
+<li>从“开始”菜单打开 <B>控制面板</B>.</li>
+<li>单击 <B>区域设置</B>图标。</li>
+<li>在“日期”选项卡上把“日期”分隔符改为 "/" 。</li>
+<li>在“时间”选项卡上把“时间”分隔符改为 ":".</li>
+<li>运行打包和部署向导。</li>
+<li>保存日期和时间设置。</li>
+</ol>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard15                       -->
+          <!--                                                  -->
+<h4><a name="Wizard15"></a>打包和部署向导:不能在第一个 Windows 95 版本上运行 Setup.exe 。</h4>
+<P>所有用向导建立的设置软件包都不能在某种情形的 Windows 95的安装下运行，这种情形是 Windows 95 所带的 Oleaut32.dll 是最初版本，而它缺少对 API 的支持。这种问题<B>不</B>会出现在 Windows 95 的 OS 发行版 2 或 Windows NT 4.0 及其更新版上，在 Microsoft Office 97 或 Internet Explorer 3.0 或 4.0 安装后也不会出现这种问题。 Visual Basic 5.0 应用程序的任何安装也能对此有所补救。您也可以通过用新版本的 Oleaut32.dll 首先覆盖其老版本而克服此故障。确认在试图手工更新 Oleaut32.dll 前关闭所有应用程序。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Wizard16                       -->
+          <!--                                                  -->
+<h4><a name="Wizard16"></a>打包和部署向导:打包 ActiveX 文档</h4>
+<P> Visual Basic 6.0 打包和部署向导能为您的 ActiveX 文档工程直接把嵌入的 CODEBASE= 和 VERSION= 信息插到 .vbd 文件中。这样就无须在发送 ActiveX 文档前准备另外的 .htm 文件。内嵌的信息允许 Internet Explorer 为您的 ActiveX 文档代码和版本信息从 .vbd 读 .cab 文件名并执行安装。.您现在能直接搜寻到 .VBD 文件，如有必要，您的“用户”文档代码可以下载。</P>
+<P>使用 SetCodeBase 工具的 Visual Basic 5.0 设置有相同的功能，SetCodeBase 工具可在 Visual Basic Owners Area 找到。</P>
+<P>以下是 Visual Basic 6.0 打包和部署向导为“用户”文档设置而产生的一些问题。</P>
+<UL>
+<LI>Internet Explorer 3.x. 4.0, 和 4.01 不能读 VBD 文件中的嵌入信息。向导也生成一个老 (VB5) 格式的 .htm 文件。此 .htm 文件能用于发送 ActiveX 文档。然而,由于大多数代码被注释掉，您必须首先修改 .htm 文件。在删除注释和顶部一个额外的 &lt;A&gt; 标记 (&lt;a href=xxxx.VBD&gt;xxxxx.VBD&lt;/a&gt;) 后，文件将仅仅是一个带有您的“用户”文档 CLSID 和一些 Window_OnLoad 事件脚本代码的 OBJECT 标记</LI></UL>
+<UL>
+<LI>带有 Service Pack 1 或更新版本的 Internet Explorer 4.01 将从 .vbd 文件中正确地读取此信息。</LI></UL>
+
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                  Error Message Issues                         -->
+     <!--                                                               -->
+<h3>有关出错消息的问题</h3>
+<br>
+          <!------------------------------------------------------>
+          <!--                   Error1                         -->
+          <!--                                                  -->
+<h4><a name="Error1"></a>下列出错消息没有相应的帮助主题</h4>
+<P>目前，下列出错消息还没有相应的帮助主题： </P>
+<LI>"对象模块需要实现 '&lt;classname&gt;' 接口的'&lt;name&gt;'。" </LI>
+<P>接口指的是未实现的过程原型的一个集合。如果在一条语句中指定了一个接口而没能为接口中的所有过程添加代码，那么就会产生这个错误。</P>
+<P>必须为接口中所指定的所有过程编写代码。一个空的过程只要包含一行注释也就足够了。</P>
+<P>有关的其他信息，请选择有疑问的项目并按 F1 键。</P>
+
+<LI>"在标准模块或者私有类中定义的私有 Enum 类型和 Enum 类型不能用作公有对象模块的参数或者公有过程的返回类型，或者公有数据成员，或者公有的用户定义的类型的字段。"</LI>
+<P>当试图将一个 Enum 类型 (或者私有 Enum 类型) 用作： </P>
+<UL>
+<LI>公有对象模块的参数</LI>
+<LI>公有过程的返回类型</LI>
+<LI>公有数据成员</LI>
+<LI>公有的用户定义的类型的字段</LI>
+</UL>
+<P> 就会产生错误。</P>
+<P>在这些情况下，请避免使用 Enum 或者私有 Enum 类型。</P>
+
+<LI>"如果变体(Variant)包含元素为 With 对象的数组，就不能对该变体进行 ReDim、Erase、或者赋值等操作。"</LI>
+<P>当试图对元素为 with 对象的变量进行 ReDim, Erase 操作或者赋值为变体，就会发生错误。例如，下列代码就会产生这样的错误：
+<pre><FONT size="2">
+   Type Test
+      Name as Integer
+   End Type
+
+   Sub Main()
+      Dim c(0) As Test
+      Dim e
+      e = c
+      With e(0)
+         ReDim e(1)
+      End With
+   End Sub
+</font></pre>
+</p>
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                  WebClass Designer Issues                     -->
+     <!--                                                               -->
+<h3>有关 WebClass 设计器的问题</h3>
+          <!------------------------------------------------------>
+          <!--                   WebClass1                      -->
+          <!--                                                  -->
+<h4><a name="WebClass1"></a>Webclasses：不支持 "Me." </h4>
+<P>不能在 webclass 代码中使用 "Me" 引用来引用 webclass 对象。例如，VB 文档多次指出可以编写这样的代码： "Me.URLData = <I>value</I>"。实际上，这是不支持的。必须改用 "Webclass" 语句。例如，不能使用 Me.URLData，而要使用 Webclass.URLData。</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass2                      -->
+          <!--                                                  -->
+<h4><a name="WebClass2"></a>Webclasses：无效的 HTML 语法会导致不可预料的错误</h4>
+<P>如果添加到 webclass 中的模板中包含格式错误的 HTML，那么有时就会遇到有关装入模板的出错消息。这个消息仅仅指出发生了一个未知的错误。例如，在老版本的页面中可能有两个 BODY  标记，一个指明背景 GIF 而一个指明颜色。此外，还可能遇到由于开始和结束标记不匹配、无效的嵌套、或者其他语法问题而引起的错误。如果遇到有关装入模板的这类消息，请仔细检查 HTML 或者通过 HTML 语法检查程序来运行该文件，然后再重新装入模板。</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass3                      -->
+          <!--                                                  -->
+<h4><a name="WebClass3"></a>Webclasses：避免在 Webclass 内使用全局和静态变量</h4>
+<P>在多线程环境中，对每个线程都会分配全局变量。有关的详细信息，请选择 <b>仅搜索标题</b> 进行 <a href="#Critical2">在线搜索</a>，在 MSDN 库 Visual Studio 6.0 文档中查找 &quot;可扩展性和多线程&quot;。</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass4                      -->
+          <!--                                                  -->
+<h4><a name="WebClass4"></a>Webclasses：有些外部的 HTML 改变不能被自动检测到</h4>
+<P>在 webclass 设计器中对 HTML 模板进行操作的时候，在 Visual Basic 之外(例如，在一个外部的 HTML 编辑器中)对 HTML 文件所作的任何改变，在返回到设计器中后通常都能够被 Visual Basic 检测到。在这些情况下，系统会提示您重新装入被改变的文件。</P>
+<P>但是在某些情况下，外部的改变却不能被检测到。最常见的这种情况就是，在切换到外部编辑器之前将输入焦点设置到不是 webclass 设计器的 Visual Basic 窗口中。在返回到 Visual Basic 之后，并不会出现刷新的提示。这有可能导致在保存项目的时候将外部的改变覆盖掉，除非您亲自刷新文件。</P>
+<BLOCKQUOTE><B>注意</B> 如果在项目运行的同时对模板进行编辑，也可能遇到这种情况。</BLOCKQUOTE>
+<P>如果改变了 HTML 而没有被提示进行刷新，在这种情况下，可以从模板的快捷菜单中选择刷新 HTML 模板，进行手动刷新。</P>
+<p><b>注意：</b> 当切换到外部 HTML 编辑器的时候，最好是使用编辑 HTML 工具条按钮或者快捷菜单命令。如果使用任务条或者 ALT+TAB 快捷键转到编辑器，请保证在离开 Visual Basic 之前保存项目，否则，就很可能丢失在设计器中所作的改变。</p>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass5                      -->
+          <!--                                                  -->
+<h4><a name="WebClass5"></a>Webclasses：模板不接受 IIS 管理控制台对文件的设置</h4>
+<P> IIS 管理控制台(IIS Administration Console)允许服务器管理员指定 IIS 服务器上可用文件的属性。这些属性包括 HTTP 标头，文件安全特性，和自定义错误(custom errors)。如果文件是由 webclass 在运行时发送到客户机上的，这些属性就不会在 webclass 模板文件上进行设置。</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass6                      -->
+          <!--                                                  -->
+<h4><a name="WebClass6"></a>Webclasses：无用户界面执行</h4>
+<P>如果项目中包含有 webclass，那么就必须选上项目属性对话框中的无用户界面执行选项。这个属性有如下的好处： </P>
+
+<UL>
+<LI>设置这个属性允许 webclass 作为一个房间模型对象运行。这就允许 webclass 在接收到 HTTP 请求的线程上为该请求提供服务，而不用在单个线程上处理所有的请求。</LI></UL>
+
+<BLOCKQUOTE><B>注意</B> 必须将项目属性对话框中的线程模型属性设置为 Apartment Threaded 以便作为一个 房间模型对象运行。</BLOCKQUOTE>
+
+<UL>
+<LI>设置这个属性可以使得 Visual Basic 运行时 DLL 在事件日志文件中记录下所有的运行时错误，而不是以提示消息的形式显示错误。显示提示消息会挂起 IIS 线程。</LI>
+<p></p>
+<LI>设置这个属性可以使得所有对 Visual Basic MsgBox 函数的调用都将其消息记录到事件日志文件当中，而不是显示提示消息。显示提示消息会挂起 IIS 线程。 </LI>
+</UL>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass7                      -->
+          <!--                                                  -->
+<h4><a name="WebClass7"></a>Webclasses：驻留内存</h4>
+<P>在标准的 Visual Basic 项目中，一旦项目不再被使用，它们就从线程或进程中释放出来。在 webclass 项目中，这个模型可能会引起性能方面的问题，因为服务器必须创建一个对象、激活对象的方法，并销毁对象。可以设置一个被称为驻留内存的项目属性，从而优化 webclass。驻留内存的属性会阻止项目的释放直到运行该项目的线程或进程结束为止。</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass8                      -->
+          <!--                                                  -->
+<h4><a name="WebClass8"></a>Webclasses：有关调试和编译过版本之间差别的说明</h4>
+<P>Visual Basic 能够调试在 Windows NT 服务下运行的组件。这个功能的最常见的用途是来调试一个 IIS 应用程序。通过在 Visual Basic 集成开发环境运行组件，Visual Basic 就能够达到这个目的。当组件运行的时候， IIS 创建一个由 Visual Basic 提供的 proxy 对象，而这个对象反过来创建一个在 Visual Basic IDE 中运行的真实对象。IIS 然后通过 DCOM 与该对象进行通信。</P>
+<P>这个调试行为与项目以编译过的 DLL 运行的方式大为不同。当运行项目的编译过的版本时，某些行为与其在调试模式下的表现大不相同。鉴于这点，当建立 webclass 时，您必需牢记项目的编译过的行为。</P>
+<P>必须在下面的关键领域中调整应用程序以便适应 webclass 作为一个编译过的应用程序时的行为： </P>
+
+<UL>
+<LI>请使用系统 DSN，因为其他的 DSN 只能在调试模式下运行。</LI>
+<LI>在项目中，请不要在远程计算机上使用 Access 数据库。尽管这样做在调试模式下是可行的，但是在编译过的应用程序中就不能使用这种数据库。</LI>
+<LI>请不要允许 webclass 将自身或者其他的 Visual Basic 组件添加到 Active Server Page 的 Application 对象中。这样做将在运行编译过的应用程序的时候产生错误。</LI>
+<LI>理解编译过的应用程序的安全上下文。有关安全方面的文章的信息，请参看下面的"Webclasses：相关的文章"部分</LI>
+<LI>请牢记，编译过的 webclass 将被从多个线程访问，而不是从同一个线程。而在调试模式下则相反。全局和静态变量将不会在进程之间保持不变。有关的详细信息，请选择 <b>仅搜索标题</b> 进行 <a href="#Critical2">在线搜索</a>，在 MSDN 库 Visual Studio 6.0 文档中查找 &quot;可伸缩性和多线程&quot; 。</LI>
+<LI>虽然在调试模式下可以看到提示消息，但是编译过的 webclass 将所有的错误当作输入项写到 NT 的事件日志或者创建在 Windows 目录下的一个文件中。在编译过的模式下不会显示任何出错消息。</LI>
+<LI>虽然必须为 webclass 设置无用户界面执行，您将看不到不能在调试模式下设置此属性的副作用。有关的详细信息，请参看上面的无用户界面执行部分。</LI></UL>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass9                      -->
+          <!--                                                  -->
+<h4><a name="WebClass9"></a>Webclasses：提高性能的技巧</h4>
+<P>可以使用下面的各种技巧来提高 IIS 应用程序的性能： </P>
+
+<UL>
+<LI>确保应用程序的项目属性对话框中的无用户界面执行和驻留内存两个选项都被选上。</LI>
+<LI>如果应用程序中不包含任何的文本替换，将 TagPrefix 属性设置为一个空的字符串。这样将避免 webclass 进行不必要的扫描。</LI>
+<LI>不要将 Visual Basic 对象 (或者任何别的房间模型 COM 对象) 保存到 Active Server Pages 的 Session 对象。这样做可能影响到可伸缩性。但是可以在 Session 对象中保存字符串而且没有副作用。有关的详细信息，请参看 IIS 文档。</LI>
+<LI>限制在应用程序中使用变体。 </LI>
+<LI>如果 webclass 的 StateManagement 属性被设置为 wcRetainInstance，当客户的数量显著增加的时候，性能将会下降。</LI>
+<LI>如果应用程序正在对一个没有包含任何替换或者使用 URLData 属性的 webclass 模板执行客户端交易，那就应该直接通过 URL 来访问模板。</LI>
+<LI>在使用 URLFor 方法时，请使用字符串名称而不要使用对象引用来指定 webitem。</LI>
+<LI>当创建和激活其他组件的时，请使用指定类型。</LI></UL>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass10                     -->
+          <!--                                                  -->
+<h4><a name="WebClass10"></a>Webclasses：问题集选</h4>
+<UL>
+<LI>当 IIS 应用程序的调试程序遇到任何事件中的断点时，按下 F5 键继续执行，但这样做并不会将输入焦点返回到 Internet Explorer中。在继续进行之后，必需手工切换到 Internet Explorer。</LI>
+<LI>Webclass 名称和标签名称是不区分大小写的。不能通过仅仅改变名称中的大小写来重新命名一个 webclass。例如，如果将一个名叫 Orderentry 的webclass 改为 OrderEntry，原来的名称将保持不变。</LI>
+<LI>在调试过程中，请避免运行多个浏览器的实例。如果打开的 Internet Explorer 实例不止一个， Visual Basic 就不会对运行 webclass 项目的浏览器实例进行跟踪。如果打开了两个浏览器，一个指向项目而另外一个指向别的页面，那么在结束调试的时候，两个浏览器都会受到影响。
+<LI>如果试图从命令行编译 IIS 应用程序项目，可能会遇到错误。消除这个错误的一种方法就是在 Visual Basic 中打开该项目，在设计器中进行一些无关紧要的改动，然后重新保存项目。随后从命令行中重新开始编译，现在编译应该可以正常地进行了。</LI>
+</LI>
+<LI>如果想要对 webclass 中 HTML 模板上的按钮进行编程，就必须注意两条事项。首先按钮必须是 SUBMIT 类型的。只要在按钮元素的 HTML 中添加一个参数，指明 type=SUBMIT，就可以将其设置为 SUBMIT 类型。其次，不能直接对按钮进行编码；而必须连接其表单元素。可以将每个按钮放置在独立的表单上，也可以使用 Request 对象的form 集合以便确定发起事件的按钮。</li> 
+</UL>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass11                     -->
+          <!--                                                  -->
+<h4><a name="WebClass11"></a>Webclasses：相关的文章</h4>
+<P>Webclasses 紧密结合了几种不同的技术，包括 Visual Basic、Active Server Pages、Internet Information Server 和 Windows NT。如果您想要了解 webclass 背后的技术，您可以从 Microsoft 的 Web 站点上获得一些有用的文章。其中一些特别有用的文章列出如下： </P>
+
+<UL>
+<LI>SiteBuilder Network 的主要站点。<BR>
+<A HREF="http://www.microsoft.com/workshop/server/toc.asp">(http://www.microsoft.com/workshop/server/toc.asp.)</A> </LI>
+<LI>"Implementing a Secure Site with ASP" <BR>
+<A HREF="http://www.microsoft.com/isn/techcenter/security.asp">(http://www.microsoft.com/isn/techcenter/security.asp.)</A> </LI>
+<LI>"Security Issues with Objects in ASP and ISAPI Extensions"<BR>
+<A HREF="http://support.microsoft.com/support/kb/articles/q172/9/25.asp">(KB article Q172925)</A> </LI>
+<LI>"COM Security Frequently Asked Questions"<BR>
+<A HREF="http://support.microsoft.com/support/kb/articles/q158/5/08.asp">(KB article Q158508)</A> </LI>
+<LI>"Descriptions of Workings of OLE Threading Models"<BR>
+<A HREF="http://support.microsoft.com/support/kb/articles/q150/7/77.asp">(KB article Q150777)</A> </LI>
+<LI>"Automate Printing in ASP from COM Servers" <BR>
+(KB article Q184291) </LI>
+<LI>"COM Servers Activation and NT Windows Stations"<BR>
+<A HREF="http://support.microsoft.com/support/kb/articles/q169/3/21.asp">(KB article Q169321)</A> </LI>
+<LI>"Launching ActiveX Servers from ISAPI Extensions"<BR>
+<A HREF="http://support.microsoft.com/support/kb/articles/q156/2/23.asp">(KB article Q156223)</A> </LI>
+<LI>"Security Ramifications for IIS Applications"<BR>
+<A HREF="http://support.microsoft.com/support/kb/articles/q158/2/29.asp">(KB article Q158229)</A> </LI></UL>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass12                     -->
+          <!--                                                  -->
+<h4><a name="WebClass12"></a>Webclasses：HTM 源文件中的格式信息</h4>
+<P>在向 webclass 设计器中添加模板文件之后， HTML 源代码中的一些格式信息可能会被丢失。例如， webclass 可能从初始的文件中删除掉一些无关紧要的空白区域。这样做完全不会影响到 HTML 页面的功能。</P>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass13                     -->
+          <!--                                                  -->
+<h4><a name="WebClass13"></a>Webclasses：不能支持 HTML 的 LINK 元素</h4>
+<P>LINK 标记在 HTML 页面中被用来引用样式表(style sheet)。尽管一个 webclass 项目中的 HTML 页面中可以包含这个标记，但是不能使用设计器来访问 LINK 元素，也不能对其编写 Visual Basic 代码。如果想要在代码中操作 LINK 标记， 可以象在线文档中那样通过手工向标记中添加事件符号(notation)。要查看符号，请在 MSDN 库 Visual Studio 6.0 文档中选择<b>仅搜索标题</b>进行 <a href="#Critical2">在线搜索</a>，查找 &quot;通过手工向 .HTM 文件中添加事件Notation &quot;。 </P>
+</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass14                      -->
+          <!--                                                  -->
+<h4><a name="WebClass14"></a>Webclasses：当与 Webclass 项目一起使用 Visual SourceSafe 的时候，必须通过手工来检查项目的 .HTM 文件</h4>
+<P>当将 IIS 应用程序项目捡选进 Visual Source Safe 时，与项目相关的 HTML 页面并不能和项目的其他文件一起被自动地选进 Source Safe 树中。必须通过手工将这些文件作为相关文件添加到树中。</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass15                      -->
+          <!--                                                  -->
+<h4><a name="WebClass15"></a>Webclasses：TagPrefix 应该是 WC:</h4>
+<P>虽然 webclass模板的 TagPrefix 属性的默认值是 <B>WC@</B>，但是无论何时，只要可能在模板文件中指示文本替换，使用 <B>WC:</B> 就更为合适一些。&nbsp;</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass16                      -->
+          <!--                                                  -->
+<h4><a name="WebClass16"></a>Webclasses： URLFor 方法中的变体参数</h4>
+<P> URLFor 方法的 WebItem 参数能够接受 WebItem 对象或者作为字符串的 WebItem 名称。出于性能方面的原因，如果在一个请求中引用了多个 webitem ，那就应该使用字符串形式。</P>
+          <!------------------------------------------------------>
+          <!--                   WebClass17                      -->
+          <!--                                                  -->
+<h4><a name="WebClass17"></a>Webclasses：使用 &amp;WCU 参数传递连续数据</h4>
+<P>在 MSDN 的组件工具指南的建立应用程序书中的"在 Webclass 中处理连续传送"一节中，文档不正确地指出，可以使用附加在 URL 请求后面的一个 <B>?Data</B> 参数在服务器和客户机之间移动数据。实际上 <B>&amp;WCU</B> 参数而不是 <B>?Data</B>。这种请求的正确语法是： </P>
+<TT><FONT ><BLOCKQUOTE>WCI=webitem1?WCE=event1&amp;WCU=01</BLOCKQUOTE>
+</font></TT>
+          <!------------------------------------------------------>
+          <!--                   WebClass18                      -->
+          <!--                                                  -->
+<h4><a name="WebClass18"></a>Webclasses："StateManagement 属性常数"帮助主题中包含了错误的属性参考信息</h4>
+<P>"StateManagement 属性常数"主题中错误地指出， <B>RetainInstance</B> 常数使得 webclass 保留状态数据直到 webclass 对象调用 <B>SetComplete</B> 方法为止。正确的说法应该是数据被保留到 webclass 对象调用  <B>ReleaseInstance</B> 方法为止。要查看此不正确的帮助主题，请选择 <b>仅搜索标题</b>  在 MSDN 库 Visual Studio 6.0 文档中进行 <a href="#Critical2">在线搜索</a>，查找 &quot;StateManagement 属性常数&quot;。</P>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass19                     -->
+          <!--                                                  -->
+<h4><a name="WebClass19"></a>Webclasses：状态和 Session 对象</h4>
+<P>如果 WebClass 的 StateManagementType 是 <b>wcRetainInstance</b>，那么在每个用户会话中，将在 ASP Session对象中保留 WebClass 的一个实例。在有些情况下，当 Session 对象中实际上有 webclass 的两个实例时，可能会显得状态并没有得到保持。如果有两个虚拟目录都指向同一个位置，就可能出现这种情况。当开始调试会话时，创建一个虚拟目录且在代码中引用又一个虚拟目录，这样做实际上将在启动代码时开始 webclass 的第二个实例。</P>
+<P>有关如何执行 Active Server Pages Session 对象的详细信息，请参考 MSDN 中的 Active Server Pages 文档。</P>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass20                     -->
+          <!--                                                  -->
+<h4><a name="WebClass20"></a>Webclasses：帮助主题"运行时定义 Webclass 事件"中的代码更正</h4>
+<P>在"运行时定义 Webclass 事件，"主题中，示例代码中显示了这样一条语句： </P>
+<pre><FONT ><BLOCKQUOTE>
+rs = New ADO.Recordset</blockquote></font></pre>
+<P>这行的正确语法应该是：</P>
+<pre><FONT ><BLOCKQUOTE>
+Set rs = New ADODB.Recordset
+</blockquote></font></pre>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass21                     -->
+          <!--                                                  -->
+<h4><a name="WebClass21"></a>Webclasses：标准的软件包中不包含 HTM 和 ASP 文件</h4>
+<P>在使用打包和展开向导将 IIS 应用程序包装到一个标准的软件包的时候，向导不会自动地在所创建的 .cab 文件中包含进项目的 .htm 和 .asp 文件。所以，在包装应用程序时您必须通过手工来包含这些文件。</P>
+
+          <!------------------------------------------------------>
+          <!--                   WebClass22                     -->
+          <!--                                                  -->
+<h4><a name="WebClass22"></a>Webclasses: 未指明的错误</h4>
+<P>如果您添加一个已有的 webclass 到一个新工程中，然后在保存工程之前单击模板图标，那么就回发生一个“未指明的错误”。如果您在此文中收到一个提示说“发生了一个未指明的错误”，请保存您的工程。</P>
+
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--               DHTML Page Designer Issues                      -->
+     <!--                                                               -->
+<h3>有关 DHTML 页面设计器的问题</h3>
+<br>
+          <!------------------------------------------------------>
+          <!--                 PageDSR1                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR1"></a>页面设计器的出错消息</h4>
+<P>对于下列消息还没有帮助主题： </P>
+<LI>"将内部 HTML 保存到文件？"</LI>
+<P>如果在属性页面上指定一个新的已有的 HTML 文件，将导致这个错误。</P>
+<P>如果在页面设计器的一个实例中拥有 HTML 代码，而又决定在设计器中使用另外一个已有的 HTML 文件，那么就必须打开属性页面并指定已有文件的名称。然后，页面设计器必须了解如何来处理设计器中当前的内部 HTML。如果选择是， Visual Basic 将在您指定一个文件名后把 HTML 保存到文件中。</P>
+<LI>"DHTML 页面设计器不能是私有的" </LI>
+<P>如果试图要将一个 DHTML 页面设计器的 <B>Public</B> 属性设置为 <B>False</B>，将导致这个错误。尽管 ActiveX 设计器可以是公有的也可以是私有的，但是在一个 DHMTL 应用程序中，只有公有的设计器才可以被访问。私有的设计器在某些场合下是有用的，比如说在数据环境中，如果想要将数据访问逻辑封装到数据环境中而又不想将数据设为公有。</P>
+<LI>"重新装入已改变的 HTML 文件？"</LI>
+<P>如果页面设计器发现它所引用的 HTML 文件在磁盘上被修改了，就会出现这个消息。这个消息确认是否想要把已经被修改 HTML 的装回到设计器中。</P>
+
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR2                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR2"></a>页面设计器：不支持"Me." </h4>
+<P>在页面设计器的代码中，不能使用"Me"引用来 DHTMLPage 对象。例如，文档中经常提到可以编写类似的代码"Me.Document.<I>item</I>"。但是实际上这是不可行的。开发人员必须改用 "DHTMLPage" 语句。例如，不能使用 Me.Document，而要改用 DHTMLPage.Document。如果设计器是私有的，则可以使用 "Me"，但是在 DHTML 页面中不允许私有。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR3                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR3"></a>页面设计器：不能从窗体或者外部对象访问 HTML 元素</h4>
+<P>在窗体、对话框或者其他的对象中，不能编写代码来引用页面上的 HTML 元素。页面元素只能在页面本身的范围内访问。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR4                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR4"></a>页面设计器：图象源文件路径被不正确地解析</h4>
+<P>当在页面设计器中进行工作的时候，经常想要引用位于当前 HTML 页面所在目录中的一个图象。在正常情况下，当引用这样一个图象时，在 image 元素的 SRC 属性中并没有包含路径信息。没有路径信息就指示浏览器从页面当前的目录中获取图象。例如，对于这种类型的图象，可以在 SRC 属性中输入"myimage.gif"，而不用指定为 "c:\mydhtml\myimage.gif"。 这被称为相对路径，因为它没有指定图象文件的完整路径。</P>
+<P>在设计阶段，页面设计器不能正确地显示这些相对路径代表的图象。如果在 SRC 属性中输入这样的属性值或者显示包含这种引用的页面，将出现两种情况： </P>
+
+<UL>
+<LI>在设计阶段，图象元素将显示为空。</LI>
+<LI>页面设计器将在 SRC 属性上附加 "About:"。例如，SRC 属性可能会显示为 "About:myimage.gif."</LI></UL>
+
+<P>尽管存在这些问题，在运行项目的时候图象还是能够正确地显示出来。所以完全可以忽略掉 SRC 属性中的 "About:" 关键词以及在设计器中图象没有被显示出来这个事实。在保存 HTML 文件的时候， image 标记将会以正确的形式写入。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR5                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR5"></a>页面设计器：二进制持久性问题</h4>
+<P>有些控件试图将其某些或者全部属性以二进制的格式保存，但是二进制格式不能在 HTML 直接表示。正因为此问题，在运行项目之后，控件的一些属性可能没有得到保存。为了纠正这个问题，请在运行时设置这些属性。下面的列表中显示了一些已经知道将发生这种问题的属性： </P>
+<TABLE CELLSPACING=1 BORDER=1 CELLPADDING=7 WIDTH=623>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE">
+<B><FONT ><P>控件</FONT></B></TD>
+<TD WIDTH="58%" VALIGN="MIDDLE">
+<B><FONT ><P>条目</FONT></B></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE">
+<FONT ><P>Tabbed 对话框控件</FONT></TD>
+<TD WIDTH="58%" VALIGN="MIDDLE">
+<FONT ><P>TabsPerRow 属性不持久</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE">
+<FONT ><P>Windowless 控件列表框</FONT></TD>
+<TD WIDTH="58%" VALIGN="MIDDLE">
+<FONT ><P>列表项不持久</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE">
+<FONT ><P>一般控件</FONT></TD>
+<TD WIDTH="58%" VALIGN="MIDDLE">
+<FONT ><P>Tabstrip 的设置不持久</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE">
+<FONT ><P>一般控件</FONT></TD>
+<TD WIDTH="58%" VALIGN="MIDDLE">
+<FONT ><P>Toolbar 的设置不持久</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE">
+<FONT ><P>一般控件</FONT></TD>
+<TD WIDTH="58%" VALIGN="MIDDLE">
+<FONT ><P>StatusBar 的设置不持久</FONT></TD>
+</TR>
+<TR><TD WIDTH="42%" VALIGN="MIDDLE">
+<FONT ><P>ADODC 控件</FONT></TD>
+<TD WIDTH="58%" VALIGN="MIDDLE">
+<FONT ><P>ConnectionString 属性不持久</FONT></TD>
+</TR>
+</TABLE>
+
+<P>此外，对于很多控件来说，字体属性不是保持不变的。这种情况是二进制持久性问题的最常见的表现形式。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR6                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR6"></a>页面设计器：类型库的问题使得有些帮助主题不能显示</h4>
+<P>当开始一个页面设计器项目的时候，您将在对象浏览器中看到两个 DHTML 类型库 --  <B>DHTMLPAGELIB</B> 库和 <B>DHTMLProject</B> 库。文档提供了 DHTMLPAGELIB 库的帮助，但是没有提供 DHTMLProject 库的帮助。DHTMLProject 的大多数元素可以在其他库中找到。</P>
+<P>在其他的情况下，类型库的问题会妨碍某些帮助的显示和正确执行。这发生在下列情况下： </P>
+<UL>
+<LI>当试图从属性窗口中访问与 ActiveX 控件的属性有关的帮助时。</LI>
+<LI>当试图从代码编辑器窗口中访问与 Document 属性有关的属性时。</LI>
+</UL>
+
+<P>在大多数情况下，应该能够通过 MSDN 帮助查看器来定位想要查找的主题。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR7                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR7"></a>页面设计器：在运行模式下有模式的提示消息出现在浏览器后面</h4>
+<P>如果向 DHTML 页面中添加一个消息框，那么在运行模式下被激活的时候该消息框将出现在 Internet Explorer 背后。此外因为这个消息框是有模式的，所以也不能通过移动 Internet Explorer 来查看消息。当听到嘟嘟的声音，表明屏幕上有一条消息的时候，请从任务条上选择 Visual Basic 应用程序，查看并清除该消息。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR8                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR8"></a>页面设计器：不要监视 HTMLDocument 类型的对象</h4>
+<P>在 IDE 内展开对 HTMLDocument 类型对象的监视可能会发生问题。请避免监视此类对象。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR9                         -->
+          <!--                                                  -->
+<h4><a name="PageDSR9"></a>页面设计器：不能在页面设计器内设计框架</h4>
+<P>当在 DHTML 页面设计器中创建 web 页面时，不能在页面内插入 framesets 并填充其内容。然而，您可以在 Visual Basic 外创建的 frameset 中显示为 DHTML 应用程序创建的页面。如果想要设计和调试框架，请按照下列过程进行操作： </P>
+<OL>
+
+<LI>在 Visual Basic 中，用独立的 DHTML 页面设计器设计每个框架的内容。</LI>
+<LI>在外部的编辑程序中，设计 frameset 文档作为一个单独的 .htm 文件并将其保存在临时目录中。将每个框架的 SRC 特性设置为指向内容页面，使用在框架的 BuildFile 属性中所定义的名称。</LI>
+<LI>在 Visual Basic 中，在项目属性对话框的调试选项卡上选择"用 URL 启动浏览器"然后输入 frameset 文件的路径。</LI>
+<LI>输入运行模式。Visual Basic 装入 Internet Explorer 并装入在外部程序中设计好的 frameset 页面。随后 frameset 文档应该在适当的框架中装入页面设计器中设计的页面。</LI>
+<LI>照常调试应用程序。</LI></OL>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR11                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR11"></a>页面设计器：不能在 SetInterval 方法中使用 Visual Basic 代码</h4>
+<P>如果在 DHTML 应用程序中将 Internet Explorer BaseWindow 对象的 SetInterval 方法使用在一个计时器上，就必须将该方法的第一个参数设置为指向页面中的一个 Javascript 或者 VBScript 时间例程。这个方法不能引用页面设计器代码中的 Visual Basic 例程。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR12                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR12"></a>页面设计器：有关控件的问题</h4>
+<P>下面列出了在 DHTML 应用程序中使用 ActiveX 控件时应该注意的事项： </P>
+
+<UL>
+<LI>如果要向 DHTML 页面中添加一个 ActiveX 控件，就必须使用该控件的编译过的版本。
+
+
+<LI>在这个版本中，不能在 ActiveX 控件项目中使用 DHTML 页面。反过来也如此--也就是说控件工程不能是您正在工作的工程组的一部分。建立并调试一个用户控件的最安全可靠的方法是编译用户控件工程，然后关闭那个工程，把控见添加到页面设计器中，并从那里继续。此时在两个工程间交互地调试和设计是不可能的。</LI>
+
+<LI>在 DHTML 应用程序的某页中嵌入 ActiveX 控件时，并不是所有合适的类型库信息都随之拷贝。这可能导致当试图在对象浏览器中访问链接以得到该控件的信息时出现错误，并且可能阻止您访问在书写代码时出现的语句完成窗口中控件的扩展属性和方法。</LI>
+
+<LI>一些 ActiveX 控件将不能和页设计器一同正常工作。不能在 DHTML 页中使用下列控件：<b>MS Chart</b>, <b>Script Debugger</b>, <b>Hierarchical FlexGrid</b>, <b>SrcEdit OC</b>, <b>LayoutDTC</b>, <b>Tabular Data control</b>, <b>PageNavbarDTC</b>, or <b>IE Popup Window</b>。另外，不能在 DHTML 应用程序的页中使用私有或未编译的用户控件。此外，可能会有一些从第三方得到的控件不能和页设计器一同正常工作。<br>大部分和 Internet Explorer 4 共同工作的控件应该能和页设计器一同工作。如果从第三方购买的控件不能和页设计器一同工作，那么就在 Internet 浏览器中测试它并和控件卖主联系。对于如何建立和页设计器以及 Internet 浏览器共同工作的 ActiveX 控件的有关信息，请参阅 MSDN 联机库或 MSDN 在线部分 Microsoft's Web 站点上的文章“建立 Internet Explorer 4.0 的 ActiveX 控件”。</LI>
+
+<LI>如果拥有一个 ActiveX 控件并且已经将其背景设置为透明，在设计阶段将其添加到 DHTML 应用程序的时候，这个控件将显示为半透明。</LI>
+
+<LI>如果 DHTML 页面中包含了一个 <b>Listview</b> 控件而又想要访问 ColHeader.Width 属性，开发人员将遇到一个出错信息，指出该对象不支持这个属性。虽然这个属性确实出现在 Auto List Members 下拉式列表框中，但是不要在代码中使用这个属性。</LI>
+
+<LI>有些 Visual Basic 控件，诸如 common 对话框或者 sysinfo 控件，在运行时是不可见的。如果将这种对象添加到 HTML 页面中，在最初画好之后，就不能再选中并在页面范围内进行移动。但是，可以在树形视图中选择该控件，然后就可以删除它或者访问其属性。</LI>
+
+<LI>如果在 DHTML 设计器中添加一个 <b>File Upload</b> 控件 (FlUpl) 并在设计时单击它，它将被激活并显示标准的文件选择对话框。可以取消该对话框，继续进行。</LI>
+
+<LI>在 horizontal rule 元素的 Auto List Members 下拉式列表框中有一个没有功能的 InnerText 属性。不要给这个属性设置任何值，因为它根本不会产生任何效果。</LI>
+
+<LI>一些从第三方获得的控件可能不能在页面设计器中正常运行。绝大多数能与 Internet Explorer 4 一起使用的控件都能与页面设计器一起使用。如果您购买的第三方控件不能在页面设计器中正确运行，请在 Internet Explorer 对其进行测试，然后再与控件厂商联系。有关如何建立与页面设计器和 Internet Explorer 协同使用的 ActiveX 控件的信息，请参看文章"为 Internet Explorer 4.0 建立 ActiveX 控件"，可以在 MSDN 库或者 Microsoft 的 Web 站点上的 MSDN Online 部分中找到这篇文章。</LI>
+
+<LI>当向页面中添加 ActiveX 控件时，并在设计器中调整控件的大小时，控件的 Height 和 Width 属性不会自动更新。要刷新 height 和 width 属性的值，请在调整完控件的大小之后单击树形视图中的空白区域。</LI>
+
+<LI>如果在工具箱中单击一个控件，然后将光标移动到设计器的设计窗格中，光标的形状不会从 I 形变为指针形以指示可以单击并画出控件。尽管光标仍然是 I 形，还是可以单击并拖动控件到想要的形状。</LI>
+
+<LI>当在同一个项目组的两个 DHTML 项目之间拷贝控件，组件对话框得不到更新。须要通过手工设置对该控件的必要的引用。</LI>
+
+<LI>如果使用 ImageList 控件且在调试模式下运行项目，其图片并不会被装入。但是，当运行编译过的 DLL 时图象会得到正确的显示。</li>
+
+</UL>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR13                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR13"></a>页面设计器：有关 HTML 的问题集选</h4>
+<P>&nbsp;下面列出了在 DHTML 页面设计器中创建和使用 HTML 时应该注意的事项： </P>
+
+<UL>
+<LI>如果页面中包含了一个 CHARSET 元标记metatag，在将该页面读入设计器的时候，这个标记将被清除掉。对大多数页面来说，这样做并不会造成问题。</LI>
+<LI>在设计器中看到的表的列宽可能与在浏览器中观察到的列宽有所不同。要避免这个问题，可以将列宽设置为百分比而不是像素，或者确保最左边的列不带有一个宽度度量单位。</LI>
+<LI>请不要给 ID 属性赋多于 117 个字符的值。否则，在运行应用程序的时候就会遇到一个错误。</LI>
+<LI>如果页面上的第一个段落元素中不包含文本且其后紧跟着另外一个 HTML 元素，那么删去第一个 &lt;P&gt; 标记将导致不可预料的结果。在这种情况下，页面上的其他元素也可能被删除掉。</LI>
+<LI>当试图使用设计器的树形视图面板删除 DIV 标记时，可能会产生不一致的结果。如果在删除  DIV 标记时遇到困难，请使用启动编辑器功能并通过手工删除 &lt;DIV&gt; 和 &lt;/DIV&gt; 标记。</LI>
+<LI>当运行项目时，只有那些包含有文本的表单元才会显示边界。可以在每个没有被使用的表单元中放置一个 &lt;BR&gt; 标记，这样就可以强制显示空单元的边界。</LI>
+<LI>在运行项目之后 HTML 页面上的 TITLE 元素的属性值没有得到保持。然而，如果在浏览器中检查 HTML 源代码，就会发现 title 属性仍然出现在 HTML 流中。</LI>
+<LI>页面上的元素总是固定在左上角。因此，如果通过拉动上边界或者左边界来调整元素的大小，当释放光标的时候，将看到一个指定大小的元素，但是它仍然按照初始的左上角来确定其位置。这将导致未知的结果。为了避免出现这种情况，首先要将控件定位在相对于左上角的适当位置，然后再正确地调整其大小。</LI>
+<LI>在删除有些元素的字体格式信息的时候，可能会遇到困难。例如，如果在页面上添加一个 H1 标题，按 ENTER，并在其下方键入一些句子，这些句子将具有与标题一样的格式 -- 也就是说，显得很大而且是黑体。不能使用格式工具条上的黑体图标清除这种字体格式。但是，您可以通过使用启动编辑器功能并用手工纠正格式标记来清除这种错误的格式，或者在设计器中将选中的文本的类型改变为 Normal。 </LI>
+<LI>显示在属性窗口中的 Document 对象的有些属性是无效的。这些属性从字母"on"开始。如果为这些属性设置值，在运行项目或者检查 HTML 源码时，所设定的值不会产生任何预期的效果。</LI>
+<LI>对于一个复选框 HTML 元素，可以使用一个被称为 "Indeterminate" 的属性来将复选框设置为 grayed-out 状态。但是，如果将此属性设置为 True 然后单击该复选框将其变为空白状态， Indeterminate 属性并不会重置为 False。可以通过手工或者第三次单击来重置这个属性的值。</LI>
+<LI>对于在属性窗口中显示了 Height 和 Width 属性的指定了绝对位置的控件，不能直接改变这些值来调整控件的大小。而要通过在设计器中拖动其一边来改变其大小。</LI>
+<LI><P>如果从 HTML 工具箱中插入一个输入图象元素到页面上，然后使用 Shape 属性将它从别的形状变为一个多边形，就会遇到一个错误。</LI>
+<LI>设计器的树形视图窗格中所反映的可能不是元素在设计窗格中显示的准确顺序。树形视图按照页面上元素在 HTML 流中出现的顺序显示了它们的结构关系。一个元素在 HTML 流中的位置并不总是与其在所显示的页面上的位置一一对应的，因为可以通过属性和内部样式来改变一个元素的位置。页面在 Internet Explorer 的显示与其在设计器的设计窗格中的显示是一致的。</LI></UL>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR14                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR14"></a>页面设计器：有关调试的问题集选</h4>
+<P>下面列出了调试和测试 DHTML 应用程序时应该注意的事项： </P>
+
+<UL>
+<LI>在本地窗口中，DHTML 应用程序中所使用的函数被列出了两次。这会造成一种错觉，因为看起来好象允许为 Boolean 设置两个不同的值。</LI>
+<LI>如果试图编辑本地窗口中列出的某些属性的值，就可能会产生错误。这些属性包括： </LI></UL>
+
+<BLOCKQUOTE><BLOCKQUOTE>&#9;DHTMLPage.BaseWindow.document.activeElement.all.length</BLOCKQUOTE></BLOCKQUOTE>
+<BLOCKQUOTE><BLOCKQUOTE>&#9;DHTMLPage.BaseWindow.document.activeElement.offsetParent.all.length</BLOCKQUOTE></BLOCKQUOTE>
+<BLOCKQUOTE><BLOCKQUOTE>&#9;DHTMLPage.BaseWindow.document.activeElement.children.length</BLOCKQUOTE></BLOCKQUOTE>
+
+<UL>
+<LI>如果在 DHTML 项目处于中断模式的时候刷新 Internet Explorer，那么就会返回到 Visual Basic 的运行模式，将不会再遇到断点而且stop 指令也将得不到执行。这种情况下，请终止调试模式，然后按 F5 键重新开始调试过程。</LI></UL>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR15                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR15"></a>页面设计器：通过编程进行浏览的语法</h4>
+<P>在建立 Internet 应用程序一书的开发 DHTML 应用程序部分的" DHTML 应用程序导航"主题中，VB 文档指出，可以在代码中使用下面这种语法来实现通过编程在页面之间移动： </P>
+<pre><CODE><FONT size="2"><BLOCKQUOTE>
+Private Function Button1_onclick() As Boolean
+   BaseWindow.navigate "Project1.DHTMLPage2.html"
+End Function
+</BLOCKQUOTE></font></CODE></pre>
+<P>这种语法是不正确的，因为项目名称和页面名称之间应该用一个下划线分隔，而不应该用句点来分隔。正确使用的语法如下所示：
+<pre><CODE><FONT size="2"><BLOCKQUOTE>
+Private Function Button1_onclick() As Boolean
+   BaseWindow.navigate "Project1_DHTMLPage2.html"
+End Function
+</BLOCKQUOTE></font></CODE></pre>
+
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR17                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR17"></a>页面设计器：OBJECT 标记的插入</h4>
+<P>在 VB 文档的"测试 DHTML 项目"主题中指出，在调试过程中页面上插入了一个 OBJECT 标记，但是它没有指出这个标记被同时插入的 METADATA 标记包围。下面这些说明信息是有帮助的： </P>
+
+<UL>
+<LI>当使用打包和展开向导来准备项目以便发布时，将在包装过程中填入 OBJECT 标记的 CODEBASE 属性的内容。</LI>
+<LI>在调试过程中， OBJECT 标记实际上被插入到 HTML 文件的一份临时的拷贝中。最终的标记将在包装过程中设置。</LI></UL>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR18                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR18"></a>页面设计器：当输入焦点位于页面设计器时，不能使用 CTRL+TAB 快捷键在窗口之间切换</h4>
+<P>当输入焦点位于页面设计器中的时候，不能象在其他项目中一样使用 CTRL+TAB 快捷键在 Visual Basic IDE 的所有打开的窗口之间移动。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR19                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR19"></a>页面设计器：不能删除一个不包含列的表</h4>
+<P>如果将页面上一个表的所有列都删除掉，然后再试图删除该表，该表将仍然显示在设计器的树形视图窗格中。要从树形视图中删除掉该表，就必须删除掉表table元素上方的段落paragraph元素。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR20                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR20"></a>页面设计器：当与页面设计器项目一起使用 Visual SourceSafe 时，必须通过手工选进项目的 .HTM 文件</h4>
+<P>当将一个 DHTML 项目捡选进 Visual Source Safe时，与该项目相关的 HTML 页面没有和项目的其他文件一起被自动选进 Source Safe 树中。必须通过手工将这些文件作为相关文件添加到树中。</P>
+<BLOCKQUOTE><B>注意</B>只有已经将 HTML 页面保存到外部文件中，才会出现这种情况。如果已经将页面保存在项目内部，就不用为设计时项目捡选任何 .htm 文件。</BLOCKQUOTE>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR21                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR21"></a>页面设计器：未指定的 BuildFile 属性将产生建立在桌面上的 DLL </h4>
+<P>如果编辑 BuildFile 属性使得它不指定放置文件的驱动器和目录，系统将直接在桌面上建立所产生的文件。当输入此属性的值时，请始终输入完整的有效路径。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR22                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR22"></a>页面设计器：与 Asynchronous 属性一起使用 Load 事件</h4>
+<P>在 MSDN 的 Visual Basic 文档的参考部分内"Load 事件"主题中，文档错误地指出： </P>
+<BLOCKQUOTE>"程序员可以在异步运行的时候使用这个事件 (当 <B>AsyncLoad</B> 属性被设置为 <B>True</B>) 作为一个表明所有元素都已经被装载到页面上的通知。"</BLOCKQUOTE>
+<P>实际上，在这儿应该说程序员可以在同步运行的时候使用 Load 事件 (当 AsyncLoad 被设置为 False) 作为一个表明所有元素都已经被装载的通知。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR23                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR23"></a>页面设计器：与属性页面相关的问题</h4>
+<P>&nbsp;以下是当您在 DHTML 页面设计器中对属性页面上的不同 HTML 元素进行操作的时候应该注意的事项： </P>
+
+<UL>
+<LI>有些元素的属性页面上有额外的选项卡，它们并不出现在 DHTML 项目的属性页面上。在很多情况下，即使这些选项卡是不可见的，您也可以通过按 TAB 键，进入这些选项卡。</LI>
+<LI>对于已经添加到应用程序中的 ActiveX 控件，如果修改其定制属性页面，这些修改并不总是能够反映在 DHTML 项目中。要纠正这个错误，请关闭 DHTML 项目并重新编译该 ActiveX 控件的项目。然后，所作出的改变就会出现在 DHTML 项目中。每次改变控件的属性页面时，请重复此过程。</LI>
+<LI>在一些属性页面上将出现 "Test" 这个词。但这并不会给应用程序造成任何问题。</LI></UL>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR24                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR24"></a>页面设计器：部署 .CAB 时项目文件所处的位置</h4>
+<P>在"部署 DHTML 项目"主题中，VB 文档指出，在部署过程中项目的 DLL 文件、 Visual Basic 实时运行库以及项目的 .dsr 和 .dsx 文件都被放置到同一个 .cab 文件中。这是不正确的。实际上，项目的 .dsr 和 .dsx 文件不会被放置到 .cab 文件中。</P>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR26                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR26"></a>页面设计器：保存选项的名称已改变</h4>
+<P>在页面设计器的文档中指出，如果不想保存到一个外部的 HTML 文件，选择保存选项的过程将提示选择页面属性对话框中叫做"将 HTML 保存在设计器内"的选项。这个选项的准确的名称是"将 HTML 保存为 VB 项目的一部分。"</P>
+<br>
+
+          <!------------------------------------------------------>
+          <!--                 PageDSR27                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR27"></a>页面设计器：从编译模式切换到调试模式的过程中由于代码改变而产生的问题</h4>
+<p>偶尔可能遇到这样的问题：运行编译过的 DLL之后，修改代码，然后进入调试模式，却看不到在 DHTML 应用程序代码中所进行的修改。在这种情况下，您可以尝试下列改正办法：
+<ul>
+<li>在修改完代码之后，开始启动调试过程之前，在项目属性对话框的调试选项卡上，取消对使用现有浏览器复选框的选择。
+<li>在运行编译过的 DLL 之后，打开 IDE 修改代码之前，退出浏览器。
+</ul>
+<BR>
+          <!------------------------------------------------------>
+          <!--                 PageDSR28                        -->
+          <!--                                                  -->
+<h4><a name="PageDSR28"></a>页面设计器：在平台 SDK 中可以获得大多数语言元素的帮助</h4>
+<p>页面设计器的大多数语言元素都继承自 Internet Explorer 的文档对象模型。不能通过按 F1 键来获得这些元素的帮助。要获得这些主题的帮助，请在 MSDN 目录中打开"平台 SDK"节点，然后打开"Internet/Intranet/Extranet 服务"节点并寻找动态 HTML 部分。也可以使用索引搜索给定的语言元素。</p>
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+
+     <!------------------------------------------------------------------->
+     <!--                   Extensibility Issues                        -->
+     <!--                                                               -->
+<h3>有关可伸缩性的问题</h3>
+
+          <!------------------------------------------------------>
+          <!--                    Ext1                          -->
+          <!--                                                  -->
+<h4><a name="Ext1"></a>"命令行安全" Add-In 方式</h4>
+<P>可以使用 Add-In 管理器中的装入方式框来控制在何时以何种方式将一个 add-in 装入 Visual Basic。</P>
+<ul>
+<li><B>装入/卸载</B> -- 如果此框被选择就装入选定的 add-in，反之则卸载。</li>
+<li><B>启动时装入</B> -- 指出在 Visual Basic IDE 启动的时候是否要装入选定的 add-in。</li>
+<li><B>命令行</B> -- 指出在通过 DOS 提示或者脚本启动 Visual Basic 的时候是否要装入一个 add-in。</li>
+</ul>
+<P>如果为一个 add-in 选择了命令行装入方式，可能会遇到如下的警告消息： </P>
+<DL>
+<DD>"被选定的 add-in 没有被确认为'命令行安全'，可能需要用户的输入 (可能的 UI)。想要继续吗？"</DD>
+</DL>
+<P>如果一个 add-in 在创建的时候并没有被其开发者声明为"命令行安全"的(这一点在 Add-In 设计器中是通过一个复选框来指示的)，那么当选择此 add-in 进行命令行装入的时候就会发生错误。</P>
+<P>"命令行安全"意味着 add-in 的注册方式指示该 add-in 中没有包含任何在通过命令行启动 Visual Basic 时需要用户输入的用户接口。用户接口会妨碍无用户界面的过程(诸如建立脚本)的执行。</P>
+<P>如果没有指示 add-in 是命令行安全的 (甚至在它确实 <I>是</I> 命令行安全的情况下)，当用户选择了该 add-in 然后在装入方式框中选择了命令行，用户将会遇到警告消息。这并不是一个很严重的问题，只是一个警告消息，告诉用户所选择的 add-in 很可能包含 UI 元素，而这些元素可能会出人意料地突然出现并暂停等待用户输入从而停止自动执行的脚本。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Ext2                           -->
+          <!--                                                  -->
+<h4><a name="Ext2"></a>通过手工设定 Add-In 注册表的值</h4>
+<P>您也可以通过手工在 Windows 注册表种设置 add-in 的安全标志位 (以及其他的值)。</P>
+<B><P>注意：</B>不要企图直接操作任何的 Windows 注册表项，除非您对注册表的操作非常熟悉。设置无效的注册表项可能会使 Windows 产生问题，在严重的情况下，可能导致不能启动 Windows。</P>
+<P>在 Visual Basic 6.0 中，保存 add-in  信息的注册表项位于 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Visual Basic\6.0\Addins\&lt;add-in.name&gt;。对于 Visual Basic 6.0 来说， LoadBehavior 的 DWord 值是：</P>
+
+<UL>
+<LI>None = 0</LI>
+<LI>Startup = 1</LI>
+<LI>Command Line = 4</LI>
+<LI>Command Line / Startup = 5</LI></UL>
+
+<P>除此之外，还有一个 DWord 值指示 add-in 是否是命令行安全的： CommandLineSafe。如果这个值为 1，则说明 add-in 是命令行安全的，如果值为 0 (默认设置)，则说明它不是命令行安全的。如果在Add-In 设计器中没有选择命令行安全复选框，那就意味着这个值是 0，相应的 add-in 也就不是命令行安全的，因为这是默认的设置。</P>
+<P>所以，为了示范如何使用这些值来指定一个假定的 add-in (My.Addin) 是命令行安全的并且在从命令行启动 Visual Basic 时装入该 add-in，就要通过使用诸如 RegEdit 的工具设置下列注册表项的值： </P>
+<pre><CODE><FONT size="2">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Visual Basic\6.0\Addins\My.Addin
+   "FriendlyName"="A friendly name for your add-in"
+   "Description"="This value describes the add-in"
+   "LoadBehavior"=dword:4
+   "CommandLineSafe"=dword:1
+</font></CODE></pre>
+
+          <!------------------------------------------------------>
+          <!--                   Ext3                           -->
+          <!--                                                  -->
+<h4><a name="Ext3"></a>使用 Add-In 设计器</h4>
+<P>Visual Basic 6.0 中包含了一件新的工具，叫做 Add-In 设计器，可以协助创建 add-in。要打开 Add-In 设计器：
+<ul>
+<li>创建一个新的 add-in 项目。</li>
+<li>在项目管理器中的设计器下，有一个叫做 Connect 的设计器。双击它就可以启动 Add-In 设计器。</li>
+</ul>
+<p>令人遗憾的是，当前 Add-In 设计器还没有上下文相关的帮助。但是相应的帮助主题还是有的。可以在 MSDN 索引中通过搜索 <b>Add-In 设计器</b> 来查找合适的帮助主题。可以查看到三个相关的主题：
+<ul>
+<li>"使用 Add-In 设计器"</li>
+<li>"常规选项卡 (Add-In 设计器)"</li>
+<li>"高级选项卡 (Add-In 设计器)"</li>
+</ul></p>
+<p>有关的详细信息，请在 MSDN 库 Visual Studio 6.0 文档中。选择 <b>仅搜索标题</b> 进行 <a href="#Critical2">在线搜索</a>，查找 &quot;注册 Add-In&quot;。 </p>
+
+          <!------------------------------------------------------>
+          <!--                     Ext4                         -->
+          <!--                                                  -->
+<h4><a name="Ext4"></a> Add-In 设计器：有关指定 Satellite DLL 的详细信息</h4>
+<P>在使用 Add-In 设计器创建 add-in 时，可以在高级选项卡上指定一个 DLL。但是请确保仅键入 DLL 文件的名称，而不要键入其完整的路径。例如： </P>
+<P> </P>
+<blockquote>MyAddinName.DLL</blockquote>
+<P>而不是：</P>
+<blockquote>Addins\MyAddinName\MyAddinName.DLL
+</blockquote>
+<BR>
+<B><P>国别化的 Satellite DLL</P>
+</B>
+<P>如果创建一个国别化的 satellite DLL，应该在适当的目录下同时为 satellite DLL 创建一个资源目录和一个国别 ID 目录。并将 DLL 安装在适当的目录下。下面是一个示意的目录：</P>
+<blockquote>&lt;AddIn Directory&gt;\Resources\&lt;Locale ID&gt;\&lt;MySatellite.DLL&gt;</blockquote>
+<P>例如，德国版的 satellite DLL  (Locale ID = 1031) 应该安装到以下目录中： </P>
+<blockquote>C:\Program Files\MyAddin\Resources\1031\MyAddinName.DLL</blockquote>
+
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                         Misc. Issues                          -->
+     <!--                                                               -->
+<h3>问题集选</h3>
+
+          <!------------------------------------------------------>
+          <!--                   Misc1                          -->
+          <!--                                                  -->
+<h4><a name="Misc1"></a>从 DLL 返回错误值</h4>
+<p>要从一个动态连接库 (DLL) 过程中返回一个错误值，必需按照 C 语言原型编写代码，这样返回的值就是一个 HRESULT。有关如何进行此工作的信息，请参看 Microsoft 出版社 OLE 2 程序员参考，第二卷。</p>
+
+          <!------------------------------------------------------>
+          <!--                   Misc2                          -->
+          <!--                                                  -->
+<h4><a name="Misc2"></a>数据访问指南： DataFormats 教程的文件扩展名是错误的</h4>
+<P>"Format Objects Tutorial"主题中错误地引用了一个扩展名为 .mdl 的文件。实际的文件扩展名是 .udl。有关的详细信息，请选择 <b>仅搜索标题</b> 在 MSDN 库 Visual Studio 6.0 文档中进行 <a href="#Critical2">在线搜索，查找"Format Objects Tutorial"。</P>
+
+<P>此处所提到的文件被列为 "Northwind.mdl"，但是应该是 "Northwind.udl"。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Misc3                          -->
+          <!--                                                  -->
+<h4><a name="Misc3"></a>选项对话框中添加了"外部编辑器"字段</h4>
+<P>选项 对话框的 高级 选项卡中增加了一个名为 <B>外部 HTML 编辑器</B> 的新文本框。利用这个选项就可以选择当从 DHTML 页面编辑器或者 Webclass 设计器中选择 <B>启动编辑器</B> 时所出现的 HTML 编辑程序。必须在这个文本框中输入想要使用的程序所在的驱动器、路径以及可执行文件名。您可以选择 HTML 编辑程序，字处理程序，或者乐于使用的文本编辑器。</P>
+
+          <!------------------------------------------------------>
+          <!--                   Misc4                          -->
+          <!--                                                  -->
+<h4><a name="Misc4"></a> Internet 组件下载中的 CodeBase Fixup 实用程序 </h4>
+<p>建立 Internet 应用程序书的"下载 ActiveX 组件"一节中提到了被称为 CodeBase Fixup 的实用程序，可以使用这个实用程序来通过手工在 ActiveX 文档中设置 codebase 信息。这条信息是不正确的。
+这个实用程序没有在Visual Basic 的 \Tools 目录中提供，而且对于 Internet Explorer 4.0，也不用通过手工来进行此过程，因为打包和展开向导会自动地为这些和其他可适用的项目插入适当的 codebase 信息。
+</P>
+
+           <!------------------------------------------------------>
+          <!--                   Misc6                          -->
+          <!--                                                  -->
+<h4><a name="Misc6"></a>中文、日文和韩文版的 Windows 下项目属性/打开对话框中的文本被截掉一部分</h4>
+<p>如果在中文、日文和韩文版的 Windows 下运行 Visual Basic，您可以注意到项目属性或者打开对话框中的文本被截掉了一部分。如果出现这种现象，请关闭 Windows，重新启动，然后重新启动 Visual Basic，就可以解决这个问题了。</p>
+
+          <!------------------------------------------------------>
+          <!--                   Misc7                          -->
+          <!--                                                  -->
+<h4><a name="Misc7"></a>避免与 ActiveX 设计器一起使用Repository Add-In </h4>
+<p>应该避免与包含有 ActiveX 设计器的项目一起使用 Repository add-in。</p>
+<p>要获得可用设计器的完整列表，请在 Visual Basic 的项目菜单上，单击组件，然后单击组件对话框上的设计器选项卡。</p>
+
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                       MTS Issues                              -->
+     <!--                                                               -->
+<h3>有关 Microsoft Transaction Server (MTS) 的问题</h3>
+          <!------------------------------------------------------>
+          <!--                   MTS1                           -->
+          <!--                                                  -->
+<h4><a name="MTS1"></a>在 Visual Basic 6.0 中建立和调试 MTS 组件</h4>
+</FONT><P>Visual Basic 6.0 支持对 Microsoft Transaction Server (MTS) 组件的调试，但是也有几条注意事项应该牢记。下面的事项仅仅适用于运行在调试器中的 MTS 组件。</P>
+<FONT FACE="宋体"><H4>必需 Windows NT 4.0 SP4 </H4>
+</FONT><P>MTS 调试支持需要 Windows NT 4.0 Service Pack 4 (SP4) 或者更高的版本。Windows 95 或者 Windows 98 不支持 MTS 调试。</P>
+<FONT FACE="宋体"><H4>MTSTransactionMode 属性</H4>
+</FONT><P>Visual Basic 6.0 为类引入了一个新的 MTSTransactionMode 属性，这允许开发人员为类设置所需要的 Microsoft Transaction Server (MTS) 交易支持。这个属性的值等于 MTS 资源管理器中的属性。但是，Visual Basic IDE 中这些属性的名称与 MTS 资源管理器中所使用的名称并不完全一致。这些名称之间的对应关系如下： </P>
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=7 WIDTH=638>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<P><STRONG>VB 属性值</STRONG></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<STRONG><P> MTS 资源管理器中的选项</STRONG></TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<P>0 - NotAnMTSObject</TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<P>N/A</TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<P>1 - NoTransactions</TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<P>不支持交易</TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<P>2 - RequiresTransaction</TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<P>需要一个交易</TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<P>3 - UsesTransaction</TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<P>支持交易</TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<P>4 - RequiresNewTransaction</TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<P>需要一个新的交易</TD>
+</TR>
+</TABLE>
+
+</FONT><p>只有使用 Add File 实用程序组件添加到软件包中，类的 Transaction 属性才会被引入到 MTS 中。如果组件是通过注册组件列表进入软件包的，那么在 MTS Explorer 中 MTS 属性就得不到反映。</p>
+<FONT FACE="宋体" ><H4>启动 MTS 调试</H4>
+</FONT><p>要用 Visual Basic 6.0 对 MTS 组件进行调试，请将 MTSTransactionMode 属性设置为不是 0-NotAnMTSObject 的值。如果按 F5 键开始调试， Visual Basic 在 Microsoft Transaction Server 运行时环境内部启动组件。</p>
+<H4>单客户机、服务器，和线程</H4>
+</FONT><P>只能对每次在单个线程上运行的单个客户机和单个 MTS 服务器组件进行调试。至于需要多个客户机或多个 MTS 服务器或多个线程的情况，就应该在 Visual C++ 开发环境中对 Visual Basic 组件进行调试。有关在 Visual C++ 环境中调试 Visual Basic 组件的详细信息，请参看 Visual C++ 文档。</P>
+<FONT FACE="宋体"><H4>调试的必要条件</H4>
+</FONT><P>要在 Visual Basic 中建立并调试 MTS 组件，就必须将组件建立为 DLL 并设置项目的二进制兼容性。如果没有设置二进制兼容性并向组件中添加接口或从组件中删除接口， MTS 并不能检测到这些改变。</P>
+<FONT FACE="宋体"><H4>对 Class_Initialize 和 Class_Terminate 事件进行调试的限制条件</H4>
+</FONT><P>如果一个组件试图访问对象或者相应的 context 对象，那么就不应该在该组件的 Class_Initialize 和 Class_Terminate 事件中放置代码。Visual Basic 运行时环境在对象及其上下文被激活之前调用 Class_Initialize，所以试图对对象及对象上下文进行的任何操作都将失败。与此相似，对象及其上下文在 Class_Terminate 被调用之前就已经撤消了，所以这个方法试图对对象及其上下文进行的操作也将失败。</P>
+<P>不应该在 MTS 组件的 Class_Terminate 事件中设置断点。当调试程序到达此断点，它将试图激活此对象，而这个试图将失败并导致 Visual Basic 停止。</P>
+<FONT FACE="宋体"><H4>监视 MTS 对象</H4>
+</FONT><P>在调试过程中，请不要监视从 MTS 运行环境中返回的对象变量，包括从 SafeRef、GetObjectContext、CreateInstance和其他返回由 MTS 包装的对象的函数的返回值。</P>
+<P>要更加有效地模拟运行环境，每次当 Visual Basic 在调试程序中中断时，Microsoft Transaction Server 运行时环境都会暂停操作。在内部，Visual Basic 调用在调试程序中被监视的对象的方法。因为在查看变量的时候 MTS 运行时环境暂停了，Visual Basic 对这些对象的调用将失败。</P>
+<P>如果向监视窗口中添加了 MTS 包装的对象或者通过其他的途径进行监视，那将导致不一致的状态并被 MTS 检测到，从而该过程将被终止。</P>
+<FONT FACE="宋体"><H4>注册和调试</H4>
+</FONT><P> Visual Basic 中的调试工具允许对还没有安装到 MTS explorer 中的 MTS 组件进行调试。当开始调试时， Visual Basic 将自动要求 MTS 在  MTS 运行时环境中运行组件。</P>
+<P>根据调试的必要条件，可能还想要将组件安装到 MTS explorer 中。在进行此操作的过程中，有一些应该牢记的问题。如果在 Visual Basic IDE 中对组件的接口、类名称、项目名称、 transactional 支持或者其他设置，MTS explorer 中的配置数据和在 Visual Basic 调试程序中运行的实际配置之间可能存在着差异。当调试组件的时候，也可以将组件装入 MTS 中。此外，如果在调试软件包中的一个组件的时候导出该软件包， MTS 将把 Visual Basic 开发环境当作组件来处理。</P>
+<P>如果确保将要调试的组件没有在 MTS explorer 注册，那么这些问题都可以避免。正如本部分后面提到的，如果在调试程序中改变一个已安装组件的配置，有可能需要删除该组件并重新进行安装。</P>
+<FONT FACE="宋体"><H4>调试过程中组件发生的改变</H4>
+</FONT><P>在 Visual Basic 中，可以在调试过程中修改 MTS 组件的transactional 属性。Visual Basic 不会在 MTS 管理器中注册这些修改。</P>
+<P>如果在调试过程中对源代码进行了改变，从而需要 Visual Basic 生成一个新的 CLSID 或者 ProgID 或者改变了任何 MTS 类的 transactional属性, 就必须使用 MTS Explorer 来删除并重新安装包含该类的软件包。如果已经为组件设置了二进制兼容性，将获得已经发生改变的警告信息。</P>
+<FONT FACE="宋体"><H4>当组件在 MTS 中运行时启动调试程序</H4>
+</FONT><P>如果正在调试程序外运行一个组件，然后决定开始调试，当在调试程序中启动该组件时，它的一个实例仍然在 MTS 中运行。MTS 将检测到这个情况并试图安静地关闭所控制的实例。要避免出现这种情况，在开始调试之前，请从 MTS explorer 中删除该组件。</P>
+<FONT FACE="宋体"><H4>调试未注册的 MTS 组件</H4>
+</FONT><P>一个 MTS 组件，即使还没有在 MTS 目录中注册，也能够在 Visual Basic 调试程序中运行。在这种情况下，该组件在 MTS Explorer 中将是不可见的。如果的组件没有注册，最好对其进行调试，这样会避免出现在本节中所讨论的其他问题。</P>
+<FONT FACE="宋体"><H4>部署和调试</H4>
+</FONT><P>要正确地部署一个 MTS 组件，需要将其建立为 DLL，请确保该组件没有在任何调试过程中运行，然后运行打包和展开向导。组件可以在 Visual Basic 打开，但是不能在调试过程中被激活。</P>
+<FONT FACE="宋体"><H4>MTS 组件在调试程序中的运行方式就象在库软件包中</H4>
+</FONT><P> MTS 运行时环境处理正在进行调试的 Visual Basic 组件的方式就好象这些组件属于一个库软件包，甚至对于那些通过 MTS 注册为属于服务器软件包的组件也是如此。库软件包不支持组件跟踪、作用检查或者进程分离。</P>
+<P>因为正在进行调试的 MTS 组件的表现就象它们属于一个库软件包，所以不能在 Visual Basic 开发环境中进行安全性方面的调试。被调试组件的远程激活功能将使用 Visual Basic 的安全特性。但是，一个运行在 MTS 运行时环境 (mtx.exe) 中的组件的远程激活功能将使用在 MTS explorer 中为特定软件包设置的安全特性。要调试有关安全的问题，应该使用 Visual C++ 开发环境。</P>
+<FONT FACE="宋体"><H4>组件的失败导致 Visual Basic 停止运行</H4>
+</FONT><P>正在调试的 MTS 组件与 Visual Basic 开发环境在同一个进程中运行，因此组件的失败同时将导致 Visual Basic 停止运行。并且，如果 MTS 运行时环境发现内部的不一致的状态，它将自动关闭运行时进程。在这些情况下， MTS 将显示一个对话框来解释所发生的情况，Visual Basic 窗口将消失，并且一个事件将被记录在 Windows NT 系统的日志文件中。请检查 Windows NT 事件查看程序以及本文档中的其他主题，以便了解对此问题的可能的解释。<FONT FACE="宋体" SIZE=1> </P>
+</FONT><FONT FACE="宋体"><H4>不支持 Transacted Web 类</H4>
+</FONT><P> Visual Basic 6.0 不支持 Transacted Visual Basic Web 类。</P>
+<FONT FACE="宋体"><H4>RunWithoutContext 注册表项被忽略</H4>
+</FONT><P>Visual Basic 6.0 忽略了 RunWithoutContext 注册表项。这一项在 Visual Basic 6.0 的 MTS 对象的综合调试环境中不再需要，因为 context 对象所提供的功能可以在调试过程中获得。</P>
+<FONT FACE="宋体"><H4>使用 IObjectControl</H4>
+</FONT><P>如果需要在启动或者关闭 MTS 对象的过程中执行代码，就应该使用 IObjectControl 接口 (从 Microsoft Transaction Server 类型库中) 并使用 Activate 和 Deactivate 函数。这些函数在对象的启动和关闭过程中被 MTS 运行环境调用。鉴于下面所描述的限制条件，使用 IObjectControl 函数比使用 Class_Initialize 和 Class_Terminate 更好一些。</P>
+<P>可以在  函数中放置访问对象context 的代码。但是，由于 MTS 运行时环境激活对象的方式，不应该在 IObjectControl::Deactivate 或者 IObjectControl::CanBePooled中设置断点。</P>
+<FONT FACE="宋体"><H4>调试程序可能重新激活被 MTS 释放的对象</H4>
+</FONT><P>当通过客户进行单步调试时，Visual Basic 6.0 可能重新激活 MTS 对象。由于 Visual Basic 6.0 发现与对象有关的信息的方式，这是可预期的现象。例如，请考虑如下的代码： </P>
+<pre><font size = 2><BLOCKQUOTE>
+Dim x as object
+Set x = CreateObject("MyApp.Class")
+x.Test
+Set x = Nothing
+</BLOCKQUOTE></font></pre>
+</FONT><P>如果 x.Test 方法调用 SetComplete，MTS 就立即从内存中释放 x，但是 x 还没有被设置为 Nothing。当 x.Test 返回时， Visual Basic 调试程序对 x 调用 QueryInterface 以查询 IProvideClassInfo 接口。与 x 相关的上下文包装程序创建 MyApp.Class 的一个新实例以便为 QueryInterface 调用提供服务。这样一来，在 x.Test 返回之后，您将在调试程序中看到这个未被初始化的对象。这个对象只出现在调试程序中，并且被接下来的将 x 设置为 Nothing 的指令删除掉。</P>
+<br>
+
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                       Dictionary Issues                       -->
+     <!--                                                               -->
+<h3>Dictionary 对象</h3>
+          <!------------------------------------------------------>
+          <!--                   Dictionary1                    -->
+          <!--                                                  -->
+<h4><a name="Dict1"></a> Dictionary 对象简介</h4>
+<P>Visual Basic 6.0 中包含了一个新的 Dictionary 对象，它可以用来用作 Collection 对象或者数组替代。Dictionary 对象等价于在 PERL 和其他语言中使用的关联数组。Dictionary 对象提供了 Collection 或者 Array 所不具备的额外的属性和方法。</P>
+<P> Dictionary 对象被包含在与 Visual Basic 6.0 一道发布的 Microsoft 脚本运行库 (Scrrun.dll) 中。为了在项目中使用 Dictionary 对象，就必须引用 Scrrun.dll。</P>
+<P>要详细了解 Dictionary 对象，请选择 <b>仅搜索标题</b> 在 MSDN 库 Visual Studio 6.0 文档中进行 <a href="#Critical2">在线搜索</a>，查找 &quot;Dictionary 对象&quot;。</P>
+<br>
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                       VCM Issues                              -->
+     <!--                                                               -->
+<h3><a name="rmmscVisualComponentManager"></a>Visual 组件管理器</h3>
+
+<h4><a name="rmmscKnownProblemsinVisualComponentManager"></a> Visual 组件管理器中已知的问题</h4>
+
+<H4><a name="RelatedFilesTab"></a>"相关文件选项卡 (组件属性对话框)"主题错误</H4>
+
+<p>Visual 组件管理器用户界面的参考："相关文件选项卡 (组件属性对话框)"主题中错误地指出该选项卡的作用是用来显示和输入与被选中组件相关的文件。实际上，这个选项卡上的所有信息都不能被修改。而且只有在发布或者重新发布组件的时候，才能向组件中添加相关的文件。有关的详细信息，请选择 <b>仅搜索标题</b> 在 MSDN 库 Visual Studio 6.0 文档中进行在线搜索，查找"发布组件"。</p>
+
+<H4><a name="RemovingRepository10RegistryKeys"></a>删除 Repository 1.0 的注册表项</H4>
+
+<p>如果安装过 VCM 5.0 (原先可以从 web 下载得到)，将要设置如下的 Windows 注册表项。对于 VCM 5.0 和 1.0 版的 Repository 来说，这些注册表项是必要的。
+如果找到了下列注册表项，那么请删除掉这些项，这样做是很安全的，实际上，还有可能提高 VCM 6.0 的性能。</p>
+
+<ul>
+
+<li>HKEY_LOCAL_MACHINE\Software\Microsoft\Repository\CacheMaxAnnProps</li>
+<li>HKEY_LOCAL_MACHINE\Software\Microsoft\Repository\CacheMaxObjects</li>
+<li>HKEY_LOCAL_MACHINE\Software\Microsoft\Repository\CacheRelshipMaxCollections</li>
+<li>HKEY_LOCAL_MACHINE\Software\Microsoft\Repository\CacheRelshipMaxRows</li>
+<li>HKEY_LOCAL_MACHINE\Software\Microsoft\Repository\MaxRowCacheAge</li>
+
+</ul>
+
+<H4><a name="AddingrepositorytablestoanexistingMDBfile"></a>向一个已有的 .mdb 文件中添加 Repository 表</H4>
+
+<p>如果试图从 VCM 内部打开一个已有的 .mdb 文件，而这个文件不是一个 repository 数据库(比如说，它不包含 repository 结构/表)，系统将会询问是否想要向数据库中添加 repository 表。对于正常的使用不应该添加 repository 表； repository 通常应该处于一个独立的数据库中。当然也可以添加 repository 表，但是在一个已有的 .mdb 文件中创建 repository 结构可能需要 10 分钟的时间。</p>
+
+<p>要创建一个包含 repository 结构的全新的 .mdb 文件，请右键单击文件夹，单击 Repository，单击新建，然后输入想要创建的文件名称。</p>
+
+<br>
+
+
+<hr align="left" size="2" width="320" color="Black">
+
+     <!------------------------------------------------------------------->
+     <!--                       APE Issues                              -->
+     <!--                                                               -->
+<h3><a name="rmmscApplicationPerformanceExplorer"></a>应用程序性能评测器</h3>
+
+<h4><a name="rmmscKnownProblemsinApplicationPerformanceExplorer"></a>应用程序性能评测器中已知的问题</h4>
+
+<H4><a name="ConfiguringRemoteAutomationSecurityWhenUsingRemoteAPEComponents"></a>在使用远程 APE 组件时配置远程自动化的安全特性</H4>
+
+<P>为了使用远程自动化(RA) 以便与远程 APE 组件通信，可能需要使用远程自动化连接管理器 (Racmgr32.exe) 来配置 RA 的安全特性。</P>
+
+<p><b>要配置 RA 的安全特性</b></p>
+
+<ol>
+
+<li>启动 Racmgr32.exe 并单击客户访问选项卡。</li>
+
+<li>选择"允许所有的远程创建"或者"允许按关键字远程创建"。</li>
+
+<li>如果选择了"允许按关键字远程创建"，请确保对每个 APE 组件都选择了"允许远程激活"复选框。</li>
+
+</ol>
+
+<P>RA 支持下列身份验证级别： </P>
+
+<TABLE>
+
+<font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+
+<TR>
+<font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+
+<TD WIDTH="22%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<B><P>名称</B></td>
+
+<TD WIDTH="10%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<B><P>值</B></font></td>
+
+<TD WIDTH="68%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<B><P>描述</B></font></td>
+</tr>
+
+<tr>
+<TD WIDTH="22%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>Default</font></td>
+
+<TD WIDTH="10%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>0</font></td>
+
+<TD WIDTH="68%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>默认使用网络。</font></td>
+</tr>
+
+<tr>
+<TD WIDTH="22%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>None</font></td>
+
+<TD WIDTH="10%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>1</font></td>
+
+<TD WIDTH="68%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>无身份验证。</font></td>
+</tr>
+
+<tr>
+<TD WIDTH="22%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>Connect</font></td>
+
+<TD WIDTH="10%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>2</font></td>
+
+<TD WIDTH="68%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>与服务器之间的连接被验证。</font></td>
+</tr>
+
+<tr>
+<TD WIDTH="22%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>Call</font></td>
+
+<TD WIDTH="10%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>3</font></td>
+
+<TD WIDTH="68%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>仅在每个远程过程调用的开始当服务器接收到请求的时候进行验证。不适用于基于连接的协议顺序 (以前缀 "ncacn" 开头)。</font></td>
+</tr>
+
+<tr>
+<TD WIDTH="22%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>Packet</font></td>
+
+<TD WIDTH="10%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>4</font></td>
+
+<TD WIDTH="68%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>检验所有的接收到的数据都来自预期的客户机。</font></td>
+</tr>
+
+<tr>
+<TD WIDTH="22%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>Packet Integrity</font></td>
+
+<TD WIDTH="10%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>5</font></td>
+
+<TD WIDTH="68%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>检验在服务器和客户机之间传送的数据中没有被改动的。</font></td>
+</tr>
+
+<tr>
+<TD WIDTH="22%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>Packet Privacy</font></td>
+
+<TD WIDTH="10%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>6</font></td>
+
+<TD WIDTH="68%" VALIGN="top"><font face="宋体" color="#000000" link="#0000FF" vlink="#660066">
+<P>检验所有其他级别并对每个远程过程调用的参数值进行加密。</font></td>
+</tr>
+
+</font>
+
+</TABLE>
+
+<P>APE 配置文件在最初安装时只具有级别为 1 ("None") 的验证，因为 Windows 95 只能支持该级别验证。但是，如果需要更高的安全特性，只要使用诸如 Notepad 的文本编辑器对配置集合文件 (Aemanagr.ini 文件) 进行修改，就可以改变配置信息的验证级别。</P>
+
+<P>配置信息集合文件中的配置信息的开头是用方括号括起来的配置信息的名称，诸如 [Peak performance, synchronous (CPU, Pool)]。随后是配置信息的属性，其格式如下 &lt;name&gt;=&lt;value&gt； (诸如 "Task Duration=1")。要改变验证级别，请改变所选择的配置信息的 "Authentication"属性的值，并保存该文件。</P>
+
+<H4><a name="compatibilityissuesbetweenvs6apeandvb5ape">与 Visual Studio 6.0 一起发布的应用程序性能评测器和与 Visual Basic 5.0 一起发布的应用程序性能评测器之间的兼容性问题</a></H4>
+
+<p>与 Visual Studio 6.0 一起发布的应用程序性能评测器和与 Visual Basic 5.0 一起发布的应用程序性能评测器之间存在着一些已知的兼容性问题。</p>
+
+<b>要避免出现兼容性的问题，请进行下列操作之一： </b>
+
+<ul>
+
+<li>如果将要安装 Visual Studio 6.0 和 APE</i> 的计算机上有与 VB 5 一起发布的APE的版本，请首先从 VB 中卸载掉该 APE，然后再安装 Visual Studio 和 APE。</li> 
+
+<li>如果将已经将 Visual Studio 6.0 和 APE 安装 </i> 在有 VB5 APE 的同一台计算机上，请卸载 VB APE，然后重新安装 Visual Studio APE。</li>
+
+</ul>
+
+<H4><a name="AdjustingdefaultsettingstouseAPEandMTS">调整默认的设置以便使用 APE 和 MTS </a></H4>
+
+<p>在 SQL 服务器上安装好 APETEST 数据库之后，必须对一些默认的设置进行调整以便使用 APE 和 MTS。</p>
+
+	<blockquote>
+<B><P>注意</B>&nbsp;&nbsp;&nbsp;如果还没有在 SQL 服务器上安装好 APETEST 数据库，那么就应该首先完成安装。要了解如何安装 APETEST 数据库，请在 <i>MSDN 库 Visual Studio 6.0</i> 中查找"APE 数据库安装向导"。 </p>
+	</blockquote>
+ 
+<p><b>要配置 APETEST 数据库的安装以便与 MTS 一起使用</b></p>
+
+<ol>
+
+<li>启动 Microsoft SQL Enterprise Manager。</li>
+
+<li>在 Databases 文件夹中，右键单击 APETEST 数据库并单击编辑。</li>
+
+<li>单击选项选项卡。</li>
+
+<li>在检查点复选框中选择Truncated Log并单击确定。 </li>
+
+<li>在 Databases 文件夹中，右键单击 tempdb 数据库并单击编辑。</li>
+
+<li>单击展开。</li>
+
+<li>在数据设备框中，选择 &lt;新建&gt;。</li>
+
+<li>在新数据库设备对话框的名称框中，键入 tempdbData。</li>
+
+<li>在大小 (MB) 框中，键入 10。</li>
+
+<li>单击立即创建，最后单击确定。</li>
+
+<li>单击立即展开。 </li>
+
+<li>单击展开。</li>
+
+<li>在Log设备框中，选择 &lt;新建&gt;。</li>
+
+<li>在新数据设备对话框的名称框中，键入 tempdbLog。</li>
+
+<li>在大小 (MB)框中，键入 10。</li>
+
+<li>单击立即创建，最后单击确定。 </li>
+
+</ol>
+
+<p><b>要配置可允许数量的用户连接</b></p>
+
+<ol>
+
+<li>启动 Microsoft SQL Enterprise Manager。</li>
+
+<li>右键单击服务器并单击配置。</li>
+
+<p>例如，如果服务器的名称为 CORONA，在服务器管理器子窗口中，右键单击 CORONA 然后单击配置。 </p>
+
+<li>单击配置选项卡。</li>
+
+<li>在配置框中，以最小为 15 的幅度增加用户连接的数量。</li>
+
+</ol>
+
+	<blockquote>
+<B><P>注意</B>&nbsp;&nbsp;&nbsp;如果正在一个已经建立的产品数据库服务器上运行 APETEST，您可能不具备访问许可，从而也不能调整当前的用户连接数量。在这种情况下，就要请求数据库管理员以最小为 15 的幅度增加用户连接的数量以便进行 APE 测试。</p>
+	</blockquote>
+
+<H4><a name="ApplicationPerformanceExplorerServerSideSetup">应用程序性能评测器的服务器端的安装可能产生错误</a></H4>
+
+<p>在安装 APE 服务器端组件的时候，可能会遇到一个错误说明 OLEAUT32.dll 版本不正确。您可以撇开这个错误继续进行安装。</p>
+
+<p>但是，这个错误消息可能暗示着 Microsoft Transaction Server软件包没有得到正确的安装。为了确认的安装是正确的，请运行 Transaction Server Explorer 并在计算机上查找所有已安装的 MTS 软件包。其中应该包括 Visual Studio APE 软件包。</p>
+
+<p>要安装该软件包， AEMTSSVC.pkg，请从开始菜单中运行 MTS Transaction Server Explorer并使用 MTS Explorer 将该软件包安装到本地计算机上。</p>
+
+
+<!--                                                                         -->
+<!--                             END CONTENTS                                -->
+<!----------------------------------------------------------------------------->
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</font>
+</body>
+</html>
+
+
+

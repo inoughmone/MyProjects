@@ -1,0 +1,64 @@
+-----------------------------------
+版本说明
+
+Microsoft(R) ODBC Driver for Oracle
+-----------------------------------
+
+(c) 1998 Microsoft Corporation
+	  
+------------
+文档使用指南
+------------
+
+要查看“自述文件”，请先将“记事本”窗口最大化，然后在“编辑”菜单中单击“自动换行”。要打印“自述文件”，
+请先将文件在“记事本”或其他文字处理器中打开，然后在“文件”菜单中选择“打印”命令。
+
+要了解新版的驱动程序有了些什么改进，请参阅本文档的“新特性”一节。
+
+----
+概览
+----
+
+Microsoft ODBC Driver for Oracle 符合“ODBC Programmer's Reference (Version 2.0) for your platform”中 
+Open Database Connectivity (ODBC) 的规定。Oracle 驱动程序允许您将符合 ODBC 规定的应用程序连接到 Oracle 
+数据库。
+
+
+--------
+系统要求
+--------
+
+要使用 Microsoft ODBC Driver for Oracle，在您的 Windows 系统中必须装有 version 7.3 或更高版本的 Oracle 
+Client Software。Microsoft Oracle ODBC Driver 只支持 SQL*Net 2.3 或更高版本。有关 Oracle 产品的详细信
+息，请参阅 Oracle 文档集。
+
+------
+新特性
+------
+
+Microsoft ODBC Driver for Oracle 新版本无论在性能或稳定性方面都作了一些改进。由于下述的新特性使此驱动
+程序功能更强、速度更快。
+
+     通过添加 ODBC 数据源管理员，改进了配置控制，包括：转换、性能和自定义选项。
+
+     扩展的“帮助”文件。
+
+新版本同时也保持了旧版本的特性如：
+
+     改进了的扩展获取支持行方式绑定。
+	请参阅“帮助”文件中“二级函数” 。
+	详细信息请参阅《Microsoft ODBC 3.0 Programmer's References and SDK Guide》。
+     用 Microsoft Transaction Server 集成分布事务。
+	请参阅“帮助”文件中“使用 Microsoft Transaction Server”。
+     支持目录函数中的 Oracle 软件包语法。 
+	请参阅“帮助”文件中“从存储程序中返回数组参数”。
+     SQLDescribeParam 的执行为 SQL 语句提供了更精确的参数说明。
+	请参阅“帮助”文件中“二级函数”。
+     从存储程序中返回数组的能力。 
+	请参阅“帮助”文件中“从存储程序中返回数组参数”。 
+     支持书签。 
+	请参阅“帮助”文件中“二级函数” 和“状态选项表”。
+     扩展的“帮助”文件。
+
+通过测试证明，Microsoft ODBC Driver for Oracle 新版本有着更高的稳定性，因为它已经过反复测试，能适应更
+多的操作环境如：Microsoft Transaction Server 和 Internet Information Server。
