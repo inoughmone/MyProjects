@@ -1,0 +1,13 @@
+<P>Specify the URL to be launched with the end user's browser, <EM>including</EM> the protocol to be used. For example:</P>
+<UL>
+<LI>Incorrect &mdash; <EM>www.installshield.com</EM> (will cause an error in the browser) 
+<LI>Correct &mdash; <EM><STRONG>http://</STRONG>www.installshield.com</EM>
+</UL></P>
+
+You can also use this action to display a local file. A string resolver can also be used. For example:
+	<UL>
+	<LI>Incorrect &mdash; C:/readme.html
+	<LI>Correct &mdash; <EM><STRONG>file://</STRONG>C:/readme.html</EM><BR>
+	OR<BR>
+	<EM><STRONG>file://$P(absoluteInstallLocation)</STRONG>/readme.html</EM>
+	</UL>

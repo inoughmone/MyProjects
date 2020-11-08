@@ -1,0 +1,30 @@
+<P>
+The value selected for <STRONG>Restart Wizard</STRONG> determines whether the wizard will be restarted after the user's system reboots.
+</P>
+<P>
+<FONT size=4><STRONG>Values</STRONG></FONT>
+<P>
+
+<TABLE ALIGN=CENTER border=0 cellPadding=1 cellSpacing=1>  
+  <TR>
+    <TD>
+        <STRONG>True</STRONG>
+        <HR size=2>The wizard will be restarted after the system reboot.
+        <P>
+        <STRONG>False</STRONG>
+        <HR size=2>The wizard will not be restarted after the system reboot.
+    </TD>
+  </TR>
+</TABLE>
+
+<P>
+If the value for <STRONG>Restart Wizard</STRONG> is 
+'True', then the wizard will restart at the next wizard bean in the wizard tree 
+(i.e., the wizard bean immediately following the Reboot Panel).  If the 
+value for <STRONG>Restart Wizard</STRONG> is 'True' and the Reboot Panel is the last wizard bean 
+in the wizard tree, then the system will simply reboot and a wizard restart will not occur.
+</P>
+<P>
+<STRONG>Note:</STRONG>  Restarting the wizard is only supported through 
+the use of native launchers.
+</P>

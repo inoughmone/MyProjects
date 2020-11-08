@@ -1,0 +1,114 @@
+The value selected for <STRONG>Platform</STRONG> is compared to the
+platform of the user's system.</P>
+
+The OS name, version, and architecture of the selected <STRONG>Platform</STRONG> 
+are compared to the OS name, version, and architecture of the end user's system for equality.</P>
+
+A predefined <STRONG>Platform</STRONG> can be selected from the list using the
+<STRONG>Predefined</STRONG> tab, or can be created using the <STRONG>Custom</STRONG> tab (see Chapter 3.3 - Wizard Beans/Conditional Bean Execution/Platform Wizard Bean Conditions of the <EM>MultiPlatform User's Guide</EM> for instructions).</P>
+
+The values for the name, version, and architecture fields are evaluated using GNU
+Regular Expressions.
+
+<H3>GNU Regular Expressions</H3>
+
+The supported regular expressions are a subset of lex, plus some extensions. Some characters 
+must be negated using a backslash ("\") in order for Java to ignore.</p>
+
+<table BORDER=0>
+<tr VALIGN=TOP>
+<td><STRONG><font size=+1>Expression</font></STRONG></td>
+<td><STRONG><font size=+1>Description</font></STRONG></td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x</td>
+<td>The character x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>"x"</td>
+<td>An x, even if x is an operator.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>\x</td>
+<td>An x, even if x is an operator.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>[xy]</td>
+<td>The character x or y.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>[x-z]</td>
+<td>The character x, y, or z.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>[^x]</td>
+<td>Any character but x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>.</td>
+<td>Any character but newline.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>^x</td>
+<td>An x at the beginning of a line.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x$</td>
+<td>An x at the end of a line.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x?</td>
+<td>An optional x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x*</td>
+<td>Zero or more instances of x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x+</td>
+<td>One or more instance of x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x\|y</td>
+<td>An x or a y.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>\(x\)</td>
+<td>An x matched as a sub-expression.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x{m,n}</td>
+<td>M through n occurrences of x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>\n</td>
+<td>A back reference, where n is a digit 0 through 9.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<TD COLSPAN="2"><STRONG>Example</STRONG></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD>\(.*"."ini\)\|\(.*"."bat\)</TD>
+<TD>Searches for all files that end with ".ini" or ".bat".</TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>

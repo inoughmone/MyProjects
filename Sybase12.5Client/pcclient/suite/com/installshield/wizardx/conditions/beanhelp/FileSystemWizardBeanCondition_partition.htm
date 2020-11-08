@@ -1,0 +1,18 @@
+<P>
+The value entered for <STRONG>Partition</STRONG> is the partition to check
+the file system of.
+</P>
+<P>
+The value entered for <STRONG>Partition</STRONG> is passed into File 
+Service's getPartitionFormat method.  The result of which is compared 
+against the value entered for <STRONG>File System</STRONG> to determine if 
+there is a match.
+</P>
+<P>
+A directory path can be entered for this property and the 
+<STRONG>Partition</STRONG> will be determined from this path.  This allows 
+developers to specify such things as $P(absoluteInstallLocation) in this 
+field.  This field must be filled in for the File System Wizard Bean 
+Condition to work properly (unlike the File System Product Bean Condition there 
+is no default behavior).
+</P>

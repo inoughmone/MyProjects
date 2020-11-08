@@ -1,0 +1,7 @@
+<P>If you believe that execution of this search could cause a noticeable delay, type a message in this property to display on the Wizard panel during the search so that the end user knows processing is still occurring. Otherwise, leave this property blank (the default) so that a message does not flash on the screen before it can be read.</P>
+
+	When this property's value is non-blank, the panel resolves it at runtime, and displays the result in the Wizard UI while the search is performed. Since this string most likely should be localized, a default string is available in the InstallShield localized resources that can be used &mdash; It displays the message "Please wait...". To specify that string, enter:</P>
+
+<BLOCKQUOTE><CODE>$L(com.installshield.wizard.i18n.WizardResources,pleaseWait)</CODE></BLOCKQUOTE></P>
+
+	You can also use the "$L()" string resolver to specify a string from a resource bundle that you have included in your project.</P>

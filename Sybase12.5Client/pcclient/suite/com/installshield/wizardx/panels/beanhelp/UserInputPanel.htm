@@ -1,0 +1,15 @@
+<P>The <STRONG>User Input Panel</STRONG> is used to retrieve user input such as name, license key number, email address, URL, etc. It can also be used to validate that the end user is authorized to install the product(s), and/or to obtain the information required to notify them of future patches, upgrades, etc. This bean is extremely flexible and can be customized to obtain any type of information from the end user for use/storage later during the installation/uninstallation.</P>
+
+<P>For example, to validate that the end user is authorized to install the product, add this panel after the <STRONG>Welcome Panel</STRONG> and request authorization information. Then add a <STRONG>User Input Condition</STRONG> to the <STRONG>Install Action</STRONG> bean that requires that it "Must be met".</P>
+
+<P>The end user input is stored as an extended property with the key being the <EM><STRONG>Name</STRONG> property of the field</EM>, that can be retrieved at any point after end user input during installation/uninstallation. The developer sets the <STRONG>Name</STRONG> for each field, each representing a different piece of information entered/selected by the end user, then retrieves the <STRONG>Value</STRONG> (for choice-type fields), string entered (for <STRONG>Text</STRONG> fields), or file/directory browsed to (for <STRONG>Directory</STRONG> and <STRONG>File</STRONG> fields) using the "$W" string resolution method.</P>
+
+<P>For example:</P>
+<BLOCKQUOTE><CODE>$W(beanID.fieldName)</CODE></P>
+
+<P>Where:</P>
+
+<P><EM>beanID</EM> is the bean ID of the <STRONG>User Input Panel</STRONG>, and <EM>fieldName</EM> is the value of the <STRONG>Name</STRONG> property, specified by the developer for that field on the panel.
+</BLOCKQUOTE>
+
+<P>For additional information, see the <STRONG><EM>MultiPlatform User's Guide</EM></STRONG>, <STRONG>Chapter 3.4 - Wizard Panels/User Input/Validating User Input</STRONG>.

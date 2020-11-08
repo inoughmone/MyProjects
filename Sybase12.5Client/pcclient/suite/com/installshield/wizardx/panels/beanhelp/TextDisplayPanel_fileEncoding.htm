@@ -1,0 +1,14 @@
+This property is only used when the <strong>Text Source</strong> property is set
+to "Local File" - Otherwise, it is ignored. Specify the Java encoding to be used for
+converting the bytes in the local file to a Java String at runtime. If left 
+blank, the installer uses the default encoding of the JVM on the target machine.
+
+<P>The encoding must match the encoding that was used to write the file specified in the <strong>File Name</strong> property.
+If you have set <strong>Include Localized Files</strong> to "True", then each of the
+localized versions of this file must also be saved using the <EM>same file encoding</EM>.
+
+<P>For example, one of the most common encodings is <EM>utf-8</EM>. If your file is encoded in <EM>utf-8</EM> format,
+then set this property to "UTF8" (without the double quotes). You must ensure that your installer is executed with a JVM that supports
+the encoding you specify. Keep in mind that the set of supported encodings differs not just
+by which version of  JVM you are using, but also the JVM vendor and whether or
+not the JVM supports internationalization.

@@ -1,0 +1,31 @@
+
+<H3>Panel Fields</H3>
+
+<P>To add a field to the panel, click the <STRONG>Add</STRONG> button in the <STRONG>Panel Fields</STRONG> box in the center of the IDE. A drop-down menu displays the following types of fields (see the <EM><STRONG>MultiPlatform User's Guide</STRONG></EM>, <STRONG>Chapter 3.4</STRONG> &mdash; <STRONG>Wizard Panels</STRONG>/<STRONG>User Input</STRONG>/<STRONG>Fields</STRONG> for a description of and instructions for setting their individual properties):</P>
+
+<UL>
+	<LI><STRONG>Label</STRONG> &mdash; Adds a label to the panel which can be used as a subtitle for groups of fields within the panel.
+	<LI><STRONG>Text</STRONG> &mdash; Creates a text field that accepts user input.
+	<LI><STRONG>Directory</STRONG> &mdash; Creates a browser dialog box from which the end user can browse to a specific <EM>directory</EM>.
+	<LI><STRONG>File</STRONG> &mdash; Creates a browser dialog box from which the end user can browse to a specific <EM>file</EM>.
+	<LI><STRONG>Password</STRONG> &mdash; Creates a field into which the end user should enter a password. The characters typed are echoed back as asterisks ("*").</P>
+
+	<LI>The rest of the list contains the following "choice-type" fields:</P>
+	
+		<TABLE CELLPADDING="2" CELLSPACING="2">
+		<TR>
+		<TD VALIGN="top" STYLE="padding-left: 8pt"><STRONG>NOTE</STRONG>: </TD>
+		<TD STYLE="padding-left: 8pt">These fields' can be set to use a mnemonic by prepending the <STRONG>Display Name</STRONG> property string with an ampersand ("&amp;").</TD>
+		</TR></TABLE></P>
+		<UL>
+		<LI>"Check List" &mdash; Displays a list of items with associated check boxes from which <EM>more</EM> than one selection can be made.
+		<LI>"Radio Button List" &mdash; Displays a list of items with associated radio buttons from which <EM>only one</EM> selection can be made.
+		<LI>"Drop Down List" &mdash; Displays a drop-down list from which <EM>only one</EM> selection can be made.
+		<LI>"Simple List" &mdash; Displays a list of items from which <EM>only one</EM> selection can be made.
+		<LI>"Scrollable Check List" &mdash; Same as "Check List" and includes a scroll bar, and <EM>more</EM> than one selection can be made.
+		</UL>
+</UL></P>
+
+As each field is added to the panel, it is added to the bottom of the list of <STRONG>Panel Fields</STRONG> in the center of the IDE. The fields display in the same order that they will appear on the panel. Use the <STRONG>Edit</STRONG>, "Up/Down Arrow", and "Delete" buttons to make any necessary changes.</P>
+
+Validation is available for all fields except <STRONG>Label</STRONG>. You can also use your own custom validation class(es).</P>

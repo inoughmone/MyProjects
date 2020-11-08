@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>PowerTransfer Help</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<body>
+		<p><big><b><br>
+				</b></big>
+		</p>
+		<p><big><b>Overview</b></big></p>
+		<p>PowerTransfer is an extension to PowerDesigner to allow the transfer of data 
+			into Sybase Adaptive Server Enterprise. &nbsp;The source database can be any 
+			ODBC datasource supported by PowerDesigner.&nbsp; The program uses the Sybase 
+			bulk copy mechanism for high performance inserts into Sybase ASE. &nbsp;</p>
+		<p>The program has been tested with the following data sources: Sybase ASE, Oracle 
+			9, Microsoft SQL Server 2000, Microsoft Access<br>
+			<br>
+		</p>
+		<p><big><b>System Requirements</b></big></p>
+		<p>In order to install and use PowerTransfer, your system will require:<br>
+		</p>
+		<ul>
+			<li>
+			Sybase PowerDesigner 9.5.2
+			<li>
+				Sybase Open Client 12.5</li>
+		</ul>
+		<br>
+		<big><b>Installation</b></big><br>
+		<ul>
+			<li>
+				Unzip the distribution file into a temporary directory.<br>
+			<li>
+			If your system does not have the Microsoft .NET framework installed already, 
+			install it by clicking dotnetfx.exe.
+			<li>
+			Click Setup.exe to install PowerTransfer.
+			<li>
+				PowerTransfer should be accessible through the PowerDesigner Tools-&gt;Execute 
+				Commands menu.<br>
+			</li>
+		</ul>
+		<br>
+		<p><big><b>Steps For Copying a Database</b></big><br>
+		</p>
+		<ol>
+			<li>
+				Before starting, you will need to set up the following:</li>
+		</ol>
+		<blockquote>
+			<ul>
+				<li>
+					The database in the target ASE should be created and configured to allow bulk 
+					operations.</li>
+			</ul>
+		</blockquote><blockquote> <blockquote> <blockquote> <blockquote> sp_dboption mydatabase,"select 
+						into", true</blockquote></blockquote></blockquote></blockquote><blockquote>
+			<ul>
+				<li>
+					Configure an ODBC connection to your source database for use by PowerDesigner 
+					and PowerTransfer.</li>
+			</ul>
+		</blockquote><blockquote>
+			<ul>
+				<li>
+					Configure an ODBC connection to the target Sybase ASE for use by PowerDesigner.
+				</li>
+			</ul>
+		</blockquote><blockquote>
+			<ul>
+				<li>
+					Sybase Open Client should be configured for a connection to the target ASE. 
+					&nbsp;Use the Sybase Dsedit utility to do this. &nbsp;This connection will be 
+					used by PowerTransfer to perform bulk inserts of the data.</li>
+			</ul>
+			<br>
+		</blockquote>
+		<ol start="2">
+			<li>
+				Using PowerDesigner, you will need to create the database on the target ASE:<br>
+			</li>
+		</ol>
+		<blockquote>
+			<ul>
+				<li>
+				Create a physical model of the source database by using the Reverse Engineer 
+				feature of PowerDesigner.
+				<li>
+				Change the Current Database Type of the physical model to Sybase ASE 12.5.
+				<li>
+				Examine the converted schema and make any changes required.
+				<li>
+					Connect to the target ASE and generate the database. &nbsp;</li>
+			</ul>
+			<blockquote>
+				<table border="1" width="100%" cellpadding="2" cellspacing="2">
+					<tbody>
+						<tr>
+							<td>NOTE: The database should first be created without indexes and rules. These 
+								items should be added after the data has been moved.</td>
+						</tr>
+					</tbody>
+				</table>
+			</blockquote></blockquote>
+		<ol start="3">
+			<li>
+			Start PowerTransfer from the Tools-&gt;Execute Commands menu of PowerDesigner.
+			<li>
+				Connect to the Source and Target database from the <b>Server Login </b>
+			tab.
+			<li>
+				In the <b>Table Copy</b> tab, select the tables you wish to transfer and click 
+				the <b>Add </b>
+			button to queue up the transfer.
+			<li>
+			The number of rows in the source table should be listed for each source table.
+			<li>
+				Click <b>Clear List</b> if you change your mind regarding the tables to be 
+				copied.<br>
+			<li>
+				Click <b>Start Copy</b> to initiate the copy<br>
+			</li>
+		</ol>
+		<br>
+		<p><b><big>Server Login Panel<big> </big>
+					<br>
+				</big>
+				<br>
+			</b>This panel describes source and target connection settings. &nbsp;The 
+			source connection is an ODBC DSN value. &nbsp;The target connection is a Sybase 
+			Open Client connection. &nbsp;Use the Sybase Dsedit utility to configure these 
+			connections. &nbsp;By default, one connection will be opened to the source and 
+			destination. &nbsp;Change the <b>Number of Connections</b> property in the <b>Options
+			</b>tab to enable multiple simultaneous transfers through more than one 
+			connection.<br>
+			<br>
+		</p>
+		<p><big><b>Table Copy Panel</b></big></p>
+		<p>The list on the left shows the table definitions that are defined in the 
+			currently open physical model. &nbsp;The name of the physical model is 
+			displayed at the top of the table. &nbsp;Click the <b>Load Table List From Active 
+				Model </b>button if you change models. &nbsp;By default, only tables are 
+			displayed, however views may also be displayed if this option is selected in 
+			the <b>Options </b>tab. &nbsp;The tables are listed in an order determined by 
+			their primary and foreign key relationships so that tables are listed after 
+			their dependencies. &nbsp;It is recommened however that for performance 
+			reasons, transfers be performed with no referential integrity applied in the 
+			target.<br>
+		</p>
+		<p>When <b>Start Copy</b> is clicked tables will be transferred in the order they 
+			are listed. &nbsp;If multiple connections have been configured, multiple 
+			simultaneous transfers will commence and execute in a non-deterministic order.<br>
+		</p>
+		<p><br>
+			<b><big>Options Panel</big></b><br>
+		</p>
+		<p>Changes to ASE bulk insert and connection properties do not take affect until 
+			connections are closed and reopened.<br>
+			<br>
+		</p>
+		<blockquote><b>Rows Per Bulk Insert </b>
+			<br>
+			This determines the number of rows fetched from the source and pushed to the 
+			target in a single bulk operation. &nbsp;Increasing this value uses more memory 
+			but increases performance.<br>
+			<br>
+			<b>Rows Per Commit</b><br>
+			This number determines the frequency that a batch commit is sent to an ASE.<br>
+			<br>
+			<b>Number Of Connections</b><br>
+			This number determines the number of connections to be opened to the source and 
+			destination servers. &nbsp;More than one connection enables simultaneous 
+			transfers.<br>
+			<br>
+			<b>Packet Size</b><br>
+			This option determines the Sybase TDS packet sized used to connect to the 
+			target ASE. &nbsp;Larger packet sizes provide better performance, however use 
+			more server memory. &nbsp;This option should not be set higher than the maximum 
+			configured packet size configured in your target server. &nbsp;The maximum 
+			allowed packet size on ASE can be configured using:<br>
+			<blockquote> <blockquote>sp_configure "max network packet size",8192<br>
+				</blockquote></blockquote>
+			<br>
+			<b>Truncate Target Table</b><br>
+			This checkbox indicates whether a TRUNCATE TABLE statement should be sent to 
+			the target at the start of &nbsp;the transfer.<br>
+			<br>
+			<b>Show Views In Table List</b><br>
+			This checkbox determines whether views in the physical model should be listed 
+			as a source tables. &nbsp;This option allows a view in the source database to 
+			be copied to a table in the target. &nbsp;This can be useful for moving a 
+			subset or an aggregation of the source database's data.<br>
+			<br>
+		</blockquote>
+		<br>
+		<b><big>Schema Conversion Notes</big></b><br>
+		<br>
+		<blockquote><b>General</b><br>
+			<ul>
+				<li>
+				Column names may be changed between the source and the target, however the 
+				column ordering must be the same.
+				<li>
+				Table names cannot altered and must be valid names on ASE. &nbsp;
+				<li>
+					The table owner is assumed to be as described in the PowerDesigner physical 
+					model. &nbsp;If you want to have different table owners between the source and 
+					target, you can assign the owner in the PowerDesigner physical model to NONE 
+					and let the userid default to the id that is used for the ODBC/Open Client 
+					connections.<br>
+				<li>
+				Data types can be different between the source and the target as long as the 
+				types are convertable. &nbsp;You may receive overflow errors during a transfer 
+				if copying into a smaller sized type.
+				<li>
+					Use views in the source database if you wish to copy subsets of the source 
+					tables or if you wish to alter the table names. &nbsp;The target database 
+					should contain an actual table definition that matches the column list of the 
+					view.<br>
+				</li>
+			</ul>
+		</blockquote><blockquote><b>Microsoft SQL Server</b><br>
+			<ul>
+				<li>
+				Watch for the identity property being applied to non-numeric datatypes. 
+				&nbsp;ASE requires a NUMERIC type for the identity property.
+				<li>
+					Uncheck "Physical options" in the PowerDesigner database generation panel to 
+					avoid "ON PRIMARY" being generated on the CREATE statements generated for ASE.</li>
+			</ul>
+			<b>Oracle</b><br>
+			<ul>
+				<li>
+					XML and TIMESTAMP datatypes are not supported.</li>
+			</ul>
+			<br>
+		</blockquote>
+		<br>
+		<br>
+		<br>
+		<br>
+	</body>
+</html>

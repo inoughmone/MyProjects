@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[bcpwin.mak]
+SCC_Aux_Path = "\\10.240.4.145\vssdb\"
+SCC_Project_Name = "$/ALPSCL/SETUP/3rdPartSetup/sombrero/samples/bcpapp", TTADAAAA

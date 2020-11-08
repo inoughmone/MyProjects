@@ -1,0 +1,336 @@
+
+<wizardTree>
+    <wizardRoot>
+        <comments/>
+        <wizardBean class="com.sybase.ismp.ase.wizardbean.SetupLogWizardAction" id="setupLog">
+            <property name="displayName">Setup Log Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+        </wizardBean>
+        <wizardBean class="com.sybase.ismp.ase.wizardbean.SetDefaultValuesWizardAction" id="bean2">
+            <property name="displayName">Set Default Values Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+        </wizardBean>
+        <wizardBean class="com.sybase.ismp.ase.wizardbean.LookAndFeelMatcher" id="lfMatch">
+            <property name="displayName">Setup UI</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.InstallCheckPanel" id="installedProductCheck">
+            <property name="displayName">Installed Product Check</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.wizardx.i18n.WizardXResources, TextDisplayPanel.description)</property>
+            <property name="showBorder">True</property>
+            <property name="busyMessage"/>
+            <property name="navigationOptions">0</property>
+            <property name="text">$L(com.installshield.wizardx.i18n.WizardXResources, TextDisplayPanel.text)</property>
+            <property name="textSource">1</property>
+            <property name="fileName"/>
+            <property name="contentType">2</property>
+            <property array="True" length="1" name="checkNames" type="string">
+                <arrayItem>patch</arrayItem>
+            </property>
+            <property name="operation">1</property>
+            <property name="onFailure">1</property>
+            <property name="stopMessage">$L(com.installshield.product.i18n.ProductResources, ProductCheckPanel.defaultStopMessage)</property>
+            <property name="overrideMessage">$L(com.installshield.product.i18n.ProductResources, ProductCheckPanel.defaultOverrideMessage)</property>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="fileEncoding"/>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.WelcomePanel" id="welcome">
+            <property name="displayName">Welcome Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">6</property>
+            <property name="text">$L(com.installshield.product.i18n.ProductResources, WelcomePanel.message, $P(pcclient.displayName), $P(pcclient.displayName), , , )</property>
+            <property name="textSource">1</property>
+            <property name="fileName"/>
+            <property name="fileEncoding"/>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="contentType">2</property>
+            <property name="showBorder">True</property>
+            <property name="busyMessage"/>
+        </wizardBean>
+        <wizardBean class="com.sybase.sis.wizardbean.SybaseLicensePanel" id="SybaseLicense">
+            <property name="displayName">Sybase License Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="agree">False</property>
+        </wizardBean>
+        <wizardBean class="com.sybase.ismp.ase.wizardbean.SybaseDestinationPanel" id="destination">
+            <property name="displayName">Destination</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description">$L(com.sybase.ismp.ase.lang.ASEResourceBundle, destination_dir_description)</property>
+            <property name="navigationOptions">0</property>
+            <property name="release"/>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.InstallCheckPanel" id="updateChecks">
+            <property name="displayName">Update Checks</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.wizardx.i18n.WizardXResources, TextDisplayPanel.description)</property>
+            <property name="showBorder">True</property>
+            <property name="busyMessage"/>
+            <property name="navigationOptions">0</property>
+            <property name="text">$L(com.installshield.wizardx.i18n.WizardXResources, TextDisplayPanel.text)</property>
+            <property name="textSource">1</property>
+            <property name="fileName"/>
+            <property name="contentType">2</property>
+            <property array="True" length="3" name="checkNames" type="string">
+                <arrayItem>patch</arrayItem>
+                <arrayItem>patchtarget</arrayItem>
+                <arrayItem>update</arrayItem>
+            </property>
+            <property name="operation">1</property>
+            <property name="onFailure">1</property>
+            <property name="stopMessage">$L(com.installshield.product.i18n.ProductResources, ProductCheckPanel.defaultStopMessage)</property>
+            <property name="overrideMessage">$L(com.installshield.product.i18n.ProductResources, ProductCheckPanel.defaultOverrideMessage)</property>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="fileEncoding"/>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SetupTypePanel" id="setupTypes">
+            <property name="displayName">Setup Types</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.product.i18n.ProductResources, SetupTypePanel.description)</property>
+            <property name="navigationOptions">0</property>
+            <property name="selectedSetupTypeId">typical</property>
+            <property array="True" length="3" name="setupTypes" type="com.installshield.product.wizardbeans.SetupType">
+                <arrayItem type="com.installshield.product.wizardbeans.SetupType">
+                    <property name="description">$L(com.installshield.product.i18n.ProductResources, SetupTypePanel.typicalDescription)</property>
+                    <property name="displayName">$L(com.installshield.product.i18n.ProductResources, SetupTypePanel.typicalDisplayName)</property>
+                    <property array="True" length="6" name="features" type="string">
+                        <arrayItem>suite_conn_conn_oc</arrayItem>
+                        <arrayItem>suite_conn_conn_oc_ctlib</arrayItem>
+                        <arrayItem>suite_admintools_admintools_sc</arrayItem>
+                        <arrayItem>suite_admintools_admintools_asep</arrayItem>
+                        <arrayItem>suite_admintools_admintools_js</arrayItem>
+                        <arrayItem>suite_admintools_admintools_sqladv</arrayItem>
+                    </property>
+                    <property name="id">typical</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.product.wizardbeans.SetupType">
+                    <property name="description">The program will be installed with all the products and features.</property>
+                    <property name="displayName">Full</property>
+                    <property array="True" length="35" name="features" type="string">
+                        <arrayItem>suite_conn_conn_oc</arrayItem>
+                        <arrayItem>suite_conn_conn_oc_ctlib</arrayItem>
+                        <arrayItem>suite_conn_conn_mcl</arrayItem>
+                        <arrayItem>suite_conn_conn_xa</arrayItem>
+                        <arrayItem>suite_conn_conn_odbc</arrayItem>
+                        <arrayItem>suite_conn_conn_oledb</arrayItem>
+                        <arrayItem>suite_lang_lang_zh</arrayItem>
+                        <arrayItem>suite_lang_lang_de</arrayItem>
+                        <arrayItem>suite_lang_lang_fr</arrayItem>
+                        <arrayItem>suite_lang_lang_ja</arrayItem>
+                        <arrayItem>suite_lang_lang_sp</arrayItem>
+                        <arrayItem>suite_lang_lang_pl</arrayItem>
+                        <arrayItem>suite_lang_lang_po</arrayItem>
+                        <arrayItem>suite_lang_lang_ko</arrayItem>
+                        <arrayItem>suite_lang_lang_th</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_debug</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_jtds</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_javadocs</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_doc</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_doc_en</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_doc_fr</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_doc_de</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_doc_ja</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_jutils</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_jutils_jisql</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_jutils_ribo</arrayItem>
+                        <arrayItem>suite_jconnect_jconnect_samples</arrayItem>
+                        <arrayItem>suite_shared_shared_jre131</arrayItem>
+                        <arrayItem>suite_shared_shared_jre118</arrayItem>
+                        <arrayItem>suite_shared_shared_lib</arrayItem>
+                        <arrayItem>suite_admintools_admintools_cluster</arrayItem>
+                        <arrayItem>suite_admintools_admintools_sc</arrayItem>
+                        <arrayItem>suite_admintools_admintools_asep</arrayItem>
+                        <arrayItem>suite_admintools_admintools_js</arrayItem>
+                        <arrayItem>suite_admintools_admintools_sqladv</arrayItem>
+                    </property>
+                    <property name="id">full</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.product.wizardbeans.SetupType">
+                    <property name="description">$L(com.installshield.product.i18n.ProductResources, SetupTypePanel.customDescription)</property>
+                    <property name="displayName">$L(com.installshield.product.i18n.ProductResources, SetupTypePanel.customDisplayName)</property>
+                    <property array="True" length="6" name="features" type="string">
+                        <arrayItem>suite_conn_conn_oc</arrayItem>
+                        <arrayItem>suite_conn_conn_oc_ctlib</arrayItem>
+                        <arrayItem>suite_admintools_admintools_sc</arrayItem>
+                        <arrayItem>suite_admintools_admintools_asep</arrayItem>
+                        <arrayItem>suite_admintools_admintools_js</arrayItem>
+                        <arrayItem>suite_admintools_admintools_sqladv</arrayItem>
+                    </property>
+                    <property name="id">custom</property>
+                </arrayItem>
+            </property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SetupTypeSequence" id="customize">
+            <property name="displayName">Setup Type Sequence</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="setupTypePanel">setupTypes</property>
+            <property name="setupType">custom</property>
+            <wizardBean class="com.installshield.product.wizardbeans.FeaturePanel" id="features">
+                <property name="displayName">Features</property>
+                <property name="active">True</property>
+                <property name="buildCategories"/>
+                <property name="comments"/>
+                <property name="conditionOperator">AND</property>
+                <property name="title"/>
+                <property name="description">$L(com.installshield.product.i18n.ProductResources, FeaturePanel.description, $P(displayName))</property>
+                <property name="navigationOptions">0</property>
+                <property name="busyMessage"/>
+                <property name="rootDisplayName">$L(com.installshield.product.i18n.ProductResources, FeaturePanel.rootNodeName)</property>
+            </wizardBean>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.InstallCheckPanel" id="check">
+            <property name="displayName">Install Check</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.wizardx.i18n.WizardXResources, TextDisplayPanel.description)</property>
+            <property name="showBorder">True</property>
+            <property name="busyMessage"/>
+            <property name="navigationOptions">0</property>
+            <property name="text">$L(com.installshield.wizardx.i18n.WizardXResources, TextDisplayPanel.text)</property>
+            <property name="textSource">1</property>
+            <property name="fileName"/>
+            <property name="contentType">2</property>
+            <property array="True" length="5" name="checkNames" type="string">
+                <arrayItem>patch</arrayItem>
+                <arrayItem>patchtarget</arrayItem>
+                <arrayItem>update</arrayItem>
+                <arrayItem>diskspace</arrayItem>
+                <arrayItem>dependencies</arrayItem>
+            </property>
+            <property name="operation">1</property>
+            <property name="onFailure">1</property>
+            <property name="stopMessage">$L(com.installshield.product.i18n.ProductResources, ProductCheckPanel.defaultStopMessage)</property>
+            <property name="overrideMessage">$L(com.installshield.product.i18n.ProductResources, ProductCheckPanel.defaultOverrideMessage)</property>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="fileEncoding"/>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SummaryPanel" id="preview">
+            <property name="displayName">Install Preview</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="busyMessage"/>
+            <property name="type">1</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.InstallAction" id="install">
+            <property name="displayName">Install</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="progressRenderer" type="com.installshield.wizardx.progress.StandardProgressRenderer">
+                <property name="progressBackground">SystemColor.window</property>
+                <property name="progressForeground">SystemColor.activeCaption</property>
+                <property name="wrapDetail">False</property>
+                <property name="overrideSwingColors">False</property>
+            </property>
+            <property name="cancelable">True</property>
+        </wizardBean>
+        <wizardBean class="com.sybase.ismp.ase.wizardbean.CopyFileWizardAction" id="copy_ismp">
+            <property name="displayName">Copy File Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="source">$J(is.external.home)\archives\ismp.jar</property>
+            <property name="destination">$P(installLocation)\uninstall\PCClient\ismp.jar</property>
+        </wizardBean>
+        <wizardBean class="com.sybase.ismp.ase.wizardbean.PostSummaryPanel" id="summary">
+            <property name="displayName">Install Summary</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">6</property>
+            <property name="busyMessage"/>
+            <property name="type">2</property>
+        </wizardBean>
+        <wizardBean class="com.sybase.ismp.ase.wizardbean.LastPanel" id="lastPanel">
+            <property name="displayName">Last Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="configSuccessExpression">true</property>
+            <property name="unsuccessfulInstallMessage">$L(com.sybase.ismp.ase.lang.ASEResourceBundle, unsuccessful_install_message)</property>
+            <property name="unsuccessfulConfigMessage">$L(com.sybase.ismp.ase.lang.ASEResourceBundle, unsuccessful_config_message)</property>
+            <property name="successfulMessage">$L(com.sybase.ismp.ase.lang.ASEResourceBundle, successful_message)</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.panels.LogoutPanel" id="logoutPanel">
+            <property name="displayName">Logout Panel</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title">$L(com.installshield.wizardx.i18n.WizardXResources, LogoutPanel.title)</property>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="text">$L(com.installshield.wizardx.i18n.WizardXResources, LogoutPanel.text)</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.panels.RebootPanel" id="rebootPanel">
+            <property name="displayName">Reboot Panel</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="rebootSelected">True</property>
+            <property name="restartWizard">False</property>
+            <property name="text">$L(com.installshield.wizardx.i18n.WizardXResources, RebootPanel.mustRestart)</property>
+        </wizardBean>
+    </wizardRoot>
+</wizardTree>

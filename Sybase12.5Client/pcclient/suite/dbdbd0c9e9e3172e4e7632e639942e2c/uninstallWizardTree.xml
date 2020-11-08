@@ -1,0 +1,75 @@
+
+<wizardTree>
+    <wizardRoot>
+        <comments/>
+        <wizardBean class="com.sybase.ismp.ase.wizardbean.LookAndFeelMatcher" id="lfMatch">
+            <property name="displayName">Setup UI</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.UninstallWelcomePanel" id="welcome">
+            <property name="displayName">Welcome Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="text">$L(com.installshield.product.i18n.ProductResources, UninstallWelcomePanel.message, $P(pcclient.displayName), $P(pcclient.displayName), , , )</property>
+            <property name="textSource">1</property>
+            <property name="fileName"/>
+            <property name="fileEncoding"/>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="contentType">2</property>
+            <property name="showBorder">True</property>
+            <property name="busyMessage"/>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.UninstallFeaturePanel" id="features">
+            <property name="displayName">Features</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.product.i18n.ProductResources, UninstallFeaturePanel.description, $P(displayName))</property>
+            <property name="navigationOptions">0</property>
+            <property name="busyMessage"/>
+            <property name="rootDisplayName">$L(com.installshield.product.i18n.ProductResources, UninstallFeaturePanel.rootNodeName)</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SummaryPanel" id="preview">
+            <property name="displayName">Uninstall Preview</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="busyMessage"/>
+            <property name="type">3</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.UninstallAction" id="uninstall">
+            <property name="displayName">Uninstall</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SummaryPanel" id="summary">
+            <property name="displayName">Uninstall Summary</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="comments"/>
+            <property name="conditionOperator">AND</property>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">6</property>
+            <property name="busyMessage"/>
+            <property name="type">4</property>
+        </wizardBean>
+    </wizardRoot>
+</wizardTree>

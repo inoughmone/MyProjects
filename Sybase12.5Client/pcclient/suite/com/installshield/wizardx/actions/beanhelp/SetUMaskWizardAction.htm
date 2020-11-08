@@ -1,0 +1,9 @@
+The <STRONG>Set UMask Wizard Action</STRONG> provides the ability to set the target system umask for the installer process in order to control the permissions assigned to files and directories <EM>created by</EM> the installer. This does <EM>not</EM> affect files and directories created by a <STRONG>Files</STRONG> bean(s) because they explicitly set the permissions at install time regardless of the umask. For other files and directories created at install time, the file mode creation mask (umask) controls the permissions assigned to them.</p>
+
+On systems that do not support the concept of a umask, this bean does nothing.</p>
+
+<P><TABLE CELLPADDING="2" CELLSPACING="2">
+<TR>
+<TD VALIGN="top"  STYLE="padding-left: 8pt"><STRONG>NOTE</STRONG>: </TD>
+<TD STYLE="padding-left: 8pt">This bean is <EM>not</EM> supported for use with the Generic Unix Platform Pack.</TD>
+</TR></TABLE></P>

@@ -1,0 +1,14 @@
+<P>The <STRONG>Wizard Log Action</STRONG> enables customization of the Wizard Log(s), and provides flexibility in specifying which event types are logged, how they are logged, and the ability to log to more than one output file. These files only contain information that is logged <EM>after</EM> the <STRONG>Wizard Log Action</STRONG> has been triggered, logging events for the beans that follow it in the Wizard Root Tree sequence (Installer and/or Uninstaller Tabs). Therefore, this bean should be at the very <EM>beginning</EM> of the Wizard Root Tree to ensure that all events are trapped. Additional <STRONG>Wizard Log Action</STRONG> beans can be placed throughout the tree to to turn off logging (by setting <STRONG>Active</STRONG> to "False"), and/or redirecting logged events from specific portions of the tree to other log files.</P>
+
+<P><TABLE CELLPADDING="2" CELLSPACING="2">
+<TR>
+<TD VALIGN="top"  STYLE="padding-left: 8pt"><STRONG>NOTE</STRONG>: </TD>
+<TD STYLE="padding-left: 8pt">If the <STRONG>Wizard Log</STRONG> property has been set in the <STRONG>Install Properties</STRONG> (Installer Tab) and/or <STRONG>Uninstall Properties</STRONG> (Uninstaller Tab), those settings are <EM>overridden</EM> by the settings made here in a <STRONG>Wizard Log Action</STRONG> bean.</TD>
+</TR></TABLE></P>
+
+<P><TABLE CELLPADDING="2" CELLSPACING="2">
+<TR>
+<TD VALIGN="top"  STYLE="padding-left: 8pt"><STRONG>WARNING!</STRONG></TD>
+<TD STYLE="padding-left: 8pt">The default log file name for the <STRONG>Log Output</STRONG> property of this bean is "$TEMPFILE". This is a temporary file that disappears after the installation/uninstallation has completed. Change this property if you need to keep the log output in a file after the installation/uninstallation has completed.</TD>
+</TR></TABLE></P>
+

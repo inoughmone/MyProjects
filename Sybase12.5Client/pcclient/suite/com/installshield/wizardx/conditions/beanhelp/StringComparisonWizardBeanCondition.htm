@@ -1,0 +1,16 @@
+<P>
+A <STRONG>String Comparison Wizard Bean Condition</STRONG> is a wizard bean condition 
+that can be used to determine whether or not a wizard bean will be visited or 
+skipped based on whether or not the <STRONG>Source</STRONG> matches the <STRONG>Compare
+Text</STRONG> using the specified comparison operator.
+
+<p>The <STRONG>Source</STRONG> is compared to the <STRONG>Compare Text</STRONG> using
+rules specified by the selected <STRONG>Operation</STRONG>.
+
+<p>The <STRONG>Source</STRONG> and the <STRONG>Compare Text</STRONG> properties
+are both resolved using string resolution prior to executing the comparison
+operation. This enables the developer
+to easily include conditions based on any strings for which a string resolver
+is available. Examples of this condition's usefulness include the ability to test
+Java system property values such as java.version using $J(java.version) or product
+bean properties using the $P string resolver.</p>

@@ -1,0 +1,853 @@
+	 Issue: 314734    04/02/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : REGR - Repository Browser dislpays an entity attbribute as "Entity Attribute"
+Description :                                     
+	 Regression BUG:(seeCR# 234493)  Repository browser displays entity attributes with a name of "Entity Attribute", if you double click the entity attribute, in the Repository Object Properties window the NAME/CODE fields are empty. Note: The first attribute of each entity displays correctly, but all subsequent attributes display the described behavior.  This is reproducable only when repository tables reside on a Ms Sql Server 2000 database.  NOTE:  I cannot reproduce on Sybase ASE 12.5, ASA 7.0.x, ASA8.0.x or Oracle 8.1.7 dbms...  Tested using either of the following ODBC drivers: Microsoft Sql Server                                                                          v. 2000.81.9001.00      SQLSRV32.dll      2/19/2002 PB DataDirect OEM 4.10 32-BIT Sql Server Wire Protocol  v. 4.10.00.00                  PBMSSS18.dll     2/15/2002 PB DataDirect OEM 4.10 32-BIT Sql Server                              v. 4.10.00.00                  PBSS618.dll         2/15/2002   To reproduce: 1. Consolidate (no auto extract) the sample  "project.cdm" file to a Ms Sql Server 2000 database. 2. In Repository browser, select the Entity folder > select a specified entity and expand it's tree.  You will see entity attributes listed as "Entity Attribute" and not it's given name. 3. Double click a entity attribute that is displayed as "Entity Attribute" to get it's properties window.  You will see it's Name and Code entries are empty.  NOTE: it appears to only be a display issue in the Repository. Because, when you extract the model and view it in the workspace window, the list of entity attributes are displayed and listed correctly.  
+
+	 Issue: 314662    04/02/03  	Status: Closed	04/04/03  
+Severity : 3         	Est. release: morpheus
+Label  : Oracle  constraints  DEFERRABLE INITIALLY DEFERRED is not RE
+Description :                                          
+	 PD 9.5.1 ebf 3 DBMS : Oracle 9i constraint on FK  DEFERRABLE INITIALLY DEFERRED is not RE by script or by ODBC                                                                                                                                                                                                                                                                                                                                                                                                                 
+
+	 Issue: 314578    04/01/03  	Status: Open	
+Severity : 1         	Est. release: morpheus
+Label  : Copy trigger templates between DBMS file causes a runtime error
+Description :                                                   
+	 Customer is trying to copy tigger templates from a db2 v7 os/390 dbms to as400 dbms. After copying the trigger templates to AS/400, PD shutsdown in 9.5.1.EBF3  Steps to reproduce:  1. Create new PDM (Target DB2v7 OS/390, COPY TO MODEL). 2. Create a second PDM (Target AS/400, COPY TO MODEL). 3. Select the DB2 model. 4. Click Database -> Edit Current DBMS 5. Select the AS/400 model. 6. Click Database -> Edit Current DBMS (You should now have 2 DBMS Properties dialog boxes.) (Note that, in the AS/400 dialog box, the Trigger Templates and Trigger Template Items tab are empty.  The idea is to copy the items from the DB2 definition.) 7. Select the DB2 dialog box. 8. Select the Trigger Templates tab. Highlight all templates (should be 6). 9. Ctrl-C to copy into the clipboard. 10. Select the AS/400 dialog box. 11. Select the Trigger Templates tab. 12. Click your mouse in the first Name cell, auto-creating "Template_1".  (This is important!) 13. Press Ctrl-V to paste the 6 templates.  You will see 7 "Template_1" items appear, then PowerDesigner shuts down. (This occurs under 9.5.1 only.) In 9.5.2, the trigger templates are pasted with the correct names.  For the customer, the GPF occurred immediately. For TSE, they needed to change focu to a different application and then the GPF occurred. 
+
+	 Issue: 314569    04/01/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Modify Database generates stored procedure before table that it references.
+Description :                                       
+	 \\neo\cir\...314569  In the customer's model is a table and a stored procedure that references the table.  When Modify Database is executed, both the table and stored procedure are dropped, but the stored procedure is recreated first.  This results in a database error when the modify script is executed against the database because the stored procedure needs to reference the table that has not been recreated.  Steps to reproduce: 1. Open the model customer's model 2. insert a new column, customer_loc, as the third column in Table_1 3. Open the procedure and make a change(change customer_id = 1002 to 1003) . 4. Execute modify database and select the archive model. 5. In the resulting sql file you will see that the create or replace procedure statement comes before the actual creation of the table.   Note: If the 'one file' option is deselected, the source sql file correctly calls the create table script first and then the stored procedure script.  
+
+	 Issue: 314513    04/01/03  	Status: Closed	04/03/03  
+Severity : 2         	Est. release: morpheus
+Label  : Maximum of 8 PK columns reversed for ASE 12.5 via ODBC
+Description :                                                
+	 When reverse engineering ASE 12.5 via ODBC, only the first 8 columns of the primary key are reverse engineered properly. Column 9 and beyond of the PK are reverse engineered, but not as primary keys.  This appears to be a limitation set in the Key\SqlListQuery item in the DBMS file.  The index_col value stops at 8 index columns.  As a workaround, add additional lines of  'index_col('[%CATALOG%..]%TABLE%',i.indid,8,u.uid)+','+ ' ensuring that the number value is incremented appropriately.  To reproduce: Generate the following to ASE 12.5 and then reverse engineer via ODBC.  create table TEST (      COLUMN_1        CHAR(10)             not null,      COLUMN_2        CHAR(10)             not null,      COLUMN_3        CHAR(10)             not null,      COLUMN_4        CHAR(10)             not null,      COLUMN_5        CHAR(10)             not null,      COLUMN_6        CHAR(10)             not null,      COLUMN_7        CHAR(10)             not null,      COLUMN_8        CHAR(10)             not null,      COLUMN_9        CHAR(10)             not null,      COLUMN_10       CHAR(10)             not null,      COLUMN_11       CHAR(10)             not null,      COLUMN_12       CHAR(10)             null,      COLUMN_13       CHAR(10)             null ) go  alter table TEST    add constraint PK_TEST primary key (COLUMN_1, COLUMN_2, COLUMN_3, COLUMN_4, COLUMN_5, COLUMN_6, COLUMN_7, COLUMN_8, COLUMN_9, COLUMN_10, COLUMN_11) go 
+
+	 Issue: 314501    04/01/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Modify database with circular reference : PD disappears without any message
+Description :                                       
+	 When  modify database based on a script or by ODBC with  a pdm containing tables with circular reference, PD disappears with any message. Problem occurs with script and with ODBC. Workaround : works fine with archive model                                                                                                                                                                                                                                                                                                 
+
+	 Issue: 313970    03/27/03  	Status: Closed	03/27/03  
+Severity : 3         	Est. release: morpheus
+Label  : After updating repository, operation is not anymore linked to a message
+Description :                               
+	 PD 9.5.1 ebf 1 : broken PD 9.5.2 build 856 : fixed Consolidation with update does not preserve an operation associated to a message inside a sequence diagram when Actor and object are shortcuts.                                                                                                                                                                                                                                                                                                                             
+
+	 Issue: 313537    03/24/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Modification made to XEM extended attribute values not consolidated
+Description :                                               
+	 The modified extended attribute value fails to be flagged as changed when consolidating the a model.  This occurs only if the model has been extracted from the repository and then the XEM is associated with the model.  If you create a new model, associate the XEM, change a value and then consolidate, the value change is saved.  To reproduce: 1) Open project.pdm, then consolidate and extract it. (Any models in repository that do not have an Extended Model Defintion(XEM) attached could be used as well.)   2) Import the PowerBuilder XEM. 3) Select the extended attributes tab on the properties window of the employee table. 4) For the LabelFont attribute, change the font size from '10' to '25' 5) Consolidate project.pdm in update mode Note: The only change that has been flagged is the addition of the PowerBuilder XEM file. 6) Drill down to the attributes of the employee table Note: The LabelFont has a symbol showing that it has been modified.  However, when you try to select the checkbix, it disappears.   In Morpheus, the workaround is to consolidate the XEM without any changes.  Extract the model; modify the extended attribute values and then consolidate the model.   
+
+	 Issue: 312695    03/17/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Reverse engineering of indexes doesn't work properly - merge window
+Description :                                               
+	 Reverse engineering from Script. DB ASE 12.5 When a script is reversed with indexes into a model and the merge model window comes up  it doesn't shows/generates it properly and finally the table ends up swapping codes for the indexes around.                                                                                                                                                                                                                                                                              
+
+	 Issue: 312468    03/14/03  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : PAMC-PDES-951-Problem with multi inheritance for Java interfaces
+Description :                                                  
+	 Having 3 interfaces I1,I2,I3:  --->>Graphically designed in PDES Interface I3 extends I1,I2.  Generating Java Code we have : public interface I3 extends I1{ .. }  instead of public interface I3 extends I1,I2{ ... }   no workaround                                                                                                                                                                                                                                                                                      
+
+	 Issue: 311894    03/10/03  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : Via ODBC modify database should handle tildas, ~, when used on default objects
+Description :                                    
+	 PowerDesigner uses tildas, ~, to suppress quotes on string values for column defaults.  When executing modify database via ODBC, the reversed PDM is compared to production PDM, and default values with tildas, are flagged as being mdofied when no modifications have been made to the default values.  PowerDesigner needs to address the tilda issue when executing modify database via an ODBC data source.  The workaround is to execute modify database via an archived model or to add the string in the default value to the list of default values in the DBMS file.  To reproduce:  1) Generate attached .apm file to database 2) Open attached .pdm file 3) Execute modify database using an ODBC data source and select the table that was just generated. Note: The ACTBEG column will show changes on the default value when no change has been made.    
+
+	 Issue: 311689    03/07/03  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : column not mandatory anymore after update PDM  from a CDM
+Description :                                                         
+	 When A domain is linked to an attribut already mandatory, updating PDM, column will not  be anymore mandatory  Workaround Inside PDM Models options : Enforce non divergence has to be checked, mandatory has to be checked, after updating model with domain, domain --> mandatory checked like that all columns linked to domain will be mandatory.                                                                                                                                                                         
+
+	 Issue: 311597    03/06/03  	Status: Closed	03/19/03  
+Severity : 2         	Est. release: morpheus
+Label  : Table owner information is being lost in the view query properties.
+Description :                                   
+	 Table owner information is being lost in the view query properties. In the SQL Query window the view query reads <owner>.<tablename> for the 'from' clause.  In the query property window, the view query reads <tablename> for the 'from' clause.   This can be seen in the DV_AD_AGENCY view in the customer's model.  This view is in the MED_MAIN package.  Also, when attempting to correct this issue, the changes are not being saved in the model.  1. Open customer's model 2. Correct any view in the MEDIA_MAIN package (User's name is added to the table name in SQL Query Properties sheet (SQL tab, Tables tab)  example: Open the DV_AD_AGENCY view and manually add '_O_W_N_E_R_.' to the FROM clause in the Query property  3. Save the model and then close the model 4. Open the model and go to the properties of the DV_AD_AGENCY view NOTE: The changes made to the Query Property have not been saved. '_O_W_N_E_R_.' is missing.  This may or may not be related but try the following: target dbms ASE IQ 12.4 1) Create table with 3 columns and associate user_1 to it as the owner. 2) Select the table and press ctrl+shift+v to create a new view Validate the SQL Query and Query properties the FROM clause is <owner>.<tablename> 3) Create a new view from the tool palette Open the Query properties and on the table tab select the table. Note: The table is listed as only <tablename> no owner information is listed. If you select the column tab, the owner information is available.  
+
+	 Issue: 311511    03/06/03  	Status: Closed	03/20/03  
+Severity : 2         	Est. release: morpheus
+Label  : DB2 V7 OS/390 RE by ODBC Index columns are not RE
+Description :                                                     
+	 PD Version 9.5.1, and PD 9.5.2 build 839 DBMS : DB2 V7 OS/390 Object Index Index columns are not RE by ODBC                                                                                                                                                                                                                                                                                                                                                                                                                   
+
+	 Issue: 311215    03/05/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Permissions not generated for procedure if 'permissions' is only option selected
+Description :                                  
+	 Permissions are not generated for stored procedure if 'permissions' is only option selected in the trigger & procedure generation option window.  To reproduce:  1) Add user_1 to a PDM 2) Create a stored procedure and associate user_1 with execute permissions 3) Preview the code (for generation options, only select 'permissions')  The preview displays the grant statement as expected. 4) Generate the stored procedure with the same generation options. Note: The generated sql file is empty              
+
+	 Issue: 311057    03/04/03  	Status: Open	
+Severity : 1         	Est. release: morpheus
+Label  : Creating report using a pdm template closes PD with runtime error
+Description :                                                 
+	 When trying to associate the attached report template to a PDM report, PowerDesigner shuts down or aborts with a runtime error:   Runtime Error! Program: c:\Program Files\Sybase\PowerDesigner 9\pdshell9.exe R6025 - pure virtual function call    The customer experienced the problem with a multi-model report, but it is reproducible with a model report.   The customer did the following (customer's text):  1.  Created a report inside a PDM (not Multi-Model).    2.  Created a Template from Section.  3.  Saved the template as BIN not XML (BIN template attached).  Saving as XML does not have abort program.  4.  Created a Multi-Model report using the new template.  5.  PD aborts with following information:   Runtime Error! Program: c:\Program Files\Sybase\PowerDesigner 9\pdshell9.exe R6025 - pure virtual function call   The Error dialog appears twice and PD terminates.    When originally saving the template it is not marked as saved and when closing the template window a save is requested again.   The original report was created with version 9.5.1.753 EBF1 and this version was also aborting.  
+
+	 Issue: 310876    03/03/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : REGR: Empty strings are no longer reversed via script or ODBC
+Description :                                                     
+	 Via script or ODBC, PowerDesigner does not reverse engineer the column default when it is an empty string, ''.  In PD 6.1.5, the empty string default value was reverse engineered.  This has been tested using ASA 8 and MS SQL Server 2000.  To reproduce:  Add the following table to a database and then reverse engineer it.  The default will be missing from column_2 after the reverse engineer process.  create table TABLE_1  (     COLUMN_1   char(10)  not null,     COLUMN_2   char(10)  not null default '',     COLUMN_3   char(10),     primary key (COLUMN_1) ); 
+
+	 Issue: 310865    03/03/03  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : In the Column tab, Copy/Paste of column attributes does not work correctly
+Description :                                        
+	 When adding columns to a table, the copy and paste of the column attributes do not work correctly.  When you try to paste a value in a new column, the paste action does not take on the first execution of ctrl+v.  To reproduce:  1) Add a table and two columns.  On column_2, set the datatype to char(25) 2) Select the datatype and copy it 3) Click the down arrow ( creating a new column with the current focus on the datatype) 4) Select ctrl+v to paste the datatype Note: The datatype is not pasted, but the cursor is now positioned at the 8th positioned or the character length of the datatype being pasted.  Note: When pasting into the column name, the name field is not updated, but the code of the column is updated.  If you select the datatype a second time an click ctrl+v, then the paste action works.  This works correctly in the CDM.  
+
+	 Issue: 310648    02/27/03  	Status: Closed	03/06/03  
+Severity : 2         	Est. release: morpheus
+Label  : Reverse of Raw datatype via ODBC misses the length
+Description :                                                    
+	 A RAW(255) column in an Oracle 8i instance was reverse-engineered as RAW (no length)when using ODBC.  If this is reverse engineered via script, the length is reversed correctly.  Per the Oracle documentation, the length of a RAW is not optional:   http://download-west.oracle.com/docs/cd/A87860_01/doc/server.817/a85397/sql_elem.htm#46020                                                                                                                                                                            
+
+	 Issue: 310588    02/27/03  	Status: Closed	03/05/03  
+Severity : 2         	Est. release: morpheus
+Label  : REGR: Modify database change char datatype to Varchar2 generates drop statement
+Description :                       
+	 DBMS: Oracle 8i2  The customer has changed a column datatype from char(5) to varchar2(5). When executing Modify database, PowerDesigner generates drop/create statements for the table, when an alter statement would address the modification.   In version 6, 8, 9 and 9.5.0.660 alter statements are generated.  (This may be related to CR 289432.)   To reproduce:  Oracle 8i2 target dbms 1) Add a table with col_a = integer PK, col_b = char(5) NULL 2) Archive the model 3) Change datatype on col_b = varchar2(5) 4) Execute modify database Note: The table is dropped and recreated instead of an alter statement 
+
+	 Issue: 310392    02/26/03  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : When tables are dropped, views based on  those tables should be recreated
+Description :                                         
+	 PD version : 9.5.1 adn 9.5.2 DBMS : Informix 9 In modify database script, when tables are dropped, views based on those tables should be created.                                                                                                                                                                                                                                                                                                                                                                              
+
+	 Issue: 309556    02/18/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : View column alias used in where clause in error
+Description :                                                                   
+	 As a result of CR 222893, the column alias is being substituted in the where clause of the view.  This should have been restricted to the table alias only.   In the SQL Query window, the "where" clause displays <table>.<column> = <table>.<column>.  When you the SQL Query properties is opened, the 'where' tab displays <table>.<column> = <column alias>.                                                                                                                                                             
+
+	 Issue: 309527    02/18/03  	Status: Closed	02/26/03  
+Severity : 2         	Est. release: morpheus
+Label  : Defer index option value not saved for DB2 6 & 7 OS/390
+Description :                                               
+	 For DB2 6 & 7 OS/390, the value for the 'defer' index option item is not preserved.  Looking at the dbms file I see the syntax as   close %s : default=yes, list=yes|no   defer : list=yes|no, default=yes   copy %s : list=yes|no, default=yes  For the defer item, the %s is missing after defer. Making this change resolves the problem. Steps to reproduce.  1. Open a model for  IBM DB2 UDB 6 or 7 for OS/390. 2. Create a table and an index on it. 3. Go to options tab for the index and select close, defer and copy and move them to the right pane. 4. Click on the sql tab and find the value for defer has not be saved. 
+
+	 Issue: 309430    02/17/03  	Status: Closed	02/26/03  
+Severity : 4         	Est. release: morpheus
+Label  : Add optional Qualifier to reference drop statement for DB2 OS/390 databases
+Description :                           
+	 For the IBM OS/390 family of databases, the optional table qualifier should be added to the drop statement for references.  The syntax for drop in the DBMS file reads    alter table %TABLE%    drop foreign key %CONSTNAME%  Customer contends that it should be     alter table [%QUALIFIER%]%TABLE%    drop foreign key %CONSTNAME%   Customer's argument is that if the add statement has it then the drop statement should also have it for consistency purposes.                                            
+
+	 Issue: 309417    02/17/03  	Status: Closed	03/04/03  
+Severity : 2         	Est. release: morpheus
+Label  : Child table column association lost on join during merging of models
+Description :                                  
+	 After merging customer's models, the join criteria of three references is now incomplete. The columns from the child tables are no longer associated to the join eventhough the join is still associated to the PKey of the parent table.  To reproduce: 1) Open M_CID_DB_2.PDM (Execute check model, note two errors that will be resolved with the merge) 2) Open M_CID_DB_3.PDM (Execute check model, note no errors) 3) Merge M_CID_DB_3.PDM into M_CID_DB_2.PDM. 3a) As part of the merge process manually synchronize the diagrams of the two models and select all actions 4) In M_CID_DB_2.PDM, execute check model Note: There are now three errors where the join criteria is incomplete on three references 
+
+	 Issue: 309402    02/17/03  	Status: Open	
+Severity : 1         	Est. release: morpheus
+Label  : Repository upgrade fails when repository user has no password and dbms is ASE
+Description :                                     
+	 Customer is upgrading from 9.0.0 to 9.5.1.  When they attempt to upgrade the repository with anuser with administration rights, they get the following error message: The repository does not contain all of the required definitions. Only an admnistrator can update it.  The repository is installed on ASE 12.5  In PD 9.0.0, the repository users were added without passwords.  When upgrading to PD 9.5.1, the repository upgrade fails. If the user has a password in PD 9.0.0, then the repository upgrade will complete.  This appears to an issue with ASE only.  When I followed the same steps with ASA8, the repository upgraded for each scenario.  To reproduce:  In PD 9.0 1) Create a repository with ASE as the DBMS 2) Add two users and assign administrator rights to both        user: sa   		password: <blank>        user:sapass		password: sql 3) Close PD 9.0  In PD 9.5.1 4) Connect to the repository with user 'sa' Note: you will receive the error messages previously mentioned 5) Connect to the repository with user 'sapass' Note: the upgrade process proceeds as expected. 
+
+	 Issue: 309281    02/14/03  	Status: Closed	03/03/03  
+Severity : 1         	Est. release: morpheus
+Label  : Consolidation with update fails : Unexpected error
+Description :                                                    
+	 Second consolidation with update of pdm with views  : error message Unexpected error while executing the following action: Changing value of attribute Creation Date of object View Column The consolidation of the document has been canceled.                                                                                                                                                                                                                                                                               
+
+	 Issue: 309119    02/13/03  	Status: Closed	03/20/03  
+Severity : 3         	Est. release: morpheus
+Label  : Index options  are not RE by ODBC
+Description :                                                                     
+	 PD 9.5.1 DBMS : DB2 OS/390 V6 Some index options are not RE by ODBC The Options Priqty, Secqty, Erase, Frepage, Pctfree are not reversed                                                                                                                                                                                                                                                                                                                                                                                      
+
+	 Issue: 308922    02/12/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Exceptions handling not regognized with Reverse Engineer PB
+Description :                                                       
+	 throws <exception list> is deleted form PB object source code if doing a "reverse engineer PowerBuilder" with PD 9.5.1 and  PD 9.5.2                                                                                                                                                                                                                                                                                                                                                                                             
+
+	 Issue: 308506    02/07/03  	Status: Closed	03/03/03  
+Severity : 0         	Est. release: morpheus
+Label  : Extracted model fails to consolidate and table object added in symbols section
+Description :                        
+	 Customer migrated from 9.5.0.660 to 9.5.1.  The customer extracts a PDM and then consolidates the model back into the repository.  The consolidation fails with the following error       "Changing relative position of object table 'data_source'        linked to physical diagram"  Upon investigation in the merge screen, this table and a few others are being added to the 'symbols' section of the model. All the metadata properties, name, column,etc... is listed under symbols.  This should not be possible.    Steps to reproduce the problem:   1. Make a connection to the repository I have created on conlabtt using the customers repository dump or restore dump from attached zip. 2. Repository login is xxxx and database info is Username: xxxx, password: xxxx 3. Extract the model PDM_MPVAR_test.pdm 4. Consolidate(update) it. The following is the error message you will get: Consolidating the document 'E:\program files\sybase\PowerDesigner 9\MPVaR_test.pdm' 	- Extracting the repository document 'PhysicalDataModel_MPVaR'... Updating model version from 9.5.0.660 to 9.5.1.759 	- Comparing the local model with the repository model... 	- Updating the repository document... 		Create Physical Diagram "PhysicalDiagram_1" in the Package "testpackage" 		Create Package "testpackage" in the Physical Data Model "PhysicalDataModel_MPVaR" 		Create Table "Table_1" in the Package "testpackage" 		Create Table "Table_2" in the Package "testpackage" 		Create Table "Table_3" in the Package "testpackage" 		Create Table "Table_4" in the Physical Data Model "PhysicalDataModel_MPVaR" 		Create Package Symbol "testpackage" in the Physical Diagram "PhysicalModel_ALL" 		Create Table Symbol "Table_1" in the Physical Diagram "PhysicalDiagram_1" 		Create Table Symbol "Table_2" in the Physical Diagram "PhysicalDiagram_1" 		Create Table Symbol "Table_3" in the Physical Diagram "PhysicalDiagram_1" Unexpected error while executing the following action: Changing relative position of object Table 'data_source' linked to Physical Diagram The consolidation of the document has been canceled. 
+
+	 Issue: 308129    02/05/03  	Status: Closed	03/10/03  
+Severity : 3         	Est. release: morpheus
+Label  : fail to reverse a script with constraint owner
+Description :                                                        
+	 including a constraint owner prevent powerdesigner from reversing a script for informix even if the %QUALIFIER% variable is indicated in the create item. See sample script << { TABLE "maxdba".srvc_ord_addr row size = 309 number of columns = 17 index size = 100 } create table "maxdba".srvc_ord_addr    (     service_order_id char(5) not null ,     open_dtm char(16) not null ,     addr_type_cde char(2) not null ,     international_flg char(1),     addr_cntry_cde char(5),     delivery_line_txt varchar(55),     po_box_txt varchar(30),     addr_post_cde varchar(15),     addr_zip_cde char(9),     addr_state_cde char(2),     address_city_txt varchar(35),     recipient_txt varchar(30),     mail_stop_txt varchar(30),     attention_txt varchar(30),     revised_by_id char(9),     revision_dtm char(16),     addr_zipplus_cde char(4),     primary key (service_order_id,open_dtm,addr_type_cde)  constraint "informix".srvc_ord_add1pk2   ) with crcols  extent size 1274 next size 50000 lock mode row; revoke all on "maxdba".srvc_ord_addr from "public";  { TABLE "maxdba".country row size = 38 number of columns = 3 index size = 13 } create table "maxdba".country    (     addr_cntry_cde char(5) not null ,     revised_by_id char(9),     revision_dtm char(16),     primary key (addr_cntry_cde)  constraint "informix".countrypk2   ) with crcols  extent size 16 next size 512 lock mode row; revoke all on "maxdba".country from "public";  alter table "maxdba".srvc_ord_addr add constraint (foreign key      (addr_cntry_cde) references "maxdba".country  constraint "informix"     .srvc_ord_add1fk1); >> 
+
+	 Issue: 307540    01/31/03  	Status: Closed	03/10/03  
+Severity : 2         	Est. release: morpheus
+Label  : CDM to PDM Generation, variables in FK column name template are not resolved
+Description :                          
+	 CDM to PDM generation, in the Detail tab page of the PDM Generation Options > Reference > FK column name template:your allowed to use a combination of 14 different variables to manage the naming of the FK column in the PDM. (9) variables don't work.  Variables are not getting resolved in the FK_column when using them in the FK column name template (PDM Generation Options > Detail tab).  To Reproduce:   1. Add to entities and primary identifiers and a relationship between the enties 2. Generate a PDM 3. In the Detail tab page of the PDM Generation options > Reference section > FK column name template, enter in one of the following variables after the prefix "FK_". (ie) FK_%REFRCODE%  Variables that DO NOT work:  %REFNAME% %REFRCODE% %PNAME% %PCODE% %COLNNAME% %COLNCODE% %CONSTNAME% %KNAME% %KCODE%  4. Select <<OK>> to generate the PDM.   NOTE: look at any FK column in the child table and you will see the named column "FK_%REFRCODE%".    
+
+	 Issue: 307523    01/31/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Check Model fails to check for unique AK constraint names
+Description :                                                         
+	 Check Model is not capturing duplicate alternate key, AK, constraint names in the same table or model as an error/warning.  As a result, when the generated ddl is executed against the database, an error occurs stating that the constraint name already exists.  The exsisting 'unique constraint name' check model attribute should be enhanced to check for AKs as well.                                                                                                                                                  
+
+	 Issue: 307438    01/30/03  	Status: Closed	02/27/03  
+Severity : 2         	Est. release: morpheus
+Label  : PK Options reversed multiple times for MS SQL Server 2000
+Description :                                             
+	 Reverse engineer of MS SQL Server 2000 via ODBC, reverse the physical options for the primary key multiple times.  To reproduce: 1) Reverse engineer the Pubs2 or Northwind database via ODBC ( same results with Mircrosoft or Merant drivers) 2) Open the properties of the employee or employees table and open the properties of PK_Employee 3) Select the Preview tab Note: "clustered on PRIMARY" appears at a minimum twice.                                                                                        
+
+	 Issue: 306629    01/24/03  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Column GUID appears in generated DDL for table permissions
+Description :                                                        
+	 In the customer's model, when you preview or generated the syntax for the ordered_service_h and ordered_service tables, the "rec_datetime" column's GUID appears as the value when specifying the column permissions for each table.  To reproduce: 1) Open customer's model (Note: They are using a modified DBMS file, but the problem, also, occurs using the standard DBMS from Morpheus) 2) Select the ordered_service table and select preview Note: The permissions section of the preview.  This issue only occurs for 9 groups, the ones that have rec_datetime set with column level permissions. 
+
+	 Issue: 305700    01/16/03  	Status: Closed	01/22/03  
+Severity : 4         	Est. release: morpheus
+Label  : Informix 9 : concatenation operator
+Description :                                                                   
+	 To concatenate two expressions, Informix uses this symbol : || This symbole doesn't exist inside list of operators Workaround INFORMIX9::Script\Sql\Keywords\ListOperators Add the value ||                                                                                                                                                                                                                                                                                                                                  
+
+	 Issue: 304919    01/08/03  	Status: Closed	01/28/03  
+Severity : 2         	Est. release: morpheus
+Label  : Reverse of Oracle ADT adds multiple copies of the attributes to each ADT
+Description :                              
+	 Oracle 9i  Customer has three identical schemas in one database (the user names are different). When a schema is reverse engineered, the attributes of the Abstract Data Type, ADT, objects are reversed in triplicate.  Steps to Reproduce:  1) Using the oracle_obj.sql file, generate the abstract datatypes in oracle database three times under different user names  2) Via ODBC, reverse engineer the ADTs for one of the schemas 3) In The List Of Abstract Data types, open the properties of the "BULK_MD_VALUE_O" ADT and select the attribute tab. 
+
+	 Issue: 304723    01/06/03  	Status: Closed	01/28/03  
+Severity : 1         	Est. release: morpheus
+Label  : Reverse engineer of SQL into existing PDM results in PD shutting down
+Description :                                 
+	 Reverse engineering a SQL script of triggers into an existing PDM results with PowerDesigner shutting down unexpectedly.  To reproduce: 1. Open aws.pdm 2. Select Database > Reverse Engineer > DDL > select the all_triggers.sql file. Note: This file has about 12,000 lines.  Using the all_triggers_test.sql, a subset of the original file, will provide the same results.   3. In the resulting Merge window, accept the default selectiona and Click <<OK>>  4. The PD application shuts down without warning.   
+
+	 Issue: 304462    01/02/03  	Status: Closed	01/22/03  
+Severity : 3         	Est. release: morpheus
+Label  : ASE clustered index to be define when the primary key constraint has no options
+Description :                       
+	 PD allows a clustered index to be define when the primary key constraint has no option defined (i.e. clustered by default) See workaround                                                                                                                                                                                                                                                                                                                                                                                      
+
+	 Issue: 304229    12/23/02  	Status: Closed	03/20/03  
+Severity : 3         	Est. release: morpheus
+Label  : PDM Oracle composite range partition option broken
+Description :                                                    
+	 The definition of composite partition works correctly until several subpartitions per partition are lost due to editing.  When the user tabs away or accepts the changes with OK, the range partition under the composite partition and all changes in the range partition are lost.                                                                                                                                                                                                                                            
+
+	 Issue: 303565    12/16/02  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : Creating a report template should allow user to preselect Sorting criteria
+Description :                                        
+	 In v. 7.x/8.x in the report editor, you can select items in the Layout option for metadata and sort criteria.  After this is selected and you create a template from section, the new template saved both sort and metadata criteria in the template.  In Pd 9.5.1, this information is no longer saved with the template.  Also, in a report template when clicking 'selection' from the context menu, the selection window does not open.                                                                                    
+
+	 Issue: 303439    12/13/02  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : PDM generation of Entity shortcut with recursive relationship fails
+Description :                                               
+	 PDM generation of Entity shortcut with recursive relationship fails.  To reproduce:  1) In CDM_1, add entity_1 with attribute_1 selected as an identifier 2) Add a recursive relationship to entity_1 3) In CDM_2, add entity_1 as a shortcut and set the generation mode to 'Generate as object' 4) In CDM_2, select Tools\Complete Links 5) In CDM_2, select Tools\Generate Physical Model Note: The PDM generation fails                                                                                             
+
+	 Issue: 303211    12/12/02  	Status: Closed	12/12/02  
+Severity : 0         	Est. release: morpheus
+Label  : Update using preserve modifications for PDM to PDM generation fails
+Description :                                   
+	 Model to model generation, using PDMs, fails when preserve modifications is selected.  The generation process completes, but the PDM to be updated is not updated and no merge window is displayed.  The DBMS type does not seem to matter, but Logical and ASA8 were selected for this repro.  To Reproduce:  1) Add a table_1 with two columns in logical_PDM with <Logical Model> as the target DBMS 2) Select Tools\Generate Physical Model and select ASA 8 as the DBMS and generate ASA8_PDM 3) In Logical_PDM and a third column to table_1 4) Select Tools\Generate Physical Model, select ASA8_PDM and check the preserve modification option.  Click OK NOTE: The PDM generation occurs, but the merge window is not displayed and ASA8_PDM is not updated.  
+
+	 Issue: 303002    12/10/02  	Status: Closed	01/28/03  
+Severity : 1         	Est. release: morpheus
+Label  : Merging user-defined trigger templates are defaulting back to the original templ
+Description :                      
+	 Merging user-defined trigger templates are defaulting back to the original template syntax.  (This was originally reported as a consolidation issue.)  When a local user-defined trigger template has been modified (user-defined trigger template is user-defined), user-defined flag is deselected when the model is merged into another model.  This results in the default user-defined template being reapplied.  To reproduce:  1)Add table_1 and table_2 to a new PDM, Test.PDM, with ASA 8 as the target DBMS 2)Select Model\Trigger\trigger templates - create a new trigger template, myTemplate based on the Before Insert trigger 3) Add the following text or any other code to the trigger definition      -- delete this line in customized code        This is a test      -- this is from the template     -- sample code that will remain in the trigger 4) Add user defined trigger no_delete to table_1.  Associate this trigger with myTemplate 5) Add user defined trigger delete to table_2. Associate this trigger with myTemplate.  Also, delete the following from the trigger definition      -- delete this line in customized code        This is a test 6)Merge Test.PDM into a new PDM, NewTest.PDM targeting ASA8.  Select all actions in the merge screen. 7)Compare the two PDMs.   NOTE: In NewTest.PDM the delete trigger is no longer user defined and the deleted text:      -- delete this line in customized code        This is a test  has been added back.  It appears that once the user-defined option is deselected, the 'myTemplate' default definition is re-instated on the delete trigger.  As a workaround, the local trigger template can be created in the DBMS file.  If this is done, then the modification made to the delete trigger will be maintained when the models are merged. 
+
+	 Issue: 302853    12/09/02  	Status: Closed	12/30/02  
+Severity : 1         	Est. release: morpheus
+Label  : Cannot consolidate into Repository in update mode changes to CDM
+Description :                                      
+	 In 9.5.0.660, the customer has extracted a CDM from the repository and has made several changes.  They then try to consolidate the model selecting 'update'.  The file is never updated to the repository.  In testing, we tried to merge enterprise.cdm into enterprisev3.cdm.  The merge process appears to complete, but when you review enterprisev3.cdm sfter the merge, you can see that several objects were not merged.  In particular, you will notice that the 'satellites' package was not merged.  To reproduce: 1) Open enterprise.cdm 2) Open enterprisev3.cdm 3) Merge enterprise.cdm into enterprisev3.cdm (Select all changes) click Ok 4) Compare the models.  You will notice numerous differences between the models 
+
+	 Issue: 302852    12/09/02  	Status: Closed	03/03/03  
+Severity : 1         	Est. release: morpheus
+Label  : Report -> Select Objects causes incorrept display of dialog box
+Description :                                       
+	 Customer is migrating CDM from 9.5.0.660 to 9.5.1.736  Report -> Select Objects in Report Editor for certain of existing reports in customer's CDM causes dialog box titled  "Report Object Selection" to be incorrectly displayed. The window is so small that only "RE..." appears in the title bar. When maximized, it is seen to contain only 4 objects -- the edit box labeled "Section:" which extends open to the right without ever seeing the dropdown arrow because there is no right end, and the buttons OK, Cancel and Help.  Using customer's model Enterprise.cdm or AP Production.cdm: [1] Open customer's Enterprise.cdm [2] Model -> Reports  then select existing report "Domains Where Used" and Edit it. [3] In the report editor Report -> Select Object [4] A small dialog box appears in the upper left, containing an edit box labeled "Section:" If I maximize it, the edit box still goes off the window/screen to the right. [5] You can see this behavior for this report, "Resued Data Items", "Business Rule Rpt" (and possibly others). If you try it with "Entity Report", "List of Entities" you get a normal selection dialog box. The complexity of the report doesn't seem to matter -- both "Domains Where Used" which gives the bad box and "List of Entities" which doesn't only contain 1 node and 1 report item.  
+
+	 Issue: 302846    12/09/02  	Status: Closed	12/30/02  
+Severity : 1         	Est. release: morpheus
+Label  : Opening target model after referencing model makes shortcut relationships vanish
+Description :                      
+	 The customer is migrating CDMs from 9.5.0.660 to 9.5.1.736.   AP Production.CDM is the customer's reference model.  It contains external shortcuts to both the Enterprise.CDM and the MMS.CDM.  AP Production.CDM is opened in PD 9.5.1.  Upon opening Enterprise.CDM or MMS.CDM, the shortcut links that were displayed in AP Production.CDM are deleted from the model.  If you execute 'complete links', the links will be redisplayed, but this is not a viable option for the customer.  This does not occur in 9.5.0.660.  Note: When opening Enterprise.CDM or MMS.CDM after AP Production.CDM the following message box is generated:  "Some shortcuts in model 'AP Production' could not find their target object in model xxx'" Click OK  To reproduce: Using customer's models Enterprise.cdm, AP Production.cdm, and mms.cdm -- problem seen in AP Production, the referencing model.  1) Open AP Production.cdm (Note: Current layout of the default digram) 2) Open Enterprise.cdm (Note: Message box noted above) 3) Set focus back to AP Production.cdm (Note: Most of the link/relationships have been deleted from the diagram. 
+
+	 Issue: 302608    12/06/02  	Status: Closed	01/22/03  
+Severity : 3         	Est. release: morpheus
+Label  : PDM Oracle local partition index , table range partition option broken
+Description :                                
+	 The user has specified an Oracle table to be partitioned by range and has a local partition primary key index.  With that the definitions of all partitions put on are missing to local partitioned PK index see tab [ Preview ].    Sample provided is a PDM v9, with a def file of the version Oracle 8i2 (8.1.6).   Three tables are contained, with which the options on table and/or index level were changed.   -------------------------------------------------------------   Error:  ---------   Some definitions are set under the tab [ options ]. This is reviewed in the tab [ Preview ] and the script is correct. However when a valid change is made in tab [ options ], this causes an error in the script because previous settings are lost, corrupted and cannot be restored.     
+
+	 Issue: 302265    12/04/02  	Status: Closed	02/18/03  
+Severity : 3         	Est. release: morpheus
+Label  : Add physical option 'Enable/Disable Query Rewrite' to Orcl9i materialized views
+Description :                       
+	 Oracle 9i has a physical option clause for ENABLE QUERY REWRITE and DISABLE QUERY REWRITE for materialized views.  Please add the physical option 'Enable and Disable...Query Rewrite' to the Oracle9i.xdb for materialized views.  Per Oracle9i Sql Reference Release 2 (9.2) doc. part#A96540-01: Section:  Create Materialized View  CREATE MATERIALIZED VIEW [schema .] materialized_view  [OF [schema .] object_type] [( scoped_table_ref_constraint )] [ORGANIZATION INDEX index_org_table_clause] [ materialized_view_props | prebuilt_table_clause ] [ USING INDEX    [{ physical_attributes_clause | TABLESPACE tablespace }    [ physical_attributes_clause | TABLESPACE tablespace ]...   ]  | USING NO INDEX ] [create_mv_refresh] [FOR UPDATE] [{ DISABLE | ENABLE } QUERY REWRITE] AS   [ subquery_factoring_clause ]   SELECT [ hint ] [ { DISTINCT | UNIQUE } | ALL ] select_list  FROM table_reference [, table_reference]...  [ WHERE condition ] [ hierarchical_query_clause ] [ group_by_clause ] [ HAVING condition ]   [ { UNION | UNION ALL | INTERSECT | MINUS } ( subquery )]  [ order_by_clause ]  *** The following entry was added to the end of the view options in the Oracle 9i XDB file:  <query rewrite> %s : list=enable query rewrite|disable query rewrite, default=enable query rewrite  
+
+	 Issue: 302116    12/03/02  	Status: Closed	01/22/03  
+Severity : 2         	Est. release: morpheus
+Label  : Reverse engineer UDT via ODBC adds rule syntax in Server Validation Rule
+Description :                              
+	 DBMS: MS SQL Server Reverse engineering user defined datatypes, domains, with default values results in the rule syntax being entered into the Server Validation Rule of the domain.  This occurs when comments have been saved with the rule syntax in the DBMS.  For example:  The following is generated to the database << ---------------------------------------------------------------- -- Rules ---------------------------------------------------------------- CREATE RULE dbo.R_ACD_FLAG AS @ACD_FLAG in ('A','C','D') go >>  When this is reverse engineered, the entire rule syntax is reversed into the Server Validation Rule of the domain so that when the domain ddl is generated, the following ddl is produced: << create rule  R_T_ACD_FLAG as        ----------------------------------------------------------------       -- Rules       ----------------------------------------------------------------       CREATE RULE dbo.R_ACD_FLAG AS @column in ('A','C','D') go >>  This issue may be solve by changing the query in Rule.SqlListQuery, replacing the retrieved column "t.text" with following the "kind-of-parsing" function call << ltrim(substring(t.text, (charindex('as', lower(t.text), charindex(lower(o.name), lower(t.text)) + len(o.name))+ 2), len(t.text))) >> 
+
+	 Issue: 301561    11/26/02  	Status: Closed	01/22/03  
+Severity : 3         	Est. release: morpheus
+Label  : DB2 COMMUN SERVER V 6 and V7 : Datatype Double is not defined
+Description :                                         
+	 Dadatype double is not defined inside the dbms
+
+Workaround 
+Go to menu Database ---> Edit Current DBMS
+Go to Dadatype --> PhysDataType
+Add DOUBLE  Internal value LF
+Apply
+
+                                                                                                                                                                                                                                                                                                                                                     
+
+	 Issue: 301429    11/25/02  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Some Oracle Packages are not reverese engineered.
+Description :                                                                 
+	 The customer is reporting that 50% of their packages are reverse engineered incompletely via ODBC.  Upon testing, it appears that for packages with the 'IS' parameter and differences in the package body as compared to the package, only the begin and end syntax of the package is reverse engineered.   Sample files have been included.                                                                                                                                                                                
+
+	 Issue: 301282    11/22/02  	Status: Closed	12/31/02  
+Severity : 2         	Est. release: morpheus
+Label  : Making changes to existing model does not prompt user to save model when closed
+Description :                       
+	 After the user has made changes to an existing model, PowerDesigner does not prompt the user to save the model when the model is closed.  To reproduce: 1) Open project.pdm 2) Open the properties of the employee table  3) Click on the columns tab and open the properties of the 'empnum' column 4) Change the default value of the 'empnum'column  5) Click OK on the Column Properties window.   Note: The asterisk is by the data model name to signify that the model changed.   6) Click OK on the table properties window.   Note: The asterisk is gone by the data model name has been removed. At this point, if PowerDesigner or project.pdm is closed PowerDesigner does not prompt the user to save the data model.  This issue appears to occur when changes are made only to the attribute windows of an object and not to the object itself.  The same behavior occurs for all model types. 
+
+	 Issue: 301103    11/21/02  	Status: Closed	01/21/03  
+Severity : 3         	Est. release: morpheus
+Label  : DB2 OS/390 : Columns support Lob Options
+Description :                                                              
+	 Workaround Modify xdb like that add a new Extended Attribute Types  name : T_LobOptions List values LOGGED NOT COMPACT LOGGED COMPACT NOT LOGGED NOT COMPACT NOT LOGGED COMPACT add a new extended attributes  go to profile --> column and create extended attributes ExtLobOptions  datatype : T_LobOptions  modify  column --> Create  and added [%ExtLobOptions %] before NULL                                                                                                                             
+
+	 Issue: 300994    11/20/02  	Status: Closed	01/22/03  
+Severity : 4         	Est. release: morpheus
+Label  : DB 2 OS/390 V7 : Alter table  Foreign key : [add] is missing in the dbms
+Description :                              
+	 In the DBMS, Script --> Object --> Reference --> Create Keyword Add should be between brackets   Workaround Inside the dbms,  Script --> Object --> Reference --> Create replace the value by  alter table [%QUALIFIER%]%TABLE%    [add] [constraint %CONSTNAME% ]foreign key [%R%?[%CONSTNAME% ]](%FKEYCOLUMNS%)       references [%PQUALIFIER%]%PARENT%[ (%CKEYCOLUMNS%)]       [%DELCONST%?on delete %DELCONST%:on delete no action]                                                                             
+
+	 Issue: 300855    11/19/02  	Status: Closed	01/22/03  
+Severity : 3         	Est. release: morpheus
+Label  : physical options of index not reverse eng if not in default odbc database
+Description :                             
+	 PD sends unqualified table names to ASE 11.x when trying to retrieve physical options of an index in order to build the sql to recreate the table and it's indices. This causes NO physical options to be reverse engineered when odbc connects to a different database from the one chosen in PD to reverse engineer.                                                                                                                                                                                                           
+
+	 Issue: 300843    11/18/02  	Status: Closed	03/10/03  
+Severity : 3         	Est. release: morpheus
+Label  : The %DATABASE% variable within the xdb file generates inconsistent values
+Description :                             
+	 If Menu Model --> Model propeties --> Database name  is empty %DATABASE% can generates model name. It should  generate nothing                                                                                                                                                                                                                                                                                                                                                                                                  
+
+	 Issue: 300842    11/18/02  	Status: Closed	12/05/02  
+Severity : 0         	Est. release: morpheus
+Label  : RE PBuilder 8 NVO with Instance variable
+Description :                                                              
+	 RE Pbuilder 8  NVO with instance variable : gives incorrect attribute                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+	 Issue: 300803    11/18/02  	Status: Closed	03/25/03  
+Severity : 3         	Est. release: morpheus
+Label  : Add List of References (view references) under the View node
+Description :                                          
+	 Add a View Reference to lists and a View Reference from list under the View node. This would be similar to what currently exists for the Table node.                                                                                                                                                                                                                                                                                                                                                                            
+
+	 Issue: 300454    11/14/02  	Status: Closed	03/06/03  
+Severity : 3         	Est. release: morpheus
+Label  : ASE create index column image text
+Description :                                                                    
+	 This request is for Powerdesigner engineering to apply a restriction in the GUI(Graphical user interface) for DBMS ASE (Sybase Adaptive Server Enterprise) so that it is no longer possible for the user to create an index on columns of image or text.    In Sybase Adaptive Server Enterprise database software v12.5 or previous versions, it is impossible to create an index on a text datatype or image datatype column.                                                                                                
+
+	 Issue: 300070    11/11/02  	Status: Closed	01/20/03  
+Severity : 3         	Est. release: morpheus
+Label  : reengineering ASE 11.x or higher database->sql to retrieve primary key is wrong
+Description :                       
+	 When reengineering a database on Adaptive server Enterprise versions 11.x->current(12.5.02) that is not the odbc datasource's default db (one chooses different db to reengineer in PowerDesigner) no primary key columns for tables that declare keys via sp_primary key will be retrieved.                                                                                                                                                                                                                                     
+
+	 Issue: 299973    11/08/02  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : Installing PD & QDesigner 9.5 Trial on the same pc immediately expires the trial
+Description :                                  
+	 Installing both the PowerDesigner and QDesigner 9.5 evaluation software on the same PC immediately expires both trial versions of software.                                                                                                                                                                                                                                                                                                                                                                                      
+
+	 Issue: 299948    11/08/02  	Status: Closed	03/03/03  
+Severity : 3         	Est. release: morpheus
+Label  : Add a Table List Card and a Column List Card for views
+Description :                                                
+	 Add a Table List Card and a Column List Card for views   (instead of just view code which is harder to read)  The customer would like the ability to see a list of tables and columns that are used in a view.  Much the same way that views are seen in the Query definition.                                                                                                                                                                                                                                               
+
+	 Issue: 299946    11/08/02  	Status: Closed	03/06/03  
+Severity : 3         	Est. release: morpheus
+Label  : Edit in place replaces a space with a underscore character in the CDM
+Description :                                 
+	 In the CDM only, the 'Edit in Place' feature replaces spcaes, ' ', with underscores, '_'. If this is done in the OOM or PDM, the space character is entered correctly.  To reproduce 1) Add an entity to a CDM and using the 'Edit in Place' feature, rename it to 'Ent Test' Note: The name is actually set to 'Ent_Test' instead of 'Ent Test'                                                                                                                                                                            
+
+	 Issue: 299939    11/08/02  	Status: Closed	12/30/02  
+Severity : 2         	Est. release: morpheus
+Label  : ASE  : PUBLIC Group : quote around PUBLIC
+Description :                                                             
+	 PD 9.5 and PD 9.1.5 build 735 By default Public Group in preview tab is with quote around PUBLIC should be without quotes Got problem with grant or with sp_dropgroup  *** Mon Nov 18 2002 15:30:00 *** vaudino *** severity increased from T3 to T2                                                                                                                                                                                                                                                                        
+
+
+	 Issue: 299930    11/08/02  	Status: Closed	02/07/03  
+Severity : 3         	Est. release: morpheus
+Label  : Cannot reverse powerbuilder user object local external function
+Description :                                       
+	 Powerdesigner is unable to reverse engineer object language Powerbuilder for Powerbuilder library files (version 8 and version 9) when local external function are defined.   Powerdesigner also failed to reverse engineer object language Powerbuilder for the user object export file (.sru) ; The result was incorrect.    Powerbuilder currently allows external functions of  type [ local, global ] to be defined.   Note: Powerbuilder Global external functions are not affected because these are stored in the Powerbuilder  application object.  Note: Powerdesigner can successfully reverse engineer the product Powerbuilder class diagram e.g. classes (border, button), associations, generalizations.    
+
+	 Issue: 299886    11/07/02  	Status: Closed	01/20/03  
+Severity : 3         	Est. release: morpheus
+Label  : Add a check model option to validate only 1 column in table can use timestamp DT
+Description :                      
+	 For MS SQL Server, a table can have only one column with a dataype of timestamp.  Please add a check model option to validate that only 1 column in table can use timestamp datatype.  (This would be similiar to the check for an identity column)                                                                                                                                                                                                                                                                              
+
+	 Issue: 299877    11/07/02  	Status: Closed	03/25/03  
+Severity : 3         	Est. release: morpheus
+Label  : Cuurent support for DB2 Summary/Materialize Query table is insufficient
+Description :                               
+	 For DB2 7 and 8, PowerDesigner provides the extended attribute, extSummary, to support Summary Tables ( In DB2 8, this object is now called Materialize Query tables.) This attribute correctly generates the 'summary' key word as part of the create table statement.  However, it does not help in generating the 'select' statement that takes the place of the column definitions.  See sample syntax below:  CREATESUMMARY TABLE SLS_LD_DM AS  (    SELECT LOC_KEY    ,DAY_IDNT    , CSHR_KEY             ,SLSPRSN_KEY            ,EMPLY_KEY                ,RGSTR_KEY                ,RTL_TYPE_KEY             ,SUM(F_SLS_AMT )  AS F_SLS_AMT          ,SUM(F_SLS_AMT_LCL) AS F_SLS_AMT_LCL FROM RDW10DM.SLS_ITEM_LM_DM  GROUP BY LOC_KEY,DAY_IDNT,CSHR_KEY,SLSPRSN_KEY,EMPLY_KEY, RGSTR_KEY,RTL_TYPE_KEY )  DATA INITIALLY DEFERRED  REFRESH DEFERRED   
+
+	 Issue: 299671    11/05/02  	Status: Closed	12/30/02  
+Severity : 4         	Est. release: morpheus
+Label  : When resizing processes, the process text does not remain centered on the proces
+Description :                      
+	 When resizing a process symbol, the text of the process does not remain centered.    To reproduce:  1) Open CR_299671.bpm 2) Select the the right border of the process and cut the width in half NOTE: The position of the text, it is now positioned at the bottom of the process. 3) Increase the width by one pixel. NOTE: The text is now centered on the symbol                                                                                                                                                   
+
+	 Issue: 299356    10/31/02  	Status: Closed	11/20/02  
+Severity : 2         	Est. release: morpheus
+Label  : REGR: custom shape's picture files are no longer saved in model
+Description :                                       
+	 Create a model and add an object, change its format to use a custom shape/bitmap. Save the model, the bitmap is not saved in the model. -> Open this model from another machine (new registry) -> the picture is lost                                                                                                                                                                                                                                                                                                          
+
+	 Issue: 299197    10/29/02  	Status: Closed	11/12/02  
+Severity : 4         	Est. release: morpheus
+Label  : Graphic in CDM documentation references different entities than text example
+Description :                          
+	 In the "Building Conceptual Data Models chapter of the documentation and online help, the graphic used in the "Defining cardinality for relationships" section is incorrect. The example text references the "employee" and "division" entities, but the graphic example references the "project" and "task" entities.                                                                                                                                                                                                           
+
+	 Issue: 299104    10/28/02  	Status: Closed	11/14/02  
+Severity : 1         	Est. release: morpheus
+Label  : Unable to specify join for View Reference when parent is view shortcut
+Description :                                
+	 Unable to specify join criteria for View Reference when the parent object is a View shortcut.  When the Join tab is selected, PowerDesigner displays the following error:  View XXX(shortcut):unknown  This prevents the user from specifying a join criteria for the View.  To Reproduce: 1) Add view_1 to diagram_1 and specify a generic query 2) Add package_1 3) Create a shortcut of view_1 in package_1 4) Create table_1 in package_1 5) Add view_reference_2 from table_1 to view_1 (shortcut) 6) Open the properties of view_reference_2 and select the Join tab Note: You get the error view_1(shortcut):unknown  
+
+	 Issue: 298900    10/25/02  	Status: Closed	01/21/03  
+Severity : 3         	Est. release: morpheus
+Label  : RE ODBC ASE 11.x PK Options are incorrectly reversed
+Description :                                                  
+	 PD version 9.5, 9.5.1 Build 730 DBMS : ASE 11.x  RE by ODBC, PK options, result is  clusteredwith max_rows_per_page = 11 on "default" instead of clustered (col...)  with max_rows_per_page = 11   Workaround Go to Script --> Object --> Key ---> SqlOptsQuery Inside  query replace    case (o.sysstat2&131072) when 131072 then case (i.status2&512) when 512 then 'clustered' else 'nonclustered' end else case (i.status&16) when 16 then 'clustered' else 'nonclustered' end end    +case(isnull(i.maxrowsperpage, 0)) when 0 then '' else 'with max_rows_per_page = ' + rtrim(convert(CHAR, i.maxrowsperpage)) end    +case (lower(s.name)) when 'default' then ' on "default"' else ' on ' + s.name end  by case (o.sysstat2&131072) when 131072 then case (i.status2&512) when 512 then 'clustered ' else 'nonclustered ' end else case (i.status&16) when 16 then 'clustered ' else 'nonclustered ' end end    +case(isnull(i.maxrowsperpage, 0)) when 0 then '' else 'with max_rows_per_page = ' + rtrim(convert(CHAR, i.maxrowsperpage)) end    +case (lower(s.name)) when 'default' then ' ' else ' on ' + s.name end 
+
+	 Issue: 298840    10/24/02  	Status: Closed	12/11/02  
+Severity : 4         	Est. release: morpheus
+Label  : add "suser_sname( )" as reserved default for MsSql Server 2000 XDB file
+Description :                               
+	 Please add "suser_sname( )" to the reserved defaults for MsSql Server 2000 XDB file.                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+	 Issue: 298778    10/24/02  	Status: Closed	11/14/02  
+Severity : 3         	Est. release: morpheus
+Label  : Table and entity names are duplicated in the browser
+Description :                                                  
+	 Table and entity names are duplicated in the browser  1. Open project.pdm or another model with multiple diagrams. 2. Expand the list of tables in the browser. 4. Find a table by typing the name of it, for example 'employee' 5. Right mouse click on employee table and select "Find it Diagram" (Select the main diagram) 6. In the Browser, select the employee table click the Left arrow twice to collapse the table list 7. Open the employee management diagram. 8. In the Browser, expand the list of tables.   Note: Each table name is duplicated.    The same behavior occurs if project.cdm is used.  Substitute entities for tables. 
+
+	 Issue: 298508    10/22/02  	Status: Closed	03/14/03  
+Severity : 2         	Est. release: morpheus
+Label  : Sort and selection does not work on list (main or sub)
+Description :                                                
+	 Create some objects on any model (ex. pdm  and tables aaa, zzz, mmm) and create a report. Add a list then try to sort the objects (here add table list and sort by name for ex.) -> The sort order is not respected.  To reproduce: 1) Open project.pdm and create a report 2) Add the 'Column list' node  3) Add 'data type' to the layout and then select 'data type' for the sort criteria 4) Select preview or quick view Note: The report is not sorted by data type.                                              
+
+	 Issue: 297827    10/16/02  	Status: Closed	03/03/03  
+Severity : 3         	Est. release: morpheus
+Label  : On title page of HTML report, the DATE optional field is not generated
+Description :                                
+	 When generating a HTML report, the DATE optional field is not generated.  It does not matter if the %DATE% variable is used or if text is printed in the field.  To reproduce: 1) Create a report in project.pdm 2) Add a node, table list 3) Modify the report Title Page. ( make sure a value is entered in the Date optional field and that the field is selected to be generated in the report 4) Generate a HTML report NOTE: All other optional fields are generated, but not the Date field.                       
+
+	 Issue: 297826    10/16/02  	Status: Closed	11/14/02  
+Severity : 4         	Est. release: morpheus
+Label  : For rtf report, 'Title' is generated with same font type as 'Optional fields'
+Description :                         
+	 For a rtf report, the 'Title' is generated with same font type as 'Optional fields' although different fonts are specified in the report.  To reproduce: 1) Open project.pdm 2) Create a report and add a node. I used table list 3) Modify the report title page.   For the Title, set the following font parameters :Arial Narrow, bold, pt size 24 For the Optional Fields, set the following font parameters: Times New Romans, Italic,pt size 12 4) Generate a RTF report Note: Font style and size is correct.  However, the 'Font' is incorrect for the Title. 
+
+	 Issue: 297557    10/14/02  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : Migration user defined trigger in Oracle family
+Description :                                                                   
+	 The migration of user defined trigger in Oracle family appears to be broken.  The user has written text in the trigger definition however when the selected dbms is changed from a lower family version to a higher family version , the customised text is missing and no longer in the trigger definition.                                                                                                                                                                                                                   
+
+	 Issue: 296858    10/07/02  	Status: Closed	01/03/03  
+Severity : 3         	Est. release: morpheus
+Label  : SQL continuation character is ignored when generating objects
+Description :                                         
+	 The SQL continuation character is ignored when generating objects.  The target DBMS does not seem to matter.  To reproduce: 1) Edit any DBMS file and add a character to the SQL Continue value. (I used a '_' and '@'.  When this is done in PD6, the sql continuation character appears after each column in a create table statement.                                                                                                                                                                                    
+
+	 Issue: 296814    10/07/02  	Status: Closed	01/08/03  
+Severity : 3         	Est. release: morpheus
+Label  : Enhance Naming Conventions to support conversions of multiple names
+Description :                                   
+	 Enhance Naming Conventions to support conversions of multiple names into a single code.  For example:  The customer would like to convert 'Social Security Number' into 'SSN' for its code. However, PowerDesigner currently converts this into 'SOCIAL_SECURITY_NO'.  There needs to be a way to evalute the entire name as one value in some cases.  However, in other instances the name needs to be evaluated according to its individual components, the current functionality.                                      
+
+	 Issue: 296784    10/07/02  	Status: Closed	03/06/03  
+Severity : 4         	Est. release: morpheus
+Label  : ENH: Association and Link to report under parent Entity
+Description :                                               
+	 This is an enhancement request for multi-model report to determine object 'entity association' and 'entity association link' details with respect to the entity specified at PARENT level.  At this time, the association information can be displayed anywhere in the report and irrespective of parent entity object.    The solution would be to have the following template:    Section_1    -  Entity - Entity %ITEM%       - Entity Association  - Association list of the entity %PARENT%       - Entity Association Link - Association link of the entity %PARENT%  In CDM, reproduced problem that the following report items are not available for the child level when the parent level = Entity  (level 0)  :   Entity (level 0) -> 'Entity Association '  list  (level 1)    Entity (level 0)  -> 'Entity Association link '  list   (level 1)   
+
+
+	 Issue: 296700    10/04/02  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : Modify Database script deletes or make views unavailable in DB2
+Description :                                                   
+	 Modify Database script will delete or make views unavailable in DB2 as part of of the Drop Table statement and the views are not recreated.  In UDB 6 OS/390, the drop table statement cascades the delete and drops all dependent objects. In this issue, the customer is concerned about view.  In UDB 7 OS/390, the drop table statement makes the dependent view inoperative. However, the view syntax is still stored in the database.  Link to version 6 documentation: http://publib.boulder.ibm.com/cgi-bin/bookmgr_OS390/BOOKS/dsnag0g3/2.11.6.8.1?SHELF=DSNSH0G4&DT=20010421154551#HDRDB0706 The DROP TABLE statement deletes a table. For example, to drop the project table, execute:        DROP TABLE DSN8610.PROJ; The statement deletes the row in the SYSIBM.SYSTABLES catalog table that contains information about DSN8610.PROJ. It also drops any other objects that depend on the project table. As a result:  The column names of the table are dropped from SYSIBM.SYSCOLUMNS.  Any views based on the table are dropped.   Link to version 7 documentation http://www-3.ibm.com/cgi-bin/db2www/data/db2/udb/winos2unix/support/document.d2w/report?last_page=list.d2w&fn=db2v7d0db2d0116.htm#HDRDROPTAB  A table can be dropped with a DROP TABLE SQL statement.  When a table is dropped, the row in the SYSCAT.TABLES catalog that contains information about that table is dropped, and any other objects that depend on the table are affected. For example:  All column names are dropped.  Indexes created on any columns of the table are dropped.  All views based on the table are marked inoperative.  
+
+	 Issue: 294368    09/12/02  	Status: Closed	03/03/03  
+Severity : 3         	Est. release: morpheus
+Label  : Selecting default on display preferences selects multiple radio buttons
+Description :                               
+	 In CDM, selecting default for Entity Attributes, selects multiple radio buttons.  To reproduce: 1) Open Display Preferences for a CDM 2) In "Object View" section, select "Entity" 3) Select "Primary Attributes" option 4) Click 'Default' Note: Both the "Primary Attributes" and "All Attributes" radio buttons are now selected.  The same occurs in the PDM for the Table object.                                                                                                                                  
+
+	 Issue: 294362    09/12/02  	Status: Closed	01/08/03  
+Severity : 3         	Est. release: morpheus
+Label  : Modify database- Allow option to not generate temporary tables/preserve data
+Description :                          
+	 Please add a Modify Database option to where you can turn on/off the generation of "moving" data to changed tables.  This could be implemented by adding a "Preserve Data" checkbox above the "Backup Tables" radio buttons and checkbox.  Turning the new checkbox off would have the following effects: - If the radio buttons are set to always create, it would drop and recreate all modified tables. - If the radio buttons are set to use alter, it would use alters where possible, but otherwise, drop and recreate.  But it would not use temporary tables at all, no matter what. - The last checkbox could still be enabled, but only to clean up temporary tables from a previous run where data preservation was turned on. 
+
+	 Issue: 292770    08/23/02  	Status: Closed	03/06/03  
+Severity : 4         	Est. release: morpheus
+Label  : Import Erwin 3.5.2 User Defined Properties UDP
+Description :                                                        
+	 to be able to import User Defined Properties from Erwin 3.5.2 inside PD                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
+	 Issue: 290732    07/25/02  	Status: Closed	11/21/02  
+Severity : 2         	Est. release: morpheus
+Label  : Move sub-objects by Drag&Drop in the workspace
+Description :                                                        
+	 PD Version : PD 7.5, 8.01, 9 and 9.5 build 649
+Move sub-objects by Drag&Drop in the workspace doesn't work                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+	 Issue: 290323    07/21/02  	Status: Closed	03/28/03  
+Severity : 3         	Est. release: morpheus
+Label  : Java type java.lang.StringBuffer is not reversed by ODBC
+Description :                                              
+	 DBMS : ASE 12 and ASE 12.5
+PD version   9.5
+column with  datatype like java.lang.StringBuffer is not reversed by ODBC inside PD                                                                                                                                                                                                                                                                                                                                                                                                  
+
+	 Issue: 289512    07/10/02  	Status: Closed	03/06/03  
+Severity : 2         	Est. release: morpheus
+Label  : REGR Report Merge with report language name different: merge failed (r/o)
+Description :                             
+	 Create a model for example a PDM with a report Report1 using the 'french' language create the same PDM but with a report Report1 using the 'english' language Merge this 2 models: you got the following error message: Intra-Model-Report 'Report1' (report1); Report language Name is readonly and the waning: the excecution of 1 merge operation(s) has failed. Note : after the language is lost for the target model                                                                                                  
+
+	 Issue: 287642    06/14/02  	Status: Closed	11/21/02  
+Severity : 3         	Est. release: morpheus
+Label  : Default position of symbol process is not well calculated with swimlanes
+Description :                              
+	 1. create a BPM with a swimlane 2. call the list of processes and create several process Their symbols are all created one above the others. Same thing i f you have several process in list to the same OU If there is no swimlane, they are created one beside the other. Default position with swimlanes whould be improved.                                                                                                                                                                                             
+
+	 Issue: 286759    06/04/02  	Status: Closed	03/17/03  
+Severity : 2         	Est. release: morpheus
+Label  : Object dependency
+Description :                                                                                     
+	 DBMS : DB 2 OS 390 V 6 and 7 Tablespace  --> dependencies --> Tables are visible not storage Storage ---> dependencies --> index is visible  not tablespace  View --> dependencies --> Table is not visible                                                                                                                                                                                                                                                                                                                  
+
+	 Issue: 279846    05/17/02  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Modify dbms via ODBC generates defaults on columns instead of only on domains
+Description :                                     
+	 Modify Database using ODBC as the DBMS schema generates incorrect ddl when the column default is associated with the Domain.  Database generation correctly generates the default value on the domain only.  When executing modify database, the default value is generated on the domain and the table column.                                                                                                                                                                                                                
+
+	 Issue: 277153    04/17/02  	Status: Closed	01/08/03  
+Severity : 3         	Est. release: morpheus
+Label  : registry key <Dttp full name> has moved under ModelOptions/ModelOptions
+Description :                               
+	 Open regedit and suppress the entry  HKEY_CURRENT_USER\Software\Sybase\PowerDesigner 9\ModelOptions\Conceptual options\Dttp full name Launch V9.0.0 and set as default an option for DM > Model Options > Use datatype full name Look at the registry, this has been correctly set. Now do the same with atlas. The Dttp full name key is under HKEY_CURRENT_USER\Software\Sybase\PowerDesigner 9\ModelOptions\ModelOptions                                                                                                
+
+	 Issue: 271058    01/29/02  	Status: Closed	03/27/03  
+Severity : 3         	Est. release: morpheus
+Label  : Report  list of objects only with package book
+Description :                                                        
+	 When we want a list of all objects inside a pdm including package and supackage, it is necessary to add book package. Customer would like to have the list of all objects without item package.                                                                                                                                                                                                                                                                                                                                  
+
+	 Issue: 265787    11/21/01  	Status: Closed	03/06/03  
+Severity : 3         	Est. release: morpheus
+Label  : Drag/drop of shortcut resizes object, thus losing current format
+Description :                                      
+	 
+**** Wed Nov 21 17:17:23 EST 2001 *** ahill **** build 438
+
+The customer has turned off the 'adjust to text' option for all diagrams.  The customer then enlarges a table so that there is ample space for the references.  The customer then creates a new diagram in the same namespace.  Then the customer selects several objects and drag/drop using ctrl+shift+click (shorcut).  The selected objects lose their formatting in the new diagram.
+
+If the customer were using the copy/paste as shortcut option the formatting would be preserved.  This would be the workaround.
+ 
+
+	 Issue: 262413    10/22/01  	Status: Closed	03/06/03  
+Severity : 3         	Est. release: morpheus
+Label  : Column default value not reverse engineered via ODBC for ASE 12.0
+Description :                                     
+	 
+**** Mon Oct 22 15:33:14 EDT 2001 *** ahill **** build 412 and 8.0.1.289
+Cannot capture column default value in PDM from ASE 12 database after Reverse Engineering
+
+When reverse engineering ASE 12 via ODBC, PD fails to reverse engineer the column default values.	This was reported on closed CR# 207042 which states that this was corrected for script, but makes no reference to ODBC.
+
+ODBC Driver:	PB MERANT OEM 3.60 32-BIT Sybase ASE (coming along with PowerDesigner 8.0)
+	PB MERANT OEM 3.70 32-BIT Sybase ASE (coming along with PowerDesigner 9.0)
+
+Steps to Reproduce Problem:
+
+(1)  Create the testing table "test_default" with default value in the column "last_user" in ASE 12 database using either one of the following two approaches:
+
+(a)  Use DEFAULT clause within CREATE TABLE statement:
+
+	create table test_default
+	(
+		id	char(1)		not null,
+		last_user	varchar(10)	default "user1"	null,
+		constraint test_default_key primary key clustered (id)
+	)
+	go
+	
+(b)  Use CREATE DEFAULT statement to create default value, use CREATE TABLE statement to create the table "test_default", and then bind it the to table column "last_user" with the system stored procedure "sp_bindefault":
+
+	create default user_default as "user1"
+	go
+
+	create table test_default
+	(
+		id	char(1)		not null,
+		last_user	varchar(10)	null,
+		constraint test_default_key primary key clustered (id)
+	)
+	go
+
+	sp_bindefault user_default, "test_default.last_user"
+	go
+
+(2)  Perform Reverse Engineering on the testing database to generate PDM inside PowerDesigner (selecting File  ->  Reverse Engineer  ->  Database... from menu).
+
+(3)  In the PDM generated, right-click on the table "test_default" and then select "Columns..." from the pop-up menu.  Double-click on the column "last_user" to open the "Column Properties" dialog box.  On the "Standard Checks" tab page, there is not any default value specified.
+
+However, if the column is associated with a domain, the domain default value is reverse engineered. 
+
+	 Issue: 258235    08/30/01  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : Add Diagram Card that includes Author,create & modify dates to a Diagram Card
+Description :                                     
+	 In spirit of adding author, create & modify dates to a Diagram' properities (see cr# 258234), we should allow this information to be in the Report on a Diagram Card.
+
+Customer knows about the object node called "Diagram List" where it  offers [diag. name, diag. code, creation date, creator, modification date, modifier, diagram comment, and annotation].  But, the user feels that a Diagram Card would best serve the user's reporting quality by allowing the following structure:
+
+Diagram_1
+  -diagram name/code
+  -diagram description/annotation/
+  -author/date created/date modified
+-tables list in diagram
+-reference list in diagram
+...
+Diagram_2
+  -diagram name/cod 
+
+	 Issue: 257664    08/23/01  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Modify Database (ASA 6) uses the Block Terminator instead of the Terminator
+Description :                                       
+	 
+**** Thu Aug 23 11:08:43 EDT 2001 *** ahill **** build 339 & 8.0.1.275
+
+
+Modify Database (ASA 6) uses the Block Terminator of "/" instead of the Command Terminator of ";".  
+
+As a workaround you have to edit the DBMS and delete the "/" to force it to use the ";".                                                                                                                                                                                                                                                         
+
+	 Issue: 242308    06/26/01  	Status: Open	
+Severity : 3         	Est. release: morpheus
+Label  : can't generate Accss2K SR-1 from v7.5 or 8.0 via script
+Description :                                                           
+	 Sunday, 6/24/01: 
+Tested on home pc:  PD 7.5.0.826 /  Access 97 SR-1.
+I ran check model and it captured 77 errors with respect to "duplicated constraints"  [table, column, fk_constraints]... I ran auto correct and it appended a sequential # at the end of each constraint name.
+In v7.5.0826, I ran the script generation per the PD instructons to the Access 97 database (*.mdb) file.  It ran very well.... 
+
+Monday, 6/25/01: 
+Test at work:  PD 7.5.0.826 and PD 8.0.0.203/ Access 2000 (9.0.2720)
+In v7.5.0.826,  I ran check model... I get the same results as the check model on my home pc... The 77 errors flagged as duplicated constraints... I auto correct them.
+In v7.5.0.826,  I ran the script generation per the PD instructions to the Access 2000 database (*.mdb) file.  It fails!!!
+Error messages: 
+   Creating table "table_1"   --> Invalid field data type.  <ok>
+   Creating table "table_2"   --> Invalid field data type.  <ok>
+   Creating table "table_3"   --> Invalid field data type.  <ok>
+   Creating table "table_4"   --> Invalid field data type.  <ok>
+Then the "Physical Data Model  / Access 2000 window that is created from selecting the "access2k.mdb" file that is found in the PowerDesigner/Tools directory remains open after these error messages fly through... I have to select the <QUIT> button and then in Ms Access 2k open the *.mdb file..
+
+I get the SAME behavior with PD 8.0.0.203...
+
+I reviewed the customer PDM model in both versions (7.5.0.826 or 8.0.0.203)...I am trying to review the issue with " Invalid field data type"...  I see a number of columns that seem to have incorrect data types... I have reviewed the Data Type mappings found in the Microsoft Access 2000 XDB file (access2k.xdb).  
+
+I tried to change the columns assigned to the "NOTE" data type to TEXT.  Regenerate did NOT work.
+
+Action: Need to review Ms Access documentation as to valid data types...
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+For the sake of testing:  I ran ODBC GENERATION from within v7.5.0.826 and v8.0.0.203.  to Access 2000 via the Microsoft Access Driver vers. 4.00.5303.01  fn: ODBCJT32.DLL date: 3/27/01
+
+I rec'd improved results!
+In v7.5.0.826:  I ran ODBC generation.  I got 17 of the 19 tables and 21 of the 22 references created in the Access 2000 (*.mdb).
+In v8.0.0.203:  I  ran ODBC generation. I got 17 of the 19 tables and  "no" references at all created in the Access 2000 (*.mdb).
+
+I ran an ODBC trace and found errors: 
+DIAG [37000] [Microsoft][ODBC Microsoft Access Driver] Syntax error in field definition. (-3553) 
+DIAG [S0002] [Microsoft][ODBC Microsoft Access Driver] Cannot find table or constraint. (-1305)  
+
+In both instances (db gen via script or odbc) it appears that something in the "Order_Item" table is not correct...
+ 
+
+	 Issue: 241546    06/13/01  	Status: Closed	11/18/02  
+Severity : 3         	Est. release: morpheus
+Label  : In v8, DB2v6 os/390 not null with default not displayed in model graphics
+Description :                             
+	 the column detail "not null with default" in a PDM targeting DB2 v6 for OS/390 is NOT well displayed in the model graphics.  It is however a detail that is correctly specified on the column object in table's Preview tab and Database generation's DDL...                                                                                                                                                                                                                                                                     
+
+	 Issue: 214867    03/08/00  	Status: Closed	03/19/03  
+Severity : 3         	Est. release: morpheus
+Label  : Be able to manage link attributes from Rose model mdl in PD, AMC 7 OOM
+Description :                                
+	 NULL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+	 Issue: 210485    11/30/99  	Status: Closed	02/18/03  
+Severity : 2         	Est. release: morpheus
+Label  : Reverse problem via script : Oracle 7.x fk constraint is not reversed
+Description :                                 
+	 generating all scripts using Oracle Designer2000  but can't reverse fk constraint .
+Same problem using poweramc 6.1.5.852 or Poweramc 7.0.1
+This script works fine :
+--REM
+-- PROMPT
+-- PROMPT Creating Table SC_MARKET_DATES
+CREATE TABLE sc_market_dates(
+ market_id                       NUMBER(4,0)                NOT NULL,
+ start_dpt_date                  DATE                       NOT NULL,
+ end_dpt_date                    DATE                       NOT NULL,
+ default_fare                    NUMBER(4,0)               DEFAULT 0
+NOT NULL,
+ batch_flag                      NUMBER(1,0)                NOT NULL,
+ user_id                         VARCHAR2(15)               NOT NULL,
+ edit_dt                         DATE                       NOT NULL
+)
+PCTFREE  10
+PCTUSED  40
+INITRANS 1
+MAXTRANS 255
+;
+
+--REM
+-- PROMPT
+-- PROMPT Creating Table SC_MARKET_ODS
+CREATE TABLE sc_market_ods(
+ market_id                       NUMBER(4,0)                NOT NULL,
+ market_orig                     VARCHAR2(5)                NOT NULL,
+ market_dest                     VARCHAR2(5)                NOT NULL,
+ default_fare                    NUMBER(4,0)               DEFAULT 0
+NOT NULL,
+ fixed_cost                      NUMBER(6,0)               DEFAULT 0
+NOT NULL,
+ tariff_km                       NUMBER(4,0)                NOT NULL,
+ mono_leg_flag                   NUMBER(1,0)                NOT NULL,
+ batch_flag                      NUMBER(1,0)                NOT NULL,
+ user_id                         VARCHAR2(15)               NOT NULL,
+ edit_dt                         DATE                       NOT NULL,
+ process                         VARCHAR2(10)               NULL
+)
+PCTFREE  10
+PCTUSED  40
+INITRANS 1
+MAXTRANS 255
+;
+ALTER TABLE SC_MARKET_DATES ADD
+      CONSTRAINT MKTDT_OD_FK
+      FOREIGN KEY (MARKET_ID)
+      REFERENCES  SC_MARKET_ODS (
+                   MARKET_ID)
+/
+
+But not this Exemple2 : reverse not successful using this generated script by Oracle the FK is not generated :
+--REM
+-- PROMPT
+-- PROMPT Creating Table SC_MARKET_DATES
+CREATE TABLE sc_market_dates(
+ market_id                       NUMBER(4,0)                NOT NULL,
+ start_dpt_date                  DATE                       NOT NULL,
+ end_dpt_date                    DATE                       NOT NULL,
+ default_fare                    NUMBER(4,0)               DEFAULT 0
+NOT NULL,
+ batch_flag                      NUMBER(1,0)                NOT NULL,
+ user_id                         VARCHAR2(15)               NOT NULL,
+
+ edit_dt                         DATE                       NOT NULL
+)
+PCTFREE  10
+PCTUSED  40
+INITRANS 1
+MAXTRANS 255
+;
+
+--REM
+-- PROMPT
+-- PROMPT Creating Table SC_MARKET_ODS
+CREATE TABLE sc_market_ods(
+ market_id                       NUMBER(4,0)                NOT NULL,
+ market_orig                     VARCHAR2(5)                NOT NULL,
+ market_dest                     VARCHAR2(5)                NOT NULL,
+ default_fare                    NUMBER(4,0)               DEFAULT 0
+NOT NULL,
+ fixed_cost                      NUMBER(6,0)               DEFAULT 0
+NOT NULL,
+ tariff_km                       NUMBER(4,0)                NOT NULL,
+ mono_leg_flag                   NUMBER(1,0)                NOT NULL,
+ batch_flag                      NUMBER(1,0)                NOT NULL,
+ user_id                         VARCHAR2(15)               NOT NULL,
+ edit_dt                         DATE                       NOT NULL,
+ process                         VARCHAR2(10)               NULL
+)
+PCTFREE  10
+PCTUSED  40
+INITRANS 1
+MAXTRANS 255
+;
+ALTER TABLE SC_MARKET_DATES ADD (
+      CONSTRAINT MKTDT_OD_FK
+      FOREIGN KEY (MARKET_ID)
+      REFERENCES  SC_MARKET_ODS (
+                   MARKET_ID)
+)
+/
+The problem is with parenthesis in the fk constraint -> after ADD (....) but Oracle support the two syntaxes with or without parenthesis and Powerdesigner 6.x, 7 can only  reverse the script without parenthesis .
+
+ 
+
+	 Issue: 209347    11/03/99  	Status: Open	
+Severity : 2         	Est. release: morpheus
+Label  : Reverse via script DB2 MVS 4.x the reference columns have wrong  order in parent
+Description :                                  
+	 NULL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+	 Issue: 195982    04/23/99  	Status: Closed	03/24/03  
+Severity : 3         	Est. release: morpheus
+Label  : Support for Ms SQL Server 7 OLAP services engine/plug-in to model cubes
+Description :                               
+	 Customer would like to create warehouse models using Warehouse Architect and be able to generate these structures into the Microsoft OLAP services product.                                                                                                                                                                                                                                                                                                                                                                     
+
+	 Issue: 193837    03/24/99  	Status: Closed	01/21/03  
+Severity : 2         	Est. release: morpheus
+Label  : DataArchitect  6.1.1 Foreign Key cannot be set as deferrable
+Description :                                          
+	 Oracle 8 def file shows that the Primary key and the Alternate Key can be set to deferrable but not the Foreign key.
+
+Enhancement request to allow Foreign Keys/ Constraints to be deferrable.                                                                                                                                                                                                                                                                                                                                   
+
+(105 rows affected)

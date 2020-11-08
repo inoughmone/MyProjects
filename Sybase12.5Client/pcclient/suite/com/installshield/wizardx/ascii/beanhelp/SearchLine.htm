@@ -1,0 +1,16 @@
+The <STRONG>Search Line/Text</STRONG> action searches the ASCII file for occurrences of a specified string, setting a position for use with the next action. It runs <EM>before</EM> the 
+<UL>
+<LI><STRONG>Add Line/Text/Comment</STRONG>,
+<LI><STRONG>Delete Line/Text</STRONG>,
+<LI><STRONG>Delete Lines Between</STRONG>, and
+<LI><STRONG>Replace Line/Text</STRONG>
+</UL>
+  
+actions to set the position in the file for the action.</P>
+
+<STRONG>NOTES</STRONG>
+<UL>
+<LI>If the specified tokens are not found and the <STRONG>Tokens Not Found</STRONG> property is set to "No Action", then the next action that requires a valid position be set is ignored.
+<LI>If multiple <STRONG>Search Line/Text</STRONG> actions are performed in a row, only the <EM>last</EM> <STRONG>Search Line/Text</STRONG> action's result is used.
+</UL>
+

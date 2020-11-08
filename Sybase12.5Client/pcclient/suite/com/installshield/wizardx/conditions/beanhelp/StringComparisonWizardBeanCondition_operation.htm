@@ -1,0 +1,141 @@
+<P>The value selected for <STRONG>Operation</STRONG> determines what type of
+string comparison to perform.</P>
+
+<P>Select a predefined <STRONG>Operation</STRONG> from the Operation list:
+
+<P>
+<FONT size=4><STRONG>Values</STRONG></FONT>
+<p>
+<CENTER>
+<TABLE border=0 cellPadding=1 cellSpacing=1 width="90%">
+  <TR>
+    <TD>
+		<P>
+		<STRONG>Equals - Case Sensitive</STRONG>
+        <HR size=2>Select this value to perform a case sensitive 
+	equality comparison. This returns the results of source.equals(compareText)
+	where both source and compareText are first resolved.
+        <P>
+        <STRONG>Equals - Case Insensitive</STRONG>
+        <HR size=2>Select this value to perform a case insensitive
+	equality comparison. This returns the results of source.equalsIgnoreCase(compareText)
+	where both source and compareText are first resolved.
+        <P>
+        <STRONG>GNU Regular Expression</STRONG>
+        <HR size=2>Select this value to perform a comparison 
+	based on GNU regular expression syntax. This returns the result of
+	com.installshield.util.rex.Rex.matches(source, compareText) where both source
+	and compareText are first resolved.
+    </TD>
+  </TR>
+</TABLE>
+</CENTER>
+<P>
+
+<P><b><font size=+1>GNU Regular Expressions</font></b></P>
+<p>The regular expressions supported are a subset of lex, plus some extensions:
+
+<p><center><table BORDER=0 WIDTH="90%" >
+<tr VALIGN=TOP>
+<td WIDTH="25%"><b>Expression</b></td>
+
+<td WIDTH="75%"><b>Description</b></td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>&nbsp;x</td>
+
+<td>The character x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>"x"</td>
+
+<td>An x, even if x is an operator.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>\x</td>
+
+<td>An x, even if x is an operator.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>[xy]</td>
+
+<td>The character x or y.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>[x-z]</td>
+
+<td>The character x, y, or z.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>[^x]</td>
+
+<td>Any character but x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>.</td>
+
+<td>Any character but newline.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>^x</td>
+
+<td>An x at the beginning of a line.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x$</td>
+
+<td>An x at the end of a line.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x?</td>
+
+<td>An optional x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x*</td>
+
+<td>Zero or more instances of x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x+</td>
+
+<td>One or more instance of x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x\|y</td>
+
+<td>An x or a y.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>\(x\)</td>
+
+<td>An x matched as a sub-expression.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>x{m,n}</td>
+
+<td>M through n occurrences of x.</td>
+</tr>
+
+<tr VALIGN=TOP>
+<td>\n</td>
+
+<td>A back reference, where n is a digit 0 through 9.</td>
+</tr>
+</table></center>
+
