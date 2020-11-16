@@ -1,0 +1,234 @@
+Version		Summary of Changes
+-------		------------------------------------------------------------------------------
+CRE 2.3A	Addition of DWVSTP32.OCX (Desaware VersionStamper OLE Control v5) 
+		requested by PL
+
+CRE 2.3B	Addition of REINS.DLL (RI  / ITG developed)
+		Addition of GRAPH32.OCX, GSW32.EXE, GSWDLL32.DLL requested by Emma2
+
+CRE 2.3C	Update of VBAJET32.DLL (MS Jet DB) to v5.0.0.7122 requested by AEGIS
+
+CRE 2.3D	Addition of MHCAL32.ocx (Microhelp/Becubed Calender control) requested by AEGIS
+
+CRE 2.3E	Addition of MSRDO20.DLL (Microsoft RDO v2) requested by PL
+
+CRE 2.4		Update of Reins.dll
+		Addition of Rate.dll requested by reinsurance
+		Addition of DSICM23C.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of DSIGM23C.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of DSIMM23C.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of ilicm23c.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of Iolem23c.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of ITC_M23C.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of ITG_M23C.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of ITGLM23C.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of ITM_M23C.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of ITOLM23C.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of Muilm23c.dll (Iona Technologies ) required for Orbix2.3C
+		Addition of itole.tlb (Iona Technologies ) required for Orbix2.3C
+
+CRE 2.5		Addition of DBClass.dll	requested by PL
+		Addition of Msflxgrd.ocx requested by DX services
+
+CRE 2.5A	Addition of S3FXCONV.dll requested by PL/EMMA
+		Addition of S3FXCONV.exe requested by PL/EMMA
+
+CRE 2.5B	Update of S3FXCONV.dll requested by PL/EMMA
+		Update of S3FXCONV.exe requested by PL/EMMA
+
+CRE 2.5C	Update of S3FXCONV.dll requested by PL/EMMA
+		Update of S3FXCONV.exe requested by PL/EMMA
+		Update of Tdbg5.ocx requested by PL
+		Addition of VXOCX6.ocx requested by PL
+		Addition of VXOCX6.oca requested by PL
+
+CRE 2.5D	Update of S3FXCONV.exe requested by EMMA
+
+CRE 2.5E	Update of S3FXCONV.dll requested by PL/EMMA
+		Update of S3FXCONV.exe requested by PL/EMMA
+
+CRE 2.5F	Update of S3FXCONV.dll requested by PL/EMMA
+		Update of S3FXCONV.exe requested by PL/EMMA
+
+CRE 2.5Fa	Update of S3FXCONV.dll requested by PL/EMMA
+		Update of S3FXCONV.exe requested by PL/EMMA
+
+CRE 2.5G	Update of DBClass.dll requested by PL
+		Update of VXOCX6.ocx  requested by PL
+		Update of VXOCX6.oca  requested by PL
+		Addition of dbmssocn.dll requested by PL for use with a UNIX database
+
+CRE 2.5Ga	Use of an older version of P2Sodbc.dll requested by WorldRisk.  This
+		dll allows their application to utilize crystal reports 5.0 through VB 5.0.
+		This dll will not be included in other CRE's, the newer version is included. 
+	
+CRE 2.5H	Update of S3FXCONV.dll requested by PL/EMMA
+		Update of S3FXCONV.exe requested by PL/EMMA
+		****************************************	
+		*** The following four files pertain ***
+		*** to an upgrade of Crystal Reports ***
+		****************************************	
+		Update of Crpaig32.dll requested by PL/Aegis
+ 		Update of Crpe32.dll   requested by PL/Aegis
+		Update of Crystl32.ocx requested by PL/Aegis
+		Update of P2ssyb10.dll requested by PL/Aegis
+
+CRE 2.5I	Upgrade of Cstext32.ocx	  requested by PL
+		Addition of S3filter.dll  requested by PL
+		Addition of OSPBroker.dll requested by PL
+		
+CRE 2.5I_J	Japanese version of TDBG5.ocx 	 requested by Warranty
+		Japanese version of xarray32.ocx requested by Warranty
+		NOTE: These changes will NOT be included in any other CRE
+
+*****************************************************************************************
+***	Change in the structure of the CRE.  All of the currently unused controls     ***
+***	have been removed from the CRE and the controls that are still being used     ***
+***	have been seperated into two InstallShields.  CRE_S3 contains all of the      ***
+***	controls that have been developed by AIU.  CRE_TP contains all of the         ***
+***	controls that have been developed by third party vendors.		      ***
+*****************************************************************************************	 
+
+
+CRE_S3 G03.00.00	First build of in house controls
+
+CRE_TP G03.00.00	First build of third party controls
+
+CRE_TP G03.01.00	Bug fix for the InstallShield no change in controls	
+
+CRE_S3 G03.01.00	Update to the S3Filter.dll requested by OSP (Val Bardash)
+	
+CRE_S3 G03.02.00	Update of Producer.dll requested by PLUS (Margarita Zaretskaya)
+
+CRE_TP G03.02.00	Addition of the xarray32.ocx requested by PLUS (Sam Mager)
+
+CRE_S3 G03.03.00	Addition of Address.dll requested by PLUS (Sam Mager)
+			Change of Producer.dll to the older version requested by A&H/PLUS
+
+CRE_S3 G03.04.00	Addition of DataAccess.dll requested by PLUS (Sam Mager)
+			Bug fix: don't hard code the windows directory.
+
+CRE_TP G03.03.00	Addition of MSADO15.dll requested by PLUS (Sam Mager)
+			Bug fix: don't hard code the windows directory.
+
+CRE_S3 G04.00.00	Repackaged for G4.  No new files.
+
+CRE_TP G04.00.00	Update to Cstext32.ocx requested by PLUS (Sam Mager).
+
+CRE_S3 G04.01.00	Addition of Address.ocx	 requested by A&H (Pat McMeekin).
+			Addition of ADDRCO~1.dll requested by A&H (Pat McMeekin).
+			Addition of ADDRBUSI.dll requested by A&H (Pat McMeekin).
+			Addition of AIStartGtwBroker.dll req by CL (Cilla Stankovich).
+
+CRE_TP G04.01.00	Update to Cscombo32.ocx requested by PLUS (Sam Mager).
+
+CRE_S3 G04.02.00	Addition of Address.ocx	requested by A&H (Bernard Cruz).
+			Addition of ADDRCO~1.dll requested by A&H (Bernard Cruz).
+			Addition of ADDRBUSI.dll requested by A&H (Bernard Cruz).
+			Addition of DataAccess.dll requested by A&H (Bernard Cruz).
+
+CRE_TP G04.02.00	****************************************	
+			*** The following four files pertain ***
+			*** to an upgrade of Crystal Reports ***
+			*** Version 7			     ***		
+			****************************************	
+			Update of Crpaig32.dll requested by PL/Aegis
+	 		Update of Crpe32.dll   requested by PL/Aegis
+			Update of msvcrt20.dll requested by PL/Aegis
+			Update of IMPLODE.dll  requested by PL/Aegis
+			Addition of ctl3d32.dll requested by PL/Aegis
+
+CRE_TP G04.03.00	Addition of RegObj.dll requested by DX
+			Addition of tlbinf32.dll requested by DX
+			Addition of MFCANS32.dll for Crystal Reports 7
+			Update of CRYSTL32.ocx for Crystal Reports 7 
+
+CRE_S3 G04.03.00	Update of Address.ocx	requested by A&H (Bernard Cruz)
+			Update of ADDRCO~1.dll requested by A&H (Bernard Cruz)
+			Update of ADDRBUSI.dll requested by A&H (Bernard Cruz)
+			Update of DataAccess.dll requested by PL
+			Update of Producer.dll requested by PL
+			Removal of address.dll requested by PL (Sam Mager)
+
+CRE_TP G04.04.00	Update of mfc42.dll    requested by Aegis(Deepak Purswani)
+			Update of Crpe32.dll   requested by PL/Aegis
+			Update of msvcrt20.dll requested by PL/Aegis
+			Addition of p2smon.dll for Crystal Reports 7
+			Addition of cdo32.dll  for Crystal Reports 7
+			
+CRE_S3 G04.04.00	Update of Address.ocx	requested by A&H (Bernard Cruz)
+			Update of DataAccess.dll requested by PL
+
+CRE_S3 G04.05.00	Update of Address.ocx	requested by A&H (Pat McMeekin)
+			Update of ADDRCO~1.dll requested by A&H (Pat McMeekin)
+			Update of Producer.dll requested by PL (Sam Mager)
+			Addition of MTCP.DLL requested by BillingFE (Vivek Malhotra)
+			Addition of VBUSplitter.OCX requested by BillingFE (Vivek Malhotra)
+			Addition of BillingCalcServices106Broker.DLL requested by BillingFE
+			Addition of BillingInfoServices107Broker.DLL requested by BillingFE 
+			Addition of Billing.DLL requested by BillingFE (Vivek Malhotra)
+
+CRE_S3 G04.06.00	Update of Address.ocx	requested by A&H (Pat McMeekin)
+			Update of ADDRCO~1.dll requested by A&H (Pat McMeekin)
+			Update of ADDRBUSI.dll requested by A&H (Pat McMeekin)
+
+CRE_S3 G04.07.00	Update of Address.ocx	requested by A&H (Pat McMeekin)
+			Update of ADDRCO~1.dll requested by A&H (Pat McMeekin)
+			Update of ADDRBUSI.dll requested by A&H (Pat McMeekin)
+			Update of Billing.DLL requested by BillingFE (Vivek Malhotra)
+			Update of MTCP.DLL requested by BillingFE (Vivek Malhotra)
+			Update of Producer.dll requested by PL (Sam Mager)
+
+CRE_S3 G04.08.00	Update of Address.ocx	requested by A&H (Pat McMeekin)
+			Update of ADDRCO~1.dll requested by A&H (Pat McMeekin)
+			Update of ADDRBUSI.dll requested by A&H (Pat McMeekin)
+			Update of Billing.DLL requested by BillingFE (Vivek Malhotra)
+			Update of MTCP.DLL requested by BillingFE (Vivek Malhotra)
+			Update of Producer.dll requested by PL (Bob Semple)
+
+CRE_S3 G04.09.00	Addition of MarsBroker.DLL requested by CL (Jackson Ho)
+			Addition of MARSClasses.dll requested by CL (Jackson Ho)
+
+CRE_S3 G04.10.00	Update of DataAccess.dll requested by PL
+			Update of Billing.DLL requested by BillingFE (Vivek Malhotra)
+			Addition of PlLabel.DLL requested by PL (Bob Semple)
+			Addition of PLGlobal.DLL requested by PL (Bob Semple)
+
+CRE_S3 G04.11.00	Update of MARSClasses.dll requested by CL (Jackson Ho)
+			Update of Producer.dll requested by PL (Bob Semple)
+
+CRE_S3 G04.12.00	Update of DataAccess.dll requested by PL (Bob Semple)
+			Update of Producer.dll requested by PL (Bob Semple)
+
+CRE_S3 G04.14.00	Update of MARSClasses.dll requested by CL (Jackson Ho)
+
+CRE_S3 G04.15.00	Update of DataAccess.dll requested by PL (Bob Semple)
+			Update of Producer.dll requested by PL (Bob Semple)
+			Update of Address.ocx requested by A&H (Pat McMeekin)
+			Update of ADDRCO~1.dll requested by A&H (Pat McMeekin)
+			Update of ADDRBUSI.dll requested by A&H (Pat McMeekin)
+			Update of MARSClasses.dll requested by CL (Jackson Ho)
+
+CRE_S3 G04.16.00	Update of Billing.dll requested by Billing (Vivek Malhotra)
+
+CRE_S3 G04.17.00	Update of Address.ocx requested by A&H (Pat McMeekin)
+			Update of ADDRCO~1.dll requested by A&H (Pat McMeekin)
+			Update of ADDRBUSI.dll requested by A&H (Pat McMeekin)
+			Update of DataAccess.dll requested by EM (Rudy Kalik)
+			Update of MARSClasses.dll requested by CL (Jackson Ho)
+			Update of Producer.dll requested by PL (Bob Semple)
+
+CRE_TP G04.05.00	Addition of CTDATE32.ocx requested by AH (Gary Boretsky)
+
+CRE_S3 G04.18.00	Update of Billing.DLL requested by BillingFE (Vivek Malhotra)
+			Update of PLGlobal.dll requested by PL (Bob Semple)
+			Update of Producer.dll requested by PL (Bob Semple)
+
+CRE_TP G04.06.00	Deleted Dbmssocn.dll which is delivered by MDAC
+			Deleted Msado15.dll which is delivered by MDAC
+			Deleted Msvcrt.dll which is delivered by MDAC
+			Deleted Oleaut32.dll which is delivered by MDAC
+			Deleted Olepro32.dll which is delivered by MDAC
+			Deleted Vbajet32.dll which is delivered by MDAC
+
+CRE_TP G04.07.00	Update of cstext32.ocx requested by CL (Jackson Ho)
