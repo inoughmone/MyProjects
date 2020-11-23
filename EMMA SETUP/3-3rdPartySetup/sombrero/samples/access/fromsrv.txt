@@ -1,0 +1,130 @@
+Function migrate_authors_from_server ()
+
+'   This function is an example of an Access Basic program which will migrate
+'   data from a SQL Server table to an Access table. This example will move
+'   data from the authors table on an Access database to the authors table
+'   found in the pubs(2) database supplied with either Microsoft or Sybase
+'   SQL Servers
+
+'   This example is only setup to handle character data. If numeric data is
+'   being migrated then changes must be made to handle those fields. This
+'   example also expects that both tables have the same number of columns.
+
+'   This example does not handle the aquistion of server messages.
+    
+'   Set up all the variables which are required to provide program access
+'   to the table to be populated from the server. See Access Manual for an
+'   explanation of the various datatypes and their use.
+
+    Dim mwsp As WorkSpace
+    Dim mdb As Database
+    Dim dset As Recordset
+    Set mwsp = DBEngine.Workspaces(0)
+    Set mdb = mwsp.OpenDatabase("c:\ac2db\oletest.mdb")
+    Set dset = mdb.OpenRecordset("authors", DB_OPEN_DYNASET)
+    
+'   Get the number of fields in the destination table. As explained above this
+'   example expects that the source and destination tables have the same number
+'   of columns
+
+    fcount = dset.fields.count
+
+'   Set up the object variables needed to use SQL-Sombrero/OLE to access data
+'   on the SQL Server
+
+    Dim sqlobj As Object	' Session object
+    Dim contst As Object	' Connection object
+
+'   Create an instance of the OLE object. "SQLOCXDB.SESSION" is the object key
+'   found in the registration database
+
+    Set sqlobj = CreateObject("SQLOCXDB.SESSION")
+    
+'   Initialize DB-Library
+
+    sqlver$ = sqlobj.SqlInit(1)
+    
+'   Set up the userid and password to be used
+
+    sqlobj.userid = "sa"
+    sqlobj.password = ""
+    
+'   Open a connection with the SQL Server. If there is a problem in creating the
+'   connection then the object contst will not be set and can be tested against
+'   the Nothing key word.
+
+    Set contst = Nothing
+    Set contst = sqlobj.sqlopenconnection("10NT", "", "SQLPROG")
+    If contst Is Nothing Then
+        GoTo letsgetout
+    End If
+    
+'   Change to the pubs2 database (this is for Sybase System 10 - if you are using
+'   a version of SQL Server prior to system 10 then this would be "pubs"
+
+    contst.sqluse = "pubs2"
+    If contst.ret_code <> 1 Then
+        GoTo letsgetout
+    End If
+    
+'   Put the SQL command to be executed into the command buffer
+
+    contst.sqlcmd = "select * from authors"
+    If contst.ret_code <> 1 Then
+        GoTo letsgetout
+    End If
+    
+'   Send the SQL command to the server for execution
+
+    contst.sqlexec
+    If contst.ret_code <> 1 Then
+        GoTo letsgetout
+    End If
+    
+'   Check for results from the SQL Server. This function will wait until results are
+'   available
+
+    contst.sqlresults
+    
+'   Check the number of columns be sent in the result set. If this is not the same
+'   number as the destination table then send an message and terminate.
+
+    ncols = contst.sqlnumcols
+    If ncols <> fcount Then
+        MsgBox "The two tables do not have the same number of columns"
+        GoTo letsgetout
+    End If
+    
+'   For each row returned (sqlnextrow will return -2 to the variable ret_code when there
+'   are no more rows) add a new row to the destination table on the Access database. Then
+'   using the sqldata function retrieve the data for each column. Then populate each row.
+'   When each column has been processed then do an "Update" to the Access table to commit
+'   the new row to the Access table.
+
+    inserts = 0
+    contst.sqlnextrow
+    While contst.ret_code <> -2
+        dset.AddNew
+        For col% = 1 To ncols
+            t$ = contst.sqldata(col%)
+            dset(col% - 1) = t$
+        Next
+        dset.Update
+        inserts = inserts + 1
+        contst.sqlnextrow
+    Wend
+
+'   Close all Access objects. Close the connection to the SQL Server. Close all SQL-Sombrero
+'   objects. Once these object go out of scope they will be closed. It is safer to close these
+'   objects yourself to ensure that the Connection object is closed prior to the Session object.
+
+letsgetout:
+    dset.Close
+    mdb.Close
+    contst.sqlclose
+    Set contst = Nothing
+    sqlobj.sqlexit
+    sqlobj.sqlwinexit
+    Set sqlobj = Nothing
+    MsgBox "There were " & Str$(inserts) & " rows migrated from the SQL Server"
+End Function
