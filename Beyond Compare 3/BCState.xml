@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Produced by Beyond Compare 3 from Scooter Software -->
+<BCState>
+	<TBcState>
+		<FirstStartup Value="False"/>
+		<FormPosStr Value="76;76;1708;943;3;144"/>
+	</TBcState>
+	<TBrowseState>
+		<FormPosStr Value="454;342;854;766"/>
+	</TBrowseState>
+	<TCheckForUpdatesState>
+		<Build Value="18981"/>
+		<CheckID Value="134391194925"/>
+		<LastChecked Value="2020-10-22 16:10:35"/>
+	</TCheckForUpdatesState>
+	<TDirCompareState>
+		<LeftMRUSpecs>
+			<_0 Value="C:\Publish\eFapiao PH2\CancellationBatch"/>
+			<_1 Value="C:\Publish\eFapiao PH2\AdminConsole - Copy\bin"/>
+			<_2 Value="D:\Publish\Online_Package04_0622"/>
+			<_3 Value="D:\Workspace\eTravel"/>
+			<_4 Value="D:\Workspace\eTravel uplift Alipay By SDK"/>
+			<_5 Value="D:\Workspace\eTravel uplift Alipay By SDK\Common"/>
+			<_6 Value="C:\Publish\eFapiao PH2\Online"/>
+			<_7 Value="D:\Roger\AIG\Code\OnlineWeb\Content\Mobile"/>
+			<_8 Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\1.Documents\5.Code\Macro\Client"/>
+		</LeftMRUSpecs>
+		<RightMRUSpecs>
+			<_0 Value="D:\EINVOICEBATCH"/>
+			<_1 Value="D:\Publish\eFapiao PH2\Build 17\AdminConsole\bin"/>
+			<_2 Value="D:\Publish\online_pacakge04_0626"/>
+			<_3 Value="D:\Workspace\eTravel uplift Alipay By SDK"/>
+			<_4 Value="D:\Workspace\eTravel uplift Alipay"/>
+			<_5 Value="D:\Workspace\eTravel uplift Alipay\Common"/>
+			<_6 Value="D:\Publish\Online_Package04"/>
+			<_7 Value="D:\Roger\eTravel\ITSR010156_NewUI\eTravel Pages-20160321\morderinput\投保信息输入 旅行保险-AIG美亚保险直销_files"/>
+			<_8 Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\1.Documents\5.Code\Macro\Offshore"/>
+		</RightMRUSpecs>
+	</TDirCompareState>
+	<TFileFormatManagerState>
+		<FormPosStr Value="299;129;1141;731"/>
+	</TFileFormatManagerState>
+	<THexCompareState>
+		<LeftMRUSpecs>
+			<_0 Value="D:\Workspace\eTravel uplift Alipay By SDK\eTravel.v11.suo"/>
+			<_1 Value="C:\Users\354057\Desktop\新建文件夹\Test_old.exe"/>
+			<_2 Value="C:\Users\354057\Documents\Visual Studio 2010\Projects\Test\Test\bin\Debug\Test.exe"/>
+		</LeftMRUSpecs>
+		<MRUFonts>
+			<_0 Value="Courier New;9"/>
+			<_1 Value="Consolas;10"/>
+		</MRUFonts>
+		<RightMRUSpecs>
+			<_0 Value="D:\Workspace\eTravel uplift Alipay\eTravel.v11.suo"/>
+			<_1 Value="C:\Users\354057\Desktop\新建文件夹\Test.exe"/>
+			<_2 Value="C:\Users\354057\Documents\Visual Studio 2010\Projects\Test\Test\bin\Debug\Test.exe"/>
+		</RightMRUSpecs>
+	</THexCompareState>
+	<THomeState>
+		<SessionType Value="TTextCompareSession"/>
+	</THomeState>
+	<TSessionSaveAsState>
+		<FormPosStr Value="479;372;800;621"/>
+	</TSessionSaveAsState>
+	<TTextCompareState>
+		<LeftMRUSpecs>
+			<_0 Value="C:\Publish\Kevin\eTravel OJS new plan before\OnlineWeb\MJS\ProductQuoteEngine.js"/>
+			<_1 Value="C:\Publish\Kevin\eTravel OJS new plan before\OnlineWeb\Views\Shared\MPartial_Slidemenu.cshtml"/>
+			<_2 Value="C:\Publish\Kevin\eTravel OJS new plan before\OnlineWeb\Views\Search\PC\Index.cshtml"/>
+			<_3 Value="C:\Publish\Kevin\eTravel OJS new plan before\OnlineWeb\Web.config"/>
+			<_4 Value="C:\Publish\Kevin\eTravel OJS new plan before\OnlineWeb\Content\main.css"/>
+			<_5 Value="C:\Publish\Kevin\eTravel OJS new plan before\Common\DAL\ETravel.edmx"/>
+			<_6 Value="C:\Publish\Kevin\eTravel OJS new plan before\AdminWeb\AdminWeb.csproj.user"/>
+			<_7 Value="C:\Publish\Kevin\eTravel OJS new plan before\ReportJob\NReportgen.cs"/>
+			<_8 Value="C:\Publish\eFapiao PH2\CancellationBatch\Config\GatewayConfig.xml"/>
+		</LeftMRUSpecs>
+		<MRUFonts>
+			<_0 Value="Consolas;10"/>
+			<_1 Value="Courier New;9"/>
+		</MRUFonts>
+		<RightMRUSpecs>
+			<_0 Value="C:\Publish\Kevin\eTravel\OnlineWeb\MJS\ProductQuoteEngine.js"/>
+			<_1 Value="C:\Publish\Kevin\eTravel\OnlineWeb\Views\Shared\MPartial_Slidemenu.cshtml"/>
+			<_2 Value="C:\Publish\Kevin\eTravel\OnlineWeb\Views\Search\PC\Index.cshtml"/>
+			<_3 Value="C:\Publish\Kevin\eTravel\OnlineWeb\Config\WeChatOpenID.xml"/>
+			<_4 Value="C:\Publish\Kevin\eTravel\OnlineWeb\Web.config"/>
+			<_5 Value="C:\Publish\Kevin\eTravel\OnlineWeb\Content\main.css"/>
+			<_6 Value="C:\Publish\Kevin\eTravel\Common\DAL\ETravel.edmx"/>
+			<_7 Value="C:\Publish\Kevin\eTravel\AdminWeb\AdminWeb.csproj.user"/>
+			<_8 Value="C:\Publish\Kevin\eTravel\ReportJob\NReportgen.cs"/>
+		</RightMRUSpecs>
+		<ShowWS Value="True"/>
+	</TTextCompareState>
+	<TTextFindState>
+		<CurSideOnly Value="False"/>
+		<FindItems>
+			<_0 Value="AMOUNT"/>
+			<_1 Value="CLAIM_AMOUNT"/>
+			<_2 Value=".title"/>
+			<_3 Value="title"/>
+			<_4 Value="lastName"/>
+			<_5 Value="fullName"/>
+			<_6 Value="24221"/>
+			<_7 Value="up_WgroupTxt_del2"/>
+			<_8 Value="up_groupTxt02"/>
+		</FindItems>
+		<ReplaceItems>
+			<_0/>
+		</ReplaceItems>
+		<Sides Value="[fsLeft]"/>
+	</TTextFindState>
+	<TTextMergeState>
+		<CenterMRUSpecs>
+			<_0 Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\02_ホスト連動処理\江東・豊洲・本社\KINMU.CPP"/>
+		</CenterMRUSpecs>
+		<LeftMRUSpecs>
+			<_0 Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\36_SJ工数連動処理\EXEファイルソース\SelKousu.cpp"/>
+		</LeftMRUSpecs>
+		<MRUFonts>
+			<_0 Value="Courier New;9"/>
+		</MRUFonts>
+		<RightMRUSpecs>
+			<_0 Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\02_ホスト連動処理\江東・豊洲・本社\FUSHUU.CPP"/>
+		</RightMRUSpecs>
+	</TTextMergeState>
+	<TTipState>
+		<DontShowAgain Value="[tipFastRefresh]"/>
+	</TTipState>
+	<TVerCompareState>
+		<LeftMRUSpecs>
+			<_0 Value="C:\Users\354057\Desktop\新建文件夹\Test_old.exe"/>
+			<_1 Value="C:\Users\354057\Documents\Visual Studio 2010\Projects\Test\Test\bin\Debug\Test.exe"/>
+		</LeftMRUSpecs>
+		<MRUFonts>
+			<_0 Value="????;9;;1"/>
+			<_1 Value="Segoe UI;9;;1"/>
+		</MRUFonts>
+		<RightMRUSpecs>
+			<_0 Value="C:\Users\354057\Desktop\新建文件夹\Test.exe"/>
+			<_1 Value="C:\Users\354057\Documents\Visual Studio 2010\Projects\Test\Test\bin\Debug\Test.exe"/>
+		</RightMRUSpecs>
+	</TVerCompareState>
+</BCState>

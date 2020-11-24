@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Produced by Beyond Compare 3 from Scooter Software -->
+<BCSessions>
+	<TDirCompareSession Value="IHI">
+		<LastModified Value="2012-01-05 17:44:07"/>
+		<Rules>
+			<UseContentComparison Value="True"/>
+			<UseTimestampComparison Value="False"/>
+		</Rules>
+		<Specs>
+			<Left Value="D:\IHI\PurchaseOrderManagement\1.Develop\2.Codes\1.Source\IHIRoot\IHI"/>
+			<Right Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\1.Source\IHIRoot\IHI"/>
+		</Specs>
+		<State>
+			<DisplayFilter Value="[showLeftAdded, showRightAdded, showLeftChanged, showRightChanged, showConflict]"/>
+		</State>
+	</TDirCompareSession>
+	<TSessionFolder>
+		<Items>
+			<TSessionFolder>
+				<Items>
+					<TDirCompareSession Value="CancellationBatch %3C--%3E EINVOICEBATCH">
+						<LastModified Value="2017-12-05 11:16:14"/>
+						<Specs>
+							<Left Value="C:\Publish\eFapiao PH2\CancellationBatch"/>
+							<Right Value="D:\EINVOICEBATCH"/>
+						</Specs>
+					</TDirCompareSession>
+					<TTextCompareSession Value="server.xml">
+						<LastModified Value="2017-11-24 13:46:20"/>
+						<Specs>
+							<Left Value="D:\postSales\server.xml"/>
+							<Right Value="D:\postSales\apache-tomcat-7.0.72_8090\conf\server.xml"/>
+						</Specs>
+					</TTextCompareSession>
+					<TTextCompareSession Value="MPaymentController.cs">
+						<LastModified Value="2017-11-23 17:32:06"/>
+						<Specs>
+							<Left Value="C:\Publish\lisa\etravle_coupon(49)\OnlineWeb\Controllers\MPaymentController.cs"/>
+							<Right Value="C:\Publish\lisa\CR\OnlineWeb\Controllers\MPaymentController.cs"/>
+						</Specs>
+					</TTextCompareSession>
+					<TDirCompareSession Value="bin">
+						<LastModified Value="2017-11-08 22:28:26"/>
+						<Specs>
+							<Left Value="C:\Publish\eFapiao PH2\AdminConsole - Copy\bin"/>
+							<Right Value="D:\Publish\eFapiao PH2\Build 17\AdminConsole\bin"/>
+						</Specs>
+					</TDirCompareSession>
+					<TTextCompareSession Value="Web.config">
+						<LastModified Value="2017-06-23 10:32:04"/>
+						<Specs>
+							<Left Value="C:\Publish\eFapiao PH2\Online\Web.config"/>
+							<Right Value="D:\Publish\Online_Package04\Web.config"/>
+						</Specs>
+					</TTextCompareSession>
+					<TDirCompareSession Value="Online %3C--%3E Online_Package04">
+						<LastModified Value="2017-06-23 10:28:38"/>
+						<Specs>
+							<Left Value="C:\Publish\eFapiao PH2\Online"/>
+							<Right Value="D:\Publish\Online_Package04"/>
+						</Specs>
+					</TDirCompareSession>
+					<TTextCompareSession Value="AISINO_CONTENT_REQUEST_TEMPLATE.xml">
+						<LastModified Value="2017-06-23 10:25:21"/>
+						<Specs>
+							<Left Value="D:\Workspace\eFapiao\Online\Template\AISINO_CONTENT_REQUEST_TEMPLATE.xml"/>
+							<Right Value="D:\Workspace\eFapiao Tmall\Online\Template\AISINO_CONTENT_REQUEST_TEMPLATE.xml"/>
+						</Specs>
+					</TTextCompareSession>
+					<TTextCompareSession Value="eTravelMobileStyle.css">
+						<LastModified Value="2016-03-29 18:26:15"/>
+						<Specs>
+							<Left Value="D:\Roger\eTravel\ITSR010156_NewUI\eTravel Pages-20160321\morderconfirm\订单信息确认 旅行保险-AIG美亚保险直销_files\eTravelMobileStyle.css"/>
+							<Right Value="D:\Roger\AIG\Code\OnlineWeb\Content\Mobile\eTravelMobileStyle.css"/>
+						</Specs>
+					</TTextCompareSession>
+					<TTextCompareSession Value="eTravelMobileStyle.css">
+						<LastModified Value="2016-03-29 18:17:03"/>
+						<Specs>
+							<Left Value="D:\Roger\eTravel\ITSR010156_NewUI\eTravel Pages-20160321\morderconfirm\订单信息确认 旅行保险-AIG美亚保险直销_files\eTravelMobileStyle.css"/>
+							<Right Value="D:\Roger\eTravel\ITSR010156_NewUI\eTravel Pages-20160321\morderinput\投保信息输入 旅行保险-AIG美亚保险直销_files\eTravelMobileStyle.css"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="eTravelMobileStyle.css">
+						<LastModified Value="2016-03-29 18:14:29"/>
+						<Specs>
+							<Left Value="D:\Roger\AIG\Code\OnlineWeb\Content\Mobile\eTravelMobileStyle.css"/>
+							<Right Value="D:\Roger\eTravel\ITSR010156_NewUI\eTravel Pages-20160321\morderinput\投保信息输入 旅行保险-AIG美亚保险直销_files\eTravelMobileStyle.css"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="minput.html %3C--%3E index.html">
+						<LastModified Value="2016-03-29 17:59:56"/>
+						<Specs>
+							<Left Value="D:\Roger\eTravel\ITSR010156_NewUI\tt\minput.html"/>
+							<Right Value="D:\Roger\eTravel\ITSR010156_NewUI\eTravel Pages-20160321\morderinput\index.html"/>
+						</Specs>
+					</TTextCompareSession>
+					<TDirCompareSession Value="Mobile %3C--%3E 投保信息输入 旅行保险-AIG美亚保险直销_files">
+						<LastModified Value="2016-03-28 09:08:48"/>
+						<Specs>
+							<Left Value="D:\Roger\AIG\Code\OnlineWeb\Content\Mobile"/>
+							<Right Value="D:\Roger\eTravel\ITSR010156_NewUI\eTravel Pages-20160321\morderinput\投保信息输入 旅行保险-AIG美亚保险直销_files"/>
+						</Specs>
+					</TDirCompareSession>
+					<TTextCompareSession Value="index.html %3C--%3E MOrderInput.cshtml">
+						<LastModified Value="2016-03-28 09:08:47"/>
+						<Specs>
+							<Left Value="D:\Roger\eTravel\ITSR010156_NewUI\eTravel Pages-20160321\morderinput\index.html"/>
+							<Right Value="D:\Roger\AIG\Code\OnlineWeb\Views\MOrder\MOrderInput.cshtml"/>
+						</Specs>
+					</TTextCompareSession>
+					<TTextCompareSession Value="Web.config %3C--%3E Web-38622.config">
+						<LastModified Value="2013-06-28 14:02:07"/>
+						<Specs>
+							<Left Value="C:\Users\354057\Desktop\wesker\ING\CR\bug\Segmented Marketing\Web.config"/>
+							<Right Value="C:\Users\354057\Desktop\wesker\ING\CR\bug\Segmented Marketing\Web-38622.config"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="1.il %3C--%3E 3.il">
+						<LastModified Value="2013-06-19 17:25:36"/>
+						<Specs>
+							<Left Value="C:\Users\354057\Desktop\新建文件夹\1.il"/>
+							<Right Value="C:\Users\354057\Desktop\新建文件夹\3.il"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="old.il %3C--%3E tee.il">
+						<LastModified Value="2013-06-19 14:22:50"/>
+						<Specs>
+							<Left Value="C:\Users\354057\Desktop\新建文件夹\old.il"/>
+							<Right Value="C:\Users\354057\Desktop\新建文件夹\tee.il"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<THexCompareSession Value="Test_old.exe %3C--%3E Test.exe">
+						<LastModified Value="2013-06-19 10:06:50"/>
+						<Specs>
+							<Left Value="C:\Users\354057\Desktop\新建文件夹\Test_old.exe"/>
+							<Right Value="C:\Users\354057\Desktop\新建文件夹\Test.exe"/>
+						</Specs>
+					</THexCompareSession>
+					<TVerCompareSession Value="Test_old.exe %3C--%3E Test.exe">
+						<LastModified Value="2013-06-19 10:06:50"/>
+						<Specs>
+							<Left Value="C:\Users\354057\Desktop\新建文件夹\Test_old.exe"/>
+							<Right Value="C:\Users\354057\Desktop\新建文件夹\Test.exe"/>
+						</Specs>
+					</TVerCompareSession>
+					<TTextCompareSession Value="Test_old.exe %3C--%3E Test.exe">
+						<LastModified Value="2013-06-19 10:06:14"/>
+						<Specs>
+							<Left Value="C:\Users\354057\Desktop\新建文件夹\Test_old.exe"/>
+							<Right Value="C:\Users\354057\Desktop\新建文件夹\Test.exe"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<THexCompareSession Value="Test.exe">
+						<LastModified Value="2013-06-18 13:41:24"/>
+						<Specs>
+							<Left Value="C:\Users\354057\Documents\Visual Studio 2010\Projects\Test\Test\bin\Debug\Test.exe"/>
+							<Right Value="C:\Users\354057\Documents\Visual Studio 2010\Projects\Test\Test\bin\Debug\Test.exe"/>
+						</Specs>
+					</THexCompareSession>
+					<TVerCompareSession Value="Test.exe">
+						<LastModified Value="2013-06-18 13:40:52"/>
+						<Specs>
+							<Left Value="C:\Users\354057\Documents\Visual Studio 2010\Projects\Test\Test\bin\Debug\Test.exe"/>
+							<Right Value="C:\Users\354057\Documents\Visual Studio 2010\Projects\Test\Test\bin\Debug\Test.exe"/>
+						</Specs>
+					</TVerCompareSession>
+					<TTextCompareSession Value="AdjustmentBiz.cs">
+						<LastModified Value="2012-11-10 16:09:29"/>
+						<Specs>
+							<Left Value="D:\Projects\Alltrust\AlltrustCode_Branch\BLL\BusinessClass\Adjustment\AdjustmentBiz.cs"/>
+							<Right Value="D:\Projects\Alltrust\AlltrustCode\BLL\BusinessClass\Adjustment\AdjustmentBiz.cs"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="TaskReassignSpecification.cs">
+						<LastModified Value="2012-11-09 13:41:36"/>
+						<Specs>
+							<Left Value="D:\Projects\Alltrust\AlltrustCode\BLL\Specification\TaskReassignSpecification.cs"/>
+							<Right Value="D:\Projects\Alltrust\AlltrustCode_Branch\BLL\Specification\TaskReassignSpecification.cs"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="AllTrustService.csproj">
+						<LastModified Value="2012-11-06 12:59:14"/>
+						<Specs>
+							<Left Value="D:\Projects\Alltrust\AlltrustCode_Branch\AllTrustService\AllTrustService.csproj"/>
+							<Right Value="D:\Projects\Alltrust\AlltrustCode\AllTrustService\AllTrustService.csproj"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="CaseReportProcess.ashx.cs">
+						<LastModified Value="2012-11-06 12:55:11"/>
+						<Specs>
+							<Left Value="D:\Projects\Alltrust\AlltrustCode_Branch\AllTrustWeb\Pages\CallCenter\CaseReportProcess.ashx.cs"/>
+							<Right Value="D:\Projects\Alltrust\AlltrustCode\AllTrustWeb\Pages\CallCenter\CaseReportProcess.ashx.cs"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftMod, showRightMod, showDiffMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="Weblocal.xml %3C--%3E webSIT.xml">
+						<LastModified Value="2012-09-18 19:03:20"/>
+						<Specs>
+							<Left Value="D:\Weblocal.xml"/>
+							<Right Value="D:\webSIT.xml"/>
+						</Specs>
+					</TTextCompareSession>
+					<TTextCompareSession Value="Web1.config %3C--%3E Web.config">
+						<LastModified Value="2012-07-31 16:08:23"/>
+						<Specs>
+							<Left Value="C:\Documents and Settings\185664\Desktop\Web1.config"/>
+							<Right Value="C:\Documents and Settings\185664\Desktop\Web.config"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showNoMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="Web.config %3C--%3E Web1.txt">
+						<LastModified Value="2012-07-26 13:07:38"/>
+						<Specs>
+							<Left Value="E:\Projects\AllTrustCode\AllTrustWeb\Web.config"/>
+							<Right Value="E:\Projects\AllTrustCode\AllTrustWeb\Web1.txt"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showNoMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TTextCompareSession Value="bnu#c01.bat">
+						<LastModified Value="2012-03-16 15:09:38"/>
+						<Specs>
+							<Left Value="E:\MLAJ\Sybase_Exit\Input\003-HRP関連資料\BNU#C01\bnu#c01.bat"/>
+							<Right Value="E:\MLAJ\Sybase_Exit\Input\003-HRP関連資料\HRPISU\bnu#c01.bat"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showNoMod]"/>
+						</State>
+					</TTextCompareSession>
+					<TDirCompareSession Value="Client %3C--%3E Offshore">
+						<LastModified Value="2012-03-12 10:48:53"/>
+						<Specs>
+							<Left Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\1.Documents\5.Code\Macro\Client"/>
+							<Right Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\1.Documents\5.Code\Macro\Offshore"/>
+						</Specs>
+					</TDirCompareSession>
+					<TTextCompareSession Value="EditUnissuedPO.aspx.cs">
+						<LastModified Value="2012-02-13 10:01:06"/>
+						<Specs>
+							<Left Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\1.Source\IHIRoot\IHI\Web\POManagement\EditUnissuedPO.aspx.cs"/>
+							<Right Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\1.Source\IHIRoot_IIS\IHI\Web\POManagement\EditUnissuedPO.aspx.cs"/>
+						</Specs>
+					</TTextCompareSession>
+					<TDirCompareSession Value="Web">
+						<LastModified Value="2012-02-02 10:29:16"/>
+						<Rules>
+							<UseContentComparison Value="True"/>
+							<UseTimestampComparison Value="False"/>
+						</Rules>
+						<Specs>
+							<Left Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\1.Source\IHIRoot\IHI\Web"/>
+							<Right Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\1.Source\IHIRoot_IIS\IHI\Web"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftAdded, showRightAdded, showLeftChanged, showRightChanged, showConflict]"/>
+						</State>
+					</TDirCompareSession>
+					<TDirCompareSession Value="StoredProcedure %3C--%3E STP_SH">
+						<LastModified Value="2012-02-02 09:35:01"/>
+						<Rules>
+							<UseContentComparison Value="True"/>
+							<UseTimestampComparison Value="False"/>
+						</Rules>
+						<Specs>
+							<Left Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\3.Setup\DataBaseSetup\StoredProcedure"/>
+							<Right Value="D:\STP_SH"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftAdded, showRightAdded, showLeftChanged, showRightChanged, showConflict]"/>
+						</State>
+					</TDirCompareSession>
+					<TDirCompareSession Value="TableData">
+						<LastModified Value="2012-01-21 11:45:52"/>
+						<Rules>
+							<UseContentComparison Value="True"/>
+							<UseTimestampComparison Value="False"/>
+						</Rules>
+						<Specs>
+							<Left Value="D:\IHI\PurchaseOrderManagement\1.Develop\2.Codes\3.Setup\DataBaseSetup\TableData"/>
+							<Right Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\3.Setup\DataBaseSetup\TableData"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftAdded, showRightAdded, showLeftChanged, showRightChanged, showConflict]"/>
+						</State>
+					</TDirCompareSession>
+					<TDirCompareSession Value="StoredProcedure">
+						<LastModified Value="2012-01-21 11:43:26"/>
+						<Rules>
+							<UseContentComparison Value="True"/>
+							<UseTimestampComparison Value="False"/>
+						</Rules>
+						<Specs>
+							<Left Value="D:\IHI\PurchaseOrderManagement\1.Develop\2.Codes\3.Setup\DataBaseSetup\StoredProcedure"/>
+							<Right Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\3.Setup\DataBaseSetup\StoredProcedure"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftAdded, showRightAdded, showLeftChanged, showRightChanged, showConflict]"/>
+						</State>
+					</TDirCompareSession>
+					<TDirCompareSession Value="TableDefinition">
+						<LastModified Value="2012-01-21 11:09:34"/>
+						<Rules>
+							<UseContentComparison Value="True"/>
+							<UseTimestampComparison Value="False"/>
+						</Rules>
+						<Specs>
+							<Left Value="D:\IHI\PurchaseOrderManagement\1.Develop\2.Codes\3.Setup\DataBaseSetup\TableDefinition"/>
+							<Right Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\3.Setup\DataBaseSetup\TableDefinition"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftAdded, showRightAdded, showLeftChanged, showRightChanged, showConflict]"/>
+						</State>
+					</TDirCompareSession>
+					<TDirCompareSession Value="IHI">
+						<LastModified Value="2012-01-05 17:43:53"/>
+						<Specs>
+							<Left Value="D:\IHI\PurchaseOrderManagement\1.Develop\2.Codes\1.Source\IHIRoot\IHI"/>
+							<Right Value="D:\IHI\PurchaseOrderManagement_Turkey\1.Develop\2.Codes\1.Source\IHIRoot\IHI"/>
+						</Specs>
+						<State>
+							<DisplayFilter Value="[showLeftAdded, showRightAdded, showLeftChanged, showRightChanged, showConflict]"/>
+						</State>
+					</TDirCompareSession>
+					<TTextCompareSession Value="Kouji3_Y8_H.cpp %3C--%3E Kouji3_V8.cpp">
+						<LastModified Value="2011-06-27 14:18:24"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\04_工事情報Ⅲ期連動処理\本社\Kouji3_Y8_H.cpp"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\04_工事情報Ⅲ期連動処理\エネ本\Kouji3_V8.cpp"/>
+						</Specs>
+					</TTextCompareSession>
+					<TTextCompareSession Value="Kouji3_Y8_H.cpp %3C--%3E Kouji3_Y8_Y.cpp">
+						<LastModified Value="2011-06-21 14:05:27"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\04_工事情報Ⅲ期連動処理\本社\Kouji3_Y8_H.cpp"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\04_工事情報Ⅲ期連動処理\本社\Kouji3_Y8_Y.cpp"/>
+						</Specs>
+					</TTextCompareSession>
+					<TDirCompareSession Value="EXEファイルソース %3C--%3E 空本">
+						<LastModified Value="2011-06-15 17:39:22"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\36_SJ工数連動処理\EXEファイルソース"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\02_ホスト連動処理\空本"/>
+						</Specs>
+					</TDirCompareSession>
+					<TTextCompareSession Value="ShainK.cpp %3C--%3E SHAIN.CPP">
+						<LastModified Value="2011-06-15 16:37:15"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\36_SJ工数連動処理\EXEファイルソース\ShainK.cpp"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\02_ホスト連動処理\江東・豊洲・本社\SHAIN.CPP"/>
+						</Specs>
+					</TTextCompareSession>
+					<TTextCompareSession Value="HAKEN.CPP">
+						<LastModified Value="2011-06-15 15:44:23"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\36_SJ工数連動処理\EXEファイルソース\HAKEN.CPP"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\02_ホスト連動処理\HAKEN.EXE\HAKEN.CPP"/>
+						</Specs>
+					</TTextCompareSession>
+					<TDirCompareSession Value="EXEファイルソース %3C--%3E 江東・豊洲・本社">
+						<LastModified Value="2011-06-15 14:55:09"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\36_SJ工数連動処理\EXEファイルソース"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\02_ホスト連動処理\江東・豊洲・本社"/>
+						</Specs>
+					</TDirCompareSession>
+					<TTextCompareSession Value="Y1_kousu.cpp %3C--%3E P2a1.cpp">
+						<LastModified Value="2011-06-15 14:04:16"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\23_原子力予定工数連動処理\EXEファイルソース\Y1_kousu.cpp"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\1.Proposal\02_From Client\バッチソース\19_相生予定工数連携処理\P2a1.cpp"/>
+						</Specs>
+					</TTextCompareSession>
+					<TDirCompareSession Value="03_豊洲 %3C--%3E 04_江東">
+						<LastModified Value="2011-06-15 12:08:54"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\5.Code\Procedure Source\03_豊洲"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\5.Code\Procedure Source\04_江東"/>
+						</Specs>
+					</TDirCompareSession>
+					<TDirCompareSession Value="02_エネ本 %3C--%3E 09_愛知">
+						<LastModified Value="2011-06-14 17:51:28"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\5.Code\Procedure Source\02_エネ本"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\5.Code\Procedure Source\09_愛知"/>
+						</Specs>
+					</TDirCompareSession>
+					<TDirCompareSession Value="dump %3C--%3E sql">
+						<LastModified Value="2011-06-14 17:51:27"/>
+						<Specs>
+							<Left Value="C:\Documents and Settings\185664\Desktop\IHI\技開本\dump"/>
+							<Right Value="C:\Documents and Settings\185664\Desktop\IHI\技開本\sql"/>
+						</Specs>
+					</TDirCompareSession>
+					<TDirCompareSession Value="01_本社 %3C--%3E 09_愛知">
+						<LastModified Value="2011-06-14 17:28:58"/>
+						<Specs>
+							<Left Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\5.Code\Procedure Source\01_本社"/>
+							<Right Value="D:\IHIWORKMANAGEMENT_P2\1.Develop\1.Documents\5.Code\Procedure Source\09_愛知"/>
+						</Specs>
+					</TDirCompareSession>
+					<TDirCompareSession Value="master">
+						<LastModified Value="2011-06-14 17:28:58"/>
+						<Specs>
+							<Left Value="D:\IHIWorkManagement\1.Develop\1.Documents\1.Proposal\02_From Client\他地区ソース\01_本社\Web\Y628pwhws\master"/>
+							<Right Value="D:\IHIWorkManagement\1.Develop\1.Documents\1.Proposal\02_From Client\他地区ソース\13_愛知地区\Web\pwhws\master"/>
+						</Specs>
+					</TDirCompareSession>
+					<TDirCompareSession Value="master">
+						<LastModified Value="2011-06-14 16:50:50"/>
+						<Specs>
+							<Left Value="D:\IHIWorkManagement\1.Develop\1.Documents\1.Proposal\02_From Client\他地区ソース\02_エネ本・相生\Web\P2pwhws\master"/>
+							<Right Value="D:\IHIWorkManagement\1.Develop\1.Documents\1.Proposal\02_From Client\他地区ソース\13_愛知地区\Web\pwhws\master"/>
+						</Specs>
+					</TDirCompareSession>
+				</Items>
+			</TSessionFolder>
+		</Items>
+	</TSessionFolder>
+</BCSessions>
